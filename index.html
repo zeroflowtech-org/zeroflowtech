@@ -1,814 +1,786 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="ZeroFlowTech - High-performance software solutions with optimized workflows and modern technology." />
-  <title>ZeroFlowTech</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    content="ZeroFlowTech – Custom CRM, dynamic websites, business automation & workflows in Bhopal. Free audits, fast delivery." />
+  <title>ZeroFlowTech | Custom Websites, CRM & Automation Solutions</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: { primary: '#2563eb', accent: '#00A3E8' },
+          boxShadow: { 'premium': '0 10px 30px -10px rgba(37,99,235,0.3)' }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-  <link href="./main.css" rel="stylesheet">    
-  <link href="./reshponshive.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .gradient-hero {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe, #dbeafe);
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #1e40af, #00A3E8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 35px -10px rgba(0, 0, 0, 0.15);
+    }
+
+    .premium-button {
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+    }
+
+    .premium-button:hover {
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .section-fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+
+    .section-fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .step-line {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(to right, #2563eb, #00A3E8);
+    }
+
+    .faq-item {
+      transition: all 0.3s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 500px;
+      opacity: 1;
+    }
+
+    .faq-item.open .faq-toggle i {
+      transform: rotate(180deg);
+    }
+
+    /* New CTA Section Styles */
+    .invest-card {
+      transition: all 0.4s ease;
+    }
+
+    .invest-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.2);
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.1;
+      }
+
+      h2 {
+        font-size: 2rem !important;
+      }
+
+      .text-xl {
+        font-size: 1.125rem !important;
+      }
+
+      .p-10 {
+        padding: 2.5rem 1.25rem !important;
+      }
+
+      .gap-10 {
+        gap: 2.5rem !important;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    @keyframes pulseSlow {
+
+      0%,
+      100% {
+        opacity: 0.9;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    .animate-pulse-slow {
+      animation: pulseSlow 4s infinite ease-in-out;
+    }
+  </style>
 </head>
 
-<body class="bg-white font-sans text-slate-900">
-  <!-- Header -->
+<body class="bg-white text-slate-900 antialiased">
 
-  <nav class="navbar">
-    <div class="cm-sticky-section flex-wrap flex items-center justify-center py-2 bg-blue-100">
-      <span> Automation Anywhere recognized as one of the ‘7 Wonders of AI’ <span class="text-blue-600 pl-2  font-medium">Learn
-        more <i class="fa-solid fa-arrow-right"></i></span> </span>
+  <!-- Top Banner -->
+  <div class="bg-blue-900 text-white text-center py-3 text-sm font-medium">
+    Limited: Only 3 project slots left this month – Secure yours now
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 sm:h-20">
+        <a href="/" class="flex items-center gap-3">
+          <img src="./assets/logos/logo.png" alt="ZeroFlowTech" class="w-10 h-10 sm:w-12 sm:h-12" />
+          <span class="font-bold text-xl sm:text-2xl gradient-text">ZeroFlowTech</span>
+        </a>
+        <div class="hidden md:flex items-center gap-10">
+          <nav class="flex gap-8 font-medium">
+            <a href="services.html" class="hover:text-blue-700">Services</a>
+            <a href="#projects" class="hover:text-blue-700">Projects</a>
+            <a href="#onboarding" class="hover:text-blue-700">Onboarding</a>
+            <a href="case-studies.html" class="text-blue-700 font-semibold">Case Studies</a>
+            <a href="#testimonials" class="hover:text-blue-700">Testimonials</a>
+            <a href="about.html" class="text-blue-700 font-semibold">About</a>
+            <a href="contact.html" class="hover:text-blue-700">Contact</a>
+          </nav>
+          <a href="https://calendly.com/zeroflowtech/15min"
+            class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
+            Book Free Call
+          </a>
+        </div>
+        <div class="md:hidden flex items-center gap-3">
+          <a href="https://calendly.com/zeroflowtech/15min" class="bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold">Book Call</a>
+          <button id="menu-btn" class="text-2xl"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t py-6 px-6 space-y-5 font-medium">
+        <a href="services.html" class="block hover:text-blue-700">Services</a>
+        <a href="#projects" class="block hover:text-blue-700">Projects</a>
+        <a href="#onboarding" class="block hover:text-blue-700">Onboarding</a>
+        <a href="case-studies.html" class="block hover:text-blue-700">Case Studies</a>
+        <a href="#testimonials" class="block hover:text-blue-700">Testimonials</a>
+        <a href="about.html" class="block hover:text-blue-700">About</a>
+        <a href="contact.html" class="block hover:text-blue-700">Contact</a>
+      </div>
     </div>
-    <div class="container nav-container">      
-        <div class="flex navigation items-center gap-10">
-          <div class="flex items-center gap-2">
-            <img src="./assets/logos/logo.png" href="" />
-            <span class="logo-text">Zeroflowtech </span>
+  </header>
+
+  <!-- Hero (unchanged) -->
+  <section class="gradient-hero pt-16 pb-24 sm:pb-32 relative overflow-hidden section-fade">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div
+            class="inline-flex gap-2 bg-white/80 px-4 py-2 rounded-full text-sm font-semibold text-blue-700 mb-6 shadow-sm">
+            <i class="fa-solid fa-rocket text-blue-600"></i> Ready in 2–6 weeks
           </div>
-          <div class="hamburger" onclick="toggleMenu()">
-                    <i class="fa-solid fa-bars"></i>
-          </div>           
-          <div class="nav-menu" id="navMenu">    
-            <div class="flex flex-col gap-10">
-              <div class="flex items-center gap-2 cm-mobile-logo">
-            <img src="./assets/logos/logo.png" href="" />
-            <span class="logo-text">Zeroflowtech </span>
-          </div>        
-              <ul class="nav-links">
-              <a href="#" class="hover:text-blue-600">Product <i class="fa-solid fa-chevron-down pl-1 "></i></a>
-              <a href="#" class="hover:text-blue-600">Solutions <i class="fa-solid fa-chevron-down pl-1"></i></a>
-              <a href="#" class="hover:text-blue-600">Resources <i class="fa-solid fa-chevron-down pl-1"></i></a>
-              <a href="#" class="hover:text-blue-600">Partners <i class="fa-solid fa-chevron-down pl-1"></i></a>
-              </ul>
-              </div> 
-              <div class="nav-actions  btn-group">
-                <a href="#" class="cm-button-outline">Request a demo</a>
-                <a href="#" class="cm-button-contained">
-                  Sign up for free <i class="fa-solid fa-arrow-right pl-2"></i>
-                </a>
-                <a href="#" class="cm-button-text">
-                  Sign in
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+            Custom Solutions That <span class="gradient-text">Drive Real Business Growth</span>
+          </h1>
+          <p class="mt-6 text-lg sm:text-xl text-slate-700 max-w-xl">
+            From static sites to fully automated CRMs & workflows — we build tools that save time and generate revenue.
+          </p>
+          <div class="mt-10 flex flex-col sm:flex-row gap-4">
+            <a href="https://calendly.com/zeroflowtech/15min"
+              class="bg-blue-700 text-white px-8 py-5 rounded-xl font-bold hover:bg-blue-800 premium-button flex items-center justify-center gap-2">
+              Free 15-min Consult <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="mailto:zeroflowtech@gmail.com?subject=Free Audit"
+              class="border-2 border-blue-700 text-blue-700 px-8 py-5 rounded-xl font-bold hover:bg-blue-700 hover:text-white transition flex items-center justify-center gap-2">
+              Free Website Audit
+            </a>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img
+            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="Modern dashboard" class="rounded-3xl shadow-2xl" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services  -->
+  <section id="services" class="py-20 bg-slate-50 section-fade">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl sm:text-5xl font-bold mb-4">Our Core Services</h2>
+        <p class="text-xl text-slate-600">Tailored solutions to automate, optimize and scale your business.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-8 rounded-2xl border card-hover shadow-premium flex flex-col">
+          <i class="fa-solid fa-globe text-5xl text-blue-600 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-3 gradient-text">Custom Websites</h3>
+          <p class="text-slate-600 flex-1">Dynamic, responsive sites with booking, payments & admin panels.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl border card-hover shadow-premium flex flex-col">
+          <i class="fa-solid fa-tools text-5xl text-blue-600 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-3 gradient-text">Website Optimization</h3>
+          <p class="text-slate-600 flex-1">Speed, SEO, UX upgrades + free audits for quick wins.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl border card-hover shadow-premium flex flex-col">
+          <i class="fa-solid fa-cogs text-5xl text-blue-600 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-3 gradient-text">Custom CRM & Tools</h3>
+          <p class="text-slate-600 flex-1">Built-to-need CRMs, dashboards & internal systems.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl border card-hover shadow-premium flex flex-col">
+          <i class="fa-solid fa-plane-departure text-5xl text-blue-600 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-3 gradient-text">Travel Automation</h3>
+          <p class="text-slate-600 flex-1">Bookings, itineraries, leads, invoices – fully automated.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects  -->
+  <section id="projects" class="py-20 bg-white section-fade">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl sm:text-5xl font-bold mb-4">Real Projects, Real Results</h2>
+        <p class="text-xl text-slate-600">Diverse solutions we've delivered for clients across industries.</p>
+      </div>
+
+      <div class="swiper projectSwiper">
+        <div class="swiper-wrapper">
+          <!-- Travel Automation -->
+          <div class="swiper-slide">
+            <div class="bg-white rounded-2xl shadow-premium overflow-hidden card-hover h-full flex flex-col">
+              <img
+                src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Travel Booking Dashboard" class="w-full h-64 object-cover" loading="lazy" />
+              <div class="p-6 flex-1 flex flex-col">
+                <h3 class="text-2xl font-bold gradient-text mb-3">Travel Booking Automation</h3>
+                <p class="text-slate-600 mb-4 flex-1">Full workflow: group trips, real-time alerts, invoices, CRM
+                  integration for DejaVu Tours.</p>
+                <a href="https://www.dejavutours.in" target="_blank"
+                  class="text-blue-700 font-semibold hover:underline mt-auto inline-flex items-center gap-2">
+                  View Live <i class="fa-solid fa-external-link-alt"></i>
                 </a>
               </div>
-                <div class="hamburger-close" onclick="toggleMenu()">
-                      <i class="fa-solid fa-close"></i>
             </div>
           </div>
-        <div class="nav-overlay" id="navOverlay" onclick="toggleMenu()"></div>
-        </div>
-                 
-    </div>
-  </nav>
-  <section class="hero-section">
-    <div class="container">
-      <div class="hero-wrapper">
 
-        <div class="hero-text">
-          <div class="badge">
-            <span><i class="fa-regular fa-face-smile-wink"></i> Watch an AI demo today <i
-                class="fa-solid fa-plus"></i></span>
+          <!-- Custom CRM -->
+          <div class="swiper-slide">
+            <div class="bg-white rounded-2xl shadow-premium overflow-hidden card-hover h-full flex flex-col">
+              <img
+                src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=1171&auto=format&fit=crop&w=800&q=80"
+                alt="CRM Dashboard" class="w-full h-64 object-cover" loading="lazy" />
+              <div class="p-6 flex-1 flex flex-col">
+                <h3 class="text-2xl font-bold gradient-text">Custom CRM Dashboard</h3>
+                <p class="text-slate-600 mb-4 flex-1">Lead tracking, automation & reporting tailored to business needs.
+                </p>
+                <!-- <a href="#" class="text-blue-700 font-semibold hover:underline mt-auto inline-flex items-center gap-2">
+                  View Demo <i class="fa-solid fa-external-link-alt"></i>
+                </a> -->
+              </div>
+            </div>
           </div>
-          <h1>One of the 7 <br> <span>Wonders of AI</span></h1>
-          <p class="text-blue-900 font-medium">
-            Your most critical processes, easily managed on a single platform.
-          </p>
 
-          <div class="btn-group">
-            <a href="#" class="cm-button-contained">
-              Sign Up for Free <i class="fa-solid fa-arrow-right pl-2"></i>
-            </a>
-            <a href="#" class="cm-button-outline">
-              Contact Sales
-            </a>
+          <!-- Inventory -->
+          <div class="swiper-slide">
+            <div class="bg-white rounded-2xl shadow-premium overflow-hidden card-hover h-full flex flex-col">
+              <img
+                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Inventory Management" class="w-full h-64 object-cover" loading="lazy" />
+              <div class="p-6 flex-1 flex flex-col">
+                <h3 class="text-2xl font-bold gradient-text">Inventory Management System</h3>
+                <p class="text-slate-600 mb-4 flex-1">Real-time stock tracking, orders & reporting UI.</p>
+                <!-- <a href="#" class="text-blue-700 font-semibold hover:underline mt-auto inline-flex items-center gap-2">
+                  View Demo <i class="fa-solid fa-external-link-alt"></i>
+                </a> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Workflow Automation -->
+          <div class="swiper-slide">
+            <div class="bg-white rounded-2xl shadow-premium overflow-hidden card-hover h-full flex flex-col">
+              <img
+                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Workflow Dashboard" class="w-full h-64 object-cover" loading="lazy" />
+              <div class="p-6 flex-1 flex flex-col">
+                <h3 class="text-2xl font-bold gradient-text">Business Workflow Automation</h3>
+                <p class="text-slate-600 mb-4 flex-1">Automated processes, approvals & notifications dashboard.</p>
+                <!-- <a href="#" class="text-blue-700 font-semibold hover:underline mt-auto inline-flex items-center gap-2">
+                  View Demo <i class="fa-solid fa-external-link-alt"></i>
+                </a> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Custom Website -->
+          <div class="swiper-slide">
+            <div class="bg-white rounded-2xl shadow-premium overflow-hidden card-hover h-full flex flex-col">
+              <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Modern Website" class="w-full h-64 object-cover" loading="lazy" />
+              <div class="p-6 flex-1 flex flex-col">
+                <h3 class="text-2xl font-bold gradient-text">Modern Custom Website</h3>
+                <p class="text-slate-600 mb-4 flex-1">Responsive, high-performance sites with advanced features.</p>
+                <a href="https://neelantgroup.com" target="_blank"
+                  class="text-blue-700 font-semibold hover:underline mt-auto inline-flex items-center gap-2">
+                  View Live <i class="fa-solid fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="hero-image">
-          <img src="./assets/images/home-right-side-section.png" alt="Dashboard">
-        </div>
+        <div class="swiper-pagination mt-10"></div>
+        <div class="swiper-button-prev text-blue-600"></div>
+        <div class="swiper-button-next text-blue-600"></div>
       </div>
     </div>
   </section>
-  <section class="ai-action-section">
-    <div class="container">
-      <div class="action-card">
 
-        <div class="action-content">
-          <h2>See AI in Action</h2>
-          <p>
-            Join experts from The Washington Post and AWS for a dynamic conversation on how they are achieving the
-            Autonomous Enterprise and transforming their most mission critical processes.
-          </p>
-          <p class="sub-text">
-            Learn how to identify your AI Best Bets—the areas where automation drives real results—and why waiting could
-            mean falling behind.
-          </p>
-          <a href="#" class="cm-button-contained max-w-[<value>]">
-            Watch the on-demand webinar
-          </a>
-        </div>
+  <!--  Project Onboarding Section -->
+  <section id="onboarding" class="py-20 bg-gradient-to-b from-white to-slate-50 section-fade">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl sm:text-5xl font-bold mb-4 gradient-text">Simple & Transparent Project Onboarding</h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">We make getting started effortless. From first call to
+          launch — clear steps, no surprises, full support.</p>
+      </div>
 
-        <div class="action-image">
-          <img src="./assets/images/ai-section.png" alt="AI Action">
+      <div class="relative py-12">
+        <div class="step-line hidden md:block"></div>
+        <div class="grid md:grid-cols-4 gap-8 relative z-10">
+          <div class="bg-white p-8 rounded-2xl shadow-premium text-center border-t-4 border-blue-600">
+            <div
+              class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 text-3xl font-bold">
+              1</div>
+            <h3 class="text-2xl font-bold mb-3">Free Discovery Call</h3>
+            <p class="text-slate-600">15–30 min chat to understand your goals, challenges & vision.</p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-premium text-center border-t-4 border-blue-600">
+            <div
+              class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 text-3xl font-bold">
+              2</div>
+            <h3 class="text-2xl font-bold mb-3">Free Audit & Proposal</h3>
+            <p class="text-slate-600">Detailed review + fixed-price proposal with timeline & scope.</p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-premium text-center border-t-4 border-blue-600">
+            <div
+              class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 text-3xl font-bold">
+              3</div>
+            <h3 class="text-2xl font-bold mb-3">Build & Weekly Updates</h3>
+            <p class="text-slate-600">Agile development with demos every week — your feedback shapes it.</p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-premium text-center border-t-4 border-blue-600">
+            <div
+              class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 text-3xl font-bold">
+              4</div>
+            <h3 class="text-2xl font-bold mb-3">Launch + Ongoing Support</h3>
+            <p class="text-slate-600">Smooth handover, training, 30-day free support & lifetime help available.</p>
+          </div>
         </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <p class="text-xl text-slate-700 mb-6">Unsure where to start? We guide you — no tech knowledge needed.</p>
+        <a href="contact.html"
+          class="inline-flex items-center gap-3 bg-blue-700 text-white px-10 py-5 rounded-xl font-bold text-lg premium-button">
+          Start Your Project Today <i class="fa-solid fa-arrow-right"></i>
+        </a>
       </div>
     </div>
   </section>
-  <section class="solutions-header">
-    <div class="container">
-      <div class="header-row">
 
-        <div class="header-title">
-          <h2>Powerful solutions for product,<br /> marketing, and more</h2>
-        </div>
-
-        <div class="header-desc">
-          <p>Ensure alignment between teams to drive business outcomes.</p>
-        </div>
-
-      </div>
-      <div class="content-grid">
-        <div class="accordion-list">
-          <div class="accordion-item ">
-            <div class="acc-header">
-              <h3>Create a centralized product roadmap</h3>
-               <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="acc-body">
-              <p>Align around a flexible, organization-wide roadmap. Customizable views let any department see
-                their
-                role, and plan accordingly.</p>
-              <a href="#" class="learn-link">Watch the webinar <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="acc-header">
-              <h3>Keep tabs on OKR progress</h3>
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="acc-body">
-              <p>Align around a flexible, organization-wide roadmap. Customizable views let any department see
-                their
-                role, and plan accordingly.</p>
-              <a href="#" class="learn-link">Watch the webinar <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="acc-header">
-              <h3>Create a feedback repository</h3>
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="acc-body">
-              <p>Align around a flexible, organization-wide roadmap. Customizable views let any department see
-                their
-                role, and plan accordingly.</p>
-              <a href="#" class="learn-link">Watch the webinar <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="acc-header">
-              <h3>Manage marketing campaigns that change fast</h3>
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="acc-body">
-              <p>Align around a flexible, organization-wide roadmap. Customizable views let any department see
-                their
-                role, and plan accordingly.</p>
-              <a href="#" class="learn-link">Watch the webinar <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <div class="acc-header">
-              <h3>Share assets across the org</h3>
-              <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="acc-body">
-              <p>Align around a flexible, organization-wide roadmap. Customizable views let any department see
-                their
-                role, and plan accordingly.</p>
-              <a href="#" class="learn-link">Watch the webinar <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-
-        </div>
-        <div class="content-image">
-          <img src="./assets/images/Accordiion-image.png" alt="Product Roadmap">
-        </div>
-      </div>
-    </div>
-
-  </section>
-  <section class="integrations-header">
-    <div class="container">
-      <div class="int-row">
-        <div class="int-title">
-          <h2>Integrate with other business-critical tools</h2>
-        </div>
-
-        <div class="int-content">
-          <p>Seamlessly connect to tools you use every day – like Jira, Salesforce, and Tableau – to ensure information
-            is shared across systems.</p>
-          <a href="#" class="view-link">
-            View all integrations <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-
-      </div>
-    </div>
-    <div class="swiper myLogoSwiper">
-      <div class="swiper-wrapper">
-
-        <div class="swiper-slide">
-          <div class="logo-card">
-            <img src="https://asset.brandfetch.io/idAnDTFapY/idDdbxxs3M.png" alt="Miro" class="card-icon">
-            <div class="card-text">
-              <h4>Miro</h4>
-              <span>Collaboration</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="logo-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" alt="Tableau"
-              class="card-icon">
-            <div class="card-text">
-              <h4>Tableau</h4>
-              <span>Analytics</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="logo-card">
-            <img src="https://www.svgrepo.com/show/354598/zendesk-icon.svg" alt="Zendesk" class="card-icon">
-            <div class="card-text">
-              <h4>Zendesk</h4>
-              <span>Support</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="logo-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce"
-              class="card-icon">
-            <div class="card-text">
-              <h4>Salesforce</h4>
-              <span>CRM</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="logo-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Box%2C_Inc._logo.svg" alt="Box"
-              class="card-icon">
-            <div class="card-text">
-              <h4>Box</h4>
-              <span>File Mgmt</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="logo-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" alt="Slack"
-              class="card-icon">
-            <div class="card-text">
-              <h4>Slack</h4>
-              <span>Chat App</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="logo-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Jira_Logo.svg" alt="Jira" class="card-icon">
-            <div class="card-text">
-              <h4>Jira</h4>
-              <span>Project Mgmt</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="logo-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma" class="card-icon">
-            <div class="card-text">
-              <h4>Figma</h4>
-              <span>Design Tool</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="logo-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Asana_logo.svg" alt="Asana" class="card-icon">
-            <div class="card-text">
-              <h4>Asana</h4>
-              <span>Task Mgmt</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="logo-card">
-            <img src="https://images.seeklogo.com/logo-png/30/1/zoom-logo-png_seeklogo-306629.png" alt="Zoom"
-              class="card-icon">
-            <div class="card-text">
-              <h4>Zoom</h4>
-              <span>Video Call</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
-  <section class="future-work-section">
-    <div class="container">
-
-      <h2 class="section-title text-center">The future of work</h2>
-
-      <div class="swiper workSwiper">
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-20 bg-slate-50 section-fade">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl sm:text-5xl font-bold text-center mb-16">What Our Clients Say</h2>
+      <div class="swiper testimonialSwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="work-grid">
-              <div class="work-content">
-                <h3>Agents that act, learn, and scale</h3>
-                <p class="description">
-                  Designed to work seamlessly across complex environments, these agents manage workflows, adapt to
-                  change, and deliver measurable business results.
-                </p>
-                <div class="user-profile">
-                  <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="user-img">
-                  <div class="user-info">
-                    <h5>Lindsay Puccio</h5>
-                    <span>Product Manager, Equinox</span>
-                  </div>
-                </div>
+            <div class="bg-white p-8 rounded-2xl shadow-premium text-center">
+              <div class="flex justify-center mb-4">
+                <i class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i>
               </div>
-              <div class="work-image-card"> <img
-                  src="https://www.netguru.com/hs-fs/hubfs/business%20documents%20on%20office%20table%20with%20smart%20phone%20and%20laptop%20computer%20and%20graph%20financial%20with%20social%20network%20diagram%20and%20three%20colleagues%20discussing%20data%20in%20the%20background-3.jpeg?width=2400&height=1600&name=business%20documents%20on%20office%20table%20with%20smart%20phone%20and%20laptop%20computer%20and%20graph%20financial%20with%20social%20network%20diagram%20and%20three%20colleagues%20discussing%20data%20in%20the%20background-3.jpeg"
-                  alt="Dashboard" class="main-img">
-              </div>
-
+              <p class="italic text-slate-700 mb-6">"Completely transformed our travel operations – bookings & leads now
+                automated 24/7. Best decision!"</p>
+              <p class="font-bold">Rahul Jain – Travel Agency Owner, Bhopal</p>
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="work-grid">
-              <div class="work-content">
-                <h3>Automate your daily workflows</h3>
-                <p class="description">
-                  Connect your favorite tools and let AI handle the repetitive tasks so you can focus on strategic
-                  decisions.
-                </p>
-                <div class="user-profile">
-                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="user-img">
-                  <div class="user-info">
-                    <h5>Mark Johnson</h5>
-                    <span>CTO, TechCorp</span>
-                  </div>
-                </div>
+            <div class="bg-white p-8 rounded-2xl shadow-premium text-center">
+              <div class="flex justify-center mb-4">
+                <i class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i>
               </div>
-              <div class="work-image-card"> <img
-                  src="https://colorlib.com/wp/wp-content/uploads/sites/2/elaadmin-dashboard-template.png"
-                  alt="Analytics" class="main-img">
+              <p class="italic text-slate-700 mb-6">"Their free audit doubled our conversions. Professional, fast, and
+                value-driven team."</p>
+              <p class="font-bold">Priya Sharma – Business Owner, Indore</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-white p-8 rounded-2xl shadow-premium text-center">
+              <div class="flex justify-center mb-4">
+                <i class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i>
               </div>
+              <p class="italic text-slate-700 mb-6">"Custom CRM saved us 20+ hours weekly. Transparent and committed
+                support."</p>
+              <p class="font-bold">Amit Patel – Logistics, Ahmedabad</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-white p-8 rounded-2xl shadow-premium text-center">
+              <div class="flex justify-center mb-4">
+                <i class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i>
+              </div>
+              <p class="italic text-slate-700 mb-6">"From idea to launch in weeks – exceeded expectations on quality and
+                timeline."</p>
+              <p class="font-bold">Neha Singh – Real Estate, Jabalpur</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-white p-8 rounded-2xl shadow-premium text-center">
+              <div class="flex justify-center mb-4">
+                <i class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i>
+              </div>
+              <p class="italic text-slate-700 mb-6">"Flexible changes welcomed – now our site converts better than
+                ever."</p>
+              <p class="font-bold">Vikram Mehta – E-commerce, Indore</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-white p-8 rounded-2xl shadow-premium text-center">
+              <div class="flex justify-center mb-4">
+                <i class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-2xl"></i>
+              </div>
+              <p class="italic text-slate-700 mb-6">"Trust built through delivery – ongoing support is exceptional."</p>
+              <p class="font-bold">Anjali Verma – Services, Ahmedabad</p>
             </div>
           </div>
         </div>
-        <div class="controls-wrapper">
-          <div class="swiper-button-prev custom-prev"></div>
-          <div class="swiper-pagination custom-pagination"></div>
-          <div class="swiper-button-next custom-next"></div>
-        </div>
+        <div class="swiper-pagination mt-10"></div>
       </div>
     </div>
   </section>
-  <section class="resources-section">
-      <div class="container">        
-          <div class="cta-strip">
-              <div class="cta-left">
-                  <h3>Teams at over 450,000 forward-thinking organizations use Airtable every day. Join them.</h3>
-              </div>
-              <div class="flex flex-col gap-2 cta-right">
-                  <a href="#" class="cm-button-contained">Sign up for free</a>
-                  <a href="#" class="cm-button-outline">Contact Sales</a>
-              </div>
-          </div>
 
-          <div class="center-intro">
-              <h2>The Autonomous Enterprise has arrived</h2>
-              <p>
-                  The ancient Seven Wonders celebrated humanity’s greatest achievements. Today, the Autonomous Enterprise stands as a new AI wonder—revolutionizing how organizations operate.
-              </p>
-          </div>
-          <div class="resources-grid">
-            <div class="resource-card">
-              <div class="card-img-wrapper">
-                <img src="./assets/images/autonomouse-one.png" alt="Autonomous Enterprise">
-              </div>
-              <div class="card-body">
-                <h3>What defines an autonomous enterprise?</h3>
-                <p>An enterprise where 80% of workflows are managed by agentic process automation with AI agents that reason,
-                  adapt, and orchestrate work in real time.</p>
-                <a href="#" class="view-link">
-                  Learn more <i class="fa-solid fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div class="resource-card">
-              <div class="card-img-wrapper">
-                <img src="./assets/images/autonomouse-two.png" alt="APA System">
-              </div>
-              <div class="card-body">
-                <h3>How do you get there?</h3>
-                <p>Agentic Process Automation System (APA) - an AI platform that orchestrates across teams, systems, and
-                  processes. Process Reasoning Engine (PRE) - a core component of the platform that leverages AI to understand context and handle exceptions.</p>
-                <a href="#" class="view-link">
-                  Learn more <i class="fa-solid fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div class="resource-card">
-              <div class="card-img-wrapper">
-                <img src="./assets/images/autonomouse-three.png" alt="Automation Advantage">
-              </div>
-              <div class="card-body">
-                <h3>The Automation Anywhere advantage.</h3>
-                <p>Process Reasoning Engine (PRE) - a core component of the platform that leverages AI to understand context and
-                  handle exceptions.</p>
-                <a href="#" class="view-link">
-                  Learn more <i class="fa-solid fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
+  <!-- Compact About Section – Trust & Process Focus -->
+  <section id="about" class="py-16 sm:py-20 bg-white section-fade">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 gradient-text">Why Businesses Trust Us</h2>
+        <p class="text-lg sm:text-xl text-slate-700 max-w-3xl mx-auto">
+          We deliver real results — not just promises.
+        </p>
       </div>
+
+      <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-premium hover:shadow-xl transition-all">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <i class="fa-solid fa-rocket-launch text-3xl text-blue-600"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-center gradient-text">Clear & Simple Process</h3>
+          <p class="text-slate-700 text-center">
+            Free call → fixed proposal → weekly updates → launch + 30-day free support
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-premium hover:shadow-xl transition-all">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <i class="fa-solid fa-shield-halved text-3xl text-blue-600"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-center gradient-text">100% Transparent</h3>
+          <p class="text-slate-700 text-center">
+            No hidden fees. Adaptable to your changing needs. Lifetime help available.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-premium hover:shadow-xl transition-all">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <i class="fa-solid fa-chart-line text-3xl text-blue-600"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-center gradient-text">Proven Results</h3>
+          <p class="text-slate-700 text-center">
+            Saved hours daily. Boosted leads & conversions. Built long-term trust.
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="about.html"
+          class="inline-flex items-center gap-3 bg-blue-700 text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-blue-800 premium-button">
+          Learn More About Us <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
   </section>
-  <section class="integration-split-section">
-      <div class="container split-container">
-          
-          <div class="split-content">
-              <h2>Integrate with other business-critical tools</h2>
-              <p>
-                  Seamlessly connect to tools you use every day – like Jira, Salesforce, and Tableau – to ensure information is shared across systems.
-              </p>
-              <a href="#" class="view-link">
-                  View all integrations <i class="fa-solid fa-arrow-right"></i>
-              </a>
-          </div>
 
-          <div class="split-visuals">
-              
-              <div class="marquee-row move-left">
-                  <div class="tool-card">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" alt="Slack">
-                      <div><strong>Slack</strong><small>Communication</small></div>
-                  </div>
-                  <div class="tool-card">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" alt="Tableau">
-                      <div><strong>Tableau</strong><small>Analytics</small></div>
-                  </div>
-                  <div class="tool-card">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce">
-                      <div><strong>Salesforce</strong><small>CRM</small></div>
-                  </div>
-                  <div class="tool-card">
-                      <img src="https://www.svgrepo.com/show/354598/zendesk-icon.svg" alt="Zendesk">
-                      <div><strong>Zendesk</strong><small>Support</small></div>
-                  </div>
-                  <div class="tool-card">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" alt="Slack">
-                      <div><strong>Slack</strong><small>Communication</small></div>
-                  </div>
-                  <div class="tool-card">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" alt="Tableau">
-                      <div><strong>Tableau</strong><small>Analytics</small></div>
-                  </div>
-              </div>
 
-              <div class="marquee-row move-right">
-                  <div class="tool-card">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube">
-                      <div><strong>YouTube</strong><small>Media</small></div>
-                  </div>
-                  <div class="tool-card">
-                      <img src="https://asset.brandfetch.io/idAnDTFapY/idDdbxxs3M.png" alt="Miro">
-                      <div><strong>Miro</strong><small>Collab</small></div>
-                  </div>
-                  <div class="tool-card">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Calendar_icon_%282020%29.svg" alt="G-Cal">
-                      <div><strong>Calendar</strong><small>Events</small></div>
-                  </div>
-                  <div class="tool-card">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Jira_Logo.svg" alt="Jira">
-                      <div><strong>Jira</strong><small>Dev</small></div>
-                  </div>
-                  <div class="tool-card">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube">
-                      <div><strong>YouTube</strong><small>Media</small></div>
-                  </div>
-                  <div class="tool-card">
-                      <img src="https://asset.brandfetch.io/idAnDTFapY/idDdbxxs3M.png" alt="Miro">
-                      <div><strong>Miro</strong><small>Collab</small></div>
-                  </div>
-              </div>
-
-              <div class="marquee-row move-left">
-                  <div class="tool-card">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Twilio-logo-red.svg" alt="Twilio">
-                      <div><strong>Twilio</strong><small>SMS</small></div>
-                  </div>
-                  <div class="tool-card">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Box%2C_Inc._logo.svg" alt="Box">
-                      <div><strong>Box</strong><small>Files</small></div>
-                  </div>
-                  <div class="tool-card">
-                      <img src="https://images.seeklogo.com/logo-png/30/1/zoom-logo-png_seeklogo-306629.png" alt="Zoom">
-                      <div><strong>Zoom</strong><small>Video</small></div>
-                  </div>
-                  <div class="tool-card">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Twilio-logo-red.svg" alt="Twilio">
-                      <div><strong>Twilio</strong><small>SMS</small></div>
-                  </div>
-                  <div class="tool-card">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Box%2C_Inc._logo.svg" alt="Box">
-                      <div><strong>Box</strong><small>Files</small></div>
-                  </div>
-              </div>
-
-          </div>
-      </div>
+  <!-- CTA + Support highlight -->
+  <section id="book" class="py-20 bg-gradient-to-r from-blue-700 to-blue-500 text-white section-fade">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-4xl sm:text-5xl font-bold mb-8">Ready to Automate Your Growth?</h2>
+      <p class="text-xl sm:text-2xl mb-6">Free consult, audit or advice — no pressure.</p>
+      <p class="text-lg mb-10">We provide dedicated support even after launch — you're never alone.</p>
+      <a href="https://calendly.com/zeroflowtech/15min" target="_blank"
+        class="bg-white text-blue-700 px-10 py-6 rounded-xl font-bold text-xl hover:bg-gray-100 premium-button inline-flex items-center gap-3">
+        Book 15-min Call <i class="fa-solid fa-arrow-right"></i>
+      </a>
+      <p class="mt-8">Or email <a href="mailto:zeroflowtech@gmail.com"
+          class="underline hover:text-white">zeroflowtech@gmail.com</a></p>
+    </div>
   </section>
-  <footer class="site-footer">
-      <div class="container">        
-          <div class="footer-top">
-              <div class="footer-brand-nav">
-                  <div class="footer-logo">
-                    <img src="./assets/logos/logo.png" href="" />
-                      <span class="logo-text">Zeroflowtech </span>
-                  </div>
-                  <ul class="footer-top-links">
-                      <li><a href="#">Platform</a></li>
-                      <li><a href="#">Solutions</a></li>
-                      <li><a href="#">Resources</a></li>
-                      <li><a href="#">Pricing</a></li>
-                      <li><a href="#">Contact Sales</a></li>
-                  </ul>
-              </div>
-              
-              <div class="footer-social">
-                  <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                  <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                  <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                  <a href="#"><i class="fa-brands fa-youtube"></i></a>
-              </div>
-          </div>
 
-          <div class="footer-divider"></div>
-
-          <div class="footer-grid">
-              
-              <div class="footer-col">
-                  <h4>Platform</h4>
-                  <ul>
-                      <li><a href="#">Platform Overview</a></li>
-                      <li><a href="#">Integrations</a></li>
-                      <li><a href="#">Extensions</a></li>
-                      <li><a href="#">App Building</a></li>
-                      <li><a href="#">AI</a></li>
-                      <li><a href="#">Connected Data</a></li>
-                      <li><a href="#" class="see-more">See more</a></li>
-                  </ul>
-              </div>
-
-              <div class="footer-col">
-                  <h4>Solutions</h4>
-                  <ul>
-                      <li><a href="#">Product</a></li>
-                      <li><a href="#">Marketing</a></li>
-                      <li><a href="#">Operations</a></li>
-                      <li><a href="#">Human Resources</a></li>
-                      <li><a href="#">Sales</a></li>
-                      <li><a href="#">Finance</a></li>
-                      <li><a href="#" class="see-more">See more</a></li>
-                  </ul>
-              </div>
-
-              <div class="footer-col">
-                  <h4>Learn</h4>
-                  <ul>
-                      <li><a href="#">Learning Center</a></li>
-                      <li><a href="#">Events</a></li>
-                      <li><a href="#">Video Center</a></li>
-                      <li><a href="#">Demos</a></li>
-                      <li><a href="#">Customer Stories</a></li>
-                      <li><a href="#">Webinars</a></li>
-                      <li><a href="#" class="see-more">See more</a></li>
-                  </ul>
-              </div>
-
-              <div class="footer-col">
-                  <h4>Resources</h4>
-                  <ul>
-                      <li><a href="#">Partners</a></li>
-                      <li><a href="#">Services</a></li>
-                      <li><a href="#">Developers</a></li>
-                      <li><a href="#">Community</a></li>
-                      <li><a href="#">Templates</a></li>
-                      <li><a href="#">Airtable Universe</a></li>
-                      <li><a href="#" class="see-more">See more</a></li>
-                  </ul>
-              </div>
-
-              <div class="footer-col">
-                  <h4>Company</h4>
-                  <ul>
-                      <li><a href="#">About</a></li>
-                      <li>
-                          <a href="#">Careers</a>
-                          <span class="badge-pop">Popular</span>
-                      </li>
-                      <li><a href="#">Blog</a></li>
-                      <li><a href="#">Status</a></li>
-                      <li><a href="#">Newsroom</a></li>
-                      <li><a href="#">Try Airtable for free</a></li>
-                  </ul>
-              </div>
-
-          </div>
-
-          <div class="footer-bottom">
-              
-              <ul class="legal-links">
-                  <li><a href="#">Security</a></li>
-                  <li><a href="#">API</a></li>
-                  <li><a href="#">Sitemap</a></li>
-                  <li><a href="#">Privacy</a></li>
-                  <li><a href="#">Terms</a></li>
-                  <li><a href="#">Do Not Sell/Share My Info</a></li>
-                  <li><a href="#">Cookie Preferences</a></li>
-              </ul>
-
-              <div class="app-buttons">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
-              </div>
-
-          </div>
-
+  <!-- New: Colorful, Trust-Building Investment CTA (replaces old contact form) -->
+  <section id="get-started"
+    class="py-16 sm:py-24 bg-gradient-to-br from-blue-50 via-white to-blue-50 relative overflow-hidden section-fade">
+    <div class="absolute inset-0 opacity-10 pointer-events-none">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(37,99,235,0.08)_0%,transparent_50%)]">
       </div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(0,163,232,0.08)_0%,transparent_50%)]">
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 relative z-10 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 gradient-text">
+        Stop Running Your Business — Start Leading It
+      </h2>
+
+      <p class="text-xl sm:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed mb-12">
+        Right now you're managing everything manually — leads, bookings, follow-ups, invoices.<br
+          class="hidden sm:block">
+        That keeps you small. Adding the <strong>right system</strong> now gives you:
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8 lg:gap-10 mb-12">
+        <div
+          class="invest-card bg-white p-8 rounded-3xl shadow-premium border border-blue-100 hover:shadow-2xl transition-all duration-300">
+          <div
+            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center">
+            <i class="fa-solid fa-clock text-4xl text-blue-700"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">10–30+ Hours Back Every Week</h3>
+          <p class="text-slate-700 text-lg">
+            Automation handles the boring stuff — you get time to think big.
+          </p>
+        </div>
+
+        <div
+          class="invest-card bg-white p-8 rounded-3xl shadow-premium border border-blue-100 hover:shadow-2xl transition-all duration-300">
+          <div
+            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center">
+            <i class="fa-solid fa-chart-line text-4xl text-green-700"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">More Revenue & Market Lead</h3>
+          <p class="text-slate-700 text-lg">
+            Never miss a lead again. Faster follow-ups = more sales & stronger position.
+          </p>
+        </div>
+
+        <div
+          class="invest-card bg-white p-8 rounded-3xl shadow-premium border border-blue-100 hover:shadow-2xl transition-all duration-300">
+          <div
+            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center">
+            <i class="fa-solid fa-hand-holding-dollar text-4xl text-purple-700"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Smart Investment — Not Cost</h3>
+          <p class="text-slate-700 text-lg">
+            Think of it like hiring your best employee who never sleeps, never asks for leave, and pays for itself in
+            weeks.
+          </p>
+        </div>
+      </div>
+
+      <p class="text-xl sm:text-2xl font-semibold text-slate-800 mb-10">
+        Waiting for the "perfect time" to add systems = staying stuck.<br>
+        The right time is <strong>now</strong> — when you still have energy to grow.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-6 flex-wrap">
+        <a href="https://calendly.com/zeroflowtech/15min"
+          class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-6 rounded-2xl font-bold text-xl hover:from-blue-700 hover:to-blue-800 premium-button shadow-2xl min-w-[280px]">
+          Book Free 15-min Strategy Call <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
+          target="_blank"
+          class="inline-flex items-center justify-center gap-3 bg-green-600 text-white px-10 py-6 rounded-2xl font-bold text-xl hover:bg-green-700 shadow-2xl min-w-[280px]">
+          Chat on WhatsApp Now <i class="fa-brands fa-whatsapp text-2xl"></i>
+        </a>
+        <a href="contact.html"
+          class="inline-flex items-center justify-center gap-3 border-2 border-blue-600 text-blue-700 px-10 py-6 rounded-2xl font-bold text-xl hover:bg-blue-50 transition min-w-[280px]">
+          Contact us <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+
+      <p class="mt-10 text-lg text-slate-600 max-w-3xl mx-auto">
+        No tech knowledge needed. We guide you step-by-step — like a trusted partner, not just a vendor.
+      </p>
+    </div>
+  </section>
+
+  <!-- Enhanced FAQ Teaser – One Key Question + Strong CTA -->
+  <section id="faq"
+    class="py-16 sm:py-24 bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden section-fade">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8 text-center">
+      <!-- Headline with subtle entrance animation -->
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-10 gradient-text animate-pulse-slow">
+        The One Question Every Business Owner Asks Us
+      </h2>
+
+      <!-- Main Value Card -->
+      <div
+        class="bg-white p-8 sm:p-12 rounded-3xl shadow-premium border border-slate-100 hover:shadow-2xl transition-all duration-500 max-w-4xl mx-auto">
+        <h3 class="text-2xl sm:text-3xl font-bold mb-8 text-slate-800 leading-tight">
+          “Will this actually save me time and make me more money — or is it just another expense?”
+        </h3>
+
+        <p class="text-lg sm:text-xl text-slate-700 leading-relaxed mb-10">
+          We don’t sell tools — we sell **freedom** and **growth**.
+        </p>
+
+        <!-- Animated Benefit List -->
+        <ul class="space-y-6 text-left max-w-3xl mx-auto">
+          <li class="flex items-start gap-5 animate-fade-in" style="animation-delay: 0.1s;">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+              <i class="fa-solid fa-clock-rotate-left text-2xl text-green-700"></i>
+            </div>
+            <div>
+              <p class="text-xl font-semibold text-slate-800">10–30+ Hours Freed Up Weekly</p>
+              <p class="text-slate-600">No more chasing leads, manual invoicing, or repetitive admin — automation does
+                it 24/7.</p>
+            </div>
+          </li>
+
+          <li class="flex items-start gap-5 animate-fade-in" style="animation-delay: 0.3s;">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+              <i class="fa-solid fa-chart-line text-2xl text-blue-700"></i>
+            </div>
+            <div>
+              <p class="text-xl font-semibold text-slate-800">Real Revenue Growth in Weeks</p>
+              <p class="text-slate-600">Faster responses = more bookings/sales. Clients often see ROI in 4–12 weeks —
+                not months.</p>
+            </div>
+          </li>
+
+          <li class="flex items-start gap-5 animate-fade-in" style="animation-delay: 0.5s;">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+              <i class="fa-solid fa-hand-holding-dollar text-2xl text-purple-700"></i>
+            </div>
+            <div>
+              <p class="text-xl font-semibold text-slate-800">Smart Investment, Not a Cost</p>
+              <p class="text-slate-600">Think of it like hiring your best employee who works 24/7, never takes leave,
+                and pays for itself fast.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Final CTA -->
+      <div class="mt-16">
+        <p class="text-xl sm:text-2xl text-slate-700 mb-8 max-w-3xl mx-auto">
+          Still wondering about pricing, timeline, support, or how we handle changes? We’ve answered everything clearly.
+        </p>
+
+        <a href="faq.html"
+          class="inline-flex items-center gap-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-6 rounded-2xl font-bold text-xl hover:from-blue-700 hover:to-blue-800 premium-button shadow-xl transition-all">
+          Read All FAQs Now <i class="fa-solid fa-arrow-right text-2xl"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="flex items-center gap-3">
+          <img src="./assets/logos/logo.png" alt="Logo" class="w-10 h-10" />
+          <span class="text-2xl font-bold gradient-text">ZeroFlowTech</span>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-6">
+          <a href="contact.html" class="hover:text-white">Contact</a>
+          <a href="faq.html" class="hover:text-white">FAQ</a>
+          <a href="mailto:zeroflowtech@gmail.com" class="hover:text-white">zeroflowtech@gmail.com</a>
+        </div>
+      </div>
+      <p class="mt-8 text-sm">© 2026 ZeroFlowTech – Building trust, one solution at a time. Ongoing support included.
+      </p>
+    </div>
   </footer>
 
-
-
-
-
-
-
-
-
-
-
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    var workSwiper = new Swiper(".workSwiper", {
-      slidesPerView: 1, 
-      loop: true, // Infinite loop
-      navigation: {
-        nextEl: ".custom-next",
-        prevEl: ".custom-prev",
-      },
-      pagination: {
-        el: ".custom-pagination",
-        clickable: true,
-      },
+    // Swipers
+    new Swiper('.projectSwiper', { slidesPerView: 1, spaceBetween: 24, loop: true, pagination: { el: '.swiper-pagination', clickable: true }, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } } });
+    new Swiper('.testimonialSwiper', { slidesPerView: 1, spaceBetween: 24, loop: true, pagination: { el: '.swiper-pagination', clickable: true }, breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } } });
+
+    // Mobile menu
+    document.getElementById('menu-btn')?.addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
     });
+
+    // Fade in sections
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
   </script>
-
-
-  <script>
-    var swiper = new Swiper(".myLogoSwiper", {
-      slidesPerView: 4,
-      spaceBetween: 60,
-      centeredSlides: true,
-      loop: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        640: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-        },
-        768: {
-          slidesPerView: 4,
-          spaceBetween: 30,
-        },
-        1024: {
-          slidesPerView: 5,
-          spaceBetween: 30,
-        },
-        1280: {
-          slidesPerView: 5,
-          spaceBetween: 30,
-        },
-      },
-    });
-  </script>
-  <script>
-    // set footer year
-    document.getElementById("year").innerText = new Date().getFullYear();
-
-    // Mobile menu toggle logic
-    const btn = document.getElementById("mobile-menu-btn");
-    const menu = document.getElementById("mobile-menu");
-    const iconOpen = document.getElementById("icon-open");
-    const iconClose = document.getElementById("icon-close");
-
-    function toggleMenu() {
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", String(!expanded));
-      iconOpen.classList.toggle("hidden");
-      iconClose.classList.toggle("hidden");
-      // toggle max-height classes for smooth transition
-      if (menu.classList.contains("max-h-0")) {
-        menu.classList.remove("max-h-0");
-        menu.classList.add("max-h-96");
-      } else {
-        menu.classList.remove("max-h-96");
-        menu.classList.add("max-h-0");
-      }
-    }
-
-    btn.addEventListener("click", toggleMenu);
-    // close mobile menu when clicking a link
-    menu.querySelectorAll("a").forEach((a) =>
-      a.addEventListener("click", () => {
-        if (window.innerWidth < 768) toggleMenu();
-      })
-    );
-
-    // ensure menu is hidden if resized to desktop
-    window.addEventListener("resize", () => {
-      if (window.innerWidth >= 768) {
-        menu.classList.remove("max-h-96");
-        menu.classList.add("max-h-0");
-        btn.setAttribute("aria-expanded", "false");
-        iconOpen.classList.remove("hidden");
-        iconClose.classList.add("hidden");
-      }
-    });
-  </script>
-  <script>
-    const accordions = document.querySelectorAll('.accordion-item');
-    accordions.forEach(item => {
-      const header = item.querySelector('.acc-header');
-      header.addEventListener('click', () => {
-        const isOpen = item.classList.contains('active');
-        accordions.forEach(otherItem => {
-          otherItem.classList.remove('active');
-        });
-
-        if (!isOpen) {
-          item.classList.add('active');
-        }
-      });
-    });
-  </script>
-    <script>
-      function toggleMenu() {
-          const navMenu = document.getElementById("navMenu");
-          navMenu.classList.toggle("active");
-      }
-  </script>
-  <script>
-    function toggleMenu() {       
-        const navMenu = document.getElementById("navMenu");
-        const navOverlay = document.getElementById("navOverlay");
-        navMenu.classList.toggle("active");
-        navOverlay.classList.toggle("active");
-    }
-</script>
 </body>
 
 </html>
