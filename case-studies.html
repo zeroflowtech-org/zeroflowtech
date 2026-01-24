@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ZeroFlowTech Case Studies – Real results from custom websites, CRM, automation & travel solutions in Bhopal and beyond." />
+  <title>Case Studies | ZeroFlowTech – Real Results, Real Growth</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: { primary: '#2563eb', accent: '#00A3E8' },
+          boxShadow: { 'premium': '0 10px 30px -10px rgba(37,99,235,0.25)' }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    .gradient-hero { background: linear-gradient(135deg, #f0f9ff, #e0f2fe, #dbeafe); }
+    .gradient-text { background: linear-gradient(90deg, #1e40af, #00A3E8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .premium-button { transition: all 0.4s ease; box-shadow: 0 6px 20px rgba(37,99,235,0.25); }
+    .premium-button:hover { box-shadow: 0 12px 35px rgba(37,99,235,0.4); transform: translateY(-3px); }
+    .section-fade { opacity: 0; transform: translateY(40px); transition: all 1s ease-out; }
+    .section-fade.visible { opacity: 1; transform: translateY(0); }
+    .case-card { transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .case-card:hover { transform: translateY(-12px); box-shadow: 0 25px 50px -12px rgba(37,99,235,0.35); }
+    .stat-number { opacity: 0; transform: translateY(20px); transition: all 1.2s ease-out; }
+    .stat-visible { opacity: 1 !important; transform: translateY(0) !important; }
+    .quote-bubble { position: relative; }
+    .quote-bubble::before { content: '“'; position: absolute; top: -30px; left: -10px; font-size: 8rem; color: #e0f2fe; opacity: 0.3; line-height: 1; z-index: -1; }
+    @media (max-width: 640px) {
+      h1 { font-size: 2.5rem !important; line-height: 1.1; }
+      h2 { font-size: 2rem !important; }
+      .text-xl { font-size: 1.125rem !important; }
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+  <!-- Top Banner -->
+  <div class="bg-blue-900 text-white text-center py-3 text-sm font-medium">
+    Limited: Only 3 project slots left this month – Secure yours now
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 sm:h-20">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="./assets/logos/logo.png" alt="ZeroFlowTech" class="w-10 h-10 sm:w-12 sm:h-12" />
+          <span class="font-bold text-xl sm:text-2xl gradient-text">ZeroFlowTech</span>
+        </a>
+        <div class="hidden md:flex items-center gap-10">
+          <nav class="flex gap-8 font-medium">
+            <a href="index.html" class="hover:text-blue-700">Home</a>
+            <a href="services.html" class="hover:text-blue-700">Services</a>
+            <a href="index.html#projects" class="hover:text-blue-700">Projects</a>
+            <a href="case-studies.html" class="text-blue-700 font-semibold">Case Studies</a>
+            <a href="about.html" class="hover:text-blue-700">About</a>
+            <a href="contact.html" class="hover:text-blue-700">Contact</a>
+          </nav>
+          <a href="https://calendly.com/zeroflowtech/15min" class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
+            Book Free Call
+          </a>
+        </div>
+        <div class="md:hidden flex items-center gap-3">
+          <a href="https://calendly.com/zeroflowtech/15min" class="bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold">Book Call</a>
+          <button id="menu-btn" class="text-2xl"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t py-6 px-6 space-y-5 font-medium">
+        <a href="index.html" class="block hover:text-blue-700">Home</a>
+        <a href="services.html" class="block hover:text-blue-700">Services</a>
+        <a href="index.html#projects" class="block hover:text-blue-700">Projects</a>
+        <a href="case-studies.html" class="block text-blue-700 font-semibold">Case Studies</a>
+        <a href="about.html" class="block hover:text-blue-700">About</a>
+        <a href="contact.html" class="block hover:text-blue-700">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="gradient-hero py-20 sm:py-28 lg:py-32 relative overflow-hidden section-fade">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+        Real Results. <span class="gradient-text">Real Businesses.</span>
+      </h1>
+      <p class="text-xl sm:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed">
+        See exactly how we turned daily chaos into automated growth — with numbers, quotes, and live links.
+      </p>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="py-16 sm:py-24 bg-white section-fade">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 lg:space-y-32">
+
+      <!-- Case 1: DejaVu Tours -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-3 bg-blue-100 text-blue-700 px-5 py-2 rounded-full text-sm font-semibold mb-6">
+            <i class="fa-solid fa-plane-departure"></i> Travel Industry
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 gradient-text">DejaVu Tours – From Chaos to 24/7 Automation</h2>
+
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
+              <i class="fa-solid fa-triangle-exclamation text-amber-500"></i> The Challenge
+            </h3>
+            <ul class="space-y-3 text-slate-700">
+              <li>• 10+ hours/day on manual bookings & coordination</li>
+              <li>• Leads lost via WhatsApp & phone</li>
+              <li>• No centralized system or real-time alerts</li>
+              <li>• Expensive foreign CRMs didn't fit</li>
+            </ul>
+          </div>
+
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
+              <i class="fa-solid fa-rocket text-blue-600"></i> Our Solution
+            </h3>
+            <ul class="space-y-3 text-slate-700">
+              <li>• Full custom website + CRM from scratch</li>
+              <li>• Automated booking, invoice & itinerary system</li>
+              <li>• Real-time alerts to admin & guests</li>
+              <li>• WhatsApp & email integration</li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-3xl border border-green-100 mb-8">
+            <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+              <i class="fa-solid fa-chart-line text-green-600"></i> Results
+            </h3>
+            <div class="grid sm:grid-cols-3 gap-6 text-center">
+              <div class="stat-number" data-target="300">300</div>
+              <div class="stat-number" data-target="28">28</div>
+              <div class="stat-number" data-target="0">0</div>
+              <div class="text-sm text-slate-600">Bookings Growth</div>
+              <div class="text-sm text-slate-600">Hours Saved Weekly</div>
+              <div class="text-sm text-slate-600">Missed Opportunities</div>
+            </div>
+          </div>
+
+          <blockquote class="italic text-slate-700 mb-8 border-l-4 border-blue-500 pl-6 quote-bubble">
+            “ZeroFlowTech turned our agency into a machine — we now focus on growth, not operations.”
+          </blockquote>
+
+          <p class="font-semibold mb-2">Tech Stack:</p>
+          <p class="text-slate-600 mb-8">Next.js • Node.js • MongoDB • WhatsApp API • Email Automation</p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://www.dejavutours.in" target="_blank" class="flex-1 bg-blue-700 text-white py-4 rounded-xl font-semibold text-center hover:bg-blue-800 premium-button">
+              View Live Site <i class="fa-solid fa-external-link-alt ml-2"></i>
+            </a>
+            <a href="contact.html" class="flex-1 border-2 border-blue-700 text-blue-700 py-4 rounded-xl font-semibold text-center hover:bg-blue-50">
+              Want Similar Results?
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Travel Automation" class="rounded-3xl shadow-2xl w-full" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Case 2: Neelant Group -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="lg:order-2">
+          <div class="inline-flex items-center gap-3 bg-blue-100 text-blue-700 px-5 py-2 rounded-full text-sm font-semibold mb-6">
+            <i class="fa-solid fa-building"></i> Real Estate & Construction
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 gradient-text">Neelant Group – Three Websites, One Strong Brand</h2>
+
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
+              <i class="fa-solid fa-triangle-exclamation text-amber-500"></i> The Challenge
+            </h3>
+            <ul class="space-y-3 text-slate-700">
+              <li>• Three businesses with scattered online presence</li>
+              <li>• Constant vision/theme changes</li>
+              <li>• Needed blogs, projects & lead capture</li>
+              <li>• No system to support flexibility</li>
+            </ul>
+          </div>
+
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
+              <i class="fa-solid fa-rocket text-blue-600"></i> Our Solution
+            </h3>
+            <ul class="space-y-3 text-slate-700">
+              <li>• Three custom dynamic websites</li>
+              <li>• Flexible blog & project showcase system</li>
+              <li>• Market research + vision guidance</li>
+              <li>• Lead generation & modern design</li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-3xl border border-green-100 mb-8">
+            <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+              <i class="fa-solid fa-chart-line text-green-600"></i> Results
+            </h3>
+            <div class="grid sm:grid-cols-3 gap-6 text-center">
+              <div class="stat-number" data-target="180">180</div>
+              <div class="stat-number" data-target="3">3</div>
+              <div class="stat-number" data-target="100">100</div>
+              <div class="text-sm text-slate-600">% Lead Growth</div>
+              <div class="text-sm text-slate-600">Unified Sites</div>
+              <div class="text-sm text-slate-600">% Brand Clarity</div>
+            </div>
+          </div>
+
+          <blockquote class="italic text-slate-700 mb-8 border-l-4 border-blue-500 pl-6 quote-bubble">
+            “They gave us clarity and a strong online identity across all businesses.”
+          </blockquote>
+
+          <p class="font-semibold mb-2">Tech Stack:</p>
+          <p class="text-slate-600 mb-8">Next.js • Node.js • MySQL • Custom CMS</p>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="https://neelantgroup.com" target="_blank" class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
+              Group Site
+            </a>
+            <a href="https://neelantproperties.com" target="_blank" class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
+              Properties
+            </a>
+            <a href="https://neelantconstruction.com" target="_blank" class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
+              Construction
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:order-1">
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80" alt="Real Estate Success" class="rounded-3xl shadow-2xl w-full" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Case 3: Logistics CRM (Example) -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-3 bg-blue-100 text-blue-700 px-5 py-2 rounded-full text-sm font-semibold mb-6">
+            <i class="fa-solid fa-truck"></i> Logistics
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 gradient-text">Swift Logistics – Real-Time Inventory & Order Dashboard</h2>
+
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
+              <i class="fa-solid fa-triangle-exclamation text-amber-500"></i> The Challenge
+            </h3>
+            <ul class="space-y-3 text-slate-700">
+              <li>• Manual stock & order tracking via Excel</li>
+              <li>• Delays in updates & errors</li>
+              <li>• No real-time visibility for team</li>
+              <li>• Lost revenue from stockouts</li>
+            </ul>
+          </div>
+
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
+              <i class="fa-solid fa-rocket text-blue-600"></i> Our Solution
+            </h3>
+            <ul class="space-y-3 text-slate-700">
+              <li>• Custom CRM dashboard with real-time sync</li>
+              <li>• Order & inventory alerts</li>
+              <li>• Driver & warehouse integration</li>
+              <li>• Reporting & analytics</li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-3xl border border-green-100 mb-8">
+            <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+              <i class="fa-solid fa-chart-line text-green-600"></i> Results
+            </h3>
+            <div class="grid sm:grid-cols-3 gap-6 text-center">
+              <div class="stat-number" data-target="95">95</div>
+              <div class="stat-number" data-target="40">40</div>
+              <div class="stat-number" data-target="18">18</div>
+              <div class="text-sm text-slate-600">% Accuracy</div>
+              <div class="text-sm text-slate-600">% Cost Saving</div>
+              <div class="text-sm text-slate-600">Hours Saved Weekly</div>
+            </div>
+          </div>
+
+          <blockquote class="italic text-slate-700 mb-8 border-l-4 border-blue-500 pl-6 quote-bubble">
+            “We finally have real-time control — no more guesswork or losses.”
+          </blockquote>
+
+          <p class="font-semibold mb-2">Tech Stack:</p>
+          <p class="text-slate-600 mb-8">React • Node.js • PostgreSQL • Real-time WebSockets</p>
+
+          <a href="contact.html" class="inline-flex items-center justify-center gap-3 bg-blue-700 text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-blue-800 premium-button">
+            Want This Efficiency? <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div>
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Logistics Dashboard" class="rounded-3xl shadow-2xl w-full" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Case 4: E-commerce Store (Example) -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="lg:order-2">
+          <div class="inline-flex items-center gap-3 bg-blue-100 text-blue-700 px-5 py-2 rounded-full text-sm font-semibold mb-6">
+            <i class="fa-solid fa-cart-shopping"></i> E-commerce
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 gradient-text">Vikram Fashion – From Slow Site to High-Converting Store</h2>
+
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
+              <i class="fa-solid fa-triangle-exclamation text-amber-500"></i> The Challenge
+            </h3>
+            <ul class="space-y-3 text-slate-700">
+              <li>• Slow, unresponsive old website</li>
+              <li>• High cart abandonment</li>
+              <li>• No proper payment or inventory sync</li>
+              <li>• Poor mobile experience</li>
+            </ul>
+          </div>
+
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
+              <i class="fa-solid fa-rocket text-blue-600"></i> Our Solution
+            </h3>
+            <ul class="space-y-3 text-slate-700">
+              <li>• Modern custom e-commerce platform</li>
+              <li>• Fast checkout + Razorpay integration</li>
+              <li>• Real-time inventory & order tracking</li>
+              <li>• Mobile-first responsive design</li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-3xl border border-green-100 mb-8">
+            <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+              <i class="fa-solid fa-chart-line text-green-600"></i> Results
+            </h3>
+            <div class="grid sm:grid-cols-3 gap-6 text-center">
+              <div class="stat-number" data-target="220">220</div>
+              <div class="stat-number" data-target="65">65</div>
+              <div class="stat-number" data-target="4x">4x</div>
+              <div class="text-sm text-slate-600">% Conversion</div>
+              <div class="text-sm text-slate-600">% Cart Recovery</div>
+              <div class="text-sm text-slate-600">Faster Load Time</div>
+            </div>
+          </div>
+
+          <blockquote class="italic text-slate-700 mb-8 border-l-4 border-blue-500 pl-6 quote-bubble">
+            “Sales doubled in first month — site now converts like never before.”
+          </blockquote>
+
+          <p class="font-semibold mb-2">Tech Stack:</p>
+          <p class="text-slate-600 mb-8">Next.js • Stripe/Razorpay • MongoDB • Tailwind</p>
+
+          <a href="contact.html" class="inline-flex items-center justify-center gap-3 bg-blue-700 text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-blue-800 premium-button">
+            Want Higher Sales? <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="lg:order-1">
+          <img src="https://images.unsplash.com/photo-1556740714-a8395b3a74dd?auto=format&fit=crop&w=1200&q=80" alt="E-commerce Success" class="rounded-3xl shadow-2xl w-full" loading="lazy" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-20 bg-gradient-to-r from-blue-700 to-blue-500 text-white section-fade">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-4xl sm:text-5xl font-bold mb-8">Your Success Story Starts Here</h2>
+      <p class="text-xl sm:text-2xl mb-10 max-w-3xl mx-auto">
+        We’ve transformed travel agencies, real estate groups, logistics firms & e-commerce stores — let’s do the same for you.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-6">
+        <a href="https://calendly.com/zeroflowtech/15min" target="_blank" class="bg-white text-blue-700 px-10 py-6 rounded-xl font-bold text-xl hover:bg-gray-100 premium-button inline-flex items-center gap-3">
+          Book Free Strategy Call <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="https://wa.me/916268497800?text=Hi%20ZeroFlowTech%2C%20show%20me%20case%20studies%20for%20my%20business" target="_blank" class="bg-green-500 text-white px-10 py-6 rounded-xl font-bold text-xl hover:bg-green-600 inline-flex items-center gap-3">
+          Chat on WhatsApp <i class="fa-brands fa-whatsapp text-2xl"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="flex items-center gap-3">
+          <img src="./assets/logos/logo.png" alt="Logo" class="w-10 h-10" />
+          <span class="text-2xl font-bold gradient-text">ZeroFlowTech</span>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-6">
+          <a href="contact.html" class="hover:text-white">Contact</a>
+          <a href="faq.html" class="hover:text-white">FAQ</a>
+          <a href="mailto:zeroflowtech@gmail.com" class="hover:text-white">zeroflowtech@gmail.com</a>
+        </div>
+      </div>
+      <p class="mt-8 text-sm">© 2026 ZeroFlowTech – Building trust, one solution at a time. Ongoing support included.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Fade-in
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
+
+    // Mobile menu
+    document.getElementById('menu-btn')?.addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Animated Stat Counter
+    const stats = document.querySelectorAll('.stat-number');
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-target'));
+          let count = 0;
+          const increment = target / 50;
+          const updateCount = () => {
+            count += increment;
+            if (count < target) {
+              el.textContent = Math.ceil(count) + (el.textContent.includes('x') ? 'x' : '');
+              setTimeout(updateCount, 40);
+            } else {
+              el.textContent = target + (el.textContent.includes('x') ? 'x' : '');
+              el.classList.add('stat-visible');
+            }
+          };
+          updateCount();
+          statObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    stats.forEach(stat => statObserver.observe(stat));
+  </script>
+</body>
+</html>

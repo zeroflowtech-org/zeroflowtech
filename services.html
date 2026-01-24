@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ZeroFlowTech Services – Custom websites, CRM, automation, AI agents & optimization for real business growth." />
+  <title>Services | ZeroFlowTech – Built for Your Growth</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: { primary: '#2563eb', accent: '#00A3E8' },
+          boxShadow: { 'premium': '0 10px 30px -10px rgba(37,99,235,0.25)' }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+    .gradient-hero { background: linear-gradient(135deg, #f0f9ff, #e0f2fe, #dbeafe); }
+    .gradient-text { background: linear-gradient(90deg, #1e40af, #00A3E8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .premium-button { transition: all 0.4s ease; box-shadow: 0 6px 20px rgba(37,99,235,0.25); }
+    .premium-button:hover { box-shadow: 0 12px 35px rgba(37,99,235,0.4); transform: translateY(-3px); }
+    .section-fade { opacity: 0; transform: translateY(40px); transition: all 1s ease-out; }
+    .section-fade.visible { opacity: 1; transform: translateY(0); }
+    .service-card { transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .service-card:hover { transform: translateY(-12px) scale(1.03); box-shadow: 0 25px 50px -12px rgba(37,99,235,0.35); }
+    .step-circle { transition: all 0.5s; }
+    .timeline-step:hover .step-circle { transform: scale(1.15); box-shadow: 0 0 0 10px rgba(37,99,235,0.15); }
+    .swiper-slide img { transition: transform 0.6s ease; }
+    .swiper-slide:hover img { transform: scale(1.08); }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-stagger { animation: fadeInUp 0.9s ease-out forwards; opacity: 0; }
+    .animate-stagger:nth-child(1) { animation-delay: 0.2s; }
+    .animate-stagger:nth-child(2) { animation-delay: 0.4s; }
+    .animate-stagger:nth-child(3) { animation-delay: 0.6s; }
+    @media (max-width: 640px) {
+      h1 { font-size: 2.5rem !important; line-height: 1.1; }
+      h2 { font-size: 2rem !important; }
+      .text-xl { font-size: 1.125rem !important; }
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+  <!-- Top Banner -->
+  <div class="bg-blue-900 text-white text-center py-3 text-sm font-medium">
+    Limited: Only 3 project slots left this month – Secure yours now
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 sm:h-20">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="./assets/logos/logo.png" alt="ZeroFlowTech" class="w-10 h-10 sm:w-12 sm:h-12" />
+          <span class="font-bold text-xl sm:text-2xl gradient-text">ZeroFlowTech</span>
+        </a>
+        <div class="hidden md:flex items-center gap-10">
+          <nav class="flex gap-8 font-medium">
+            <a href="index.html" class="hover:text-blue-700">Home</a>
+            <a href="services.html" class="text-blue-700 font-semibold">Services</a>
+            <a href="index.html#projects" class="hover:text-blue-700">Projects</a>
+            <a href="case-studies.html" class="hover:text-blue-700">Case Studies</a>
+            <a href="about.html" class="hover:text-blue-700">About</a>
+            <a href="contact.html" class="hover:text-blue-700">Contact</a>
+          </nav>
+          <a href="https://calendly.com/zeroflowtech/15min" class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
+            Book Free Call
+          </a>
+        </div>
+        <div class="md:hidden flex items-center gap-3">
+          <a href="https://calendly.com/zeroflowtech/15min" class="bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold">Book Call</a>
+          <button id="menu-btn" class="text-2xl"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t py-6 px-6 space-y-5 font-medium">
+        <a href="index.html" class="block hover:text-blue-700">Home</a>
+        <a href="services.html" class="block text-blue-700 font-semibold">Services</a>
+        <a href="index.html#projects" class="block hover:text-blue-700">Projects</a>
+        <a href="case-studies.html" class="block hover:text-blue-700">Case Studies</a>
+        <a href="about.html" class="block hover:text-blue-700">About</a>
+        <a href="contact.html" class="block hover:text-blue-700">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="gradient-hero py-20 sm:py-28 lg:py-32 relative overflow-hidden section-fade">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+        Services Built <span class="gradient-text">Exactly for You</span>
+      </h1>
+      <p class="text-xl sm:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed">
+        No confusion. No generic packages. Clear solutions for your industry — see what fits, get free quote in minutes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Slider 1: Domain Expertise -->
+  <section class="py-16 sm:py-20 bg-white section-fade">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 gradient-text">
+        Industries We Power
+      </h2>
+
+      <div class="swiper domainSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="bg-white rounded-3xl shadow-premium overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Travel" class="w-full h-64 object-cover">
+              <div class="p-6 text-center">
+                <h3 class="text-2xl font-bold gradient-text mb-2">Travel & Tours</h3>
+                <p class="text-slate-600">Bookings, itineraries, group alerts, 24/7 notifications</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="bg-white rounded-3xl shadow-premium overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1560518883-2e5c3868c2a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Real Estate" class="w-full h-64 object-cover">
+              <div class="p-6 text-center">
+                <h3 class="text-2xl font-bold gradient-text mb-2">Real Estate</h3>
+                <p class="text-slate-600">Property dashboards, lead tracking, client portals</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="bg-white rounded-3xl shadow-premium overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Logistics" class="w-full h-64 object-cover">
+              <div class="p-6 text-center">
+                <h3 class="text-2xl font-bold gradient-text mb-2">Logistics & Supply</h3>
+                <p class="text-slate-600">Inventory, orders, real-time tracking systems</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="bg-white rounded-3xl shadow-premium overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Education" class="w-full h-64 object-cover">
+              <div class="p-6 text-center">
+                <h3 class="text-2xl font-bold gradient-text mb-2">Education & Coaching</h3>
+                <p class="text-slate-600">Student portals, course management, payment flows</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="bg-white rounded-3xl shadow-premium overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Services" class="w-full h-64 object-cover">
+              <div class="p-6 text-center">
+                <h3 class="text-2xl font-bold gradient-text mb-2">Service Businesses</h3>
+                <p class="text-slate-600">Appointment booking, client dashboards, invoicing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination mt-10"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slider 2: Tech Stack & Capabilities -->
+  <section class="py-16 sm:py-20 bg-slate-50 section-fade">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 gradient-text">
+        Technologies & Capabilities
+      </h2>
+
+      <div class="swiper techSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="bg-white p-8 rounded-3xl shadow-premium text-center">
+              <i class="fa-brands fa-react text-6xl text-blue-600 mb-6 animate-pulse"></i>
+              <h3 class="text-2xl font-bold mb-3 gradient-text">React / Next.js</h3>
+              <p class="text-slate-600">Fast, modern frontends — perfect for dashboards & user portals</p>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="bg-white p-8 rounded-3xl shadow-premium text-center">
+              <i class="fa-solid fa-database text-6xl text-purple-600 mb-6 animate-pulse"></i>
+              <h3 class="text-2xl font-bold mb-3 gradient-text">Node.js / PHP / MongoDB / SQL</h3>
+              <p class="text-slate-600">Powerful, scalable backends — secure & fast data handling</p>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="bg-white p-8 rounded-3xl shadow-premium text-center">
+              <i class="fa-brands fa-wordpress text-6xl text-blue-700 mb-6 animate-pulse"></i>
+              <h3 class="text-2xl font-bold mb-3 gradient-text">WordPress + Custom</h3>
+              <p class="text-slate-600">Quick sites or fully custom — eCommerce ready</p>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="bg-white p-8 rounded-3xl shadow-premium text-center">
+              <i class="fa-solid fa-cart-shopping text-6xl text-green-600 mb-6 animate-pulse"></i>
+              <h3 class="text-2xl font-bold mb-3 gradient-text">E-commerce Solutions</h3>
+              <p class="text-slate-600">WooCommerce, custom carts, payment gateways</p>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="bg-white p-8 rounded-3xl shadow-premium text-center">
+              <i class="fa-solid fa-robot text-6xl text-purple-600 mb-6 animate-pulse"></i>
+              <h3 class="text-2xl font-bold mb-3 gradient-text">AI Agents (Coming Soon)</h3>
+              <p class="text-slate-600">Customer support bots, sales callers, smart automation flows</p>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="bg-white p-8 rounded-3xl shadow-premium text-center">
+              <i class="fa-solid fa-pencil-ruler text-6xl text-orange-600 mb-6 animate-pulse"></i>
+              <h3 class="text-2xl font-bold mb-3 gradient-text">UI/UX + Figma</h3>
+              <p class="text-slate-600">Beautiful, user-friendly designs — from idea to reality</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination mt-10"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Services Grid -->
+  <section class="py-20 bg-white section-fade">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-16 gradient-text">Our Core Services</h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <!-- Custom Websites -->
+        <div class="service-card bg-gradient-to-br from-blue-50 to-white p-8 rounded-3xl shadow-premium border border-blue-100">
+          <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fa-solid fa-globe text-4xl text-blue-600"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-center gradient-text">Custom Websites</h3>
+          <p class="text-slate-600 text-center mb-6">From static showcase to full e-commerce & booking platforms</p>
+          <ul class="space-y-3 text-sm text-slate-700 mb-6">
+            <li>• Booking & payment integration</li>
+            <li>• Admin dashboard</li>
+            <li>• Mobile-first & fast loading</li>
+          </ul>
+          <a href="contact.html" class="block text-center bg-blue-700 text-white py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
+            Get Free Quote
+          </a>
+        </div>
+
+        <!-- Website Optimization -->
+        <div class="service-card bg-gradient-to-br from-green-50 to-white p-8 rounded-3xl shadow-premium border border-green-100">
+          <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fa-solid fa-rocket text-4xl text-green-600"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-center gradient-text">Website Optimization</h3>
+          <p class="text-slate-600 text-center mb-6">Speed, SEO, UX fixes + free audit</p>
+          <ul class="space-y-3 text-sm text-slate-700 mb-6">
+            <li>• Google speed score boost</li>
+            <li>• Better ranking & conversions</li>
+            <li>• Mobile responsiveness</li>
+          </ul>
+          <a href="contact.html" class="block text-center bg-green-700 text-white py-3 rounded-xl font-semibold hover:bg-green-800 premium-button">
+            Get Free Audit
+          </a>
+        </div>
+
+        <!-- Custom CRM & Tools -->
+        <div class="service-card bg-gradient-to-br from-purple-50 to-white p-8 rounded-3xl shadow-premium border border-purple-100">
+          <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fa-solid fa-cogs text-4xl text-purple-600"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-center gradient-text">Custom CRM & Tools</h3>
+          <p class="text-slate-600 text-center mb-6">Lead tracking, inventory, internal dashboards</p>
+          <ul class="space-y-3 text-sm text-slate-700 mb-6">
+            <li>• Built exactly for your flow</li>
+            <li>• No expensive subscriptions</li>
+            <li>• Real-time updates</li>
+          </ul>
+          <a href="contact.html" class="block text-center bg-purple-700 text-white py-3 rounded-xl font-semibold hover:bg-purple-800 premium-button">
+            Get Free Quote
+          </a>
+        </div>
+
+        <!-- Travel Automation -->
+        <div class="service-card bg-gradient-to-br from-orange-50 to-white p-8 rounded-3xl shadow-premium border border-orange-100">
+          <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fa-solid fa-plane-departure text-4xl text-orange-600"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-center gradient-text">Travel Automation</h3>
+          <p class="text-slate-600 text-center mb-6">Bookings, alerts, itineraries, lead management</p>
+          <ul class="space-y-3 text-sm text-slate-700 mb-6">
+            <li>• 24/7 notifications</li>
+            <li>• Group trip management</li>
+            <li>• Scale without chaos</li>
+          </ul>
+          <a href="contact.html" class="block text-center bg-orange-700 text-white py-3 rounded-xl font-semibold hover:bg-orange-800 premium-button">
+            Get Free Quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Work Timeline -->
+  <section class="py-20 bg-slate-50 section-fade">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-16 gradient-text">
+        How We Work – 3 Simple Steps
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-12 lg:gap-16 relative">
+        <div class="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-200 via-blue-400 to-blue-600 hidden md:block"></div>
+
+        <div class="timeline-step relative z-10 text-center">
+          <div class="step-circle w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6 text-4xl font-bold gradient-text shadow-lg border-4 border-blue-200">
+            1
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Book Free Call</h3>
+          <p class="text-slate-700">15–30 min — tell us your pain points, we listen.</p>
+        </div>
+
+        <div class="timeline-step relative z-10 text-center">
+          <div class="step-circle w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6 text-4xl font-bold gradient-text shadow-lg border-4 border-blue-200">
+            2
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Free Proposal</h3>
+          <p class="text-slate-700">Clear plan, timeline, fixed price — no surprises.</p>
+        </div>
+
+        <div class="timeline-step relative z-10 text-center">
+          <div class="step-circle w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6 text-4xl font-bold gradient-text shadow-lg border-4 border-blue-200">
+            3
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Launch & Grow</h3>
+          <p class="text-slate-700">We build fast — you get results + lifetime support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Vision -->
+  <section class="py-20 bg-white section-fade">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-10 gradient-text">
+        What’s Coming Next
+      </h2>
+      <p class="text-xl sm:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed mb-12">
+        We’re already working on <strong>next-generation AI agents</strong> — customer support bots, automated sales calls, smart business flows — all at reasonable cost.
+      </p>
+      <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-10 rounded-3xl shadow-premium border border-purple-100">
+        <h3 class="text-3xl font-bold mb-6 gradient-text">Got an MVP or Crazy Idea?</h3>
+        <p class="text-lg text-slate-700 mb-8">
+          Our energetic team is ready to build anything — from simple websites to complex AI-driven automation.<br><br>
+          Any domain, any scale — we turn your vision into working reality.
+        </p>
+        <a href="contact.html" class="inline-flex items-center gap-3 bg-purple-700 text-white px-10 py-6 rounded-2xl font-bold text-xl hover:bg-purple-800 premium-button">
+          Share Your Idea Now <i class="fa-solid fa-rocket"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="flex items-center gap-3">
+          <img src="./assets/logos/logo.png" alt="Logo" class="w-10 h-10" />
+          <span class="text-2xl font-bold gradient-text">ZeroFlowTech</span>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-6">
+          <a href="contact.html" class="hover:text-white">Contact</a>
+          <a href="faq.html" class="hover:text-white">FAQ</a>
+          <a href="mailto:zeroflowtech@gmail.com" class="hover:text-white">zeroflowtech@gmail.com</a>
+        </div>
+      </div>
+      <p class="mt-8 text-sm">© 2026 ZeroFlowTech – Building trust, one solution at a time. Ongoing support included.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // Fade-in
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
+
+    // Mobile menu
+    document.getElementById('menu-btn')?.addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Domain Slider
+    new Swiper('.domainSwiper', {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      loop: true,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      breakpoints: {
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+
+    // Tech Slider
+    new Swiper('.techSwiper', {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      loop: true,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      breakpoints: {
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+  </script>
+</body>
+</html>
