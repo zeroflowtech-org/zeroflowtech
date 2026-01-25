@@ -32,6 +32,12 @@
     .premium-button:hover { box-shadow: 0 8px 25px rgba(37,99,235,0.4); transform: translateY(-2px); }
     .section-fade { opacity: 0; transform: translateY(30px); transition: all 0.9s ease-out; }
     .section-fade.visible { opacity: 1; transform: translateY(0); }
+    .highlight-point { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .highlight-point:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0,163,232,0.2); }
+    .animate-pulse-slow { animation: pulse-slow 2s infinite; }
+    @keyframes pulse-slow { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
+    .comparison-table td { transition: background-color 0.3s ease; }
+    .comparison-table tr:hover td { background-color: #f0f9ff; }
     @media (max-width: 640px) {
       h1 { font-size: 2.5rem; line-height: 1.1; }
       h2 { font-size: 2.25rem; }
@@ -58,28 +64,31 @@
         <div class="hidden md:flex items-center gap-10">
           <nav class="flex gap-8 font-medium">
             <a href="index.html" class="hover:text-blue-700">Home</a>
-            <a href="index.html#services" class="hover:text-blue-700">Services</a>
-            <a href="index.html#projects" class="hover:text-blue-700">Projects</a>
+            <a href="services.html" class="hover:text-blue-700">Services</a>
             <a href="case-studies.html" class="hover:text-blue-700">Case Studies</a>
             <a href="about.html" class="text-blue-700 font-semibold">About</a>
             <a href="contact.html" class="hover:text-blue-700">Contact</a>
+            <a href="faq.html" class="hover:text-blue-700">FAQ</a>
           </nav>
-          <a href="https://calendly.com/zeroflowtech/15min" class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
-            Book Free Call
+           <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
+            target="_blank" class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
+            Query ?
           </a>
         </div>
         <div class="md:hidden flex items-center gap-3">
-          <a href="https://calendly.com/zeroflowtech/15min" class="bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold">Book Call</a>
-          <button id="menu-btn" class="text-2xl"><i class="fa-solid fa-bars"></i></button>
+          <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
+          target="_blank" class="bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold">Query ?</a>
+          <button id="menu-btn" class="text-2xl"><i class="fa-solid fa-bars"></i>
+          </button>
         </div>
       </div>
       <div id="mobile-menu" class="hidden md:hidden bg-white border-t py-6 px-6 space-y-5 font-medium">
         <a href="index.html" class="block hover:text-blue-700">Home</a>
-        <a href="index.html#services" class="block hover:text-blue-700">Services</a>
-        <a href="index.html#projects" class="block hover:text-blue-700">Projects</a>
+        <a href="services.html" class="block hover:text-blue-700">Services</a>
         <a href="case-studies.html" class="block hover:text-blue-700">Case Studies</a>
         <a href="about.html" class="block text-blue-700 font-semibold">About</a>
         <a href="contact.html" class="block hover:text-blue-700">Contact</a>
+        <a href="faq.html" class=" block hover:text-blue-700">FAQ</a>
       </div>
     </div>
   </header>
@@ -104,23 +113,111 @@
         <div>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 gradient-text">Our Story</h2>
           <p class="text-lg sm:text-xl text-slate-700 leading-relaxed mb-8">
-            We started as frustrated business owners ourselves — tired of manual work, expensive tools that didn’t fit, and agencies that promised the world but delivered templates.
+            We started as professionals automating processes for foreign clients. While streamlining their operations, we couldn't help but wonder: <span class="font-bold text-blue-600 animate-pulse-slow">Why aren't Indian businesses scaling like global giants?</span>
           </p>
           <p class="text-lg sm:text-xl text-slate-700 leading-relaxed mb-8">
-            So we built <strong>ZeroFlowTech</strong> with one rule: <strong>It’s all about YOU</strong>.
+            Some say it's about money—but in our local areas, we've seen entrepreneurs earning lakhs or crores quarterly, yet stuck in traditional, manual ways. Smart owners adapt and scale, but many want growth without upgrading systems. Foreign businesses invest in automation to free up time for strategy, getting real-time updates—no more end-of-month Excel chaos or phone calls. This data-driven approach builds confidence for bold decisions.
+          </p>
+          <p class="text-lg sm:text-xl text-slate-700 leading-relaxed mb-8">
+            In India, small and medium businesses hire staff at 18k-25k/month to handle tasks, but overlook systems that could automate it all. A single employee costs <span class="font-bold gradient-text">₹18k x 12 = ₹2,16,000/year</span>—and that's recurring! Plus, human errors, data locked in notebooks or spreadsheets, and chaos when they leave. Manual methods trap you in a small pond; you can't scale without proper tracking.
+          </p>
+          <p class="text-lg sm:text-xl text-slate-700 leading-relaxed mb-8">
+            New players with smart workflows zoom past experienced ones. In this fast-paced world, opportunities favor the adaptable—those with confidence from real data and automation.
+          </p>
+          <p class="text-lg sm:text-xl text-slate-700 leading-relaxed mb-8 font-semibold">
+            We've identified the core: Our nation's building blocks need sustainable, high-quality systems to boost production and services. Don't see it as extra investment—you're already spending on hires. If they leave, your investment vanishes. But a custom system? It's yours forever, driving data-backed decisions.
+          </p>
+          <p class="text-lg sm:text-xl text-slate-700 leading-relaxed mb-8 font-bold gradient-text">
+            At ZeroFlowTech, we don't sell pre-built tools. We dive into your business model, key functions, and build automation tailored for you. No extra person needed—the system runs itself.
           </p>
           <p class="text-lg sm:text-xl text-slate-700 leading-relaxed font-semibold">
             Our vision? Make powerful automation affordable, flexible, and built exactly for Indian businesses — not what some foreign company decided you need.
           </p>
         </div>
-        <div>
+        <div class="relative">
           <img 
             src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
             alt="Team brainstorming solutions" 
             class="rounded-3xl shadow-2xl w-full" 
             loading="lazy" 
           />
+          <div class="absolute -bottom-10 -right-10 bg-blue-100 p-6 rounded-xl shadow-lg hidden lg:block animate-pulse-slow">
+            <i class="fa-solid fa-lightbulb text-4xl text-yellow-500 mb-2 block"></i>
+            <p class="text-sm font-semibold">Unlock Scalable Growth with Custom Automation</p>
+          </div>
         </div>
+      </div>
+
+      <!-- Key Insights with Icons and Animations -->
+      <div class="mt-16">
+        <h3 class="text-2xl sm:text-3xl font-bold mb-8 text-center gradient-text">Why Choose Systems Over Manual Hiring?</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-premium highlight-point">
+            <div class="flex items-center gap-4 mb-4">
+              <i class="fa-solid fa-user-tie text-4xl text-red-600"></i>
+              <h4 class="text-xl font-bold">The Manual Trap</h4>
+            </div>
+            <ul class="space-y-3 text-slate-700">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-circle-arrow-right text-blue-600 mt-1"></i> Recurring costs: ₹2,16,000/year per employee</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-circle-arrow-right text-blue-600 mt-1"></i> Human errors & data loss risks</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-circle-arrow-right text-blue-600 mt-1"></i> Limited scalability—depends on individuals</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-circle-arrow-right text-blue-600 mt-1"></i> No real-time insights; end-of-month surprises</li>
+            </ul>
+          </div>
+          <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-premium highlight-point">
+            <div class="flex items-center gap-4 mb-4">
+              <i class="fa-solid fa-robot text-4xl text-green-600"></i>
+              <h4 class="text-xl font-bold">The Automation Advantage</h4>
+            </div>
+            <ul class="space-y-3 text-slate-700">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-circle-arrow-right text-blue-600 mt-1"></i> One-time investment; lifelong value</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-circle-arrow-right text-blue-600 mt-1"></i> Error-free, real-time data & reports</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-circle-arrow-right text-blue-600 mt-1"></i> Scales effortlessly with your growth</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-circle-arrow-right text-blue-600 mt-1"></i> Data-driven decisions for confident risks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Comparison Table -->
+      <div class="mt-16 overflow-x-auto">
+        <h3 class="text-2xl sm:text-3xl font-bold mb-8 text-center gradient-text">Cost & Benefit Breakdown</h3>
+        <table class="w-full border-collapse comparison-table text-left text-slate-700">
+          <thead class="bg-blue-100">
+            <tr>
+              <th class="p-4 font-bold">Aspect</th>
+              <th class="p-4 font-bold">Hiring a Person</th>
+              <th class="p-4 font-bold">Building a System</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="p-4">Initial Cost</td>
+              <td class="p-4">₹18k-25k/month (ongoing)</td>
+              <td class="p-4">One-time setup (custom to your needs)</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-4">Annual Expense</td>
+              <td class="p-4 font-bold text-red-600">₹2,16,000+ (recurring)</td>
+              <td class="p-4 font-bold text-green-600">Minimal maintenance</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-4">Risks</td>
+              <td class="p-4">Errors, turnover, data loss</td>
+              <td class="p-4">Reliable, always available</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-4">Benefits</td>
+              <td class="p-4">Familiar but limited</td>
+              <td class="p-4">Real-time insights, automation, scalability</td>
+            </tr>
+            <tr>
+              <td class="p-4">Long-Term Impact</td>
+              <td class="p-4">Stuck in small-scale operations</td>
+              <td class="p-4 font-bold gradient-text">Empowers growth & market leadership</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -192,7 +289,7 @@
         </div>
         <div class="flex flex-col sm:flex-row gap-6">
           <a href="contact.html" class="hover:text-white">Contact</a>
-          <a href="#faq" class="hover:text-white">FAQ</a>
+          <a href="faq.html" class="hover:text-white">FAQ</a>
           <a href="mailto:zeroflowtech@gmail.com" class="hover:text-white">zeroflowtech@gmail.com</a>
         </div>
       </div>
