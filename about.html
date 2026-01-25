@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="About ZeroFlowTech – We turn your business pain into automated growth with custom websites, CRM & workflows built just for you in Bhopal & beyond." />
+  <meta name="description"
+    content="About ZeroFlowTech – We turn your business pain into automated growth with custom websites, CRM & workflows built just for you in Bhopal & beyond." />
   <title>About Us | ZeroFlowTech – Your Vision, Our Execution</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,6 +13,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <script>
     tailwind.config = {
       theme: {
@@ -23,34 +31,193 @@
     }
   </script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
   <style>
-    .gradient-hero { background: linear-gradient(135deg, #f0f9ff, #e0f2fe, #dbeafe); }
-    .gradient-text { background: linear-gradient(90deg, #1e40af, #00A3E8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .premium-button { transition: all 0.3s ease; box-shadow: 0 4px 14px rgba(37,99,235,0.25); }
-    .premium-button:hover { box-shadow: 0 8px 25px rgba(37,99,235,0.4); transform: translateY(-2px); }
-    .section-fade { opacity: 0; transform: translateY(30px); transition: all 0.9s ease-out; }
-    .section-fade.visible { opacity: 1; transform: translateY(0); }
-    .highlight-point { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .highlight-point:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0,163,232,0.2); }
-    .animate-pulse-slow { animation: pulse-slow 2s infinite; }
-    @keyframes pulse-slow { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
-    .comparison-table td { transition: background-color 0.3s ease; }
-    .comparison-table tr:hover td { background-color: #f0f9ff; }
+    /* Hero improvements */
+    .gradient-hero {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe, #dbeafe);
+      background-size: 300% 300%;
+      animation: gradientExplode 20s ease infinite;
+    }
+
+    @keyframes gradientExplode {
+      0% {
+        background-position: 0% 0%;
+      }
+
+      50% {
+        background-position: 100% 100%;
+      }
+
+      100% {
+        background-position: 0% 0%;
+      }
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #1e40af, #00A3E8, #1e40af, #00A3E8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400% auto;
+      animation: textShineDramatic 3s linear infinite;
+    }
+
+    @keyframes textShineDramatic {
+      to {
+        background-position: 400% center;
+      }
+    }
+
+    .typing-dramatic {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 4px solid #00A3E8;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    /* Make typing gentler on mobile */
     @media (max-width: 640px) {
-      h1 { font-size: 2.5rem; line-height: 1.1; }
-      h2 { font-size: 2.25rem; }
-      .text-xl { font-size: 1.125rem; }
-      .p-10 { padding: 2.5rem 1.5rem; }
+      .typing-dramatic {
+        animation: typingDramaticMobile 3s steps(30, end) forwards, blinkDramatic 0.7s step-end infinite;
+        border-right-width: 3px;
+      }
+    }
+
+    @keyframes typingDramaticMobile {
+      from {
+        width: 0;
+        opacity: 0.6;
+      }
+
+      to {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+
+    @keyframes blinkDramatic {
+
+      from,
+      to {
+        border-color: transparent;
+      }
+
+      50% {
+        border-color: #00A3E8;
+      }
+    }
+
+    .parallax-bg {
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+    }
+
+    /* Better responsive title sizing */
+    @media (max-width: 640px) {
+      h1 {
+        font-size: clamp(1.875rem, 9vw, 2.75rem);
+        line-height: 1.15;
+      }
+
+      .typing-dramatic br {
+        display: none;
+      }
+
+      /* avoid forced break on very small screens */
+    }
+
+    @media (min-width: 641px) and (max-width: 1024px) {
+      h1 {
+        font-size: clamp(3rem, 7vw, 4.5rem);
+        line-height: 1.1;
+      }
+    }
+
+    /* Subtle entrance */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .premium-button {
+      transition: all 0.4s ease;
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
+    }
+
+    .premium-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
+    }
+
+    /* Better mobile typography scaling */
+    @media (max-width: 768px) {
+      .gradient-hero {
+        animation-duration: 30s;
+      }
+
+      h1 {
+        font-size: clamp(2.25rem, 8vw, 3.5rem);
+        line-height: 1.1;
+      }
+
+      h2 {
+        font-size: clamp(1.875rem, 6vw, 2.75rem);
+      }
+
+      .py-24 {
+        padding: 4rem 1rem;
+      }
+
+      .md\:flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .md\:w-1\/2 {
+        width: 100%;
+        padding: 0 !important;
+      }
+
+      .hidden.md\:block {
+        display: none;
+      }
+
+      .flex-row-reverse {
+        flex-direction: column-reverse;
+      }
+    }
+
+    @media (max-width: 640px) {
+      h2 {
+        font-size: 1.875rem;
+      }
+
+      p {
+        font-size: 1.05rem;
+        line-height: 1.75;
+      }
+
+      .typing-dramatic {
+        border-right-width: 3px;
+      }
     }
   </style>
 </head>
-<body class="bg-white text-slate-900 antialiased">
+
+<body class="bg-white text-slate-900 antialiased min-h-screen flex flex-col">
 
   <!-- Top Banner -->
-  <div class="bg-blue-900 text-white text-center py-3 text-sm font-medium">
-    Limited: Only 3 project slots left this month – Secure yours now
+  <div
+    class="bg-gradient-to-r from-blue-900 to-indigo-900 text-white text-center py-3 text-sm font-medium animate-pulse">
+    Limited: Only 3 project slots left this month – Secure yours now!
   </div>
 
   <!-- Navigation -->
@@ -70,16 +237,16 @@
             <a href="contact.html" class="hover:text-blue-700">Contact</a>
             <a href="faq.html" class="hover:text-blue-700">FAQ</a>
           </nav>
-           <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
-            target="_blank" class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
+          <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
+            target="_blank"
+            class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
             Query ?
           </a>
         </div>
         <div class="md:hidden flex items-center gap-3">
           <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
-          target="_blank" class="bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold">Query ?</a>
-          <button id="menu-btn" class="text-2xl"><i class="fa-solid fa-bars"></i>
-          </button>
+            target="_blank" class="bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold">Query ?</a>
+          <button id="menu-btn" class="text-2xl"><i class="fa-solid fa-bars"></i></button>
         </div>
       </div>
       <div id="mobile-menu" class="hidden md:hidden bg-white border-t py-6 px-6 space-y-5 font-medium">
@@ -88,199 +255,255 @@
         <a href="case-studies.html" class="block hover:text-blue-700">Case Studies</a>
         <a href="about.html" class="block text-blue-700 font-semibold">About</a>
         <a href="contact.html" class="block hover:text-blue-700">Contact</a>
-        <a href="faq.html" class=" block hover:text-blue-700">FAQ</a>
+        <a href="faq.html" class="block hover:text-blue-700">FAQ</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero with Story Hook -->
-  <section class="gradient-hero py-20 sm:py-28 lg:py-32 relative overflow-hidden section-fade">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-        Your Vision,<br><span class="gradient-text">Our Promise to Deliver</span>
+  <!-- Hero – improved mobile scaling & no cutoff -->
+  <section class="gradient-hero py-16 sm:py-24 lg:py-32 relative overflow-hidden parallax-bg"
+    style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80'); background-blend-mode: overlay;">
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="absolute inset-0 opacity-40 pointer-events-none"
+      style="background: radial-gradient(circle at 50% 50%, transparent, rgba(0,163,232,0.2) 80%);"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <h1
+        class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 gradient-text typing-dramatic mx-auto max-w-full break-words"
+        style="width: auto; max-width: 100%;">
+        Your Vision,<br class="sm:hidden"> Our Promise to Deliver
       </h1>
-      <p class="text-xl sm:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed">
-        Every business owner has a dream — and daily chaos that kills it.<br class="hidden sm:block">
-        We exist to turn your dream into reality… without adding more headaches.
+      <p class="text-lg sm:text-xl lg:text-2xl text-white max-w-4xl mx-auto leading-relaxed font-light">
+        Imagine: Chaos turning into clarity. Dreams scaling without drama.
       </p>
-    </div>
-  </section>
-
-  <!-- Our Story & Vision -->
-  <section class="py-16 sm:py-20 bg-white section-fade">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 gradient-text">Our Story</h2>
-          <p class="text-lg sm:text-xl text-slate-700 leading-relaxed mb-8">
-            We started as professionals automating processes for foreign clients. While streamlining their operations, we couldn't help but wonder: <span class="font-bold text-blue-600 animate-pulse-slow">Why aren't Indian businesses scaling like global giants?</span>
-          </p>
-          <p class="text-lg sm:text-xl text-slate-700 leading-relaxed mb-8">
-            Some say it's about money—but in our local areas, we've seen entrepreneurs earning lakhs or crores quarterly, yet stuck in traditional, manual ways. Smart owners adapt and scale, but many want growth without upgrading systems. Foreign businesses invest in automation to free up time for strategy, getting real-time updates—no more end-of-month Excel chaos or phone calls. This data-driven approach builds confidence for bold decisions.
-          </p>
-          <p class="text-lg sm:text-xl text-slate-700 leading-relaxed mb-8">
-            In India, small and medium businesses hire staff at 18k-25k/month to handle tasks, but overlook systems that could automate it all. A single employee costs <span class="font-bold gradient-text">₹18k x 12 = ₹2,16,000/year</span>—and that's recurring! Plus, human errors, data locked in notebooks or spreadsheets, and chaos when they leave. Manual methods trap you in a small pond; you can't scale without proper tracking.
-          </p>
-          <p class="text-lg sm:text-xl text-slate-700 leading-relaxed mb-8">
-            New players with smart workflows zoom past experienced ones. In this fast-paced world, opportunities favor the adaptable—those with confidence from real data and automation.
-          </p>
-          <p class="text-lg sm:text-xl text-slate-700 leading-relaxed mb-8 font-semibold">
-            We've identified the core: Our nation's building blocks need sustainable, high-quality systems to boost production and services. Don't see it as extra investment—you're already spending on hires. If they leave, your investment vanishes. But a custom system? It's yours forever, driving data-backed decisions.
-          </p>
-          <p class="text-lg sm:text-xl text-slate-700 leading-relaxed mb-8 font-bold gradient-text">
-            At ZeroFlowTech, we don't sell pre-built tools. We dive into your business model, key functions, and build automation tailored for you. No extra person needed—the system runs itself.
-          </p>
-          <p class="text-lg sm:text-xl text-slate-700 leading-relaxed font-semibold">
-            Our vision? Make powerful automation affordable, flexible, and built exactly for Indian businesses — not what some foreign company decided you need.
-          </p>
-        </div>
-        <div class="relative">
-          <img 
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-            alt="Team brainstorming solutions" 
-            class="rounded-3xl shadow-2xl w-full" 
-            loading="lazy" 
-          />
-          <div class="absolute -bottom-10 -right-10 bg-blue-100 p-6 rounded-xl shadow-lg hidden lg:block animate-pulse-slow">
-            <i class="fa-solid fa-lightbulb text-4xl text-yellow-500 mb-2 block"></i>
-            <p class="text-sm font-semibold">Unlock Scalable Growth with Custom Automation</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Key Insights with Icons and Animations -->
-      <div class="mt-16">
-        <h3 class="text-2xl sm:text-3xl font-bold mb-8 text-center gradient-text">Why Choose Systems Over Manual Hiring?</h3>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-premium highlight-point">
-            <div class="flex items-center gap-4 mb-4">
-              <i class="fa-solid fa-user-tie text-4xl text-red-600"></i>
-              <h4 class="text-xl font-bold">The Manual Trap</h4>
-            </div>
-            <ul class="space-y-3 text-slate-700">
-              <li class="flex items-start gap-2"><i class="fa-solid fa-circle-arrow-right text-blue-600 mt-1"></i> Recurring costs: ₹2,16,000/year per employee</li>
-              <li class="flex items-start gap-2"><i class="fa-solid fa-circle-arrow-right text-blue-600 mt-1"></i> Human errors & data loss risks</li>
-              <li class="flex items-start gap-2"><i class="fa-solid fa-circle-arrow-right text-blue-600 mt-1"></i> Limited scalability—depends on individuals</li>
-              <li class="flex items-start gap-2"><i class="fa-solid fa-circle-arrow-right text-blue-600 mt-1"></i> No real-time insights; end-of-month surprises</li>
-            </ul>
-          </div>
-          <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-premium highlight-point">
-            <div class="flex items-center gap-4 mb-4">
-              <i class="fa-solid fa-robot text-4xl text-green-600"></i>
-              <h4 class="text-xl font-bold">The Automation Advantage</h4>
-            </div>
-            <ul class="space-y-3 text-slate-700">
-              <li class="flex items-start gap-2"><i class="fa-solid fa-circle-arrow-right text-blue-600 mt-1"></i> One-time investment; lifelong value</li>
-              <li class="flex items-start gap-2"><i class="fa-solid fa-circle-arrow-right text-blue-600 mt-1"></i> Error-free, real-time data & reports</li>
-              <li class="flex items-start gap-2"><i class="fa-solid fa-circle-arrow-right text-blue-600 mt-1"></i> Scales effortlessly with your growth</li>
-              <li class="flex items-start gap-2"><i class="fa-solid fa-circle-arrow-right text-blue-600 mt-1"></i> Data-driven decisions for confident risks</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Visual Comparison Table -->
-      <div class="mt-16 overflow-x-auto">
-        <h3 class="text-2xl sm:text-3xl font-bold mb-8 text-center gradient-text">Cost & Benefit Breakdown</h3>
-        <table class="w-full border-collapse comparison-table text-left text-slate-700">
-          <thead class="bg-blue-100">
-            <tr>
-              <th class="p-4 font-bold">Aspect</th>
-              <th class="p-4 font-bold">Hiring a Person</th>
-              <th class="p-4 font-bold">Building a System</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b">
-              <td class="p-4">Initial Cost</td>
-              <td class="p-4">₹18k-25k/month (ongoing)</td>
-              <td class="p-4">One-time setup (custom to your needs)</td>
-            </tr>
-            <tr class="border-b">
-              <td class="p-4">Annual Expense</td>
-              <td class="p-4 font-bold text-red-600">₹2,16,000+ (recurring)</td>
-              <td class="p-4 font-bold text-green-600">Minimal maintenance</td>
-            </tr>
-            <tr class="border-b">
-              <td class="p-4">Risks</td>
-              <td class="p-4">Errors, turnover, data loss</td>
-              <td class="p-4">Reliable, always available</td>
-            </tr>
-            <tr class="border-b">
-              <td class="p-4">Benefits</td>
-              <td class="p-4">Familiar but limited</td>
-              <td class="p-4">Real-time insights, automation, scalability</td>
-            </tr>
-            <tr>
-              <td class="p-4">Long-Term Impact</td>
-              <td class="p-4">Stuck in small-scale operations</td>
-              <td class="p-4 font-bold gradient-text">Empowers growth & market leadership</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Process – How We Build for You -->
-  <section class="py-16 sm:py-20 bg-gradient-to-br from-slate-50 to-white section-fade">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 gradient-text">How We Turn Your Idea into Reality</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
-        <div class="bg-white p-8 rounded-2xl shadow-premium border border-slate-200 hover:shadow-xl transition-all">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-            <i class="fa-solid fa-phone-volume text-3xl text-blue-600"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-4 text-center">1. First Call</h3>
-          <p class="text-slate-700 text-center">
-            You talk, we listen. No sales pitch — just understanding your pain, goals & vision.
-          </p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-premium border border-slate-200 hover:shadow-xl transition-all">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-            <i class="fa-solid fa-magnifying-glass-chart text-3xl text-blue-600"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-4 text-center">2. Research & Brainstorm</h3>
-          <p class="text-slate-700 text-center">
-            If you're confused — we help. Market insights, competitor study, idea validation — before we build anything.
-          </p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-premium border border-slate-200 hover:shadow-xl transition-all">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-            <i class="fa-solid fa-gears text-3xl text-blue-600"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-4 text-center">3. MVP → Full Solution</h3>
-          <p class="text-slate-700 text-center">
-            Start small (MVP), test fast, improve fast. Then scale to exactly what you need — your way, not ours.
-          </p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-premium border border-slate-200 hover:shadow-xl transition-all">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-            <i class="fa-solid fa-headset text-3xl text-blue-600"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-4 text-center">4. Launch + Lifetime Care</h3>
-          <p class="text-slate-700 text-center">
-            We test everything. You don’t. Post-launch support + ongoing help — because your success is ours.
-          </p>
-        </div>
-      </div>
-
-      <div class="text-center mt-16">
-        <p class="text-2xl sm:text-3xl font-semibold text-slate-800 mb-8">
-          We don’t promise the moon.<br>We deliver what actually moves your business forward.
-        </p>
-        <a href="contact.html" class="inline-flex items-center gap-3 bg-blue-700 text-white px-10 py-5 rounded-xl font-bold text-xl hover:bg-blue-800 premium-button">
-          Let's Make Your Vision Real <i class="fa-solid fa-arrow-right"></i>
+      <div class="mt-10 sm:mt-12">
+        <a href="#story"
+          class="inline-flex items-center gap-3 bg-white text-blue-700 px-7 py-4 sm:px-8 sm:py-5 rounded-xl font-bold text-base sm:text-lg premium-button">
+          Discover Our Story <i class="fa-solid fa-arrow-down ml-2"></i>
         </a>
       </div>
     </div>
   </section>
 
+  <!-- Story Timeline -->
+  <section id="story" class="py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl lg:text-5xl font-bold gradient-text mb-12 lg:mb-16 text-center fade-up">
+        The Wake-Up Call for Indian Businesses
+      </h2>
+
+      <div class="relative max-w-5xl mx-auto space-y-16 lg:space-y-24">
+        <div class="lg:flex items-start gap-12 fade-up">
+          <div class="lg:w-1/2 text-center lg:text-right lg:pr-8">
+            <div class="inline-flex bg-blue-100 p-5 rounded-full shadow mb-4 mx-auto lg:mx-0">
+              <i class="fa-solid fa-globe text-4xl text-blue-600"></i>
+            </div>
+            <h3 class="text-2xl font-bold gradient-text mb-3">Foreign Clients Thriving</h3>
+            <p class="text-lg text-slate-700">We automated global giants. Real-time data, no chaos. They focus on
+              growth, not spreadsheets.</p>
+          </div>
+          <div class="hidden lg:block lg:w-1/2"></div>
+        </div>
+
+        <div class="lg:flex items-start gap-12 fade-up lg:flex-row-reverse">
+          <div class="lg:w-1/2 text-center lg:text-left lg:pl-8">
+            <div class="inline-flex bg-red-100 p-5 rounded-full shadow mb-4 mx-auto lg:mx-0">
+              <i class="fa-solid fa-question-circle text-4xl text-red-600"></i>
+            </div>
+            <h3 class="text-2xl font-bold gradient-text mb-3">Why India Lags?</h3>
+            <p class="text-lg text-slate-700">Local earners make lakhs/crores quarterly — but manual mess traps them.
+              Hiring at ₹18–25k/month = recurring ₹2.16 lakh/year loss when people leave.</p>
+          </div>
+          <div class="hidden lg:block lg:w-1/2"></div>
+        </div>
+
+        <div class="lg:flex items-start gap-12 fade-up">
+          <div class="lg:w-1/2 text-center lg:text-right lg:pr-8">
+            <div class="inline-flex bg-yellow-100 p-5 rounded-full shadow mb-4 mx-auto lg:mx-0">
+              <i class="fa-solid fa-exclamation-triangle text-4xl text-yellow-600"></i>
+            </div>
+            <h3 class="text-2xl font-bold gradient-text mb-3">The Hidden Trap</h3>
+            <p class="text-lg text-slate-700">Human errors, lost data, no real-time view. Can't scale — newer players
+              with systems overtake experienced ones.</p>
+          </div>
+          <div class="hidden lg:block lg:w-1/2"></div>
+        </div>
+
+        <div class="lg:flex items-start gap-12 fade-up lg:flex-row-reverse">
+          <div class="lg:w-1/2 text-center lg:text-left lg:pl-8">
+            <div class="inline-flex bg-green-100 p-5 rounded-full shadow mb-4 mx-auto lg:mx-0">
+              <i class="fa-solid fa-lightbulb text-4xl text-green-600"></i>
+            </div>
+            <h3 class="text-2xl font-bold gradient-text mb-3">Our Breakthrough</h3>
+            <p class="text-lg text-slate-700">Custom systems — not off-the-shelf. Automate your real workflow. One-time
+              investment. Lifelong scale. Data-driven confidence.</p>
+          </div>
+          <div class="hidden lg:block lg:w-1/2"></div>
+        </div>
+      </div>
+
+      <!-- Updated Comparison Cards – more concise + requested points -->
+      <div class="mt-16 lg:mt-24 grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+        <div
+          class="bg-gradient-to-br from-red-50 to-white p-7 rounded-2xl shadow-lg border border-red-100 hover:shadow-xl transition-shadow duration-300 fade-up">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="bg-red-100 p-4 rounded-full">
+              <i class="fa-solid fa-user-slash text-3xl text-red-600"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-red-700">Manual Chaos (Current Reality)</h3>
+          </div>
+          <ul class="space-y-3 text-slate-700 text-base leading-relaxed">
+            <li class="flex gap-3"><i class="fa-solid fa-triangle-exclamation text-red-500 mt-1"></i>Dependent on Excel
+              + WhatsApp + Tally every day</li>
+            <li class="flex gap-3"><i class="fa-solid fa-triangle-exclamation text-red-500 mt-1"></i>No proper inventory
+              / event tracking — stockouts or overstock</li>
+            <li class="flex gap-3"><i class="fa-solid fa-triangle-exclamation text-red-500 mt-1"></i>Decisions delayed —
+              you know profit/loss only after month-end</li>
+            <li class="flex gap-3"><i class="fa-solid fa-triangle-exclamation text-red-500 mt-1 font-bold"></i>Waste
+              hours daily chasing data → lose time & money</li>
+            <li class="flex gap-3"><i class="fa-solid fa-triangle-exclamation text-red-500 mt-1 font-bold"></i>Wrong /
+              late decisions cost lakhs in missed opportunities</li>
+          </ul>
+        </div>
+
+        <div
+          class="bg-gradient-to-br from-green-50 to-white p-7 rounded-2xl shadow-lg border border-green-100 hover:shadow-xl transition-shadow duration-300 fade-up">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="bg-green-100 p-4 rounded-full">
+              <i class="fa-solid fa-rocket text-3xl text-green-600"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-green-700">With Proper System</h3>
+          </div>
+          <ul class="space-y-3 text-slate-700 text-base leading-relaxed">
+            <li class="flex gap-3"><i class="fa-solid fa-check-circle text-green-600 mt-1"></i>Real-time dashboard — no
+              more Excel/WhatsApp chaos</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check-circle text-green-600 mt-1"></i>Automatic inventory &
+              event tracking — never miss stock</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check-circle text-green-600 mt-1"></i>Instant profit/loss
+              visibility — take right decisions at right time</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check-circle text-green-600 mt-1 font-bold"></i>Save hours
+              daily → more time for growth & strategy</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check-circle text-green-600 mt-1 font-bold"></i>Confident, fast
+              decisions → capture opportunities, avoid losses</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why We Do This -->
+  <section class="py-16 lg:py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl lg:text-5xl font-bold gradient-text mb-10 lg:mb-14 text-center fade-up">
+        Why We Do This
+      </h2>
+
+      <div class="prose prose-lg max-w-none text-slate-700 space-y-8 lg:space-y-10 fade-up">
+        <p>We were working professionals helping foreign clients automate and manage their processes efficiently. During
+          this time, we kept asking ourselves one question:</p>
+
+        <p class="text-xl font-semibold text-blue-700">Why are Indian businesses — even the successful ones — not
+          scaling like foreign companies?</p>
+
+        <p>Many say it's because they don't have money to invest. But we saw local entrepreneurs in our own area earning
+          <strong>lakhs or even crores every quarter</strong> — yet still operating with traditional methods: WhatsApp
+          messages, Excel sheets, notebooks, phone calls, and manual tracking.</p>
+
+        <p>Foreign businesses invest in <strong>systems</strong> that reduce daily responsibilities — giving owners
+          real-time visibility and freeing them to focus on growth. In India, most owners are ready to pay ₹18k–25k per
+          month for a person to handle these tasks, but hesitate to invest in a system that can do the same (better,
+          faster, and forever).</p>
+
+        <p class="font-medium">Let's do the math:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>One employee = ₹18,000–25,000/month → <strong>₹2,16,000–3,00,000 per year</strong></li>
+          <li>Every year you pay again — and again</li>
+          <li>If they leave → your investment (time + knowledge) disappears</li>
+          <li>New person needs months to understand your business → more loss</li>
+        </ul>
+
+        <p>But a custom system?</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>One-time investment</li>
+          <li>No salary, no leave, no errors</li>
+          <li>Always available — 24/7 real-time data</li>
+          <li>Grows with your business — no need to hire 10 people for 10× volume</li>
+        </ul>
+
+        <p class="text-lg font-semibold mt-8">We realized: Indian businesses don't need foreign software. They need
+          <strong>Indian solutions</strong> — built for Indian realities, Indian workflows, Indian budgets.</p>
+
+        <p class="text-xl font-bold gradient-text mt-10">So we started ZeroFlowTech.</p>
+        <p>We don't sell pre-made tools. We listen to your business model, understand your pain points, map your real
+          processes — and build exactly what you need. A system that runs automatically, gives you confidence, and lets
+          you scale without chaos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl lg:text-5xl font-bold gradient-text mb-12 lg:mb-16 text-center fade-up">
+        How We Ignite Your Growth
+      </h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div
+          class="bg-white p-7 rounded-2xl shadow-lg border border-slate-100 text-center fade-up hover:shadow-xl transition-shadow duration-300">
+          <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fa-solid fa-ear-listen text-3xl text-blue-600"></i>
+          </div>
+          <h3 class="text-xl lg:text-2xl font-bold mb-3">1. Hear Your Chaos</h3>
+          <p class="text-slate-600">We deeply understand your real pain — no generic templates.</p>
+        </div>
+
+        <div
+          class="bg-white p-7 rounded-2xl shadow-lg border border-slate-100 text-center fade-up hover:shadow-xl transition-shadow duration-300">
+          <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fa-solid fa-brain text-3xl text-blue-600"></i>
+          </div>
+          <h3 class="text-xl lg:text-2xl font-bold mb-3">2. Map the Path</h3>
+          <p class="text-slate-600">Research your workflow, competitors, goals — then design the right solution.</p>
+        </div>
+
+        <div
+          class="bg-white p-7 rounded-2xl shadow-lg border border-slate-100 text-center fade-up hover:shadow-xl transition-shadow duration-300">
+          <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fa-solid fa-hammer text-3xl text-blue-600"></i>
+          </div>
+          <h3 class="text-xl lg:text-2xl font-bold mb-3">3. Build & Test</h3>
+          <p class="text-slate-600">Start with MVP → test fast → refine → scale to full power.</p>
+        </div>
+
+        <div
+          class="bg-white p-7 rounded-2xl shadow-lg border border-slate-100 text-center fade-up hover:shadow-xl transition-shadow duration-300">
+          <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fa-solid fa-shield-heart text-3xl text-blue-600"></i>
+          </div>
+          <h3 class="text-xl lg:text-2xl font-bold mb-3">4. Launch & Guard</h3>
+          <p class="text-slate-600">We launch, train, support forever — your growth is our mission.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-24 bg-gradient-to-br from-blue-600 to-indigo-700 text-white text-center">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <h2 class="text-4xl lg:text-5xl font-bold mb-6 fade-up">Don't Just Survive — Dominate</h2>
+      <p class="text-xl lg:text-2xl mb-10 opacity-90 max-w-3xl mx-auto fade-up">
+        Understand the trap. Choose smart systems. Let's build your future — today.
+      </p>
+      <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
+        class="inline-flex items-center gap-3 bg-white text-blue-700 px-10 py-5 rounded-xl font-bold text-xl premium-button shadow-2xl fade-up">
+        Ignite My Business <i class="fa-solid fa-fire ml-2"></i>
+      </a>
+    </div>
+  </section>
+
   <!-- Footer -->
-  <footer class="bg-slate-900 text-slate-300 py-12">
+  <footer class="bg-slate-900 text-slate-300 py-12 mt-auto">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <div class="flex flex-col md:flex-row justify-between items-center gap-8">
         <div class="flex items-center gap-3">
@@ -293,21 +516,33 @@
           <a href="mailto:zeroflowtech@gmail.com" class="hover:text-white">zeroflowtech@gmail.com</a>
         </div>
       </div>
-      <p class="mt-8 text-sm">© 2026 ZeroFlowTech – Building trust, one solution at a time. Ongoing support included.</p>
+      <p class="mt-8 text-sm">© 2026 ZeroFlowTech – Building trust, scaling dreams. Ongoing support included.</p>
     </div>
   </footer>
 
   <script>
-    // Fade-in animation
+    // Subtle fade-up
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
 
-    // Mobile menu toggle
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Mobile menu
     document.getElementById('menu-btn')?.addEventListener('click', () => {
       document.getElementById('mobile-menu').classList.toggle('hidden');
     });
+
+    // Smooth scroll
+    document.querySelector('a[href="#story"]')?.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector('#story').scrollIntoView({ behavior: 'smooth' });
+    });
   </script>
 </body>
+
 </html>
