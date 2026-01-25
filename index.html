@@ -39,21 +39,6 @@
       -webkit-text-fill-color: transparent;
     }
 
-    .card-hover:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 25px 35px -10px rgba(0, 0, 0, 0.15);
-    }
-
-    .premium-button {
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
-    }
-
-    .premium-button:hover {
-      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
-      transform: translateY(-2px);
-    }
-
     .section-fade {
       opacity: 0;
       transform: translateY(20px);
@@ -74,50 +59,8 @@
       background: linear-gradient(to right, #2563eb, #00A3E8);
     }
 
-    .faq-item {
-      transition: all 0.3s ease;
-    }
-
-    .faq-item.open .faq-answer {
-      max-height: 500px;
-      opacity: 1;
-    }
-
-    .faq-item.open .faq-toggle i {
-      transform: rotate(180deg);
-    }
-
-    /* New CTA Section Styles */
     .invest-card {
       transition: all 0.4s ease;
-    }
-
-    .invest-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.2);
-    }
-
-    @media (max-width: 640px) {
-      h1 {
-        font-size: 2.5rem !important;
-        line-height: 1.1;
-      }
-
-      h2 {
-        font-size: 2rem !important;
-      }
-
-      .text-xl {
-        font-size: 1.125rem !important;
-      }
-
-      .p-10 {
-        padding: 2.5rem 1.25rem !important;
-      }
-
-      .gap-10 {
-        gap: 2.5rem !important;
-      }
     }
 
     @keyframes fadeInUp {
@@ -151,26 +94,62 @@
     .animate-pulse-slow {
       animation: pulseSlow 4s infinite ease-in-out;
     }
+
+    /* Responsive typography with clamp for fluid scaling */
+    h1 {
+      font-size: clamp(2rem, 5.5vw + 0.5rem, 4.5rem);
+      line-height: 1.1;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 4.2vw + 0.4rem, 3.5rem);
+      line-height: 1.15;
+    }
+
+    h3, h4 {
+      font-size: clamp(1.25rem, 3vw + 0.25rem, 2rem);
+      line-height: 1.25;
+    }
+
+    p, li, blockquote {
+      font-size: clamp(0.875rem, 2vw + 0.5rem, 1.125rem);
+      line-height: clamp(1.4, 0.1vw + 1.45, 1.6);
+    }
+
+    .text-sm {
+      font-size: clamp(0.75rem, 1.8vw + 0.3rem, 0.875rem);
+    }
+
+    .text-base {
+      font-size: clamp(0.875rem, 2vw + 0.4rem, 1rem);
+    }
+
+    .text-lg {
+      font-size: clamp(1rem, 2.5vw + 0.4rem, 1.125rem);
+    }
+
+    .text-xl {
+      font-size: clamp(1.125rem, 3vw + 0.5rem, 1.25rem);
+    }
   </style>
 </head>
 
-<body class="bg-white text-slate-900 antialiased">
-
+<body class="bg-white text-slate-900 antialiased text-base leading-relaxed">
   <!-- Top Banner -->
-  <div class="bg-blue-900 text-white text-center py-3 text-sm font-medium">
+  <div class="bg-blue-900 text-white text-center py-2 text-sm font-medium">
     Limited: Only 3 project slots left this month – Secure yours now
   </div>
 
   <!-- Navigation -->
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16 sm:h-20">
-        <a href="index.html" class="flex items-center gap-3">
-          <img src="./assets/logos/logo.png" alt="ZeroFlowTech" class="w-10 h-10 sm:w-12 sm:h-12" />
-          <span class="font-bold text-xl sm:text-2xl gradient-text">ZeroFlowTech</span>
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center gap-2">
+          <img src="./assets/logos/logo.png" alt="ZeroFlowTech" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
+          <span class="font-bold text-lg sm:text-xl md:text-2xl gradient-text">ZeroFlowTech</span>
         </a>
-        <div class="hidden md:flex items-center gap-10">
-          <nav class="flex gap-8 font-medium">
+        <div class="hidden md:flex items-center gap-6">
+          <nav class="flex gap-4 md:gap-8 font-medium">
             <a href="services.html" class="hover:text-blue-700">Services</a>
             <a href="case-studies.html" class="hover:text-blue-700">Case Studies</a>
             <a href="about.html" class="hover:text-blue-700">About</a>
@@ -179,51 +158,57 @@
           </nav>
           <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
             target="_blank"
-            class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
-            Query ?
+            class="bg-blue-700 text-white px-4 py-2 rounded-xl font-semibold hover:bg-blue-800 premium-button md:px-6 md:py-3">
+            Query
           </a>
         </div>
-        <div class="md:hidden flex items-center gap-3">
+        <div class="md:hidden flex items-center gap-2">
           <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
-            target="_blank" class="bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold">Query ?</a>
-          <button id="menu-btn" class="text-2xl"><i class="fa-solid fa-bars"></i>
+            target="_blank" class="bg-blue-700 text-white px-3 py-2 rounded-lg text-sm font-semibold sm:px-4">
+            Query
+          </a>
+          <button id="menu-btn" class="text-2xl p-2">
+            <i class="fa-solid fa-bars"></i>
           </button>
         </div>
       </div>
-      <div id="mobile-menu" class="hidden md:hidden bg-white border-t py-6 px-6 space-y-5 font-medium">
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t py-4 px-4 space-y-4 font-medium">
+        <button id="close-menu" class="text-right w-full text-xl"><i class="fa-solid fa-times"></i></button>
         <a href="services.html" class="block hover:text-blue-700">Services</a>
         <a href="case-studies.html" class="block hover:text-blue-700">Case Studies</a>
         <a href="about.html" class="block hover:text-blue-700">About</a>
+        <a href="contact.html" class="block hover:text-blue-700">Contact</a>
         <a href="faq.html" class="block hover:text-blue-700">Faq</a>
       </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="gradient-hero pt-16 pb-24 sm:pb-32 relative overflow-hidden section-fade">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+  <section class="gradient-hero pt-8 pb-12 sm:pt-16 sm:pb-24 lg:pb-32 relative overflow-hidden section-fade">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-6 sm:gap-12 items-center">
         <div>
           <div
-            class="inline-flex gap-2 bg-white/80 px-4 py-2 rounded-full text-sm font-semibold text-blue-700 mb-6 shadow-sm">
+            class="inline-flex gap-2 bg-white/80 px-3 py-2 rounded-full text-sm font-semibold text-blue-700 mb-4 shadow-sm sm:px-4 sm:mb-6">
             <i class="fa-solid fa-rocket text-blue-600"></i> Ready in 2–6 weeks
           </div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+          <h1 class="text-3xl font-bold leading-tight sm:text-4xl lg:text-6xl">
             We help small businesses replace <span class="gradient-text">Excel, WhatsApp & manual work</span>
           </h1>
-          <p class="mt-6 text-lg sm:text-xl text-slate-700 max-w-xl">with simple reliable systems that save 10–30
-            hours/week and increase revenue.</p>
-          <p>
+          <p class="mt-4 text-base text-slate-700 max-w-xl sm:mt-6 sm:text-lg lg:text-xl">
+            with simple reliable systems that save 10–30 hours/week and increase revenue.
+          </p>
+          <p class="mt-2 text-base text-slate-700 max-w-xl sm:mt-4 sm:text-lg lg:text-xl">
             From static sites to fully automated CRMs & workflows — we build tools that save time and generate revenue.
           </p>
-          <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:mt-10">
             <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
               target="_blank"
-              class="bg-blue-700 text-white px-8 py-5 rounded-xl font-semibold hover:bg-blue-700 premium-button flex items-center justify-center gap-2">
+              class="bg-blue-700 text-white px-6 py-4 rounded-xl font-semibold hover:bg-blue-700 premium-button flex items-center justify-center gap-2 sm:px-8 sm:py-5">
               Get Consult
             </a>
             <a href="mailto:zeroflowtech@gmail.com?subject=Free Audit"
-              class="border-2 border-blue-700 text-blue-700 px-8 py-5 rounded-xl font-bold hover:bg-blue-700 hover:text-white transition flex items-center justify-center gap-2">
+              class="border-2 border-blue-700 text-blue-700 px-6 py-4 rounded-xl font-bold hover:bg-blue-700 hover:text-white transition flex items-center justify-center gap-2 sm:px-8 sm:py-5">
               Free Website Audit
             </a>
           </div>
@@ -231,63 +216,73 @@
         <div class="hidden lg:block">
           <img
             src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-            alt="Modern dashboard" class="rounded-3xl shadow-2xl" loading="lazy" />
+            alt="Modern dashboard" class="rounded-3xl shadow-2xl w-full aspect-[4/3] object-cover" loading="lazy" />
         </div>
       </div>
     </div>
   </section>
 
   <!-- Services  -->
-  <section id="services" class="py-20 bg-slate-50 section-fade">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl sm:text-5xl font-bold mb-4">Our Services</h2>
-        <p class="text-xl text-slate-600">Tailored solutions to automate, optimize and scale your business.</p>
+  <section id="services" class="py-12 bg-slate-50 section-fade sm:py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-8 sm:mb-16">
+        <h2 class="text-3xl font-bold mb-2 sm:text-4xl sm:mb-4 lg:text-5xl">Our Services</h2>
+        <p class="text-base text-slate-600 sm:text-lg lg:text-xl">Tailored solutions to automate, optimize and scale
+          your business.</p>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="bg-white p-8 rounded-2xl border card-hover shadow-premium flex flex-col">
-          <i class="fa-solid fa-globe text-5xl text-blue-600 mb-6"></i>
-          <h3 class="text-2xl font-bold mb-3 gradient-text">Inventory & stock panel for traders</h3>
-          <p class="text-slate-600 flex-1">Dynamic, responsive sites with booking, payments & admin panels.</p>
+      <div class="grid gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
+        <div
+          class="bg-white p-6 rounded-2xl border shadow-premium flex flex-col transition duration-300 hover:translate-y-[-10px] hover:shadow-2xl">
+          <i class="fa-solid fa-globe text-4xl text-blue-600 mb-4 sm:text-5xl sm:mb-6"></i>
+          <h3 class="text-xl font-bold mb-2 gradient-text sm:text-2xl sm:mb-3">Inventory & stock panel for traders</h3>
+          <p class="text-slate-600 flex-1 text-base">Dynamic, responsive sites with booking, payments & admin panels.
+          </p>
         </div>
-        <div class="bg-white p-8 rounded-2xl border card-hover shadow-premium flex flex-col">
-          <i class="fa-solid fa-tools text-5xl text-blue-600 mb-6"></i>
-          <h3 class="text-2xl font-bold mb-3 gradient-text">Website Optimization</h3>
-          <p class="text-slate-600 flex-1">Speed, SEO, UX upgrades + free audits for quick wins.</p>
+        <div
+          class="bg-white p-6 rounded-2xl border shadow-premium flex flex-col transition duration-300 hover:translate-y-[-10px] hover:shadow-2xl">
+          <i class="fa-solid fa-tools text-4xl text-blue-600 mb-4 sm:text-5xl sm:mb-6"></i>
+          <h3 class="text-xl font-bold mb-2 gradient-text sm:text-2xl sm:mb-3">Website Optimization</h3>
+          <p class="text-slate-600 flex-1 text-base">Speed, SEO, UX upgrades + free audits for quick wins.</p>
         </div>
-        <div class="bg-white p-8 rounded-2xl border card-hover shadow-premium flex flex-col">
-          <i class="fa-solid fa-cogs text-5xl text-blue-600 mb-6"></i>
-          <h3 class="text-2xl font-bold mb-3 gradient-text">Lead & Customer Tracking System</h3>
-          <p class="text-slate-600 flex-1">No More Excel Chaos</p>
+        <div
+          class="bg-white p-6 rounded-2xl border shadow-premium flex flex-col transition duration-300 hover:translate-y-[-10px] hover:shadow-2xl">
+          <i class="fa-solid fa-cogs text-4xl text-blue-600 mb-4 sm:text-5xl sm:mb-6"></i>
+          <h3 class="text-xl font-bold mb-2 gradient-text sm:text-2xl sm:mb-3">Lead & Customer Tracking System</h3>
+          <p class="text-slate-600 flex-1 text-base">No More Excel Chaos</p>
         </div>
-        <div class="bg-white p-8 rounded-2xl border card-hover shadow-premium flex flex-col">
-          <i class="fa-solid fa-plane-departure text-5xl text-blue-600 mb-6"></i>
-          <h3 class="text-2xl font-bold mb-3 gradient-text">Automate tour bookings for travel businesses</h3>
-          <p class="text-slate-600 flex-1">Bookings, itineraries, leads, invoices – fully automated.</p>
+        <div
+          class="bg-white p-6 rounded-2xl border shadow-premium flex flex-col transition duration-300 hover:translate-y-[-10px] hover:shadow-2xl">
+          <i class="fa-solid fa-plane-departure text-4xl text-blue-600 mb-4 sm:text-5xl sm:mb-6"></i>
+          <h3 class="text-xl font-bold mb-2 gradient-text sm:text-2xl sm:mb-3">Automate tour bookings for travel
+            businesses</h3>
+          <p class="text-slate-600 flex-1 text-base">Bookings, itineraries, leads, invoices – fully automated.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Projects  -->
-  <section id="projects" class="py-20 bg-white section-fade">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl sm:text-5xl font-bold mb-4">Real Projects, Real Results</h2>
-        <p class="text-xl text-slate-600">Diverse solutions we've delivered for clients across industries.</p>
+  <section id="projects" class="py-12 bg-white section-fade sm:py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-8 sm:mb-16">
+        <h2 class="text-3xl font-bold mb-2 sm:text-4xl sm:mb-4 lg:text-5xl">Real Projects, Real Results</h2>
+        <p class="text-base text-slate-600 sm:text-lg lg:text-xl">Diverse solutions we've delivered for clients across
+          industries.</p>
       </div>
 
       <div class="swiper projectSwiper">
         <div class="swiper-wrapper">
           <!-- Travel Automation -->
           <div class="swiper-slide">
-            <div class="bg-white rounded-2xl shadow-premium overflow-hidden card-hover h-full flex flex-col">
+            <div
+              class="bg-white rounded-2xl shadow-premium overflow-hidden h-full flex flex-col transition duration-300 hover:translate-y-[-10px] hover:shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Travel Booking Dashboard" class="w-full h-64 object-cover" loading="lazy" />
-              <div class="p-6 flex-1 flex flex-col">
-                <h3 class="text-2xl font-bold gradient-text mb-3">Travel Booking Automation</h3>
-                <p class="text-slate-600 mb-4 flex-1">Full workflow: group trips, real-time alerts, invoices, CRM
+                alt="Travel Booking Dashboard" class="w-full aspect-[4/3] object-cover" loading="lazy" />
+              <div class="p-4 flex-1 flex flex-col sm:p-6">
+                <h3 class="text-xl font-bold gradient-text mb-2 sm:text-2xl sm:mb-3">Travel Booking Automation</h3>
+                <p class="text-slate-600 mb-4 flex-1 text-base">Full workflow: group trips, real-time alerts, invoices,
+                  CRM
                   integration for DejaVu Tours.</p>
                 <a href="https://www.dejavutours.in" target="_blank"
                   class="text-blue-700 font-semibold hover:underline mt-auto inline-flex items-center gap-2">
@@ -299,62 +294,63 @@
 
           <!-- Custom CRM -->
           <div class="swiper-slide">
-            <div class="bg-white rounded-2xl shadow-premium overflow-hidden card-hover h-full flex flex-col">
+            <div
+              class="bg-white rounded-2xl shadow-premium overflow-hidden h-full flex flex-col transition duration-300 hover:translate-y-[-10px] hover:shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=1171&auto=format&fit=crop&w=800&q=80"
-                alt="CRM Dashboard" class="w-full h-64 object-cover" loading="lazy" />
-              <div class="p-6 flex-1 flex flex-col">
-                <h3 class="text-2xl font-bold gradient-text">Custom CRM Dashboard</h3>
-                <p class="text-slate-600 mb-4 flex-1">Lead tracking, automation & reporting tailored to business needs.
+                alt="CRM Dashboard" class="w-full aspect-[4/3] object-cover" loading="lazy" />
+              <div class="p-4 flex-1 flex flex-col sm:p-6">
+                <h3 class="text-xl font-bold gradient-text mb-2 sm:text-2xl sm:mb-3">Custom CRM Dashboard</h3>
+                <p class="text-slate-600 mb-4 flex-1 text-base">Lead tracking, automation & reporting tailored to
+                  business needs.
                 </p>
-                <!-- <a href="#" class="text-blue-700 font-semibold hover:underline mt-auto inline-flex items-center gap-2">
-                  View Demo <i class="fa-solid fa-external-link-alt"></i>
-                </a> -->
+
               </div>
             </div>
           </div>
 
           <!-- Inventory -->
           <div class="swiper-slide">
-            <div class="bg-white rounded-2xl shadow-premium overflow-hidden card-hover h-full flex flex-col">
+            <div
+              class="bg-white rounded-2xl shadow-premium overflow-hidden h-full flex flex-col transition duration-300 hover:translate-y-[-10px] hover:shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Inventory Management" class="w-full h-64 object-cover" loading="lazy" />
-              <div class="p-6 flex-1 flex flex-col">
-                <h3 class="text-2xl font-bold gradient-text">Inventory Management System</h3>
-                <p class="text-slate-600 mb-4 flex-1">Real-time stock tracking, orders & reporting UI.</p>
-                <!-- <a href="#" class="text-blue-700 font-semibold hover:underline mt-auto inline-flex items-center gap-2">
-                  View Demo <i class="fa-solid fa-external-link-alt"></i>
-                </a> -->
+                alt="Inventory Management" class="w-full aspect-[4/3] object-cover" loading="lazy" />
+              <div class="p-4 flex-1 flex flex-col sm:p-6">
+                <h3 class="text-xl font-bold gradient-text mb-2 sm:text-2xl sm:mb-3">Inventory Management System</h3>
+                <p class="text-slate-600 mb-4 flex-1 text-base">Real-time stock tracking, orders & reporting UI.</p>
+
               </div>
             </div>
           </div>
 
           <!-- Workflow Automation -->
           <div class="swiper-slide">
-            <div class="bg-white rounded-2xl shadow-premium overflow-hidden card-hover h-full flex flex-col">
+            <div
+              class="bg-white rounded-2xl shadow-premium overflow-hidden h-full flex flex-col transition duration-300 hover:translate-y-[-10px] hover:shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Workflow Dashboard" class="w-full h-64 object-cover" loading="lazy" />
-              <div class="p-6 flex-1 flex flex-col">
-                <h3 class="text-2xl font-bold gradient-text">Business Workflow Automation</h3>
-                <p class="text-slate-600 mb-4 flex-1">Automated processes, approvals & notifications dashboard.</p>
-                <!-- <a href="#" class="text-blue-700 font-semibold hover:underline mt-auto inline-flex items-center gap-2">
-                  View Demo <i class="fa-solid fa-external-link-alt"></i>
-                </a> -->
+                alt="Workflow Dashboard" class="w-full aspect-[4/3] object-cover" loading="lazy" />
+              <div class="p-4 flex-1 flex flex-col sm:p-6">
+                <h3 class="text-xl font-bold gradient-text mb-2 sm:text-2xl sm:mb-3">Business Workflow Automation</h3>
+                <p class="text-slate-600 mb-4 flex-1 text-base">Automated processes, approvals & notifications
+                  dashboard.</p>
+
               </div>
             </div>
           </div>
 
           <!-- Custom Website -->
           <div class="swiper-slide">
-            <div class="bg-white rounded-2xl shadow-premium overflow-hidden card-hover h-full flex flex-col">
+            <div
+              class="bg-white rounded-2xl shadow-premium overflow-hidden h-full flex flex-col transition duration-300 hover:translate-y-[-10px] hover:shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Modern Website" class="w-full h-64 object-cover" loading="lazy" />
-              <div class="p-6 flex-1 flex flex-col">
-                <h3 class="text-2xl font-bold gradient-text">Modern Custom Website</h3>
-                <p class="text-slate-600 mb-4 flex-1">Responsive, high-performance sites with advanced features.</p>
+                alt="Modern Website" class="w-full aspect-[4/3] object-cover" loading="lazy" />
+              <div class="p-4 flex-1 flex flex-col sm:p-6">
+                <h3 class="text-xl font-bold gradient-text mb-2 sm:text-2xl sm:mb-3">Modern Custom Website</h3>
+                <p class="text-slate-600 mb-4 flex-1 text-base">Responsive, high-performance sites with advanced
+                  features.</p>
                 <a href="https://neelantgroup.com" target="_blank"
                   class="text-blue-700 font-semibold hover:underline mt-auto inline-flex items-center gap-2">
                   View Live <i class="fa-solid fa-external-link-alt"></i>
@@ -363,7 +359,7 @@
             </div>
           </div>
         </div>
-        <div class="swiper-pagination mt-10"></div>
+        <div class="swiper-pagination mt-6 sm:mt-10"></div>
         <div class="swiper-button-prev text-blue-600"></div>
         <div class="swiper-button-next text-blue-600"></div>
       </div>
@@ -371,52 +367,56 @@
   </section>
 
   <!--  Project Onboarding Section -->
-  <section id="onboarding" class="py-20 bg-gradient-to-b from-white to-slate-50 section-fade">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl sm:text-5xl font-bold mb-4 gradient-text">Simple & Transparent Project Onboarding</h2>
-        <p class="text-xl text-slate-600 max-w-3xl mx-auto">We make getting started effortless. From first call to
+  <section id="onboarding" class="py-12 bg-gradient-to-b from-white to-slate-50 section-fade sm:py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-8 sm:mb-16">
+        <h2 class="text-3xl font-bold mb-2 gradient-text sm:text-4xl sm:mb-4 lg:text-5xl">Simple & Transparent Project
+          Onboarding</h2>
+        <p class="text-base text-slate-600 max-w-3xl mx-auto sm:text-lg lg:text-xl">We make getting started effortless.
+          From first call to
           launch — clear steps, no surprises, full support.</p>
       </div>
 
-      <div class="relative py-12">
+      <div class="relative py-8 sm:py-12">
         <div class="step-line hidden md:block"></div>
-        <div class="grid md:grid-cols-4 gap-8 relative z-10">
-          <div class="bg-white p-8 rounded-2xl shadow-premium text-center border-t-4 border-blue-600">
+        <div class="grid gap-6 md:grid-cols-4 md:gap-8 relative z-10">
+          <div class="bg-white p-6 rounded-2xl shadow-premium text-center border-t-4 border-blue-600 sm:p-8">
             <div
-              class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 text-3xl font-bold">
+              class="w-12 h-12 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 text-2xl font-bold sm:w-16 sm:h-16 sm:mb-6 sm:text-3xl">
               1</div>
-            <h3 class="text-2xl font-bold mb-3">Free Discovery Call</h3>
-            <p class="text-slate-600">15–30 min chat to understand your goals, challenges & vision.</p>
+            <h3 class="text-xl font-bold mb-2 sm:text-2xl sm:mb-3">Free Discovery Call</h3>
+            <p class="text-slate-600 text-base">15–30 min chat to understand your goals, challenges & vision.</p>
           </div>
-          <div class="bg-white p-8 rounded-2xl shadow-premium text-center border-t-4 border-blue-600">
+          <div class="bg-white p-6 rounded-2xl shadow-premium text-center border-t-4 border-blue-600 sm:p-8">
             <div
-              class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 text-3xl font-bold">
+              class="w-12 h-12 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 text-2xl font-bold sm:w-16 sm:h-16 sm:mb-6 sm:text-3xl">
               2</div>
-            <h3 class="text-2xl font-bold mb-3">Free Audit & Proposal</h3>
-            <p class="text-slate-600">Detailed review + fixed-price proposal with timeline & scope.</p>
+            <h3 class="text-xl font-bold mb-2 sm:text-2xl sm:mb-3">Free Audit & Proposal</h3>
+            <p class="text-slate-600 text-base">Detailed review + fixed-price proposal with timeline & scope.</p>
           </div>
-          <div class="bg-white p-8 rounded-2xl shadow-premium text-center border-t-4 border-blue-600">
+          <div class="bg-white p-6 rounded-2xl shadow-premium text-center border-t-4 border-blue-600 sm:p-8">
             <div
-              class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 text-3xl font-bold">
+              class="w-12 h-12 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 text-2xl font-bold sm:w-16 sm:h-16 sm:mb-6 sm:text-3xl">
               3</div>
-            <h3 class="text-2xl font-bold mb-3">Build & Weekly Updates</h3>
-            <p class="text-slate-600">Agile development with demos every week — your feedback shapes it.</p>
+            <h3 class="text-xl font-bold mb-2 sm:text-2xl sm:mb-3">Build & Weekly Updates</h3>
+            <p class="text-slate-600 text-base">Agile development with demos every week — your feedback shapes it.</p>
           </div>
-          <div class="bg-white p-8 rounded-2xl shadow-premium text-center border-t-4 border-blue-600">
+          <div class="bg-white p-6 rounded-2xl shadow-premium text-center border-t-4 border-blue-600 sm:p-8">
             <div
-              class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 text-3xl font-bold">
+              class="w-12 h-12 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 text-2xl font-bold sm:w-16 sm:h-16 sm:mb-6 sm:text-3xl">
               4</div>
-            <h3 class="text-2xl font-bold mb-3">Launch + Ongoing Support</h3>
-            <p class="text-slate-600">Smooth handover, training, 30-day free support & lifetime help available.</p>
+            <h3 class="text-xl font-bold mb-2 sm:text-2xl sm:mb-3">Launch + Ongoing Support</h3>
+            <p class="text-slate-600 text-base">Smooth handover, training, 30-day free support & lifetime help
+              available.</p>
           </div>
         </div>
       </div>
 
-      <div class="text-center mt-12">
-        <p class="text-xl text-slate-700 mb-6">Unsure where to start? We guide you — no tech knowledge needed.</p>
+      <div class="text-center mt-8 sm:mt-12">
+        <p class="text-base text-slate-700 mb-4 sm:text-lg sm:mb-6 lg:text-xl">Unsure where to start? We guide you — no
+          tech knowledge needed.</p>
         <a href="contact.html"
-          class="inline-flex items-center gap-3 bg-blue-700 text-white px-10 py-5 rounded-xl font-bold text-lg premium-button">
+          class="inline-flex items-center gap-2 bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-base premium-button sm:gap-3 sm:px-10 sm:py-5 sm:text-lg">
           Start Your Project Today <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
@@ -424,145 +424,158 @@
   </section>
 
   <!-- Testimonials -->
-  <section id="testimonials" class="py-20 bg-slate-50 section-fade">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl sm:text-5xl font-bold text-center mb-16">What Our Clients Say</h2>
+  <section id="testimonials" class="py-12 bg-slate-50 section-fade sm:py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8 sm:text-4xl sm:mb-16 lg:text-5xl">What Our Clients Say</h2>
       <div class="swiper testimonialSwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="bg-white p-8 rounded-2xl shadow-premium text-center">
-              <div class="flex justify-center mb-4">
-                <i class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i>
+            <div class="bg-white p-6 rounded-2xl shadow-premium text-center sm:p-8">
+              <div class="flex justify-center mb-3 sm:mb-4">
+                <i class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i>
               </div>
-              <p class="italic text-slate-700 mb-6">"Completely transformed our travel operations – bookings & leads now
-                automated 24/7. Saved 15 hours/week, Best decision!"</p>
-              <p class="font-bold">Rahul Jain – Travel Agency Owner</p>
+              <p class="italic text-slate-700 mb-4 text-base sm:mb-6">
+                "Completely transformed our travel operations – bookings & leads now automated 24/7. Saved 15
+                hours/week, Best decision!"
+              </p>
+              <p class="font-bold text-base">Rahul Jain – Travel Agency Owner</p>
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="bg-white p-8 rounded-2xl shadow-premium text-center">
-              <div class="flex justify-center mb-4">
-                <i class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i>
+            <div class="bg-white p-6 rounded-2xl shadow-premium text-center sm:p-8">
+              <div class="flex justify-center mb-3 sm:mb-4">
+                <i class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i>
               </div>
-              <p class="italic text-slate-700 mb-6">"Their free audit doubled our conversions. Professional, fast, and
+              <p class="italic text-slate-700 mb-4 text-base sm:mb-6">"Their free audit doubled our conversions.
+                Professional, fast, and
                 value-driven team."</p>
-              <p class="font-bold">Priya Sharma – Business Owner, Indore</p>
+              <p class="font-bold text-base">Priya Sharma – Business Owner, Indore</p>
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="bg-white p-8 rounded-2xl shadow-premium text-center">
-              <div class="flex justify-center mb-4">
-                <i class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i>
+            <div class="bg-white p-6 rounded-2xl shadow-premium text-center sm:p-8">
+              <div class="flex justify-center mb-3 sm:mb-4">
+                <i class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i>
               </div>
-              <p class="italic text-slate-700 mb-6">"Custom CRM saved us 20+ hours weekly. Transparent and committed
+              <p class="italic text-slate-700 mb-4 text-base sm:mb-6">"Custom CRM saved us 20+ hours weekly. Transparent
+                and committed
                 support."</p>
-              <p class="font-bold">Amit Patel – Logistics, Ahmedabad</p>
+              <p class="font-bold text-base">Amit Patel – Logistics, Ahmedabad</p>
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="bg-white p-8 rounded-2xl shadow-premium text-center">
-              <div class="flex justify-center mb-4">
-                <i class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i>
+            <div class="bg-white p-6 rounded-2xl shadow-premium text-center sm:p-8">
+              <div class="flex justify-center mb-3 sm:mb-4">
+                <i class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i>
               </div>
-              <p class="italic text-slate-700 mb-6">"From idea to launch in weeks – exceeded expectations on quality and
+              <p class="italic text-slate-700 mb-4 text-base sm:mb-6">"From idea to launch in weeks – exceeded
+                expectations on quality and
                 timeline."</p>
-              <p class="font-bold">Neha Singh – Real Estate, Jabalpur</p>
+              <p class="font-bold text-base">Neha Singh – Real Estate, Jabalpur</p>
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="bg-white p-8 rounded-2xl shadow-premium text-center">
-              <div class="flex justify-center mb-4">
-                <i class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i>
+            <div class="bg-white p-6 rounded-2xl shadow-premium text-center sm:p-8">
+              <div class="flex justify-center mb-3 sm:mb-4">
+                <i class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i>
               </div>
-              <p class="italic text-slate-700 mb-6">"Flexible changes welcomed – now our site converts better than
+              <p class="italic text-slate-700 mb-4 text-base sm:mb-6">"Flexible changes welcomed – now our site converts
+                better than
                 ever."</p>
-              <p class="font-bold">Vikram Mehta – E-commerce, Indore</p>
+              <p class="font-bold text-base">Vikram Mehta – E-commerce, Indore</p>
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="bg-white p-8 rounded-2xl shadow-premium text-center">
-              <div class="flex justify-center mb-4">
-                <i class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i><i
-                  class="fa-solid fa-star text-yellow-400 text-2xl"></i>
+            <div class="bg-white p-6 rounded-2xl shadow-premium text-center sm:p-8">
+              <div class="flex justify-center mb-3 sm:mb-4">
+                <i class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i><i
+                  class="fa-solid fa-star text-yellow-400 text-xl sm:text-2xl"></i>
               </div>
-              <p class="italic text-slate-700 mb-6">"Trust built through delivery – ongoing support is exceptional."</p>
-              <p class="font-bold">Anjali Verma – Services, Ahmedabad</p>
+              <p class="italic text-slate-700 mb-4 text-base sm:mb-6">"Trust built through delivery – ongoing support is
+                exceptional."</p>
+              <p class="font-bold text-base">Anjali Verma – Services, Ahmedabad</p>
             </div>
           </div>
         </div>
-        <div class="swiper-pagination mt-10"></div>
+        <div class="swiper-pagination mt-6 sm:mt-10"></div>
       </div>
     </div>
   </section>
 
   <!-- Compact About Section – Trust & Process Focus -->
-  <section id="about" class="py-16 sm:py-20 bg-white section-fade">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 gradient-text">Why Businesses Trust Us</h2>
-        <p class="text-lg sm:text-xl text-slate-700 max-w-3xl mx-auto">
+  <section id="about" class="py-12 bg-white section-fade sm:py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-8 sm:mb-12">
+        <h2 class="text-3xl font-bold mb-2 gradient-text sm:text-4xl sm:mb-4 lg:text-5xl">Why Businesses Trust Us</h2>
+        <p class="text-base text-slate-700 max-w-3xl mx-auto sm:text-lg lg:text-xl">
           We deliver real results — not just promises.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
-        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-premium hover:shadow-xl transition-all">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-            <i class="fa-solid fa-rocket text-3xl text-blue-600"></i>
+      <div class="grid gap-6 md:grid-cols-3 md:gap-8 lg:gap-12">
+        <div
+          class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-premium transition-all duration-300 hover:shadow-xl hover:translate-y-[-8px] sm:p-8">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto sm:w-16 sm:h-16 sm:mb-6">
+            <i class="fa-solid fa-rocket text-2xl text-blue-600 sm:text-3xl"></i>
           </div>
-          <h3 class="text-xl font-bold mb-4 text-center gradient-text">Clear & Simple Process</h3>
-          <p class="text-slate-700 text-center">
+          <h3 class="text-lg font-bold mb-2 text-center gradient-text sm:text-xl sm:mb-4">Clear & Simple Process</h3>
+          <p class="text-slate-700 text-center text-base">
             Free call → fixed proposal → weekly updates → launch + 30-day free support
           </p>
         </div>
 
-        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-premium hover:shadow-xl transition-all">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-            <i class="fa-solid fa-shield-halved text-3xl text-blue-600"></i>
+        <div
+          class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-premium transition-all duration-300 hover:shadow-xl hover:translate-y-[-8px] sm:p-8">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto sm:w-16 sm:h-16 sm:mb-6">
+            <i class="fa-solid fa-shield-halved text-2xl text-blue-600 sm:text-3xl"></i>
           </div>
-          <h3 class="text-xl font-bold mb-4 text-center gradient-text">100% Transparent</h3>
-          <p class="text-slate-700 text-center">
+          <h3 class="text-lg font-bold mb-2 text-center gradient-text sm:text-xl sm:mb-4">100% Transparent</h3>
+          <p class="text-slate-700 text-center text-base">
             No hidden fees. Adaptable to your changing needs. Lifetime help available.
           </p>
         </div>
 
-        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-premium hover:shadow-xl transition-all">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-            <i class="fa-solid fa-chart-line text-3xl text-blue-600"></i>
+        <div
+          class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-premium transition-all duration-300 hover:shadow-xl hover:translate-y-[-8px] sm:p-8">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto sm:w-16 sm:h-16 sm:mb-6">
+            <i class="fa-solid fa-chart-line text-2xl text-blue-600 sm:text-3xl"></i>
           </div>
-          <h3 class="text-xl font-bold mb-4 text-center gradient-text">Proven Results</h3>
-          <p class="text-slate-700 text-center">
+          <h3 class="text-lg font-bold mb-2 text-center gradient-text sm:text-xl sm:mb-4">Proven Results</h3>
+          <p class="text-slate-700 text-center text-base">
             Saved hours daily. Boosted leads & conversions. Built long-term trust.
           </p>
         </div>
       </div>
 
-      <div class="text-center mt-12">
+      <div class="text-center mt-8 sm:mt-12">
         <a href="about.html"
-          class="inline-flex items-center gap-3 bg-blue-700 text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-blue-800 premium-button">
+          class="inline-flex items-center gap-2 bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-base hover:bg-blue-800 transition duration-300 hover:shadow-xl hover:translate-y-[-2px] sm:gap-3 sm:px-10 sm:py-5 sm:text-lg">
           Learn More About Us <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
@@ -571,189 +584,186 @@
 
 
   <!-- CTA + Support highlight -->
-  <section id="book" class="py-20 bg-gradient-to-r from-blue-700 to-blue-500 text-white section-fade">
+  <section id="book" class="py-12 bg-gradient-to-r from-blue-700 to-blue-500 text-white section-fade sm:py-20">
     <div class="max-w-5xl mx-auto px-4 text-center">
-      <h2 class="text-4xl sm:text-5xl font-bold mb-8">Ready to Automate Your Growth?</h2>
-      <p class="text-xl sm:text-2xl mb-6">Free consult, audit or advice — no pressure.</p>
-      <p class="text-lg mb-10">We provide dedicated support even after launch — you're never alone.</p>
+      <h2 class="text-3xl font-bold mb-4 sm:text-4xl sm:mb-8 lg:text-5xl">Ready to Automate Your Growth?</h2>
+      <p class="text-lg mb-4 sm:text-xl sm:mb-6 lg:text-2xl">Free consult, audit or advice — no pressure.</p>
+      <p class="text-base mb-6 sm:text-lg sm:mb-10">We provide dedicated support even after launch — you're never alone.
+      </p>
 
-      <p class="mt-8">Or email <a href="mailto:zeroflowtech@gmail.com"
+      <p class="mt-4 sm:mt-8">Or email <a href="mailto:zeroflowtech@gmail.com"
           class="underline hover:text-white">zeroflowtech@gmail.com</a></p>
     </div>
   </section>
 
-  <!-- New: Colorful, Trust-Building Investment CTA (replaces old contact form) -->
-  <section id="get-started"
-    class="py-16 sm:py-24 bg-gradient-to-br from-blue-50 via-white to-blue-50 relative overflow-hidden section-fade">
-    <div class="absolute inset-0 opacity-10 pointer-events-none">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(37,99,235,0.08)_0%,transparent_50%)]">
-      </div>
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(0,163,232,0.08)_0%,transparent_50%)]">
-      </div>
-    </div>
 
-    <div class="max-w-6xl mx-auto px-5 sm:px-8 relative z-10 text-center">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 gradient-text">
-        Stop Running Your Business — Start Leading It
-      </h2>
+  <!-- === GET STARTED SECTION – Cleaner & more professional version === -->
+  <section id="get-started" class="py-10 bg-white section-fade sm:py-16 lg:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight gradient-text mb-4 sm:mb-6">
+          Stop Running Your Business.<br class="sm:hidden"> Start Leading It.
+        </h2>
 
-      <p class="text-xl sm:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed mb-12">
-        Right now you're managing everything manually — leads, bookings, follow-ups, invoices.<br
-          class="hidden sm:block">
-        That keeps you small. Adding the <strong>right system</strong> now gives you:
-      </p>
+        <p class="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-12">
+          Right now you're handling leads, bookings, follow-ups and invoices manually.<br class="hidden sm:inline">
+          That keeps you small. The <strong>right system</strong> changes everything:
+        </p>
 
-      <div class="grid md:grid-cols-3 gap-8 lg:gap-10 mb-12">
-        <div
-          class="invest-card bg-white p-8 rounded-3xl shadow-premium border border-blue-100 hover:shadow-2xl transition-all duration-300">
+        <!-- Benefits – 1-column mobile, 3-column desktop -->
+        <div class="grid gap-5 sm:gap-6 md:grid-cols-3 md:gap-8 mb-10 sm:mb-14">
           <div
-            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center">
-            <i class="fa-solid fa-clock text-4xl text-blue-700"></i>
+            class="bg-gradient-to-b from-blue-50 to-white p-6 rounded-2xl border border-blue-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div class="w-14 h-14 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+              <i class="fa-solid fa-clock text-2xl text-blue-700"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-semibold text-slate-800 mb-2">
+              10–30+ Hours Back Every Week
+            </h3>
+            <p class="text-sm sm:text-base text-slate-600">
+              Automation removes repetitive work — you get time to grow.
+            </p>
           </div>
-          <h3 class="text-2xl font-bold mb-4">10–30+ Hours Back Every Week</h3>
-          <p class="text-slate-700 text-lg">
-            Automation handles the boring stuff — you get time to think big.
-          </p>
+
+          <div
+            class="bg-gradient-to-b from-green-50 to-white p-6 rounded-2xl border border-green-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div class="w-14 h-14 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+              <i class="fa-solid fa-chart-line text-2xl text-green-700"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-semibold text-slate-800 mb-2">
+              Real Revenue Growth
+            </h3>
+            <p class="text-sm sm:text-base text-slate-600">
+              Never miss leads again. Faster follow-ups = more bookings & sales.
+            </p>
+          </div>
+
+          <div
+            class="bg-gradient-to-b from-purple-50 to-white p-6 rounded-2xl border border-purple-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div class="w-14 h-14 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
+              <i class="fa-solid fa-hand-holding-dollar text-2xl text-purple-700"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-semibold text-slate-800 mb-2">
+              Smart Investment
+            </h3>
+            <p class="text-sm sm:text-base text-slate-600">
+              Pays for itself quickly — like hiring a 24/7 employee who never sleeps.
+            </p>
+          </div>
         </div>
 
-        <div
-          class="invest-card bg-white p-8 rounded-3xl shadow-premium border border-blue-100 hover:shadow-2xl transition-all duration-300">
-          <div
-            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center">
-            <i class="fa-solid fa-chart-line text-4xl text-green-700"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-4">More Revenue & Market Lead</h3>
-          <p class="text-slate-700 text-lg">
-            Never miss a lead again. Faster follow-ups = more sales & stronger position.
-          </p>
+        <!-- Urgency paragraph -->
+        <p class="text-base sm:text-lg font-medium text-slate-800 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed">
+          Waiting for the “perfect time” keeps you stuck.<br class="hidden sm:inline">
+          The best time to start is <strong>right now</strong> — while you still have energy to grow.
+        </p>
+
+        <!-- CTAs – stacked on mobile, side-by-side on larger screens -->
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+          <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
+            target="_blank"
+            class="inline-flex items-center justify-center gap-2.5 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold text-base sm:text-lg shadow-md min-w-[260px] sm:min-w-[280px] transition-all duration-200">
+            <i class="fa-brands fa-whatsapp text-xl"></i>
+            Chat on WhatsApp Now
+          </a>
+
+          <a href="contact.html"
+            class="inline-flex items-center justify-center gap-2.5 border-2 border-blue-600 text-blue-700 hover:bg-blue-50 px-8 py-4 rounded-xl font-semibold text-base sm:text-lg min-w-[260px] sm:min-w-[280px] transition-all duration-200">
+            <i class="fa-solid fa-envelope text-xl"></i>
+            Contact us
+          </a>
         </div>
 
-        <div
-          class="invest-card bg-white p-8 rounded-3xl shadow-premium border border-blue-100 hover:shadow-2xl transition-all duration-300">
-          <div
-            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center">
-            <i class="fa-solid fa-hand-holding-dollar text-4xl text-purple-700"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-4">Smart Investment — Not Cost</h3>
-          <p class="text-slate-700 text-lg">
-            Think of it like hiring your best employee who never sleeps, never asks for leave, and pays for itself in
-            weeks.
-          </p>
-        </div>
+        <p class="mt-6 text-sm sm:text-base text-slate-500">
+          No tech knowledge needed. We guide you step by step — like a trusted partner.
+        </p>
       </div>
-
-      <p class="text-xl sm:text-2xl font-semibold text-slate-800 mb-10">
-        Waiting for the "perfect time" to add systems = staying stuck.<br>
-        The right time is <strong>now</strong> — when you still have energy to grow.
-      </p>
-
-      <div class="flex flex-col sm:flex-row justify-center gap-6 flex-wrap">
-        <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
-          target="_blank"
-          class="inline-flex items-center justify-center gap-3 bg-green-600 text-white px-10 py-6 rounded-2xl font-bold text-xl hover:bg-green-700 shadow-2xl min-w-[280px]">
-          Chat on WhatsApp Now <i class="fa-brands fa-whatsapp text-2xl"></i>
-        </a>
-        <a href="contact.html"
-          class="inline-flex items-center justify-center gap-3 border-2 border-blue-600 text-blue-700 px-10 py-6 rounded-2xl font-bold text-xl hover:bg-blue-50 transition min-w-[280px]">
-          Contact us <i class="fa-solid fa-envelope"></i>
-        </a>
-      </div>
-
-      <p class="mt-10 text-lg text-slate-600 max-w-3xl mx-auto">
-        No tech knowledge needed. We guide you step-by-step — like a trusted partner, not just a vendor.
-      </p>
     </div>
   </section>
 
-  <!-- Enhanced FAQ Teaser – One Key Question + Strong CTA -->
-  <section id="faq"
-    class="py-16 sm:py-24 bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden section-fade">
-    <div class="max-w-5xl mx-auto px-5 sm:px-8 text-center">
-      <!-- Headline with subtle entrance animation -->
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-10 gradient-text animate-pulse-slow">
-        The One Question Every Business Owner Asks Us
+
+  <!-- FAQ TEASER – Restructured without small cards, integrated benefits as icon list (different way, similar to onboarding style) -->
+  <section id="faq" class="py-10 bg-gradient-to-b from-slate-50 to-white section-fade sm:py-16 lg:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl font-bold gradient-text leading-tight mb-4 sm:text-3xl sm:mb-6 lg:text-4xl lg:mb-8">
+        The #1 Question Business Owners Ask Us
       </h2>
 
-      <!-- Main Value Card -->
-      <div
-        class="bg-white p-8 sm:p-12 rounded-3xl shadow-premium border border-slate-100 hover:shadow-2xl transition-all duration-500 max-w-4xl mx-auto">
-        <h3 class="text-2xl sm:text-3xl font-bold mb-8 text-slate-800 leading-tight">
-          “Will this actually save me time and make me more money — or is it just another expense?”
-        </h3>
+      <div class="relative bg-white rounded-3xl shadow-premium border border-slate-100 p-5 sm:p-8 lg:p-10 max-w-4xl mx-auto mb-6 sm:mb-10 lg:mb-12">
+        <!-- Creative element: Subtle question mark icon -->
+        <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-white rounded-full p-3 shadow-md sm:p-4 lg:p-5">
+          <i class="fa-solid fa-question text-2xl text-blue-600 sm:text-3xl lg:text-4xl"></i>
+        </div>
 
-        <p class="text-lg sm:text-xl text-slate-700 leading-relaxed mb-10">
-          We don’t sell tools — we sell <b>freedom</b> and <b>growth</b>.
+        <blockquote class="text-lg font-bold text-slate-800 leading-tight mb-4 sm:text-xl sm:mb-6 lg:text-2.5xl lg:mb-8">
+          “Will this actually save time and make more money — or is it just another expense?”
+        </blockquote>
+
+        <p class="text-sm text-slate-700 font-medium mb-5 sm:text-base sm:mb-7 lg:text-lg lg:mb-8">
+          We don’t sell tools. We deliver <strong>time freedom</strong> + <strong>real growth</strong>.
         </p>
 
-        <!-- Animated Benefit List -->
-        <ul class="space-y-6 text-left max-w-3xl mx-auto">
-          <li class="flex items-start gap-5 animate-fade-in" style="animation-delay: 0.1s;">
-            <div
-              class="w-12 h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
-              <i class="fa-solid fa-clock-rotate-left text-2xl text-green-700"></i>
+        <!-- Benefits as integrated icon list (different way, no cards; stacked on mobile like onboarding steps) -->
+        <ul class="space-y-4 max-w-3xl mx-auto text-left sm:space-y-6">
+          <li class="flex items-start gap-3 sm:gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-green-100 rounded-full flex items-center justify-center sm:w-12 sm:h-12">
+              <i class="fa-solid fa-clock-rotate-left text-xl text-green-600 sm:text-2xl"></i>
             </div>
             <div>
-              <p class="text-xl font-semibold text-slate-800">10–30+ Hours Freed Up Weekly</p>
-              <p class="text-slate-600">No more chasing leads, manual invoicing, or repetitive admin — automation does
-                it 24/7.</p>
+              <p class="font-semibold text-sm sm:text-base lg:text-lg">10–30+ hours back weekly</p>
+              <p class="text-xs text-slate-600 sm:text-sm lg:text-base">No more manual follow-ups & admin work</p>
             </div>
           </li>
-
-          <li class="flex items-start gap-5 animate-fade-in" style="animation-delay: 0.3s;">
-            <div
-              class="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
-              <i class="fa-solid fa-chart-line text-2xl text-blue-700"></i>
+          <li class="flex items-start gap-3 sm:gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-blue-100 rounded-full flex items-center justify-center sm:w-12 sm:h-12">
+              <i class="fa-solid fa-chart-line text-xl text-blue-600 sm:text-2xl"></i>
             </div>
             <div>
-              <p class="text-xl font-semibold text-slate-800">Real Revenue Growth in Weeks</p>
-              <p class="text-slate-600">Faster responses = more bookings/sales. Clients often see ROI in 4–12 weeks —
-                not months.</p>
+              <p class="font-semibold text-sm sm:text-base lg:text-lg">Revenue growth in weeks</p>
+              <p class="text-xs text-slate-600 sm:text-sm lg:text-base">Faster replies = more bookings & sales</p>
             </div>
           </li>
-
-          <li class="flex items-start gap-5 animate-fade-in" style="animation-delay: 0.5s;">
-            <div
-              class="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
-              <i class="fa-solid fa-hand-holding-dollar text-2xl text-purple-700"></i>
+          <li class="flex items-start gap-3 sm:gap-4">
+            <div class="w-10 h-10 flex-shrink-0 bg-purple-100 rounded-full flex items-center justify-center sm:w-12 sm:h-12">
+              <i class="fa-solid fa-hand-holding-dollar text-xl text-purple-600 sm:text-2xl"></i>
             </div>
             <div>
-              <p class="text-xl font-semibold text-slate-800">Smart Investment, Not a Cost</p>
-              <p class="text-slate-600">Think of it like hiring your best employee who works 24/7, never takes leave,
-                and pays for itself fast.</p>
+              <p class="font-semibold text-sm sm:text-base lg:text-lg">Smart investment</p>
+              <p class="text-xs text-slate-600 sm:text-sm lg:text-base">Pays for itself fast — like a perfect 24/7 assistant</p>
             </div>
           </li>
         </ul>
       </div>
 
-      <!-- Final CTA -->
-      <div class="mt-16">
-        <p class="text-xl sm:text-2xl text-slate-700 mb-8 max-w-3xl mx-auto">
-          Still wondering about pricing, timeline, support, or how we handle changes? We’ve answered everything clearly.
+      <div>
+        <p class="text-sm text-slate-600 mb-4 max-w-3xl mx-auto sm:text-base sm:mb-5 lg:text-lg lg:mb-6">
+          Curious about pricing, timeline or how we handle changes? Everything is clearly explained — no surprises.
         </p>
 
         <a href="faq.html"
-          class="inline-flex items-center gap-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-6 rounded-2xl font-bold text-xl hover:from-blue-700 hover:to-blue-800 premium-button shadow-xl transition-all">
-          Read All FAQs Now <i class="fa-solid fa-arrow-right text-2xl"></i>
+          class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-blue-700 transition duration-300 hover:shadow-md sm:gap-2.5 sm:px-7 sm:py-3.5 sm:text-base lg:px-8 lg:py-4 lg:text-lg">
+          See Full FAQs <i class="fa-solid fa-arrow-right text-sm sm:text-base lg:text-lg"></i>
         </a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-slate-900 text-slate-300 py-12">
+  <footer class="bg-slate-900 text-slate-300 py-8 sm:py-12">
     <div class="max-w-7xl mx-auto px-4 text-center">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-        <div class="flex items-center gap-3">
-          <img src="./assets/logos/logo.png" alt="Logo" class="w-10 h-10" />
-          <span class="text-2xl font-bold gradient-text">ZeroFlowTech</span>
+      <div class="flex flex-col gap-6 md:flex-row md:justify-between md:items-center md:gap-8">
+        <div class="flex items-center justify-center gap-2 sm:gap-3">
+          <img src="./assets/logos/logo.png" alt="Logo" class="w-8 h-8 sm:w-10 sm:h-10" />
+          <span class="text-xl font-bold gradient-text sm:text-2xl">ZeroFlowTech</span>
         </div>
-        <div class="flex flex-col sm:flex-row gap-6">
+        <div class="flex flex-col gap-4 sm:flex-row sm:gap-6">
           <a href="contact.html" class="hover:text-white">Contact</a>
           <a href="faq.html" class="hover:text-white">FAQ</a>
           <a href="mailto:zeroflowtech@gmail.com" class="hover:text-white">zeroflowtech@gmail.com</a>
         </div>
       </div>
-      <p class="mt-8 text-sm">© 2026 ZeroFlowTech – Building trust, one solution at a time. Ongoing support included.
+      <p class="mt-6 text-sm sm:mt-8">© 2026 ZeroFlowTech – Building trust, one solution at a time. Ongoing support
+        included.
       </p>
     </div>
   </footer>
@@ -761,12 +771,16 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     // Swipers
-    new Swiper('.projectSwiper', { slidesPerView: 1, spaceBetween: 24, loop: true, pagination: { el: '.swiper-pagination', clickable: true }, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } } });
-    new Swiper('.testimonialSwiper', { slidesPerView: 1, spaceBetween: 24, loop: true, pagination: { el: '.swiper-pagination', clickable: true }, breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } } });
-
-    // Mobile menu
-    document.getElementById('menu-btn')?.addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
+    new Swiper('.projectSwiper', { slidesPerView: 1, spaceBetween: 16, loop: true, pagination: { el: '.swiper-pagination', clickable: true }, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, breakpoints: { 640: { slidesPerView: 2, spaceBetween: 24 }, 1024: { slidesPerView: 3 } } });
+    new Swiper('.testimonialSwiper', { slidesPerView: 1, spaceBetween: 16, loop: true, pagination: { el: '.swiper-pagination', clickable: true }, breakpoints: { 640: { slidesPerView: 2, spaceBetween: 24 }, 1024: { slidesPerView: 3 } } });
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    closeBtn?.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
     });
 
     // Fade in sections
