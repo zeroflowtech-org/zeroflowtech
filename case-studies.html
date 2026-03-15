@@ -10,7 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -18,8 +18,16 @@
       theme: {
         extend: {
           fontFamily: { sans: ['Inter', 'sans-serif'] },
-          colors: { primary: '#2563eb', accent: '#00A3E8' },
-          boxShadow: { 'premium': '0 10px 30px -10px rgba(37,99,235,0.25)' }
+          colors: {
+            primary: '#4f46e5',
+            secondary: '#7c3aed',
+            accent: '#06b6d4',
+          },
+          boxShadow: {
+            'glow': '0 0 40px rgba(79,70,229,0.2)',
+            'card': '0 10px 40px -10px rgba(0,0,0,0.1)',
+            'button': '0 8px 30px rgba(79,70,229,0.4)',
+          }
         }
       }
     }
@@ -29,146 +37,128 @@
 
   <style>
     .gradient-hero {
-      background: linear-gradient(135deg, #f0f9ff, #e0f2fe, #dbeafe);
+      background: #050d1a;
+      background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(79,70,229,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(6,182,212,0.08) 0%, transparent 55%);
     }
-
     .gradient-text {
-      background: linear-gradient(90deg, #1e40af, #00A3E8);
+      background: linear-gradient(90deg, #4f46e5, #06b6d4);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-
-    .premium-button {
-      transition: all 0.4s ease;
-      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
+    .btn-primary {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+      padding: 0.875rem 2rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
-
-    .premium-button:hover {
-      box-shadow: 0 12px 35px rgba(37, 99, 235, 0.4);
-      transform: translateY(-3px);
+    .btn-primary:hover {
+      box-shadow: 0 8px 30px rgba(79,70,229,0.45);
+      transform: translateY(-2px);
     }
-
     .section-fade {
       opacity: 0;
-      transform: translateY(40px);
-      transition: all 1s ease-out;
+      transform: translateY(30px);
+      transition: all 0.9s ease-out;
     }
-
     .section-fade.visible {
       opacity: 1;
       transform: translateY(0);
     }
-
     .case-card {
-      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: all 0.4s ease;
     }
-
     .case-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.35);
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgba(79,70,229,0.2);
     }
-
     .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       opacity: 0;
       transform: translateY(20px);
       transition: all 1.2s ease-out;
     }
-
     .stat-visible {
       opacity: 1 !important;
       transform: translateY(0) !important;
     }
-
-    .quote-bubble {
-      position: relative;
-    }
-
-    .quote-bubble::before {
-      content: '“';
-      position: absolute;
-      top: -30px;
-      left: -10px;
-      font-size: 8rem;
-      color: #e0f2fe;
-      opacity: 0.3;
-      line-height: 1;
-      z-index: -1;
-    }
-
     @media (max-width: 640px) {
-      h1 {
-        font-size: 2.5rem !important;
-        line-height: 1.1;
-      }
-
-      h2 {
-        font-size: 2rem !important;
-      }
-
-      .text-xl {
-        font-size: 1.125rem !important;
-      }
+      h1 { font-size: 2.5rem !important; line-height: 1.1; }
+      h2 { font-size: 2rem !important; }
     }
   </style>
 </head>
 
 <body class="bg-white text-slate-900 antialiased">
 
-  <!-- Top Banner -->
-  <div class="bg-blue-900 text-white text-center py-3 text-sm font-medium">
-    Limited: Only 3 project slots left this month – Secure yours now
+  <!-- Announcement Bar -->
+  <div id="announcement-bar" class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-center py-2.5 text-sm font-medium relative">
+    🚀 Travel CRM for Indian Travel Agencies — Now Live. <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="underline font-bold ml-1">Book a Free Demo →</a>
+    <button onclick="document.getElementById('announcement-bar').remove()" class="absolute right-4 top-1/2 -translate-y-1/2 opacity-70 hover:opacity-100 transition text-lg">×</button>
   </div>
 
   <!-- Navigation -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16 sm:h-20">
-        <a href="index.html" class="flex items-center gap-3">
-          <img src="./assets/logos/logo.png" alt="ZeroFlowTech" class="w-10 h-10 sm:w-12 sm:h-12" />
-          <span class="font-bold text-xl sm:text-2xl gradient-text">ZeroFlowTech</span>
-        </a>
-        <div class="hidden md:flex items-center gap-10">
-          <nav class="flex gap-8 font-medium">
-            <a href="index.html" class="hover:text-blue-700">Home</a>
-            <a href="services.html" class="hover:text-blue-700">Services</a>
-            <a href="case-studies.html" class="text-blue-700 font-semibold">Case Studies</a>
-            <a href="about.html" class="hover:text-blue-700">About</a>
-            <a href="contact.html" class="hover:text-blue-700">Contact</a>
-            <a href="faq.html" class="hover:text-blue-700">FAQ</a>
-          </nav>
-          <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
-            target="_blank"
-            class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
-            Query ?
-          </a>
-        </div>
-        <div class="md:hidden flex items-center gap-3">
-          <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
-            target="_blank"
-            class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
-            Query ?
-          </a>
-          <button id="menu-btn" class="text-2xl"><i class="fa-solid fa-bars"></i></button>
-        </div>
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+      <a href="index.html" class="text-xl font-black">
+        ZeroFlow<span class="bg-gradient-to-r from-indigo-600 to-cyan-500 bg-clip-text text-transparent">Tech</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">Home</a>
+        <a href="travel-crm.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">Product</a>
+        <a href="services.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">Services</a>
+        <a href="case-studies.html" class="text-indigo-600 font-semibold">Case Studies</a>
+        <a href="about.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">About</a>
+        <a href="contact.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">Contact</a>
       </div>
-      <div id="mobile-menu" class="hidden md:hidden bg-white border-t py-6 px-6 space-y-5 font-medium">
-        <a href="index.html" class="block hover:text-blue-700">Home</a>
-        <a href="services.html" class="block hover:text-blue-700">Services</a>
-        <a href="case-studies.html" class="block text-blue-700 font-semibold">Case Studies</a>
-        <a href="about.html" class="block hover:text-blue-700">About</a>
-        <a href="contact.html" class="block hover:text-blue-700">Contact</a>
-        <a href="faq.html" class="clock hover:text-blue-700">FAQ</a>
+      <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM"
+         target="_blank"
+         class="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:shadow-[0_8px_20px_rgba(79,70,229,0.4)] hover:scale-105 transition-all duration-300">
+        Book Demo <i class="fa-solid fa-arrow-right text-xs"></i>
+      </a>
+      <div class="md:hidden flex items-center gap-3">
+        <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM"
+           target="_blank"
+           class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white px-4 py-2 rounded-lg font-semibold text-sm">
+          Demo
+        </a>
+        <button id="menu-btn" class="text-2xl text-slate-700"><i class="fa-solid fa-bars"></i></button>
       </div>
     </div>
-  </header>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 py-6 px-6 space-y-5 font-medium">
+      <a href="index.html" class="block text-slate-700 hover:text-indigo-600">Home</a>
+      <a href="travel-crm.html" class="block text-slate-700 hover:text-indigo-600">Product</a>
+      <a href="services.html" class="block text-slate-700 hover:text-indigo-600">Services</a>
+      <a href="case-studies.html" class="block text-indigo-600 font-semibold">Case Studies</a>
+      <a href="about.html" class="block text-slate-700 hover:text-indigo-600">About</a>
+      <a href="contact.html" class="block text-slate-700 hover:text-indigo-600">Contact</a>
+      <a href="faq.html" class="block text-slate-700 hover:text-indigo-600">FAQ</a>
+    </div>
+  </nav>
 
   <!-- Hero -->
-  <section class="gradient-hero py-20 sm:py-28 lg:py-32 relative overflow-hidden section-fade">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-        Real Results. <span class="gradient-text">Real Businesses.</span>
+  <section class="gradient-hero py-20 sm:py-28 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-cyan-300 px-4 py-2 rounded-full text-sm font-medium mb-8 backdrop-blur-sm">
+        <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
+        Proof in Numbers
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+        Real Results. <span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Real Businesses.</span>
       </h1>
-      <p class="text-xl sm:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed">
+      <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
         See exactly how we turned daily chaos into automated growth — with numbers, quotes, and live links.
       </p>
     </div>
@@ -179,67 +169,72 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 lg:space-y-32">
 
       <!-- Case 1: DejaVu Tours -->
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="grid lg:grid-cols-2 gap-12 items-center case-card">
         <div>
-          <div
-            class="inline-flex items-center gap-3 bg-blue-100 text-blue-700 px-5 py-2 rounded-full text-sm font-semibold mb-6">
+          <div class="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-indigo-100">
             <i class="fa-solid fa-plane-departure"></i> Travel Industry
           </div>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 gradient-text">DejaVu Tours – From Chaos to 24/7
-            Automation</h2>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6 leading-tight">DejaVu Tours – <span class="gradient-text">From Chaos to 24/7 Automation</span></h2>
 
           <div class="mb-8">
-            <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
+            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800">
               <i class="fa-solid fa-triangle-exclamation text-amber-500"></i> The Challenge
             </h3>
-            <ul class="space-y-3 text-slate-700">
-              <li>• 10+ hours/day on manual bookings & coordination</li>
-              <li>• Leads lost via WhatsApp & phone</li>
-              <li>• No centralized system or real-time alerts</li>
-              <li>• Expensive foreign CRMs didn't fit</li>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> 10+ hours/day on manual bookings & coordination</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> Leads lost via WhatsApp & phone</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> No centralized system or real-time alerts</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> Expensive foreign CRMs didn't fit</li>
             </ul>
           </div>
 
           <div class="mb-8">
-            <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
-              <i class="fa-solid fa-rocket text-blue-600"></i> Our Solution
+            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800">
+              <i class="fa-solid fa-rocket text-indigo-600"></i> Our Solution
             </h3>
-            <ul class="space-y-3 text-slate-700">
-              <li>• Full custom website + CRM from scratch</li>
-              <li>• Automated booking, invoice & itinerary system</li>
-              <li>• Real-time alerts to admin & guests</li>
-              <li>• WhatsApp & email integration</li>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Full custom website + CRM from scratch</li>
+              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Automated booking, invoice & itinerary system</li>
+              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Real-time alerts to admin & guests</li>
+              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> WhatsApp & email integration</li>
             </ul>
           </div>
 
-          <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-3xl border border-green-100 mb-8">
-            <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-              <i class="fa-solid fa-chart-line text-green-600"></i> Results
+          <div class="bg-gradient-to-br from-emerald-50 to-white p-8 rounded-2xl border border-emerald-100 mb-8">
+            <h3 class="text-lg font-bold mb-6 flex items-center gap-2 text-slate-800">
+              <i class="fa-solid fa-chart-line text-emerald-600"></i> Results
             </h3>
-            <div class="grid sm:grid-cols-3 gap-6 text-center">
-              <div class="stat-number" data-target="300">300</div>
-              <div class="stat-number" data-target="28">28</div>
-              <div class="stat-number" data-target="0">0</div>
-              <div class="text-sm text-slate-600">Bookings Growth</div>
-              <div class="text-sm text-slate-600">Hours Saved Weekly</div>
-              <div class="text-sm text-slate-600">Missed Opportunities</div>
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <div>
+                <div class="stat-number" data-target="300" data-suffix="%">0%</div>
+                <div class="text-sm text-slate-600 mt-1">Bookings Growth</div>
+              </div>
+              <div>
+                <div class="stat-number" data-target="28" data-suffix="">0</div>
+                <div class="text-sm text-slate-600 mt-1">Hours Saved Weekly</div>
+              </div>
+              <div>
+                <div class="stat-number" data-target="0" data-suffix="">0</div>
+                <div class="text-sm text-slate-600 mt-1">Missed Opportunities</div>
+              </div>
             </div>
           </div>
 
-          <blockquote class="italic text-slate-700 mb-8 border-l-4 border-blue-500 pl-6 quote-bubble">
-            “ZeroFlowTech turned our agency into a machine — we now focus on growth, not operations.”
+          <blockquote class="italic text-slate-600 mb-8 border-l-4 border-indigo-500 pl-6 py-1">
+            "ZeroFlowTech turned our agency into a machine — we now focus on growth, not operations."
           </blockquote>
 
-          <p class="font-semibold mb-2">Tech Stack:</p>
-          <p class="text-slate-600 mb-8">Next.js • Node.js • MongoDB • WhatsApp API • Email Automation</p>
+          <div class="mb-6">
+            <span class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Tech Stack</span>
+            <p class="text-slate-600 mt-1">Next.js · Node.js · MongoDB · WhatsApp API · Email Automation</p>
+          </div>
 
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="https://www.dejavutours.in" target="_blank"
-              class="flex-1 bg-blue-700 text-white py-4 rounded-xl font-semibold text-center hover:bg-blue-800 premium-button">
-              View Live Site <i class="fa-solid fa-external-link-alt ml-2"></i>
+            <a href="https://www.dejavutours.in" target="_blank" class="btn-primary flex-1 justify-center">
+              View Live Site <i class="fa-solid fa-external-link-alt text-xs"></i>
             </a>
             <a href="contact.html"
-              class="flex-1 border-2 border-blue-700 text-blue-700 py-4 rounded-xl font-semibold text-center hover:bg-blue-50">
+              class="flex-1 border-2 border-indigo-600 text-indigo-600 py-3.5 rounded-xl font-semibold text-center hover:bg-indigo-600 hover:text-white transition-all duration-300">
               Want Similar Results?
             </a>
           </div>
@@ -247,144 +242,152 @@
 
         <div>
           <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
-            alt="Travel Automation" class="rounded-3xl shadow-2xl w-full" loading="lazy" />
+            alt="Travel Automation" class="rounded-2xl shadow-2xl w-full" loading="lazy" />
         </div>
       </div>
 
       <!-- Case 2: Neelant Group -->
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="grid lg:grid-cols-2 gap-12 items-center case-card">
         <div class="lg:order-2">
-          <div
-            class="inline-flex items-center gap-3 bg-blue-100 text-blue-700 px-5 py-2 rounded-full text-sm font-semibold mb-6">
+          <div class="inline-flex items-center gap-2 bg-violet-50 text-violet-700 px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-violet-100">
             <i class="fa-solid fa-building"></i> Real Estate & Construction
           </div>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 gradient-text">Neelant Group – Three Websites, One
-            Strong Brand</h2>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6 leading-tight">Neelant Group – <span class="gradient-text">Three Websites, One Strong Brand</span></h2>
 
           <div class="mb-8">
-            <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
+            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800">
               <i class="fa-solid fa-triangle-exclamation text-amber-500"></i> The Challenge
             </h3>
-            <ul class="space-y-3 text-slate-700">
-              <li>• Three businesses with scattered online presence</li>
-              <li>• Constant vision/theme changes</li>
-              <li>• Needed blogs, projects & lead capture</li>
-              <li>• No system to support flexibility</li>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> Three businesses with scattered online presence</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> Constant vision/theme changes</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> Needed blogs, projects & lead capture</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> No system to support flexibility</li>
             </ul>
           </div>
 
           <div class="mb-8">
-            <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
-              <i class="fa-solid fa-rocket text-blue-600"></i> Our Solution
+            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800">
+              <i class="fa-solid fa-rocket text-indigo-600"></i> Our Solution
             </h3>
-            <ul class="space-y-3 text-slate-700">
-              <li>• Three custom dynamic websites</li>
-              <li>• Flexible blog & project showcase system</li>
-              <li>• Market research + vision guidance</li>
-              <li>• Lead generation & modern design</li>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Three custom dynamic websites</li>
+              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Flexible blog & project showcase system</li>
+              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Market research + vision guidance</li>
+              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Lead generation & modern design</li>
             </ul>
           </div>
 
-          <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-3xl border border-green-100 mb-8">
-            <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-              <i class="fa-solid fa-chart-line text-green-600"></i> Results
+          <div class="bg-gradient-to-br from-emerald-50 to-white p-8 rounded-2xl border border-emerald-100 mb-8">
+            <h3 class="text-lg font-bold mb-6 flex items-center gap-2 text-slate-800">
+              <i class="fa-solid fa-chart-line text-emerald-600"></i> Results
             </h3>
-            <div class="grid sm:grid-cols-3 gap-6 text-center">
-              <div class="stat-number" data-target="180">180</div>
-              <div class="stat-number" data-target="3">3</div>
-              <div class="stat-number" data-target="100">100</div>
-              <div class="text-sm text-slate-600">% Lead Growth</div>
-              <div class="text-sm text-slate-600">Unified Sites</div>
-              <div class="text-sm text-slate-600">% Brand Clarity</div>
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <div>
+                <div class="stat-number" data-target="180" data-suffix="%">0%</div>
+                <div class="text-sm text-slate-600 mt-1">Lead Growth</div>
+              </div>
+              <div>
+                <div class="stat-number" data-target="3" data-suffix="">0</div>
+                <div class="text-sm text-slate-600 mt-1">Unified Sites</div>
+              </div>
+              <div>
+                <div class="stat-number" data-target="100" data-suffix="%">0%</div>
+                <div class="text-sm text-slate-600 mt-1">Brand Clarity</div>
+              </div>
             </div>
           </div>
 
-          <blockquote class="italic text-slate-700 mb-8 border-l-4 border-blue-500 pl-6 quote-bubble">
-            “They gave us clarity and a strong online identity across all businesses.”
+          <blockquote class="italic text-slate-600 mb-8 border-l-4 border-indigo-500 pl-6 py-1">
+            "They gave us clarity and a strong online identity across all businesses."
           </blockquote>
 
-          <p class="font-semibold mb-2">Tech Stack:</p>
-          <p class="text-slate-600 mb-8">Next.js • Node.js • MySQL • Custom CMS</p>
+          <div class="mb-6">
+            <span class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Tech Stack</span>
+            <p class="text-slate-600 mt-1">Next.js · Node.js · MySQL · Custom CMS</p>
+          </div>
 
-          <div class="flex flex-wrap gap-4">
-            <a href="https://neelantgroup.com" target="_blank"
-              class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
-              Group Site
+          <div class="flex flex-wrap gap-3">
+            <a href="https://neelantgroup.com" target="_blank" class="btn-primary">
+              Group Site <i class="fa-solid fa-external-link-alt text-xs"></i>
             </a>
-            <a href="https://neelantproperties.com" target="_blank"
-              class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
-              Properties
+            <a href="https://neelantproperties.com" target="_blank" class="btn-primary">
+              Properties <i class="fa-solid fa-external-link-alt text-xs"></i>
             </a>
-            <a href="https://neelantconstruction.com" target="_blank"
-              class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
-              Construction
+            <a href="https://neelantconstruction.com" target="_blank" class="btn-primary">
+              Construction <i class="fa-solid fa-external-link-alt text-xs"></i>
             </a>
           </div>
         </div>
 
         <div class="lg:order-1">
           <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80"
-            alt="Real Estate Success" class="rounded-3xl shadow-2xl w-full" loading="lazy" />
+            alt="Real Estate Success" class="rounded-2xl shadow-2xl w-full" loading="lazy" />
         </div>
       </div>
 
-      <!-- Case 3: Logistics CRM (Example) -->
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Case 3: Swift Logistics -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center case-card">
         <div>
-          <div
-            class="inline-flex items-center gap-3 bg-blue-100 text-blue-700 px-5 py-2 rounded-full text-sm font-semibold mb-6">
+          <div class="inline-flex items-center gap-2 bg-cyan-50 text-cyan-700 px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-cyan-100">
             <i class="fa-solid fa-truck"></i> Logistics
           </div>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 gradient-text">Swift Logistics – Real-Time
-            Inventory & Order Dashboard</h2>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6 leading-tight">Swift Logistics – <span class="gradient-text">Real-Time Inventory & Order Dashboard</span></h2>
 
           <div class="mb-8">
-            <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
+            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800">
               <i class="fa-solid fa-triangle-exclamation text-amber-500"></i> The Challenge
             </h3>
-            <ul class="space-y-3 text-slate-700">
-              <li>• Manual stock & order tracking via Excel</li>
-              <li>• Delays in updates & errors</li>
-              <li>• No real-time visibility for team</li>
-              <li>• Lost revenue from stockouts</li>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> Manual stock & order tracking via Excel</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> Delays in updates & errors</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> No real-time visibility for team</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> Lost revenue from stockouts</li>
             </ul>
           </div>
 
           <div class="mb-8">
-            <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
-              <i class="fa-solid fa-rocket text-blue-600"></i> Our Solution
+            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800">
+              <i class="fa-solid fa-rocket text-indigo-600"></i> Our Solution
             </h3>
-            <ul class="space-y-3 text-slate-700">
-              <li>• Custom CRM dashboard with real-time sync</li>
-              <li>• Order & inventory alerts</li>
-              <li>• Driver & warehouse integration</li>
-              <li>• Reporting & analytics</li>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Custom CRM dashboard with real-time sync</li>
+              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Order & inventory alerts</li>
+              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Driver & warehouse integration</li>
+              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Reporting & analytics</li>
             </ul>
           </div>
 
-          <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-3xl border border-green-100 mb-8">
-            <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-              <i class="fa-solid fa-chart-line text-green-600"></i> Results
+          <div class="bg-gradient-to-br from-emerald-50 to-white p-8 rounded-2xl border border-emerald-100 mb-8">
+            <h3 class="text-lg font-bold mb-6 flex items-center gap-2 text-slate-800">
+              <i class="fa-solid fa-chart-line text-emerald-600"></i> Results
             </h3>
-            <div class="grid sm:grid-cols-3 gap-6 text-center">
-              <div class="stat-number" data-target="95">95</div>
-              <div class="stat-number" data-target="40">40</div>
-              <div class="stat-number" data-target="18">18</div>
-              <div class="text-sm text-slate-600">% Accuracy</div>
-              <div class="text-sm text-slate-600">% Cost Saving</div>
-              <div class="text-sm text-slate-600">Hours Saved Weekly</div>
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <div>
+                <div class="stat-number" data-target="95" data-suffix="%">0%</div>
+                <div class="text-sm text-slate-600 mt-1">Accuracy</div>
+              </div>
+              <div>
+                <div class="stat-number" data-target="40" data-suffix="%">0%</div>
+                <div class="text-sm text-slate-600 mt-1">Cost Saving</div>
+              </div>
+              <div>
+                <div class="stat-number" data-target="18" data-suffix="">0</div>
+                <div class="text-sm text-slate-600 mt-1">Hours Saved Weekly</div>
+              </div>
             </div>
           </div>
 
-          <blockquote class="italic text-slate-700 mb-8 border-l-4 border-blue-500 pl-6 quote-bubble">
-            “We finally have real-time control — no more guesswork or losses.”
+          <blockquote class="italic text-slate-600 mb-8 border-l-4 border-indigo-500 pl-6 py-1">
+            "We finally have real-time control — no more guesswork or losses."
           </blockquote>
 
-          <p class="font-semibold mb-2">Tech Stack:</p>
-          <p class="text-slate-600 mb-8">React • Node.js • PostgreSQL • Real-time WebSockets</p>
+          <div class="mb-6">
+            <span class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Tech Stack</span>
+            <p class="text-slate-600 mt-1">React · Node.js · PostgreSQL · Real-time WebSockets</p>
+          </div>
 
-          <a href="contact.html"
-            class="inline-flex items-center justify-center gap-3 bg-blue-700 text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-blue-800 premium-button">
+          <a href="contact.html" class="btn-primary">
             Want This Efficiency? <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
@@ -392,74 +395,79 @@
         <div>
           <img
             src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-            alt="Logistics Dashboard" class="rounded-3xl shadow-2xl w-full" loading="lazy" />
+            alt="Logistics Dashboard" class="rounded-2xl shadow-2xl w-full" loading="lazy" />
         </div>
       </div>
 
-      <!-- Case 4: E-commerce Store (Example) -->
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Case 4: Vikram Fashion -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center case-card">
         <div class="lg:order-2">
-          <div
-            class="inline-flex items-center gap-3 bg-blue-100 text-blue-700 px-5 py-2 rounded-full text-sm font-semibold mb-6">
+          <div class="inline-flex items-center gap-2 bg-amber-50 text-amber-700 px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-amber-100">
             <i class="fa-solid fa-cart-shopping"></i> E-commerce
           </div>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 gradient-text">Vikram Fashion – From Slow Site to
-            High-Converting Store</h2>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6 leading-tight">Vikram Fashion – <span class="gradient-text">From Slow Site to High-Converting Store</span></h2>
 
           <div class="mb-8">
-            <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
+            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800">
               <i class="fa-solid fa-triangle-exclamation text-amber-500"></i> The Challenge
             </h3>
-            <ul class="space-y-3 text-slate-700">
-              <li>• Slow, unresponsive old website</li>
-              <li>• High cart abandonment</li>
-              <li>• No proper payment or inventory sync</li>
-              <li>• Poor mobile experience</li>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> Slow, unresponsive old website</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> High cart abandonment</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> No proper payment or inventory sync</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> Poor mobile experience</li>
             </ul>
           </div>
 
           <div class="mb-8">
-            <h3 class="text-2xl font-bold mb-3 flex items-center gap-3">
-              <i class="fa-solid fa-rocket text-blue-600"></i> Our Solution
+            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800">
+              <i class="fa-solid fa-rocket text-indigo-600"></i> Our Solution
             </h3>
-            <ul class="space-y-3 text-slate-700">
-              <li>• Modern custom e-commerce platform</li>
-              <li>• Fast checkout + Razorpay integration</li>
-              <li>• Real-time inventory & order tracking</li>
-              <li>• Mobile-first responsive design</li>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Modern custom e-commerce platform</li>
+              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Fast checkout + Razorpay integration</li>
+              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Real-time inventory & order tracking</li>
+              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Mobile-first responsive design</li>
             </ul>
           </div>
 
-          <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-3xl border border-green-100 mb-8">
-            <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-              <i class="fa-solid fa-chart-line text-green-600"></i> Results
+          <div class="bg-gradient-to-br from-emerald-50 to-white p-8 rounded-2xl border border-emerald-100 mb-8">
+            <h3 class="text-lg font-bold mb-6 flex items-center gap-2 text-slate-800">
+              <i class="fa-solid fa-chart-line text-emerald-600"></i> Results
             </h3>
-            <div class="grid sm:grid-cols-3 gap-6 text-center">
-              <div class="stat-number" data-target="220">220</div>
-              <div class="stat-number" data-target="65">65</div>
-              <div class="stat-number" data-target="4x">4x</div>
-              <div class="text-sm text-slate-600">% Conversion</div>
-              <div class="text-sm text-slate-600">% Cart Recovery</div>
-              <div class="text-sm text-slate-600">Faster Load Time</div>
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <div>
+                <div class="stat-number" data-target="220" data-suffix="%">0%</div>
+                <div class="text-sm text-slate-600 mt-1">Conversion</div>
+              </div>
+              <div>
+                <div class="stat-number" data-target="65" data-suffix="%">0%</div>
+                <div class="text-sm text-slate-600 mt-1">Cart Recovery</div>
+              </div>
+              <div>
+                <div class="stat-number-static" style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#4f46e5,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">4×</div>
+                <div class="text-sm text-slate-600 mt-1">Faster Load Time</div>
+              </div>
             </div>
           </div>
 
-          <blockquote class="italic text-slate-700 mb-8 border-l-4 border-blue-500 pl-6 quote-bubble">
-            “Sales doubled in first month — site now converts like never before.”
+          <blockquote class="italic text-slate-600 mb-8 border-l-4 border-indigo-500 pl-6 py-1">
+            "Sales doubled in first month — site now converts like never before."
           </blockquote>
 
-          <p class="font-semibold mb-2">Tech Stack:</p>
-          <p class="text-slate-600 mb-8">Next.js • Stripe/Razorpay • MongoDB • Tailwind</p>
+          <div class="mb-6">
+            <span class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Tech Stack</span>
+            <p class="text-slate-600 mt-1">Next.js · Razorpay · MongoDB · Tailwind</p>
+          </div>
 
-          <a href="contact.html"
-            class="inline-flex items-center justify-center gap-3 bg-blue-700 text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-blue-800 premium-button">
+          <a href="contact.html" class="btn-primary">
             Want Higher Sales? <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
 
         <div class="lg:order-1">
           <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
-            alt="E-commerce Success" class="rounded-3xl shadow-2xl w-full" loading="lazy" />
+            alt="E-commerce Success" class="rounded-2xl shadow-2xl w-full" loading="lazy" />
         </div>
       </div>
 
@@ -467,39 +475,68 @@
   </section>
 
   <!-- CTA Banner -->
-  <section class="py-20 bg-gradient-to-r from-blue-700 to-blue-500 text-white section-fade">
-    <div class="max-w-5xl mx-auto px-4 text-center">
-      <h2 class="text-4xl sm:text-5xl font-bold mb-8">Your Success Story Starts Here</h2>
-      <p class="text-xl sm:text-2xl mb-10 max-w-3xl mx-auto">
-        We’ve transformed travel agencies, real estate groups, logistics firms & e-commerce stores — let’s do the same
-        for you.
+  <section class="py-20 bg-gradient-to-r from-indigo-600 to-violet-600 text-white section-fade">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Your Success Story Starts Here</h2>
+      <p class="text-lg sm:text-xl mb-10 opacity-90 max-w-2xl mx-auto">
+        We've transformed travel agencies, real estate groups, logistics firms & e-commerce stores — let's do the same for you.
       </p>
-      <div class="flex flex-col sm:flex-row justify-center gap-6">
-        <a href="https://wa.me/916268497800?text=Hi%20ZeroFlowTech%2C%20show%20me%20case%20studies%20for%20my%20business"
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM"
           target="_blank"
-          class="bg-green-500 text-white px-10 py-6 rounded-xl font-bold text-xl hover:bg-green-600 inline-flex items-center gap-3">
-          Chat on WhatsApp <i class="fa-brands fa-whatsapp text-2xl"></i>
+          class="inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white px-8 py-5 rounded-xl font-bold text-lg transition">
+          <i class="fa-brands fa-whatsapp text-2xl"></i> Chat on WhatsApp
+        </a>
+        <a href="contact.html"
+          class="inline-flex items-center justify-center gap-3 border-2 border-white text-white px-8 py-5 rounded-xl font-bold text-lg hover:bg-white hover:text-indigo-700 transition">
+          Contact Us
         </a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-slate-900 text-slate-300 py-12">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-        <div class="flex items-center gap-3">
-          <img src="./assets/logos/logo.png" alt="Logo" class="w-10 h-10" />
-          <span class="text-2xl font-bold gradient-text">ZeroFlowTech</span>
+  <footer class="bg-[#050d1a] text-slate-400 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div>
+          <a href="index.html" class="text-xl font-black text-white mb-3 block">
+            ZeroFlow<span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Tech</span>
+          </a>
+          <p class="text-sm leading-relaxed mb-4">Building SaaS products and custom solutions for Indian businesses.</p>
+          <div class="flex gap-3">
+            <a href="https://wa.me/6268497800" class="text-slate-400 hover:text-green-400 transition"><i class="fa-brands fa-whatsapp text-lg"></i></a>
+            <a href="mailto:zeroflowtech@gmail.com" class="text-slate-400 hover:text-indigo-400 transition"><i class="fa-solid fa-envelope text-lg"></i></a>
+          </div>
         </div>
-        <div class="flex flex-col sm:flex-row gap-6">
-          <a href="contact.html" class="hover:text-white">Contact</a>
-          <a href="faq.html" class="hover:text-white">FAQ</a>
-          <a href="mailto:zeroflowtech@gmail.com" class="hover:text-white">zeroflowtech@gmail.com</a>
+        <div>
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Product</p>
+          <div class="flex flex-col gap-2 text-sm">
+            <a href="travel-crm.html" class="hover:text-indigo-400 transition">Travel CRM</a>
+            <a href="travel-crm.html#features" class="hover:text-indigo-400 transition">Features</a>
+            <a href="travel-crm.html#faq" class="hover:text-indigo-400 transition">FAQ</a>
+            <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="hover:text-indigo-400 transition">Book Demo</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Company</p>
+          <div class="flex flex-col gap-2 text-sm">
+            <a href="services.html" class="hover:text-indigo-400 transition">Services</a>
+            <a href="about.html" class="hover:text-indigo-400 transition">About</a>
+            <a href="case-studies.html" class="hover:text-indigo-400 transition">Case Studies</a>
+            <a href="faq.html" class="hover:text-indigo-400 transition">FAQ</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Contact</p>
+          <div class="flex flex-col gap-2 text-sm">
+            <a href="mailto:zeroflowtech@gmail.com" class="hover:text-indigo-400 transition">zeroflowtech@gmail.com</a>
+            <a href="https://wa.me/6268497800" class="hover:text-green-400 transition">+91 62684 97800</a>
+            <a href="contact.html" class="hover:text-indigo-400 transition">Contact Form</a>
+          </div>
         </div>
       </div>
-      <p class="mt-8 text-sm">© 2026 ZeroFlowTech – Building trust, one solution at a time. Ongoing support included.
-      </p>
+      <p class="mt-8 text-sm text-center text-slate-500">© 2026 ZeroFlowTech. All rights reserved.</p>
     </div>
   </footer>
 
@@ -522,15 +559,16 @@
         if (entry.isIntersecting) {
           const el = entry.target;
           const target = parseInt(el.getAttribute('data-target'));
+          const suffix = el.getAttribute('data-suffix') || '';
           let count = 0;
-          const increment = target / 50;
+          const increment = Math.max(1, target / 50);
           const updateCount = () => {
             count += increment;
             if (count < target) {
-              el.textContent = Math.ceil(count) + (el.textContent.includes('x') ? 'x' : '');
+              el.textContent = Math.ceil(count) + suffix;
               setTimeout(updateCount, 40);
             } else {
-              el.textContent = target + (el.textContent.includes('x') ? 'x' : '');
+              el.textContent = target + suffix;
               el.classList.add('stat-visible');
             }
           };
@@ -539,7 +577,6 @@
         }
       });
     }, { threshold: 0.5 });
-
     stats.forEach(stat => statObserver.observe(stat));
   </script>
 </body>

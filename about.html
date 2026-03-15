@@ -1,390 +1,173 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="About ZeroFlowTech – We turn your business pain into automated growth with custom websites, CRM & workflows built just for you in Bhopal & beyond." />
+  <meta name="description" content="About ZeroFlowTech – We turn your business pain into automated growth with custom websites, CRM & Travel CRM SaaS built for Indian businesses." />
   <title>About Us | ZeroFlowTech – Your Vision, Our Execution</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: { sans: ['Inter', 'sans-serif'] },
-          colors: { primary: '#2563eb', accent: '#00A3E8' },
-          boxShadow: { 'premium': '0 10px 30px -10px rgba(37,99,235,0.25)' }
+          colors: { primary: '#4f46e5', secondary: '#7c3aed', accent: '#06b6d4' },
+          boxShadow: { 'glow': '0 0 40px rgba(79,70,229,0.2)', 'card': '0 10px 40px -10px rgba(0,0,0,0.1)', 'button': '0 8px 30px rgba(79,70,229,0.4)' }
         }
       }
     }
   </script>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    /* Hero improvements */
-    .gradient-hero {
-      background: linear-gradient(135deg, #f0f9ff, #e0f2fe, #dbeafe);
-      background-size: 300% 300%;
-      animation: gradientExplode 20s ease infinite;
-    }
-
-    @keyframes gradientExplode {
-      0% {
-        background-position: 0% 0%;
-      }
-
-      50% {
-        background-position: 100% 100%;
-      }
-
-      100% {
-        background-position: 0% 0%;
-      }
-    }
-
-    .gradient-text {
-      background: linear-gradient(90deg, #1e40af, #00A3E8, #1e40af, #00A3E8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 400% auto;
-      animation: textShineDramatic 3s linear infinite;
-    }
-
-    @keyframes textShineDramatic {
-      to {
-        background-position: 400% center;
-      }
-    }
-
-    .typing-dramatic {
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 4px solid #00A3E8;
-      display: inline-block;
-      vertical-align: top;
-    }
-
-    /* Make typing gentler on mobile */
-    @media (max-width: 640px) {
-      .typing-dramatic {
-        animation: typingDramaticMobile 3s steps(30, end) forwards, blinkDramatic 0.7s step-end infinite;
-        border-right-width: 3px;
-      }
-    }
-
-    @keyframes typingDramaticMobile {
-      from {
-        width: 0;
-        opacity: 0.6;
-      }
-
-      to {
-        width: 100%;
-        opacity: 1;
-      }
-    }
-
-    @keyframes blinkDramatic {
-
-      from,
-      to {
-        border-color: transparent;
-      }
-
-      50% {
-        border-color: #00A3E8;
-      }
-    }
-
-    .parallax-bg {
-      background-attachment: fixed;
-      background-position: center;
-      background-size: cover;
-    }
-
-    /* Better responsive title sizing */
-    @media (max-width: 640px) {
-      h1 {
-        font-size: clamp(1.875rem, 9vw, 2.75rem);
-        line-height: 1.15;
-      }
-
-      .typing-dramatic br {
-        display: none;
-      }
-
-      /* avoid forced break on very small screens */
-    }
-
-    @media (min-width: 641px) and (max-width: 1024px) {
-      h1 {
-        font-size: clamp(3rem, 7vw, 4.5rem);
-        line-height: 1.1;
-      }
-    }
-
-    /* Subtle entrance */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.9s ease-out, transform 0.9s ease-out;
-    }
-
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .premium-button {
-      transition: all 0.4s ease;
-      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
-    }
-
-    .premium-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
-    }
-
-    /* Better mobile typography scaling */
-    @media (max-width: 768px) {
-      .gradient-hero {
-        animation-duration: 30s;
-      }
-
-      h1 {
-        font-size: clamp(2.25rem, 8vw, 3.5rem);
-        line-height: 1.1;
-      }
-
-      h2 {
-        font-size: clamp(1.875rem, 6vw, 2.75rem);
-      }
-
-      .py-24 {
-        padding: 4rem 1rem;
-      }
-
-      .md\:flex {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .md\:w-1\/2 {
-        width: 100%;
-        padding: 0 !important;
-      }
-
-      .hidden.md\:block {
-        display: none;
-      }
-
-      .flex-row-reverse {
-        flex-direction: column-reverse;
-      }
-    }
-
-    @media (max-width: 640px) {
-      h2 {
-        font-size: 1.875rem;
-      }
-
-      p {
-        font-size: 1.05rem;
-        line-height: 1.75;
-      }
-
-      .typing-dramatic {
-        border-right-width: 3px;
-      }
-    }
+    * { font-family: 'Inter', sans-serif; }
+    .gradient-hero { background: #050d1a; background-image: radial-gradient(ellipse at 20% 50%, rgba(79,70,229,0.18) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(6,182,212,0.1) 0%, transparent 55%); }
+    .gradient-text { background: linear-gradient(90deg, #4f46e5, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .btn-primary { background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; padding: 0.875rem 2rem; border-radius: 0.75rem; font-weight: 600; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+    .btn-primary:hover { box-shadow: 0 8px 30px rgba(79,70,229,0.45); transform: translateY(-2px); }
+    .section-fade, .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.9s ease-out; }
+    .section-fade.visible, .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: block; }
+    .badge-pill { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; padding: 0.35rem 0.9rem; border-radius: 9999px; }
   </style>
 </head>
-
-<body class="bg-white text-slate-900 antialiased min-h-screen flex flex-col">
-
-  <!-- Top Banner -->
-  <div
-    class="bg-gradient-to-r from-blue-900 to-indigo-900 text-white text-center py-3 text-sm font-medium animate-pulse">
-    Limited: Only 3 project slots left this month – Secure yours now!
-  </div>
+<body class="bg-white text-slate-900 antialiased">
 
   <!-- Navigation -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16 sm:h-20">
-        <a href="index.html" class="flex items-center gap-3">
-          <img src="./assets/logos/logo.png" alt="ZeroFlowTech" class="w-10 h-10 sm:w-12 sm:h-12" />
-          <span class="font-bold text-xl sm:text-2xl gradient-text">ZeroFlowTech</span>
-        </a>
-        <div class="hidden md:flex items-center gap-10">
-          <nav class="flex gap-8 font-medium">
-            <a href="index.html" class="hover:text-blue-700">Home</a>
-            <a href="services.html" class="hover:text-blue-700">Services</a>
-            <a href="case-studies.html" class="hover:text-blue-700">Case Studies</a>
-            <a href="about.html" class="text-blue-700 font-semibold">About</a>
-            <a href="contact.html" class="hover:text-blue-700">Contact</a>
-            <a href="faq.html" class="hover:text-blue-700">FAQ</a>
-          </nav>
-          <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
-            target="_blank"
-            class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
-            Query ?
-          </a>
-        </div>
-        <div class="md:hidden flex items-center gap-3">
-          <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
-            target="_blank" class="bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold">Query ?</a>
-          <button id="menu-btn" class="text-2xl"><i class="fa-solid fa-bars"></i></button>
-        </div>
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+      <a href="index.html" class="text-xl font-black tracking-tight">ZeroFlow<span class="gradient-text">Tech</span></a>
+      <div class="hidden md:flex items-center gap-7">
+        <a href="index.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Home</a>
+        <a href="travel-crm.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Product</a>
+        <a href="services.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Services</a>
+        <a href="case-studies.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Case Studies</a>
+        <a href="about.html" class="text-indigo-600 font-semibold text-sm">About</a>
+        <a href="contact.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Contact</a>
       </div>
-      <div id="mobile-menu" class="hidden md:hidden bg-white border-t py-6 px-6 space-y-5 font-medium">
-        <a href="index.html" class="block hover:text-blue-700">Home</a>
-        <a href="services.html" class="block hover:text-blue-700">Services</a>
-        <a href="case-studies.html" class="block hover:text-blue-700">Case Studies</a>
-        <a href="about.html" class="block text-blue-700 font-semibold">About</a>
-        <a href="contact.html" class="block hover:text-blue-700">Contact</a>
-        <a href="faq.html" class="block hover:text-blue-700">FAQ</a>
+      <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:shadow-button hover:scale-105 transition-all duration-300">
+        Book Demo <i class="fa-solid fa-arrow-right text-xs"></i>
+      </a>
+      <button id="mobile-toggle" class="md:hidden text-slate-700 p-2"><i class="fa-solid fa-bars text-xl"></i></button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t border-slate-100 px-4 py-4">
+      <div class="flex flex-col gap-1">
+        <a href="index.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Home</a>
+        <a href="travel-crm.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Product</a>
+        <a href="services.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Services</a>
+        <a href="case-studies.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Case Studies</a>
+        <a href="about.html" class="block py-2.5 px-3 rounded-lg text-indigo-600 font-semibold bg-indigo-50">About</a>
+        <a href="contact.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Contact</a>
+        <a href="faq.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">FAQ</a>
+        <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="btn-primary mt-3 justify-center"><i class="fa-brands fa-whatsapp"></i> Book Demo</a>
       </div>
     </div>
-  </header>
+  </nav>
 
-  <!-- Hero – improved mobile scaling & no cutoff -->
-  <section class="gradient-hero py-16 sm:py-24 lg:py-32 relative overflow-hidden parallax-bg"
-    style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80'); background-blend-mode: overlay;">
-    <div class="absolute inset-0 bg-black/20"></div>
-    <div class="absolute inset-0 opacity-40 pointer-events-none"
-      style="background: radial-gradient(circle at 50% 50%, transparent, rgba(0,163,232,0.2) 80%);"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-      <h1
-        class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 gradient-text typing-dramatic mx-auto max-w-full break-words"
-        style="width: auto; max-width: 100%;">
-        Your Vision,<br class="sm:hidden"> Our Promise to Deliver
+  <!-- Hero -->
+  <section class="gradient-hero py-20 lg:py-28 section-fade">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h1 class="text-4xl lg:text-6xl font-black text-white leading-tight mb-5">
+        Your Vision,<br /><span class="gradient-text">Our Promise to Deliver</span>
       </h1>
-      <p class="text-lg sm:text-xl lg:text-2xl text-white max-w-4xl mx-auto leading-relaxed font-light">
+      <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8">
         Imagine: Chaos turning into clarity. Dreams scaling without drama.
       </p>
-      <div class="mt-10 sm:mt-12">
-        <a href="#story"
-          class="inline-flex items-center gap-3 bg-white text-blue-700 px-7 py-4 sm:px-8 sm:py-5 rounded-xl font-bold text-base sm:text-lg premium-button">
-          Discover Our Story <i class="fa-solid fa-arrow-down ml-2"></i>
-        </a>
-      </div>
+      <a href="#story" class="btn-primary mx-auto">
+        Discover Our Story <i class="fa-solid fa-arrow-down"></i>
+      </a>
     </div>
   </section>
 
   <!-- Story Timeline -->
-  <section id="story" class="py-16 lg:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl lg:text-5xl font-bold gradient-text mb-12 lg:mb-16 text-center fade-up">
+  <section id="story" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold gradient-text mb-14 text-center fade-up">
         The Wake-Up Call for Indian Businesses
       </h2>
-
-      <div class="relative max-w-5xl mx-auto space-y-16 lg:space-y-24">
+      <div class="relative max-w-5xl mx-auto space-y-16">
         <div class="lg:flex items-start gap-12 fade-up">
           <div class="lg:w-1/2 text-center lg:text-right lg:pr-8">
-            <div class="inline-flex bg-blue-100 p-5 rounded-full shadow mb-4 mx-auto lg:mx-0">
-              <i class="fa-solid fa-globe text-4xl text-blue-600"></i>
+            <div class="inline-flex bg-indigo-100 p-5 rounded-2xl shadow mb-4">
+              <i class="fa-solid fa-globe text-4xl text-indigo-600"></i>
             </div>
-            <h3 class="text-2xl font-bold gradient-text mb-3">Foreign Clients Thriving</h3>
-            <p class="text-lg text-slate-700">We automated global giants. Real-time data, no chaos. They focus on
-              growth, not spreadsheets.</p>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">Foreign Clients Thriving</h3>
+            <p class="text-lg text-slate-600">We automated global giants. Real-time data, no chaos. They focus on growth, not spreadsheets.</p>
           </div>
           <div class="hidden lg:block lg:w-1/2"></div>
         </div>
 
         <div class="lg:flex items-start gap-12 fade-up lg:flex-row-reverse">
           <div class="lg:w-1/2 text-center lg:text-left lg:pl-8">
-            <div class="inline-flex bg-red-100 p-5 rounded-full shadow mb-4 mx-auto lg:mx-0">
+            <div class="inline-flex bg-red-100 p-5 rounded-2xl shadow mb-4">
               <i class="fa-solid fa-question-circle text-4xl text-red-600"></i>
             </div>
-            <h3 class="text-2xl font-bold gradient-text mb-3">Why India Lags?</h3>
-            <p class="text-lg text-slate-700">Local earners make lakhs/crores quarterly — but manual mess traps them.
-              Hiring at ₹18–25k/month = recurring ₹2.16 lakh/year loss when people leave.</p>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">Why India Lags?</h3>
+            <p class="text-lg text-slate-600">Local earners make lakhs/crores quarterly — but manual mess traps them. Hiring at ₹18–25k/month = recurring ₹2.16 lakh/year loss when people leave.</p>
           </div>
           <div class="hidden lg:block lg:w-1/2"></div>
         </div>
 
         <div class="lg:flex items-start gap-12 fade-up">
           <div class="lg:w-1/2 text-center lg:text-right lg:pr-8">
-            <div class="inline-flex bg-yellow-100 p-5 rounded-full shadow mb-4 mx-auto lg:mx-0">
-              <i class="fa-solid fa-exclamation-triangle text-4xl text-yellow-600"></i>
+            <div class="inline-flex bg-amber-100 p-5 rounded-2xl shadow mb-4">
+              <i class="fa-solid fa-exclamation-triangle text-4xl text-amber-600"></i>
             </div>
-            <h3 class="text-2xl font-bold gradient-text mb-3">The Hidden Trap</h3>
-            <p class="text-lg text-slate-700">Human errors, lost data, no real-time view. Can't scale — newer players
-              with systems overtake experienced ones.</p>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">The Hidden Trap</h3>
+            <p class="text-lg text-slate-600">Human errors, lost data, no real-time view. Can't scale — newer players with systems overtake experienced ones.</p>
           </div>
           <div class="hidden lg:block lg:w-1/2"></div>
         </div>
 
         <div class="lg:flex items-start gap-12 fade-up lg:flex-row-reverse">
           <div class="lg:w-1/2 text-center lg:text-left lg:pl-8">
-            <div class="inline-flex bg-green-100 p-5 rounded-full shadow mb-4 mx-auto lg:mx-0">
+            <div class="inline-flex bg-green-100 p-5 rounded-2xl shadow mb-4">
               <i class="fa-solid fa-lightbulb text-4xl text-green-600"></i>
             </div>
-            <h3 class="text-2xl font-bold gradient-text mb-3">Our Breakthrough</h3>
-            <p class="text-lg text-slate-700">Custom systems — not off-the-shelf. Automate your real workflow. One-time
-              investment. Lifelong scale. Data-driven confidence.</p>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">Our Breakthrough</h3>
+            <p class="text-lg text-slate-600">Custom systems — not off-the-shelf. Automate your real workflow. One-time investment. Lifelong scale. Data-driven confidence.</p>
+            <p class="text-base text-slate-500 mt-3">Our flagship <strong>Travel CRM</strong> is a direct result — a complete SaaS for Indian travel agencies, now available for demo.</p>
+            <a href="travel-crm.html" class="mt-4 inline-flex items-center gap-2 text-indigo-600 font-semibold hover:underline text-base">
+              See Travel CRM <i class="fa-solid fa-arrow-right text-sm"></i>
+            </a>
           </div>
           <div class="hidden lg:block lg:w-1/2"></div>
         </div>
       </div>
 
-      <!-- Updated Comparison Cards – more concise + requested points -->
-      <div class="mt-16 lg:mt-24 grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
-        <div
-          class="bg-gradient-to-br from-red-50 to-white p-7 rounded-2xl shadow-lg border border-red-100 hover:shadow-xl transition-shadow duration-300 fade-up">
+      <!-- Before / After -->
+      <div class="mt-20 grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="bg-gradient-to-br from-red-50 to-white p-7 rounded-2xl border border-red-100 hover:shadow-lg transition-shadow duration-300 fade-up">
           <div class="flex items-center gap-4 mb-5">
-            <div class="bg-red-100 p-4 rounded-full">
-              <i class="fa-solid fa-user-slash text-3xl text-red-600"></i>
+            <div class="bg-red-100 p-4 rounded-xl">
+              <i class="fa-solid fa-user-slash text-2xl text-red-600"></i>
             </div>
-            <h3 class="text-2xl font-bold text-red-700">Manual Chaos (Current Reality)</h3>
+            <h3 class="text-xl font-bold text-red-700">Manual Chaos (Current Reality)</h3>
           </div>
-          <ul class="space-y-3 text-slate-700 text-base leading-relaxed">
-            <li class="flex gap-3"><i class="fa-solid fa-triangle-exclamation text-red-500 mt-1"></i>Dependent on Excel
-              + WhatsApp + Tally every day</li>
-            <li class="flex gap-3"><i class="fa-solid fa-triangle-exclamation text-red-500 mt-1"></i>No proper inventory
-              / event tracking — stockouts or overstock</li>
-            <li class="flex gap-3"><i class="fa-solid fa-triangle-exclamation text-red-500 mt-1"></i>Decisions delayed —
-              you know profit/loss only after month-end</li>
-            <li class="flex gap-3"><i class="fa-solid fa-triangle-exclamation text-red-500 mt-1 font-bold"></i>Waste
-              hours daily chasing data → lose time & money</li>
-            <li class="flex gap-3"><i class="fa-solid fa-triangle-exclamation text-red-500 mt-1 font-bold"></i>Wrong /
-              late decisions cost lakhs in missed opportunities</li>
+          <ul class="space-y-3 text-slate-600 text-sm leading-relaxed">
+            <li class="flex gap-3"><i class="fa-solid fa-triangle-exclamation text-red-400 mt-1 flex-shrink-0"></i>Dependent on Excel + WhatsApp + Tally every day</li>
+            <li class="flex gap-3"><i class="fa-solid fa-triangle-exclamation text-red-400 mt-1 flex-shrink-0"></i>No proper inventory/event tracking — stockouts or overstock</li>
+            <li class="flex gap-3"><i class="fa-solid fa-triangle-exclamation text-red-400 mt-1 flex-shrink-0"></i>Decisions delayed — you know profit/loss only after month-end</li>
+            <li class="flex gap-3"><i class="fa-solid fa-triangle-exclamation text-red-400 mt-1 flex-shrink-0"></i>Waste hours daily chasing data → lose time &amp; money</li>
+            <li class="flex gap-3"><i class="fa-solid fa-triangle-exclamation text-red-400 mt-1 flex-shrink-0"></i>Wrong/late decisions cost lakhs in missed opportunities</li>
           </ul>
         </div>
-
-        <div
-          class="bg-gradient-to-br from-green-50 to-white p-7 rounded-2xl shadow-lg border border-green-100 hover:shadow-xl transition-shadow duration-300 fade-up">
+        <div class="bg-gradient-to-br from-green-50 to-white p-7 rounded-2xl border border-green-100 hover:shadow-lg transition-shadow duration-300 fade-up">
           <div class="flex items-center gap-4 mb-5">
-            <div class="bg-green-100 p-4 rounded-full">
-              <i class="fa-solid fa-rocket text-3xl text-green-600"></i>
+            <div class="bg-green-100 p-4 rounded-xl">
+              <i class="fa-solid fa-rocket text-2xl text-green-600"></i>
             </div>
-            <h3 class="text-2xl font-bold text-green-700">With Proper System</h3>
+            <h3 class="text-xl font-bold text-green-700">With Proper System</h3>
           </div>
-          <ul class="space-y-3 text-slate-700 text-base leading-relaxed">
-            <li class="flex gap-3"><i class="fa-solid fa-check-circle text-green-600 mt-1"></i>Real-time dashboard — no
-              more Excel/WhatsApp chaos</li>
-            <li class="flex gap-3"><i class="fa-solid fa-check-circle text-green-600 mt-1"></i>Automatic inventory &
-              event tracking — never miss stock</li>
-            <li class="flex gap-3"><i class="fa-solid fa-check-circle text-green-600 mt-1"></i>Instant profit/loss
-              visibility — take right decisions at right time</li>
-            <li class="flex gap-3"><i class="fa-solid fa-check-circle text-green-600 mt-1 font-bold"></i>Save hours
-              daily → more time for growth & strategy</li>
-            <li class="flex gap-3"><i class="fa-solid fa-check-circle text-green-600 mt-1 font-bold"></i>Confident, fast
-              decisions → capture opportunities, avoid losses</li>
+          <ul class="space-y-3 text-slate-600 text-sm leading-relaxed">
+            <li class="flex gap-3"><i class="fa-solid fa-check-circle text-green-500 mt-1 flex-shrink-0"></i>Real-time dashboard — no more Excel/WhatsApp chaos</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check-circle text-green-500 mt-1 flex-shrink-0"></i>Automatic inventory &amp; event tracking — never miss stock</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check-circle text-green-500 mt-1 flex-shrink-0"></i>Instant profit/loss visibility — take right decisions at right time</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check-circle text-green-500 mt-1 flex-shrink-0"></i>Save hours daily → more time for growth &amp; strategy</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check-circle text-green-500 mt-1 flex-shrink-0"></i>Confident, fast decisions → capture opportunities, avoid losses</li>
           </ul>
         </div>
       </div>
@@ -392,157 +175,146 @@
   </section>
 
   <!-- Why We Do This -->
-  <section class="py-16 lg:py-24 bg-slate-50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl lg:text-5xl font-bold gradient-text mb-10 lg:mb-14 text-center fade-up">
-        Why We Do This
-      </h2>
-
-      <div class="prose prose-lg max-w-none text-slate-700 space-y-8 lg:space-y-10 fade-up">
-        <p>We were working professionals helping foreign clients automate and manage their processes efficiently. During
-          this time, we kept asking ourselves one question:</p>
-
-        <p class="text-xl font-semibold text-blue-700">Why are Indian businesses — even the successful ones — not
-          scaling like foreign companies?</p>
-
-        <p>Many say it's because they don't have money to invest. But we saw local entrepreneurs in our own area earning
-          <strong>lakhs or even crores every quarter</strong> — yet still operating with traditional methods: WhatsApp
-          messages, Excel sheets, notebooks, phone calls, and manual tracking.</p>
-
-        <p>Foreign businesses invest in <strong>systems</strong> that reduce daily responsibilities — giving owners
-          real-time visibility and freeing them to focus on growth. In India, most owners are ready to pay ₹18k–25k per
-          month for a person to handle these tasks, but hesitate to invest in a system that can do the same (better,
-          faster, and forever).</p>
-
-        <p class="font-medium">Let's do the math:</p>
-        <ul class="list-disc pl-6 space-y-2">
-          <li>One employee = ₹18,000–25,000/month → <strong>₹2,16,000–3,00,000 per year</strong></li>
-          <li>Every year you pay again — and again</li>
-          <li>If they leave → your investment (time + knowledge) disappears</li>
-          <li>New person needs months to understand your business → more loss</li>
-        </ul>
-
-        <p>But a custom system?</p>
-        <ul class="list-disc pl-6 space-y-2">
-          <li>One-time investment</li>
-          <li>No salary, no leave, no errors</li>
-          <li>Always available — 24/7 real-time data</li>
-          <li>Grows with your business — no need to hire 10 people for 10× volume</li>
-        </ul>
-
-        <p class="text-lg font-semibold mt-8">We realized: Indian businesses don't need foreign software. They need
-          <strong>Indian solutions</strong> — built for Indian realities, Indian workflows, Indian budgets.</p>
-
-        <p class="text-xl font-bold gradient-text mt-10">So we started ZeroFlowTech.</p>
-        <p>We don't sell pre-made tools. We listen to your business model, understand your pain points, map your real
-          processes — and build exactly what you need. A system that runs automatically, gives you confidence, and lets
-          you scale without chaos.</p>
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-10 text-center fade-up">Why We Do This</h2>
+      <div class="prose prose-lg max-w-none text-slate-600 space-y-6 fade-up text-base leading-relaxed">
+        <p>We were working professionals helping foreign clients automate and manage their processes efficiently. During this time, we kept asking ourselves one question:</p>
+        <p class="text-xl font-semibold text-indigo-600">Why are Indian businesses — even the successful ones — not scaling like foreign companies?</p>
+        <p>Many say it's because they don't have money to invest. But we saw local entrepreneurs in our own area earning <strong>lakhs or even crores every quarter</strong> — yet still operating with traditional methods: WhatsApp messages, Excel sheets, notebooks, phone calls, and manual tracking.</p>
+        <p>Foreign businesses invest in <strong>systems</strong> that reduce daily responsibilities — giving owners real-time visibility and freeing them to focus on growth. In India, most owners are ready to pay ₹18k–25k per month for a person to handle these tasks, but hesitate to invest in a system that can do the same (better, faster, and forever).</p>
+        <div class="bg-indigo-50 border border-indigo-100 rounded-2xl p-6 my-6">
+          <p class="font-semibold text-slate-800 mb-3">Let's do the math:</p>
+          <ul class="space-y-1.5 text-slate-600">
+            <li>• One employee = ₹18,000–25,000/month → <strong>₹2,16,000–3,00,000 per year</strong></li>
+            <li>• Every year you pay again — and again</li>
+            <li>• If they leave → your investment (time + knowledge) disappears</li>
+            <li>• New person needs months to understand your business → more loss</li>
+          </ul>
+          <p class="font-semibold text-slate-800 mt-4 mb-2">But a custom system?</p>
+          <ul class="space-y-1.5 text-slate-600">
+            <li>• One-time investment</li>
+            <li>• No salary, no leave, no errors</li>
+            <li>• Always available — 24/7 real-time data</li>
+            <li>• Grows with your business — no need to hire 10 people for 10× volume</li>
+          </ul>
+        </div>
+        <p class="text-lg font-semibold">We realized: Indian businesses don't need foreign software. They need <strong>Indian solutions</strong> — built for Indian realities, Indian workflows, Indian budgets.</p>
+        <p class="text-xl font-bold gradient-text">So we started ZeroFlowTech.</p>
+        <p>We don't sell pre-made tools. We listen to your business model, understand your pain points, map your real processes — and build exactly what you need. A system that runs automatically, gives you confidence, and lets you scale without chaos.</p>
       </div>
     </div>
   </section>
 
   <!-- Process -->
-  <section class="py-16 lg:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl lg:text-5xl font-bold gradient-text mb-12 lg:mb-16 text-center fade-up">
-        How We Ignite Your Growth
-      </h2>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
-        <div
-          class="bg-white p-7 rounded-2xl shadow-lg border border-slate-100 text-center fade-up hover:shadow-xl transition-shadow duration-300">
-          <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fa-solid fa-ear-listen text-3xl text-blue-600"></i>
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-12 text-center fade-up">How We Ignite Your Growth</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-7 rounded-2xl border border-slate-100 shadow-card text-center fade-up hover:shadow-lg transition-shadow duration-300">
+          <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <i class="fa-solid fa-ear-listen text-white text-xl"></i>
           </div>
-          <h3 class="text-xl lg:text-2xl font-bold mb-3">1. Hear Your Chaos</h3>
-          <p class="text-slate-600">We deeply understand your real pain — no generic templates.</p>
+          <h3 class="text-lg font-bold mb-2 text-slate-900">1. Hear Your Chaos</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">We deeply understand your real pain — no generic templates.</p>
         </div>
-
-        <div
-          class="bg-white p-7 rounded-2xl shadow-lg border border-slate-100 text-center fade-up hover:shadow-xl transition-shadow duration-300">
-          <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fa-solid fa-brain text-3xl text-blue-600"></i>
+        <div class="bg-white p-7 rounded-2xl border border-slate-100 shadow-card text-center fade-up hover:shadow-lg transition-shadow duration-300">
+          <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <i class="fa-solid fa-brain text-white text-xl"></i>
           </div>
-          <h3 class="text-xl lg:text-2xl font-bold mb-3">2. Map the Path</h3>
-          <p class="text-slate-600">Research your workflow, competitors, goals — then design the right solution.</p>
+          <h3 class="text-lg font-bold mb-2 text-slate-900">2. Map the Path</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Research your workflow, competitors, goals — then design the right solution.</p>
         </div>
-
-        <div
-          class="bg-white p-7 rounded-2xl shadow-lg border border-slate-100 text-center fade-up hover:shadow-xl transition-shadow duration-300">
-          <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fa-solid fa-hammer text-3xl text-blue-600"></i>
+        <div class="bg-white p-7 rounded-2xl border border-slate-100 shadow-card text-center fade-up hover:shadow-lg transition-shadow duration-300">
+          <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <i class="fa-solid fa-hammer text-white text-xl"></i>
           </div>
-          <h3 class="text-xl lg:text-2xl font-bold mb-3">3. Build & Test</h3>
-          <p class="text-slate-600">Start with MVP → test fast → refine → scale to full power.</p>
+          <h3 class="text-lg font-bold mb-2 text-slate-900">3. Build &amp; Test</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Start with MVP → test fast → refine → scale to full power.</p>
         </div>
-
-        <div
-          class="bg-white p-7 rounded-2xl shadow-lg border border-slate-100 text-center fade-up hover:shadow-xl transition-shadow duration-300">
-          <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fa-solid fa-shield-heart text-3xl text-blue-600"></i>
+        <div class="bg-white p-7 rounded-2xl border border-slate-100 shadow-card text-center fade-up hover:shadow-lg transition-shadow duration-300">
+          <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <i class="fa-solid fa-shield-heart text-white text-xl"></i>
           </div>
-          <h3 class="text-xl lg:text-2xl font-bold mb-3">4. Launch & Guard</h3>
-          <p class="text-slate-600">We launch, train, support forever — your growth is our mission.</p>
+          <h3 class="text-lg font-bold mb-2 text-slate-900">4. Launch &amp; Guard</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">We launch, train, support forever — your growth is our mission.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-16 lg:py-24 bg-gradient-to-br from-blue-600 to-indigo-700 text-white text-center">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <h2 class="text-4xl lg:text-5xl font-bold mb-6 fade-up">Don't Just Survive — Dominate</h2>
-      <p class="text-xl lg:text-2xl mb-10 opacity-90 max-w-3xl mx-auto fade-up">
-        Understand the trap. Choose smart systems. Let's build your future — today.
-      </p>
+  <section class="py-20 bg-gradient-to-br from-indigo-700 via-indigo-600 to-violet-600 text-white section-fade">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-4xl font-black mb-5">Don't Just Survive — Dominate</h2>
+      <p class="text-xl mb-10 opacity-90 max-w-3xl mx-auto">Understand the trap. Choose smart systems. Let's build your future — today.</p>
       <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
-        class="inline-flex items-center gap-3 bg-white text-blue-700 px-10 py-5 rounded-xl font-bold text-xl premium-button shadow-2xl fade-up">
-        Ignite My Business <i class="fa-solid fa-fire ml-2"></i>
+         class="inline-flex items-center gap-3 bg-white text-indigo-700 px-10 py-5 rounded-xl font-bold text-xl hover:bg-indigo-50 transition-all duration-300 shadow-lg">
+        Ignite My Business <i class="fa-solid fa-fire"></i>
       </a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-slate-900 text-slate-300 py-12 mt-auto">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-        <div class="flex items-center gap-3">
-          <img src="./assets/logos/logo.png" alt="Logo" class="w-10 h-10" />
-          <span class="text-2xl font-bold gradient-text">ZeroFlowTech</span>
+  <footer class="bg-[#050d1a] text-slate-400 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div>
+          <a href="index.html" class="text-xl font-black text-white mb-3 block tracking-tight">ZeroFlow<span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Tech</span></a>
+          <p class="text-sm leading-relaxed mb-5 text-slate-500">Building SaaS products and custom digital solutions for Indian businesses.</p>
+          <div class="flex gap-4">
+            <a href="https://wa.me/6268497800" class="text-slate-400 hover:text-green-400 transition text-lg"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:zeroflowtech@gmail.com" class="text-slate-400 hover:text-indigo-400 transition text-lg"><i class="fa-solid fa-envelope"></i></a>
+          </div>
         </div>
-        <div class="flex flex-col sm:flex-row gap-6">
-          <a href="contact.html" class="hover:text-white">Contact</a>
-          <a href="faq.html" class="hover:text-white">FAQ</a>
-          <a href="mailto:zeroflowtech@gmail.com" class="hover:text-white">zeroflowtech@gmail.com</a>
+        <div>
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Product</p>
+          <div class="flex flex-col gap-2.5 text-sm">
+            <a href="travel-crm.html" class="hover:text-indigo-400 transition">Travel CRM</a>
+            <a href="travel-crm.html#features" class="hover:text-indigo-400 transition">Features</a>
+            <a href="travel-crm.html#faq" class="hover:text-indigo-400 transition">FAQ</a>
+            <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="hover:text-green-400 transition">Book Demo</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Company</p>
+          <div class="flex flex-col gap-2.5 text-sm">
+            <a href="services.html" class="hover:text-indigo-400 transition">Services</a>
+            <a href="about.html" class="hover:text-indigo-400 transition">About</a>
+            <a href="case-studies.html" class="hover:text-indigo-400 transition">Case Studies</a>
+            <a href="faq.html" class="hover:text-indigo-400 transition">FAQ</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</p>
+          <div class="flex flex-col gap-2.5 text-sm">
+            <a href="mailto:zeroflowtech@gmail.com" class="hover:text-indigo-400 transition">zeroflowtech@gmail.com</a>
+            <a href="https://wa.me/6268497800" class="hover:text-green-400 transition">+91 62684 97800</a>
+            <a href="contact.html" class="hover:text-indigo-400 transition">Contact Form</a>
+          </div>
         </div>
       </div>
-      <p class="mt-8 text-sm">© 2026 ZeroFlowTech – Building trust, scaling dreams. Ongoing support included.</p>
+      <p class="mt-8 text-sm text-center text-slate-600">© 2026 ZeroFlowTech. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    // Subtle fade-up
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-    // Mobile menu
-    document.getElementById('menu-btn')?.addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
+    const toggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      const icon = toggle.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-xmark');
     });
-
-    // Smooth scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up, .section-fade').forEach(el => observer.observe(el));
     document.querySelector('a[href="#story"]')?.addEventListener('click', e => {
       e.preventDefault();
       document.querySelector('#story').scrollIntoView({ behavior: 'smooth' });
     });
   </script>
 </body>
-
 </html>

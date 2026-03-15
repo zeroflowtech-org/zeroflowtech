@@ -3,349 +3,225 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ZeroFlowTech Services – Custom websites, CRM, automation, AI agents & optimization for real business growth." />
+  <meta name="description" content="ZeroFlowTech Services – Custom websites, CRM, automation & our flagship Travel CRM SaaS for Indian travel agencies." />
   <title>Services | ZeroFlowTech – Built for Your Growth</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: { sans: ['Inter', 'sans-serif'] },
-          colors: { primary: '#2563eb', accent: '#00A3E8' },
-          boxShadow: { 'premium': '0 10px 30px -10px rgba(37,99,235,0.25)' }
+          colors: { primary: '#4f46e5', secondary: '#7c3aed', accent: '#06b6d4' },
+          boxShadow: { 'glow': '0 0 40px rgba(79,70,229,0.2)', 'card': '0 10px 40px -10px rgba(0,0,0,0.1)', 'button': '0 8px 30px rgba(79,70,229,0.4)' }
         }
       }
     }
   </script>
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
   <style>
-    .gradient-hero { background: linear-gradient(135deg, #f0f9ff, #e0f2fe, #dbeafe); }
-    .gradient-text { background: linear-gradient(90deg, #1e40af, #00A3E8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .premium-button { transition: all 0.4s ease; box-shadow: 0 6px 20px rgba(37,99,235,0.25); }
-    .premium-button:hover { box-shadow: 0 12px 35px rgba(37,99,235,0.4); transform: translateY(-3px); }
-    .section-fade { opacity: 0; transform: translateY(40px); transition: all 1s ease-out; }
+    * { font-family: 'Inter', sans-serif; }
+    .gradient-hero { background: #050d1a; background-image: radial-gradient(ellipse at 20% 50%, rgba(79,70,229,0.18) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(6,182,212,0.1) 0%, transparent 55%); }
+    .gradient-text { background: linear-gradient(90deg, #4f46e5, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .btn-primary { background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; padding: 0.875rem 2rem; border-radius: 0.75rem; font-weight: 600; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+    .btn-primary:hover { box-shadow: 0 8px 30px rgba(79,70,229,0.45); transform: translateY(-2px); }
+    .section-fade { opacity: 0; transform: translateY(30px); transition: all 0.9s ease-out; }
     .section-fade.visible { opacity: 1; transform: translateY(0); }
-    .service-card { transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
-    .service-card:hover { transform: translateY(-12px) scale(1.03); box-shadow: 0 25px 50px -12px rgba(37,99,235,0.35); }
-    .step-circle { transition: all 0.5s; }
-    .timeline-step:hover .step-circle { transform: scale(1.15); box-shadow: 0 0 0 10px rgba(37,99,235,0.15); }
-    .swiper-slide img { transition: transform 0.6s ease; }
-    .swiper-slide:hover img { transform: scale(1.08); }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-stagger { animation: fadeInUp 0.9s ease-out forwards; opacity: 0; }
-    .animate-stagger:nth-child(1) { animation-delay: 0.2s; }
-    .animate-stagger:nth-child(2) { animation-delay: 0.4s; }
-    .animate-stagger:nth-child(3) { animation-delay: 0.6s; }
-    @media (max-width: 640px) {
-      h1 { font-size: 2.5rem !important; line-height: 1.1; }
-      h2 { font-size: 2rem !important; }
-      .text-xl { font-size: 1.125rem !important; }
-    }
+    .service-card { transition: all 0.4s ease; }
+    .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -10px rgba(79,70,229,0.15); }
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: block; }
+    .badge-pill { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 600; padding: 0.35rem 0.9rem; border-radius: 9999px; }
   </style>
 </head>
 <body class="bg-white text-slate-900 antialiased">
 
-  <!-- Top Banner -->
-  <div class="bg-blue-900 text-white text-center py-3 text-sm font-medium">
-    Limited: Only 3 project slots left this month – Secure yours now
-  </div>
-
   <!-- Navigation -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16 sm:h-20">
-        <a href="index.html" class="flex items-center gap-3">
-          <img src="./assets/logos/logo.png" alt="ZeroFlowTech" class="w-10 h-10 sm:w-12 sm:h-12" />
-          <span class="font-bold text-xl sm:text-2xl gradient-text">ZeroFlowTech</span>
-        </a>
-        <div class="hidden md:flex items-center gap-10">
-          <nav class="flex gap-8 font-medium">
-            <a href="index.html" class="hover:text-blue-700">Home</a>
-            <a href="services.html" class="text-blue-700 font-semibold">Services</a>
-            <a href="case-studies.html" class="hover:text-blue-700">Case Studies</a>
-            <a href="about.html" class="hover:text-blue-700">About</a>
-            <a href="contact.html" class="hover:text-blue-700">Contact</a>
-            <a href="faq.html" class="hover:text-blue-700">FAQ</a>
-          </nav>
-          <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
-            target="_blank" class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
-            Query ?
-          </a>
-        </div>
-        <div class="md:hidden flex items-center gap-3">
-         <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
-            target="_blank" class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
-            Query ?
-          </a>
-          <button id="menu-btn" class="text-2xl"><i class="fa-solid fa-bars"></i></button>
-        </div>
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+      <a href="index.html" class="text-xl font-black tracking-tight">ZeroFlow<span class="gradient-text">Tech</span></a>
+      <div class="hidden md:flex items-center gap-7">
+        <a href="index.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Home</a>
+        <a href="travel-crm.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Product</a>
+        <a href="services.html" class="text-indigo-600 font-semibold text-sm">Services</a>
+        <a href="case-studies.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Case Studies</a>
+        <a href="about.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">About</a>
+        <a href="contact.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Contact</a>
       </div>
-      <div id="mobile-menu" class="hidden md:hidden bg-white border-t py-6 px-6 space-y-5 font-medium">
-        <a href="index.html" class="block hover:text-blue-700">Home</a>
-        <a href="services.html" class="block text-blue-700 font-semibold">Services</a>
-        <a href="case-studies.html" class="block hover:text-blue-700">Case Studies</a>
-        <a href="about.html" class="block hover:text-blue-700">About</a>
-        <a href="contact.html" class="block hover:text-blue-700">Contact</a>
-        <a href="faq.html" class="block hover:text-blue-700">FAQ</a>
+      <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:shadow-button hover:scale-105 transition-all duration-300">
+        Book Demo <i class="fa-solid fa-arrow-right text-xs"></i>
+      </a>
+      <button id="mobile-toggle" class="md:hidden text-slate-700 p-2"><i class="fa-solid fa-bars text-xl"></i></button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t border-slate-100 px-4 py-4">
+      <div class="flex flex-col gap-1">
+        <a href="index.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Home</a>
+        <a href="travel-crm.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Product</a>
+        <a href="services.html" class="block py-2.5 px-3 rounded-lg text-indigo-600 font-semibold bg-indigo-50">Services</a>
+        <a href="case-studies.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Case Studies</a>
+        <a href="about.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">About</a>
+        <a href="contact.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Contact</a>
+        <a href="faq.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">FAQ</a>
+        <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="btn-primary mt-3 justify-center"><i class="fa-brands fa-whatsapp"></i> Book Demo</a>
       </div>
     </div>
-  </header>
+  </nav>
 
   <!-- Hero -->
-  <section class="gradient-hero py-20 sm:py-28 lg:py-32 relative overflow-hidden section-fade">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+  <section class="gradient-hero py-20 lg:py-28 section-fade">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <span class="badge-pill bg-indigo-500/15 text-indigo-300 border border-indigo-500/25 mb-4">Agency Services + SaaS Product</span>
+      <h1 class="text-4xl lg:text-6xl font-black text-white leading-tight mt-4 mb-5">
         Services Built <span class="gradient-text">Exactly for You</span>
       </h1>
-      <p class="text-xl sm:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed">
-        No confusion. No generic packages. Clear solutions for your industry — see what fits, get free quote in minutes.
+      <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+        Custom solutions for any business — or use our ready-made Travel CRM SaaS for travel agencies.
       </p>
     </div>
   </section>
 
-  <!-- Slider 1: Domain Expertise -->
-  <section class="py-16 sm:py-20 bg-white section-fade">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 gradient-text">
-        Industries We Power
-      </h2>
-
-      <div class="swiper domainSwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="bg-white rounded-3xl shadow-premium overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Travel" class="w-full h-64 object-cover">
-              <div class="p-6 text-center">
-                <h3 class="text-2xl font-bold gradient-text mb-2">Travel & Tours</h3>
-                <p class="text-slate-600">Bookings, itineraries, group alerts, 24/7 notifications</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="bg-white rounded-3xl shadow-premium overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Real Estate" class="w-full h-64 object-cover">
-              <div class="p-6 text-center">
-                <h3 class="text-2xl font-bold gradient-text mb-2">Real Estate</h3>
-                <p class="text-slate-600">Property dashboards, lead tracking, client portals</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="bg-white rounded-3xl shadow-premium overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Logistics" class="w-full h-64 object-cover">
-              <div class="p-6 text-center">
-                <h3 class="text-2xl font-bold gradient-text mb-2">Logistics & Supply</h3>
-                <p class="text-slate-600">Inventory, orders, real-time tracking systems</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="bg-white rounded-3xl shadow-premium overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Education" class="w-full h-64 object-cover">
-              <div class="p-6 text-center">
-                <h3 class="text-2xl font-bold gradient-text mb-2">Education & Coaching</h3>
-                <p class="text-slate-600">Student portals, course management, payment flows</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="bg-white rounded-3xl shadow-premium overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Services" class="w-full h-64 object-cover">
-              <div class="p-6 text-center">
-                <h3 class="text-2xl font-bold gradient-text mb-2">Service Businesses</h3>
-                <p class="text-slate-600">Appointment booking, client dashboards, invoicing</p>
-              </div>
-            </div>
-          </div>
+  <!-- Travel CRM Product Banner -->
+  <section class="py-12 bg-white section-fade">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="bg-gradient-to-r from-indigo-700 via-indigo-600 to-violet-600 text-white p-8 rounded-3xl flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div>
+          <span class="text-xs font-bold bg-white/20 px-3 py-1 rounded-full mb-3 inline-block tracking-widest uppercase">SaaS Product — Live Now</span>
+          <h3 class="text-2xl font-bold mb-2 mt-3">Travel CRM — Built for Indian Travel Agencies</h3>
+          <p class="opacity-90 text-base max-w-xl leading-relaxed">Complete CRM: lead pipeline, itinerary builder, tour management, bookings, payments with Razorpay, commissions, reports. 17 modules. Ready to go live in 2 weeks.</p>
         </div>
-        <div class="swiper-pagination mt-10"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Slider 2: Tech Stack & Capabilities -->
-  <section class="py-16 sm:py-20 bg-slate-50 section-fade">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 gradient-text">
-        Technologies & Capabilities
-      </h2>
-
-      <div class="swiper techSwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="bg-white p-8 rounded-3xl shadow-premium text-center">
-              <i class="fa-brands fa-react text-6xl text-blue-600 mb-6 animate-pulse"></i>
-              <h3 class="text-2xl font-bold mb-3 gradient-text">React / Next.js</h3>
-              <p class="text-slate-600">Fast, modern frontends — perfect for dashboards & user portals</p>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="bg-white p-8 rounded-3xl shadow-premium text-center">
-              <i class="fa-solid fa-database text-6xl text-purple-600 mb-6 animate-pulse"></i>
-              <h3 class="text-2xl font-bold mb-3 gradient-text">Node.js / MongoDB / SQL</h3>
-              <p class="text-slate-600">Powerful, scalable backends — secure & fast data handling</p>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="bg-white p-8 rounded-3xl shadow-premium text-center">
-              <i class="fa-brands fa-wordpress text-6xl text-blue-700 mb-6 animate-pulse"></i>
-              <h3 class="text-2xl font-bold mb-3 gradient-text">WordPress + Custom</h3>
-              <p class="text-slate-600">Quick sites or fully custom — eCommerce ready</p>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="bg-white p-8 rounded-3xl shadow-premium text-center">
-              <i class="fa-solid fa-cart-shopping text-6xl text-green-600 mb-6 animate-pulse"></i>
-              <h3 class="text-2xl font-bold mb-3 gradient-text">E-commerce Solutions</h3>
-              <p class="text-slate-600">WooCommerce, custom carts, payment gateways</p>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="bg-white p-8 rounded-3xl shadow-premium text-center">
-              <i class="fa-solid fa-robot text-6xl text-purple-600 mb-6 animate-pulse"></i>
-              <h3 class="text-2xl font-bold mb-3 gradient-text">AI Agents (Coming Soon)</h3>
-              <p class="text-slate-600">Customer support bots, sales callers, smart automation flows</p>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="bg-white p-8 rounded-3xl shadow-premium text-center">
-              <i class="fa-solid fa-pencil-ruler text-6xl text-orange-600 mb-6 animate-pulse"></i>
-              <h3 class="text-2xl font-bold mb-3 gradient-text">UI/UX + Figma</h3>
-              <p class="text-slate-600">Beautiful, user-friendly designs — from idea to reality</p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-pagination mt-10"></div>
+        <a href="travel-crm.html" class="flex-shrink-0 bg-white text-indigo-700 px-8 py-4 rounded-xl font-bold hover:bg-indigo-50 transition duration-300 whitespace-nowrap inline-flex items-center gap-2">
+          Explore Product <i class="fa-solid fa-arrow-right"></i>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Main Services Grid -->
-  <section class="py-20 bg-white section-fade">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-16 gradient-text">Our Core Services</h2>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+  <section class="py-16 bg-slate-50 section-fade">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">Our Core Agency Services</h2>
+        <p class="text-slate-500 text-lg">Custom-built solutions for your unique business challenges.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Custom Websites -->
-        <div class="service-card bg-gradient-to-br from-blue-50 to-white p-8 rounded-3xl shadow-premium border border-blue-100">
-          <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fa-solid fa-globe text-4xl text-blue-600"></i>
+        <div class="service-card bg-white p-7 rounded-2xl border border-slate-100 shadow-card">
+          <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-2xl flex items-center justify-center mb-5">
+            <i class="fa-solid fa-globe text-white text-xl"></i>
           </div>
-          <h3 class="text-2xl font-bold mb-4 text-center gradient-text">Custom Websites</h3>
-          <p class="text-slate-600 text-center mb-6">From static showcase to full e-commerce & booking platforms</p>
-          <ul class="space-y-3 text-sm text-slate-700 mb-6">
-            <li>• Booking & payment integration</li>
-            <li>• Admin dashboard</li>
-            <li>• Mobile-first & fast loading</li>
+          <h3 class="text-xl font-bold mb-3 text-slate-900">Custom Websites</h3>
+          <p class="text-slate-500 mb-5 text-sm leading-relaxed">From static showcase to full e-commerce &amp; booking platforms</p>
+          <ul class="space-y-2 text-sm text-slate-600 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-500 text-xs"></i> Booking &amp; payment integration</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-500 text-xs"></i> Admin dashboard</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-500 text-xs"></i> Mobile-first &amp; fast loading</li>
           </ul>
-          <a href="contact.html" class="block text-center bg-blue-700 text-white py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
-            Get Free Quote
-          </a>
+          <a href="contact.html" class="btn-primary w-full justify-center text-sm py-3">Get Free Quote</a>
         </div>
-
         <!-- Website Optimization -->
-        <div class="service-card bg-gradient-to-br from-green-50 to-white p-8 rounded-3xl shadow-premium border border-green-100">
-          <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fa-solid fa-rocket text-4xl text-green-600"></i>
+        <div class="service-card bg-white p-7 rounded-2xl border border-slate-100 shadow-card">
+          <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-5">
+            <i class="fa-solid fa-rocket text-white text-xl"></i>
           </div>
-          <h3 class="text-2xl font-bold mb-4 text-center gradient-text">Website Optimization</h3>
-          <p class="text-slate-600 text-center mb-6">Speed, SEO, UX fixes + free audit</p>
-          <ul class="space-y-3 text-sm text-slate-700 mb-6">
-            <li>• Google speed score boost</li>
-            <li>• Better ranking & conversions</li>
-            <li>• Mobile responsiveness</li>
+          <h3 class="text-xl font-bold mb-3 text-slate-900">Website Optimization</h3>
+          <p class="text-slate-500 mb-5 text-sm leading-relaxed">Speed, SEO, UX fixes + free audit — improve performance fast</p>
+          <ul class="space-y-2 text-sm text-slate-600 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Google speed score boost</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Better ranking &amp; conversions</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Mobile responsiveness</li>
           </ul>
-          <a href="contact.html" class="block text-center bg-green-700 text-white py-3 rounded-xl font-semibold hover:bg-green-800 premium-button">
-            Get Free Audit
-          </a>
+          <a href="contact.html" class="inline-flex items-center justify-center gap-2 w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300">Get Free Audit</a>
         </div>
-
-        <!-- Custom CRM & Tools -->
-        <div class="service-card bg-gradient-to-br from-purple-50 to-white p-8 rounded-3xl shadow-premium border border-purple-100">
-          <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fa-solid fa-cogs text-4xl text-purple-600"></i>
+        <!-- Custom CRM -->
+        <div class="service-card bg-white p-7 rounded-2xl border border-slate-100 shadow-card">
+          <div class="w-14 h-14 bg-gradient-to-br from-violet-500 to-purple-700 rounded-2xl flex items-center justify-center mb-5">
+            <i class="fa-solid fa-cogs text-white text-xl"></i>
           </div>
-          <h3 class="text-2xl font-bold mb-4 text-center gradient-text">Custom CRM & Tools</h3>
-          <p class="text-slate-600 text-center mb-6">Lead tracking, inventory, internal dashboards</p>
-          <ul class="space-y-3 text-sm text-slate-700 mb-6">
-            <li>• Built exactly for your flow</li>
-            <li>• No expensive subscriptions</li>
-            <li>• Real-time updates</li>
+          <h3 class="text-xl font-bold mb-3 text-slate-900">Custom CRM &amp; Tools</h3>
+          <p class="text-slate-500 mb-5 text-sm leading-relaxed">Lead tracking, inventory, internal dashboards — built for your flow</p>
+          <ul class="space-y-2 text-sm text-slate-600 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-violet-500 text-xs"></i> Built exactly for your flow</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-violet-500 text-xs"></i> No expensive subscriptions</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-violet-500 text-xs"></i> Real-time updates</li>
           </ul>
-          <a href="contact.html" class="block text-center bg-purple-700 text-white py-3 rounded-xl font-semibold hover:bg-purple-800 premium-button">
-            Get Free Quote
-          </a>
+          <a href="contact.html" class="inline-flex items-center justify-center gap-2 w-full bg-gradient-to-r from-violet-600 to-purple-700 text-white py-3 rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300">Get Free Quote</a>
         </div>
-
-        <!-- Travel Automation -->
-        <div class="service-card bg-gradient-to-br from-orange-50 to-white p-8 rounded-3xl shadow-premium border border-orange-100">
-          <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fa-solid fa-plane-departure text-4xl text-orange-600"></i>
+        <!-- Travel CRM Card -->
+        <div class="service-card bg-gradient-to-br from-indigo-50 to-white p-7 rounded-2xl border-2 border-indigo-200 shadow-card relative">
+          <span class="absolute top-4 right-4 text-xs bg-gradient-to-r from-indigo-600 to-violet-600 text-white px-3 py-1 rounded-full font-semibold">SaaS Product</span>
+          <div class="w-14 h-14 bg-gradient-to-br from-indigo-600 to-violet-600 rounded-2xl flex items-center justify-center mb-5">
+            <i class="fa-solid fa-plane-departure text-white text-xl"></i>
           </div>
-          <h3 class="text-2xl font-bold mb-4 text-center gradient-text">Travel Automation</h3>
-          <p class="text-slate-600 text-center mb-6">Bookings, alerts, itineraries, lead management</p>
-          <ul class="space-y-3 text-sm text-slate-700 mb-6">
-            <li>• 24/7 notifications</li>
-            <li>• Group trip management</li>
-            <li>• Scale without chaos</li>
+          <h3 class="text-xl font-bold mb-3 text-slate-900">Travel CRM</h3>
+          <p class="text-slate-500 mb-5 text-sm leading-relaxed">Our SaaS product — complete system for Indian travel agencies</p>
+          <ul class="space-y-2 text-sm text-slate-600 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-500 text-xs"></i> Lead pipeline + itinerary builder</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-500 text-xs"></i> Bookings, Razorpay, GST</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-500 text-xs"></i> Commissions + reports dashboard</li>
           </ul>
-          <a href="contact.html" class="block text-center bg-orange-700 text-white py-3 rounded-xl font-semibold hover:bg-orange-800 premium-button">
-            Get Free Quote
-          </a>
+          <a href="travel-crm.html" class="btn-primary w-full justify-center text-sm py-3">See Product</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- How We Work Timeline -->
+  <!-- Industries -->
+  <section class="py-16 bg-white section-fade">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-center text-slate-900 mb-12">Industries We Power</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-5">
+        <div class="bg-slate-50 rounded-2xl p-6 text-center hover:bg-indigo-50 hover:border-indigo-200 border border-slate-100 transition-all duration-300">
+          <i class="fa-solid fa-plane text-indigo-500 text-2xl mb-3"></i>
+          <h3 class="font-bold text-slate-900 text-sm">Travel &amp; Tours</h3>
+          <p class="text-slate-500 text-xs mt-1 leading-relaxed">Bookings, itineraries, CRM, commissions</p>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-6 text-center hover:bg-indigo-50 hover:border-indigo-200 border border-slate-100 transition-all duration-300">
+          <i class="fa-solid fa-building text-indigo-500 text-2xl mb-3"></i>
+          <h3 class="font-bold text-slate-900 text-sm">Real Estate</h3>
+          <p class="text-slate-500 text-xs mt-1 leading-relaxed">Property dashboards, lead tracking</p>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-6 text-center hover:bg-indigo-50 hover:border-indigo-200 border border-slate-100 transition-all duration-300">
+          <i class="fa-solid fa-truck text-indigo-500 text-2xl mb-3"></i>
+          <h3 class="font-bold text-slate-900 text-sm">Logistics</h3>
+          <p class="text-slate-500 text-xs mt-1 leading-relaxed">Inventory, orders, real-time tracking</p>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-6 text-center hover:bg-indigo-50 hover:border-indigo-200 border border-slate-100 transition-all duration-300">
+          <i class="fa-solid fa-graduation-cap text-indigo-500 text-2xl mb-3"></i>
+          <h3 class="font-bold text-slate-900 text-sm">Education</h3>
+          <p class="text-slate-500 text-xs mt-1 leading-relaxed">Student portals, course management</p>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-6 text-center hover:bg-indigo-50 hover:border-indigo-200 border border-slate-100 transition-all duration-300">
+          <i class="fa-solid fa-handshake text-indigo-500 text-2xl mb-3"></i>
+          <h3 class="font-bold text-slate-900 text-sm">Service Businesses</h3>
+          <p class="text-slate-500 text-xs mt-1 leading-relaxed">Appointments, invoicing, dashboards</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Work -->
   <section class="py-20 bg-slate-50 section-fade">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-16 gradient-text">
-        How We Work – 3 Simple Steps
-      </h2>
-
-      <div class="grid md:grid-cols-3 gap-12 lg:gap-16 relative">
-        <div class="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-200 via-blue-400 to-blue-600 hidden md:block"></div>
-
-        <div class="timeline-step relative z-10 text-center">
-          <div class="step-circle w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6 text-4xl font-bold gradient-text shadow-lg border-4 border-blue-200">
-            1
-          </div>
-          <h3 class="text-2xl font-bold mb-4">Book Free Call</h3>
-          <p class="text-slate-700">15–30 min — tell us your pain points, we listen.</p>
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-center text-slate-900 mb-14">How We Work — 3 Simple Steps</h2>
+      <div class="grid md:grid-cols-3 gap-10 relative">
+        <div class="absolute top-12 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-200 via-indigo-400 to-violet-400 hidden md:block"></div>
+        <div class="text-center relative z-10">
+          <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6 text-4xl font-black gradient-text shadow-lg border-4 border-indigo-100">1</div>
+          <h3 class="text-xl font-bold mb-3 text-slate-900">Book Free Call</h3>
+          <p class="text-slate-500 leading-relaxed">15–30 min — tell us your pain points, we listen and analyze.</p>
         </div>
-
-        <div class="timeline-step relative z-10 text-center">
-          <div class="step-circle w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6 text-4xl font-bold gradient-text shadow-lg border-4 border-blue-200">
-            2
-          </div>
-          <h3 class="text-2xl font-bold mb-4">Free Proposal</h3>
-          <p class="text-slate-700">Clear plan, timeline, fixed price — no surprises.</p>
+        <div class="text-center relative z-10">
+          <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6 text-4xl font-black gradient-text shadow-lg border-4 border-indigo-100">2</div>
+          <h3 class="text-xl font-bold mb-3 text-slate-900">Free Proposal</h3>
+          <p class="text-slate-500 leading-relaxed">Clear plan, timeline, fixed price — no surprises, no hidden fees.</p>
         </div>
-
-        <div class="timeline-step relative z-10 text-center">
-          <div class="step-circle w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6 text-4xl font-bold gradient-text shadow-lg border-4 border-blue-200">
-            3
-          </div>
-          <h3 class="text-2xl font-bold mb-4">Launch & Grow</h3>
-          <p class="text-slate-700">We build fast — you get results + lifetime support.</p>
+        <div class="text-center relative z-10">
+          <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6 text-4xl font-black gradient-text shadow-lg border-4 border-indigo-100">3</div>
+          <h3 class="text-xl font-bold mb-3 text-slate-900">Launch &amp; Grow</h3>
+          <p class="text-slate-500 leading-relaxed">We build fast — you get results + lifetime support guaranteed.</p>
         </div>
       </div>
     </div>
@@ -353,80 +229,93 @@
 
   <!-- Future Vision -->
   <section class="py-20 bg-white section-fade">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-10 gradient-text">
-        What’s Coming Next
-      </h2>
-      <p class="text-xl sm:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed mb-12">
-        We’re already working on <strong>next-generation AI agents</strong> — customer support bots, automated sales calls, smart business flows — all at reasonable cost.
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">Got an MVP or Crazy Idea?</h2>
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+        Our team is ready to build anything — from simple websites to complex AI-driven automation. Any domain, any scale — we turn your vision into working reality.
       </p>
-      <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-10 rounded-3xl shadow-premium border border-purple-100">
-        <h3 class="text-3xl font-bold mb-6 gradient-text">Got an MVP or Crazy Idea?</h3>
-        <p class="text-lg text-slate-700 mb-8">
-          Our energetic team is ready to build anything — from simple websites to complex AI-driven automation.<br><br>
-          Any domain, any scale — we turn your vision into working reality.
-        </p>
-        <a href="contact.html" class="inline-flex items-center gap-3 bg-purple-700 text-white px-10 py-6 rounded-2xl font-bold text-xl hover:bg-purple-800 premium-button">
-          Share Your Idea Now <i class="fa-solid fa-rocket"></i>
+      <div class="bg-gradient-to-br from-indigo-50 to-violet-50 p-10 rounded-3xl border border-indigo-100">
+        <p class="text-slate-700 text-lg mb-8 leading-relaxed">We're also working on <strong>next-generation AI agents</strong> — customer support bots, automated sales flows, smart business automation — all at reasonable cost for Indian SMEs.</p>
+        <a href="contact.html" class="btn-primary text-base px-10 py-4 mx-auto">
+          Share Your Idea Now <i class="fa-solid fa-rocket text-sm"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-20 bg-gradient-to-br from-indigo-700 via-indigo-600 to-violet-600 section-fade">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-3xl lg:text-4xl font-black text-white mb-4">Ready to Stop the Daily Grind?</h2>
+      <p class="text-indigo-100 text-lg mb-8">One short call can change how your business runs. Let's find out if we're the right fit for you.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20my%20business" class="inline-flex items-center justify-center gap-2 bg-white text-indigo-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-indigo-50 transition-all duration-300">
+          <i class="fa-brands fa-whatsapp text-green-600"></i> Chat on WhatsApp
+        </a>
+        <a href="contact.html" class="inline-flex items-center justify-center gap-2 border-2 border-white/40 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-all duration-300">
+          Contact Form
         </a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-slate-900 text-slate-300 py-12">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-        <div class="flex items-center gap-3">
-          <img src="./assets/logos/logo.png" alt="Logo" class="w-10 h-10" />
-          <span class="text-2xl font-bold gradient-text">ZeroFlowTech</span>
+  <footer class="bg-[#050d1a] text-slate-400 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div>
+          <a href="index.html" class="text-xl font-black text-white mb-3 block tracking-tight">ZeroFlow<span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Tech</span></a>
+          <p class="text-sm leading-relaxed mb-5 text-slate-500">Building SaaS products and custom digital solutions for Indian businesses.</p>
+          <div class="flex gap-4">
+            <a href="https://wa.me/6268497800" class="text-slate-400 hover:text-green-400 transition text-lg"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:zeroflowtech@gmail.com" class="text-slate-400 hover:text-indigo-400 transition text-lg"><i class="fa-solid fa-envelope"></i></a>
+          </div>
         </div>
-        <div class="flex flex-col sm:flex-row gap-6">
-          <a href="contact.html" class="hover:text-white">Contact</a>
-          <a href="faq.html" class="hover:text-white">FAQ</a>
-          <a href="mailto:zeroflowtech@gmail.com" class="hover:text-white">zeroflowtech@gmail.com</a>
+        <div>
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Product</p>
+          <div class="flex flex-col gap-2.5 text-sm">
+            <a href="travel-crm.html" class="hover:text-indigo-400 transition">Travel CRM</a>
+            <a href="travel-crm.html#features" class="hover:text-indigo-400 transition">Features</a>
+            <a href="travel-crm.html#faq" class="hover:text-indigo-400 transition">FAQ</a>
+            <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="hover:text-green-400 transition">Book Demo</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Company</p>
+          <div class="flex flex-col gap-2.5 text-sm">
+            <a href="services.html" class="hover:text-indigo-400 transition">Services</a>
+            <a href="about.html" class="hover:text-indigo-400 transition">About</a>
+            <a href="case-studies.html" class="hover:text-indigo-400 transition">Case Studies</a>
+            <a href="faq.html" class="hover:text-indigo-400 transition">FAQ</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</p>
+          <div class="flex flex-col gap-2.5 text-sm">
+            <a href="mailto:zeroflowtech@gmail.com" class="hover:text-indigo-400 transition">zeroflowtech@gmail.com</a>
+            <a href="https://wa.me/6268497800" class="hover:text-green-400 transition">+91 62684 97800</a>
+            <a href="contact.html" class="hover:text-indigo-400 transition">Contact Form</a>
+          </div>
         </div>
       </div>
-      <p class="mt-8 text-sm">© 2026 ZeroFlowTech – Building trust, one solution at a time. Ongoing support included.</p>
+      <p class="mt-8 text-sm text-center text-slate-600">© 2026 ZeroFlowTech. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    // Fade-in
+    const toggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      const icon = toggle.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-xmark');
+    });
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
-
-    // Mobile menu
-    document.getElementById('menu-btn')?.addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
-
-    // Domain Slider
-    new Swiper('.domainSwiper', {
-      slidesPerView: 1,
-      spaceBetween: 24,
-      loop: true,
-      pagination: { el: '.swiper-pagination', clickable: true },
-      breakpoints: {
-        640: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 }
-      }
-    });
-
-    // Tech Slider
-    new Swiper('.techSwiper', {
-      slidesPerView: 1,
-      spaceBetween: 24,
-      loop: true,
-      pagination: { el: '.swiper-pagination', clickable: true },
-      breakpoints: {
-        640: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 }
-      }
-    });
   </script>
 </body>
 </html>

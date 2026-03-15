@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="FAQ – Common questions about ZeroFlowTech custom CRM, websites, automation, pricing & process in Bhopal." />
+  <meta name="description" content="FAQ – Common questions about ZeroFlowTech Travel CRM, custom CRM, websites, automation, pricing & process." />
   <title>FAQ | ZeroFlowTech – Your Questions Answered</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -16,8 +16,16 @@
       theme: {
         extend: {
           fontFamily: { sans: ['Inter', 'sans-serif'] },
-          colors: { primary: '#2563eb', accent: '#00A3E8' },
-          boxShadow: { 'premium': '0 10px 30px -10px rgba(37,99,235,0.3)' }
+          colors: {
+            primary: '#4f46e5',
+            secondary: '#7c3aed',
+            accent: '#06b6d4',
+          },
+          boxShadow: {
+            'glow': '0 0 40px rgba(79,70,229,0.2)',
+            'card': '0 10px 40px -10px rgba(0,0,0,0.1)',
+            'button': '0 8px 30px rgba(79,70,229,0.4)',
+          }
         }
       }
     }
@@ -26,77 +34,110 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
-    .gradient-hero { background: linear-gradient(135deg, #f0f9ff, #e0f2fe, #dbeafe); }
-    .gradient-text { background: linear-gradient(90deg, #1e40af, #00A3E8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .premium-button { transition: all 0.3s ease; box-shadow: 0 4px 14px rgba(37,99,235,0.25); }
-    .premium-button:hover { box-shadow: 0 8px 25px rgba(37,99,235,0.4); transform: translateY(-2px); }
-    .section-fade { opacity: 0; transform: translateY(30px); transition: all 0.9s ease-out; }
-    .section-fade.visible { opacity: 1; transform: translateY(0); }
+    .gradient-hero {
+      background: #050d1a;
+      background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(79,70,229,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(6,182,212,0.08) 0%, transparent 55%);
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #4f46e5, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+      padding: 0.875rem 2rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 8px 30px rgba(79,70,229,0.45);
+      transform: translateY(-2px);
+    }
+    .section-fade {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.9s ease-out;
+    }
+    .section-fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
     .faq-item { transition: all 0.3s ease; }
-    .faq-item.open .faq-answer { max-height: 600px; opacity: 1; padding-top: 1.5rem; }
+    .faq-item.open .faq-answer { max-height: 600px; opacity: 1; padding-top: 1.25rem; }
     .faq-item.open .faq-toggle i { transform: rotate(180deg); }
+    .faq-answer { max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s ease-in-out; }
     @media (max-width: 640px) {
       h1 { font-size: 2.5rem; line-height: 1.1; }
-      h2 { font-size: 2.25rem; }
-      .text-xl { font-size: 1.125rem; }
     }
   </style>
 </head>
 <body class="bg-white text-slate-900 antialiased">
 
-  <!-- Top Banner -->
-  <div class="bg-blue-900 text-white text-center py-3 text-sm font-medium">
-    Limited: Only 3 project slots left this month – Secure yours now
+  <!-- Announcement Bar -->
+  <div id="announcement-bar" class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-center py-2.5 text-sm font-medium relative">
+    🚀 Travel CRM for Indian Travel Agencies — Now Live. <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="underline font-bold ml-1">Book a Free Demo →</a>
+    <button onclick="document.getElementById('announcement-bar').remove()" class="absolute right-4 top-1/2 -translate-y-1/2 opacity-70 hover:opacity-100 transition text-lg">×</button>
   </div>
 
   <!-- Navigation -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16 sm:h-20">
-        <a href="index.html" class="flex items-center gap-3">
-          <img src="./assets/logos/logo.png" alt="ZeroFlowTech" class="w-10 h-10 sm:w-12 sm:h-12" />
-          <span class="font-bold text-xl sm:text-2xl gradient-text">ZeroFlowTech</span>
-        </a>
-        <div class="hidden md:flex items-center gap-10">
-          <nav class="flex gap-8 font-medium">
-            <a href="index.html" class="hover:text-blue-700">Home</a>
-            <a href="services.html" class="hover:text-blue-700">Services</a>
-            <a href="case-studies.html" class="hover:text-blue-700">Case Studies</a>
-            <a href="about.html" class="hover:text-blue-700">About</a>
-            <a href="contact.html" class="hover:text-blue-700">Contact</a>
-            <a href="faq.html" class="text-blue-700 font-semibold">FAQ</a>
-          </nav>
-        <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
-            target="_blank" class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
-            Query ?
-          </a>
-        </div>
-        <div class="md:hidden flex items-center gap-3">
-          <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk%20about%20automating%20my%20business"
-            target="_blank" class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800 premium-button">
-            Query ?
-          </a>
-          <button id="menu-btn" class="text-2xl"><i class="fa-solid fa-bars"></i></button>
-        </div>
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+      <a href="index.html" class="text-xl font-black">
+        ZeroFlow<span class="bg-gradient-to-r from-indigo-600 to-cyan-500 bg-clip-text text-transparent">Tech</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">Home</a>
+        <a href="travel-crm.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">Product</a>
+        <a href="services.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">Services</a>
+        <a href="case-studies.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">Case Studies</a>
+        <a href="about.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">About</a>
+        <a href="contact.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">Contact</a>
+        <a href="faq.html" class="text-indigo-600 font-semibold">FAQ</a>
       </div>
-      <div id="mobile-menu" class="hidden md:hidden bg-white border-t py-6 px-6 space-y-5 font-medium">
-        <a href="index.html" class="block hover:text-blue-700">Home</a>
-        <a href="services.html" class="block hover:text-blue-700">Services</a>
-        <a href="case-studies.html" class="block hover:text-blue-700">Case Studies</a>
-        <a href="about.html" class="block hover:text-blue-700">About</a>
-        <a href="contact.html" class="block hover:text-blue-700">Contact</a>
-        <a href="faq.html" class="block text-blue-700 font-semibold">FAQ</a>
+      <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM"
+         target="_blank"
+         class="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:shadow-[0_8px_20px_rgba(79,70,229,0.4)] hover:scale-105 transition-all duration-300">
+        Book Demo <i class="fa-solid fa-arrow-right text-xs"></i>
+      </a>
+      <div class="md:hidden flex items-center gap-3">
+        <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM"
+           target="_blank"
+           class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white px-4 py-2 rounded-lg font-semibold text-sm">
+          Demo
+        </a>
+        <button id="menu-btn" class="text-2xl text-slate-700"><i class="fa-solid fa-bars"></i></button>
       </div>
     </div>
-  </header>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 py-6 px-6 space-y-5 font-medium">
+      <a href="index.html" class="block text-slate-700 hover:text-indigo-600">Home</a>
+      <a href="travel-crm.html" class="block text-slate-700 hover:text-indigo-600">Product</a>
+      <a href="services.html" class="block text-slate-700 hover:text-indigo-600">Services</a>
+      <a href="case-studies.html" class="block text-slate-700 hover:text-indigo-600">Case Studies</a>
+      <a href="about.html" class="block text-slate-700 hover:text-indigo-600">About</a>
+      <a href="contact.html" class="block text-slate-700 hover:text-indigo-600">Contact</a>
+      <a href="faq.html" class="block text-indigo-600 font-semibold">FAQ</a>
+    </div>
+  </nav>
 
   <!-- Hero -->
-  <section class="gradient-hero py-20 sm:py-28 relative overflow-hidden section-fade">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 gradient-text">
-        Frequently Asked Questions
+  <section class="gradient-hero py-20 sm:py-28 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-cyan-300 px-4 py-2 rounded-full text-sm font-medium mb-8 backdrop-blur-sm">
+        <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
+        Clear, Honest Answers
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+        Frequently Asked <span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Questions</span>
       </h1>
-      <p class="text-xl sm:text-2xl text-slate-700 max-w-3xl mx-auto">
+      <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto">
         Got questions? We've got clear, honest answers.
       </p>
     </div>
@@ -104,129 +145,200 @@
 
   <!-- FAQ Accordion -->
   <section class="py-16 sm:py-20 bg-white section-fade">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="space-y-6">
-        <!-- FAQ 1 -->
-        <div class="faq-item bg-slate-50 rounded-2xl overflow-hidden border border-slate-200">
-          <button class="faq-toggle w-full px-6 sm:px-8 py-6 text-left flex justify-between items-center font-semibold text-xl focus:outline-none">
-            <span>How long does a project usually take?</span>
-            <i class="fa-solid fa-chevron-down transition-transform duration-300 text-blue-600"></i>
-          </button>
-          <div class="faq-answer max-h-0 opacity-0 overflow-hidden px-6 sm:px-8 pb-6 transition-all duration-500 ease-in-out">
-            <p class="text-slate-700 leading-relaxed">
-              • Simple website redesign or optimization: 2–4 weeks<br>
-              • Full custom website with features: 4–8 weeks<br>
-              • CRM + complex automation (e.g. travel agency): 8–12 weeks<br>
-              We give exact timelines in the free proposal after discovery call.
-            </p>
-          </div>
-        </div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
 
-        <!-- FAQ 2 -->
-        <div class="faq-item bg-slate-50 rounded-2xl overflow-hidden border border-slate-200">
-          <button class="faq-toggle w-full px-6 sm:px-8 py-6 text-left flex justify-between items-center font-semibold text-xl focus:outline-none">
-            <span>Do you offer free consultation or audit?</span>
-            <i class="fa-solid fa-chevron-down transition-transform duration-300 text-blue-600"></i>
-          </button>
-          <div class="faq-answer max-h-0 opacity-0 overflow-hidden px-6 sm:px-8 pb-6 transition-all duration-500 ease-in-out">
-            <p class="text-slate-700 leading-relaxed">
-              Yes — 100% free and no obligation:<br>
-              • 15–30 min discovery call<br>
-              • Free website audit (speed, UX, conversions, mobile issues)<br>
-              We only proceed if we both see clear value.
-            </p>
+      <!-- Travel CRM FAQs -->
+      <div class="mb-12">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-plane text-white text-sm"></i>
           </div>
+          <h2 class="text-xl font-bold text-slate-800">Travel CRM Questions</h2>
         </div>
-
-        <!-- FAQ 3 -->
-        <div class="faq-item bg-slate-50 rounded-2xl overflow-hidden border border-slate-200">
-          <button class="faq-toggle w-full px-6 sm:px-8 py-6 text-left flex justify-between items-center font-semibold text-xl focus:outline-none">
-            <span>What kind of businesses do you work with?</span>
-            <i class="fa-solid fa-chevron-down transition-transform duration-300 text-blue-600"></i>
-          </button>
-          <div class="faq-answer max-h-0 opacity-0 overflow-hidden px-6 sm:px-8 pb-6 transition-all duration-500 ease-in-out">
-            <p class="text-slate-700 leading-relaxed">
-              We specialize in small-to-medium Indian businesses, especially:<br>
-              • Travel agencies & tour operators<br>
-              • Real estate, property & construction groups<br>
-              • Service-based businesses (logistics, education, consulting)<br>
-              But we love solving automation problems for any industry.
-            </p>
+        <div class="space-y-3">
+          <div class="faq-item bg-indigo-50 rounded-2xl overflow-hidden border border-indigo-100">
+            <button class="faq-toggle w-full px-6 sm:px-8 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none text-slate-800">
+              <span>What is Travel CRM?</span>
+              <i class="fa-solid fa-chevron-down transition-transform duration-300 text-indigo-600 flex-shrink-0 ml-4"></i>
+            </button>
+            <div class="faq-answer px-6 sm:px-8 pb-6">
+              <p class="text-slate-600 leading-relaxed">Travel CRM is our SaaS product built specifically for Indian travel agencies. It manages your entire business in one system — leads (7-stage pipeline), tour management with approval workflow, bookings lifecycle, payments with GST & Razorpay, auto-invoices (PDF), commission system, and reports. Multi-role access for Admin, Manager, Agent, Finance and Customer. Includes Itinerary Builder, Customer Portal with OTP/Gmail login, and WhatsApp notifications. <a href="travel-crm.html" class="text-indigo-600 font-semibold hover:underline">See full product details →</a></p>
+            </div>
           </div>
-        </div>
-
-        <!-- FAQ 4 -->
-        <div class="faq-item bg-slate-50 rounded-2xl overflow-hidden border border-slate-200">
-          <button class="faq-toggle w-full px-6 sm:px-8 py-6 text-left flex justify-between items-center font-semibold text-xl focus:outline-none">
-            <span>Do you provide support after launch?</span>
-            <i class="fa-solid fa-chevron-down transition-transform duration-300 text-blue-600"></i>
-          </button>
-          <div class="faq-answer max-h-0 opacity-0 overflow-hidden px-6 sm:px-8 pb-6 transition-all duration-500 ease-in-out">
-            <p class="text-slate-700 leading-relaxed">
-              Yes — support is part of our promise:<br>
-              • 30 days free post-launch (bug fixes, small changes)<br>
-              • Lifetime advice & guidance<br>
-              • Affordable monthly maintenance plans if needed
-            </p>
+          <div class="faq-item bg-indigo-50 rounded-2xl overflow-hidden border border-indigo-100">
+            <button class="faq-toggle w-full px-6 sm:px-8 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none text-slate-800">
+              <span>Is Travel CRM a monthly subscription or one-time?</span>
+              <i class="fa-solid fa-chevron-down transition-transform duration-300 text-indigo-600 flex-shrink-0 ml-4"></i>
+            </button>
+            <div class="faq-answer px-6 sm:px-8 pb-6">
+              <p class="text-slate-600 leading-relaxed">Pricing is based on team size and modules. We share the full pricing structure during the free demo call — no hidden fees, no surprises. Book a demo to get the details specific to your agency size.</p>
+            </div>
           </div>
-        </div>
-
-        <!-- FAQ 5 -->
-        <div class="faq-item bg-slate-50 rounded-2xl overflow-hidden border border-slate-200">
-          <button class="faq-toggle w-full px-6 sm:px-8 py-6 text-left flex justify-between items-center font-semibold text-xl focus:outline-none">
-            <span>What if my requirements change during the project?</span>
-            <i class="fa-solid fa-chevron-down transition-transform duration-300 text-blue-600"></i>
-          </button>
-          <div class="faq-answer max-h-0 opacity-0 overflow-hidden px-6 sm:px-8 pb-6 transition-all duration-500 ease-in-out">
-            <p class="text-slate-700 leading-relaxed">
-              Totally normal — we embrace change!<br>
-              • Weekly feedback keeps us aligned<br>
-              • Major changes discussed openly<br>
-              • We adjust timeline & cost fairly (only for significant additions)
-            </p>
+          <div class="faq-item bg-indigo-50 rounded-2xl overflow-hidden border border-indigo-100">
+            <button class="faq-toggle w-full px-6 sm:px-8 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none text-slate-800">
+              <span>Can I use Travel CRM without any technical setup?</span>
+              <i class="fa-solid fa-chevron-down transition-transform duration-300 text-indigo-600 flex-shrink-0 ml-4"></i>
+            </button>
+            <div class="faq-answer px-6 sm:px-8 pb-6">
+              <p class="text-slate-600 leading-relaxed">Yes. We handle the full setup — system configuration, branding, user accounts and data migration. We also train you and your team before go-live. If you can use WhatsApp, you can use Travel CRM.</p>
+            </div>
           </div>
-        </div>
-
-        <!-- FAQ 6 -->
-        <div class="faq-item bg-slate-50 rounded-2xl overflow-hidden border border-slate-200">
-          <button class="faq-toggle w-full px-6 sm:px-8 py-6 text-left flex justify-between items-center font-semibold text-xl focus:outline-none">
-            <span>How does pricing & payment work?</span>
-            <i class="fa-solid fa-chevron-down transition-transform duration-300 text-blue-600"></i>
-          </button>
-          <div class="faq-answer max-h-0 opacity-0 overflow-hidden px-6 sm:px-8 pb-6 transition-all duration-500 ease-in-out">
-            <p class="text-slate-700 leading-relaxed">
-              • Fixed price after free discovery call<br>
-              • 30–40% upfront, rest in 2–3 milestones<br>
-              • No hidden fees — everything agreed upfront<br>
-              • We flex price if scope changes significantly
-            </p>
+          <div class="faq-item bg-indigo-50 rounded-2xl overflow-hidden border border-indigo-100">
+            <button class="faq-toggle w-full px-6 sm:px-8 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none text-slate-800">
+              <span>Does Travel CRM include the Itinerary Builder?</span>
+              <i class="fa-solid fa-chevron-down transition-transform duration-300 text-indigo-600 flex-shrink-0 ml-4"></i>
+            </button>
+            <div class="faq-answer px-6 sm:px-8 pb-6">
+              <p class="text-slate-600 leading-relaxed">Yes. The Itinerary Builder is a core module. You can build day-by-day itineraries, attach pricing, generate a PDF proposal, and share a public URL with your customer. When the customer approves, the system automatically converts it to a booking. The full lifecycle is: DRAFT → SENT → VIEWED → APPROVED → CONVERTED.</p>
+            </div>
           </div>
-        </div>
-
-        <!-- FAQ 7 -->
-        <div class="faq-item bg-slate-50 rounded-2xl overflow-hidden border border-slate-200">
-          <button class="faq-toggle w-full px-6 sm:px-8 py-6 text-left flex justify-between items-center font-semibold text-xl focus:outline-none">
-            <span>Do you use templates or pre-built tools?</span>
-            <i class="fa-solid fa-chevron-down transition-transform duration-300 text-blue-600"></i>
-          </button>
-          <div class="faq-answer max-h-0 opacity-0 overflow-hidden px-6 sm:px-8 pb-6 transition-all duration-500 ease-in-out">
-            <p class="text-slate-700 leading-relaxed">
-              No — we build custom every time.<br>
-              We avoid rigid, expensive foreign platforms. Your solution is made exactly for your business — not the other way around.
-            </p>
+          <div class="faq-item bg-indigo-50 rounded-2xl overflow-hidden border border-indigo-100">
+            <button class="faq-toggle w-full px-6 sm:px-8 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none text-slate-800">
+              <span>Can customers book tours online themselves?</span>
+              <i class="fa-solid fa-chevron-down transition-transform duration-300 text-indigo-600 flex-shrink-0 ml-4"></i>
+            </button>
+            <div class="faq-answer px-6 sm:px-8 pb-6">
+              <p class="text-slate-600 leading-relaxed">Yes. The Customer Portal lets your clients log in via OTP or Gmail, browse your tours, book directly, and pay via Razorpay — all without calling your office. They can also view their booking history and download receipts.</p>
+            </div>
+          </div>
+          <div class="faq-item bg-indigo-50 rounded-2xl overflow-hidden border border-indigo-100">
+            <button class="faq-toggle w-full px-6 sm:px-8 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none text-slate-800">
+              <span>How long does it take to go live?</span>
+              <i class="fa-solid fa-chevron-down transition-transform duration-300 text-indigo-600 flex-shrink-0 ml-4"></i>
+            </button>
+            <div class="faq-answer px-6 sm:px-8 pb-6">
+              <p class="text-slate-600 leading-relaxed">Typically 1–2 weeks from onboarding to go-live. The product is already built — we just configure it for your agency, set up your team's roles, import your data, and train your staff. No long development cycles.</p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="text-center mt-16">
-        <p class="text-xl sm:text-2xl text-slate-700 mb-8">
+      <!-- General FAQs -->
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-circle-question text-slate-600"></i>
+          </div>
+          <h2 class="text-xl font-bold text-slate-800">General Questions</h2>
+        </div>
+        <div class="space-y-3">
+          <div class="faq-item bg-slate-50 rounded-2xl overflow-hidden border border-slate-200">
+            <button class="faq-toggle w-full px-6 sm:px-8 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none text-slate-800">
+              <span>How long does a project usually take?</span>
+              <i class="fa-solid fa-chevron-down transition-transform duration-300 text-indigo-600 flex-shrink-0 ml-4"></i>
+            </button>
+            <div class="faq-answer px-6 sm:px-8 pb-6">
+              <p class="text-slate-600 leading-relaxed">
+                • Simple website redesign or optimization: 2–4 weeks<br>
+                • Full custom website with features: 4–8 weeks<br>
+                • CRM + complex automation: 8–12 weeks<br>
+                We give exact timelines in the free proposal after discovery call.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-slate-50 rounded-2xl overflow-hidden border border-slate-200">
+            <button class="faq-toggle w-full px-6 sm:px-8 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none text-slate-800">
+              <span>Do you offer free consultation or audit?</span>
+              <i class="fa-solid fa-chevron-down transition-transform duration-300 text-indigo-600 flex-shrink-0 ml-4"></i>
+            </button>
+            <div class="faq-answer px-6 sm:px-8 pb-6">
+              <p class="text-slate-600 leading-relaxed">
+                Yes — 100% free and no obligation:<br>
+                • 15–30 min discovery call<br>
+                • Free website audit (speed, UX, conversions, mobile issues)<br>
+                We only proceed if we both see clear value.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-slate-50 rounded-2xl overflow-hidden border border-slate-200">
+            <button class="faq-toggle w-full px-6 sm:px-8 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none text-slate-800">
+              <span>What kind of businesses do you work with?</span>
+              <i class="fa-solid fa-chevron-down transition-transform duration-300 text-indigo-600 flex-shrink-0 ml-4"></i>
+            </button>
+            <div class="faq-answer px-6 sm:px-8 pb-6">
+              <p class="text-slate-600 leading-relaxed">
+                We specialize in small-to-medium Indian businesses, especially:<br>
+                • Travel agencies & tour operators<br>
+                • Real estate, property & construction groups<br>
+                • Service-based businesses (logistics, education, consulting)<br>
+                But we love solving automation problems for any industry.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-slate-50 rounded-2xl overflow-hidden border border-slate-200">
+            <button class="faq-toggle w-full px-6 sm:px-8 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none text-slate-800">
+              <span>Do you provide support after launch?</span>
+              <i class="fa-solid fa-chevron-down transition-transform duration-300 text-indigo-600 flex-shrink-0 ml-4"></i>
+            </button>
+            <div class="faq-answer px-6 sm:px-8 pb-6">
+              <p class="text-slate-600 leading-relaxed">
+                Yes — support is part of our promise:<br>
+                • 30 days free post-launch (bug fixes, small changes)<br>
+                • Lifetime advice & guidance<br>
+                • Affordable monthly maintenance plans if needed
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-slate-50 rounded-2xl overflow-hidden border border-slate-200">
+            <button class="faq-toggle w-full px-6 sm:px-8 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none text-slate-800">
+              <span>What if my requirements change during the project?</span>
+              <i class="fa-solid fa-chevron-down transition-transform duration-300 text-indigo-600 flex-shrink-0 ml-4"></i>
+            </button>
+            <div class="faq-answer px-6 sm:px-8 pb-6">
+              <p class="text-slate-600 leading-relaxed">
+                Totally normal — we embrace change!<br>
+                • Weekly feedback keeps us aligned<br>
+                • Major changes discussed openly<br>
+                • We adjust timeline & cost fairly (only for significant additions)
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-slate-50 rounded-2xl overflow-hidden border border-slate-200">
+            <button class="faq-toggle w-full px-6 sm:px-8 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none text-slate-800">
+              <span>How does pricing & payment work?</span>
+              <i class="fa-solid fa-chevron-down transition-transform duration-300 text-indigo-600 flex-shrink-0 ml-4"></i>
+            </button>
+            <div class="faq-answer px-6 sm:px-8 pb-6">
+              <p class="text-slate-600 leading-relaxed">
+                • Fixed price after free discovery call<br>
+                • 30–40% upfront, rest in 2–3 milestones<br>
+                • No hidden fees — everything agreed upfront<br>
+                • We flex price if scope changes significantly
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item bg-slate-50 rounded-2xl overflow-hidden border border-slate-200">
+            <button class="faq-toggle w-full px-6 sm:px-8 py-5 text-left flex justify-between items-center font-semibold text-lg focus:outline-none text-slate-800">
+              <span>Do you use templates or pre-built tools?</span>
+              <i class="fa-solid fa-chevron-down transition-transform duration-300 text-indigo-600 flex-shrink-0 ml-4"></i>
+            </button>
+            <div class="faq-answer px-6 sm:px-8 pb-6">
+              <p class="text-slate-600 leading-relaxed">
+                No — we build custom every time. We avoid rigid, expensive foreign platforms. Your solution is made exactly for your business — not the other way around.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-16 pt-10 border-t border-slate-100">
+        <p class="text-lg sm:text-xl text-slate-600 mb-8">
           Still have a question? We're happy to answer — no pressure.
         </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-6">
-          <a href="contact.html" class="inline-flex items-center gap-3 bg-blue-700 text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-blue-800 premium-button">
-            Contact Us Now <i class="fa-solid fa-arrow-right"></i>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM"
+             target="_blank"
+             class="btn-primary justify-center">
+            <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
           </a>
-          <a href="mailto:zeroflowtech@gmail.com?subject=FAQ%20Question" class="inline-flex items-center gap-3 border-2 border-blue-700 text-blue-700 px-10 py-5 rounded-xl font-bold text-lg hover:bg-blue-700 hover:text-white transition">
+          <a href="mailto:zeroflowtech@gmail.com?subject=FAQ%20Question"
+             class="inline-flex items-center justify-center gap-2 border-2 border-indigo-600 text-indigo-600 px-8 py-3.5 rounded-xl font-semibold hover:bg-indigo-600 hover:text-white transition-all duration-300">
             Email Us Directly
           </a>
         </div>
@@ -235,36 +347,60 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-slate-900 text-slate-300 py-12">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-        <div class="flex items-center gap-3">
-          <img src="./assets/logos/logo.png" alt="Logo" class="w-10 h-10" />
-          <span class="text-2xl font-bold gradient-text">ZeroFlowTech</span>
+  <footer class="bg-[#050d1a] text-slate-400 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div>
+          <a href="index.html" class="text-xl font-black text-white mb-3 block">
+            ZeroFlow<span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Tech</span>
+          </a>
+          <p class="text-sm leading-relaxed mb-4">Building SaaS products and custom solutions for Indian businesses.</p>
+          <div class="flex gap-3">
+            <a href="https://wa.me/6268497800" class="text-slate-400 hover:text-green-400 transition"><i class="fa-brands fa-whatsapp text-lg"></i></a>
+            <a href="mailto:zeroflowtech@gmail.com" class="text-slate-400 hover:text-indigo-400 transition"><i class="fa-solid fa-envelope text-lg"></i></a>
+          </div>
         </div>
-        <div class="flex flex-col sm:flex-row gap-6">
-          <a href="contact.html" class="hover:text-white">Contact</a>
-          <a href="faq.html" class="hover:text-white">FAQ</a>
-          <a href="mailto:zeroflowtech@gmail.com" class="hover:text-white">zeroflowtech@gmail.com</a>
+        <div>
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Product</p>
+          <div class="flex flex-col gap-2 text-sm">
+            <a href="travel-crm.html" class="hover:text-indigo-400 transition">Travel CRM</a>
+            <a href="travel-crm.html#features" class="hover:text-indigo-400 transition">Features</a>
+            <a href="travel-crm.html#faq" class="hover:text-indigo-400 transition">FAQ</a>
+            <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="hover:text-indigo-400 transition">Book Demo</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Company</p>
+          <div class="flex flex-col gap-2 text-sm">
+            <a href="services.html" class="hover:text-indigo-400 transition">Services</a>
+            <a href="about.html" class="hover:text-indigo-400 transition">About</a>
+            <a href="case-studies.html" class="hover:text-indigo-400 transition">Case Studies</a>
+            <a href="faq.html" class="hover:text-indigo-400 transition">FAQ</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Contact</p>
+          <div class="flex flex-col gap-2 text-sm">
+            <a href="mailto:zeroflowtech@gmail.com" class="hover:text-indigo-400 transition">zeroflowtech@gmail.com</a>
+            <a href="https://wa.me/6268497800" class="hover:text-green-400 transition">+91 62684 97800</a>
+            <a href="contact.html" class="hover:text-indigo-400 transition">Contact Form</a>
+          </div>
         </div>
       </div>
-      <p class="mt-8 text-sm">© 2026 ZeroFlowTech – Building trust, one solution at a time. Ongoing support included.</p>
+      <p class="mt-8 text-sm text-center text-slate-500">© 2026 ZeroFlowTech. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    // Fade-in animation
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
 
-    // Mobile menu toggle
     document.getElementById('menu-btn')?.addEventListener('click', () => {
       document.getElementById('mobile-menu').classList.toggle('hidden');
     });
 
-    // FAQ Accordion
     document.querySelectorAll('.faq-toggle').forEach(button => {
       button.addEventListener('click', () => {
         const item = button.closest('.faq-item');
