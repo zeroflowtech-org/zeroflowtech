@@ -4,24 +4,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | ZeroFlowTech — Let's Build Your Growth</title>
   <meta name="description"
-    content="Contact ZeroFlowTech – Get in touch for custom CRM, websites, automation & free audits in Bhopal." />
-  <title>Contact Us | ZeroFlowTech – Let's Build Your Growth</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+    content="Contact ZeroFlowTech — Get in touch for custom CRM, websites, automation & free audits in Bhopal." />
+  <link rel="icon" href="assets/logos/logo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          fontFamily: { heading: ['Poppins', 'sans-serif'], sans: ['Inter', 'sans-serif'] },
           colors: {
             primary: '#4f46e5',
             secondary: '#7c3aed',
             accent: '#06b6d4',
+            coral: '#FF6B6B',
+            golden: '#F59E0B',
+            sunset: '#FB923C',
+            forest: '#059669',
           },
           boxShadow: {
             'glow': '0 0 40px rgba(79,70,229,0.2)',
@@ -32,121 +37,41 @@
       }
     }
   </script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <style>
-    .gradient-hero {
-      background: #050d1a;
-      background-image:
-        radial-gradient(ellipse at 20% 50%, rgba(79,70,229,0.15) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(6,182,212,0.08) 0%, transparent 55%);
-    }
-    .gradient-text {
-      background: linear-gradient(90deg, #4f46e5, #06b6d4);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, #4f46e5, #7c3aed);
-      color: white;
-      padding: 0.875rem 2rem;
-      border-radius: 0.75rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .btn-primary:hover {
-      box-shadow: 0 8px 30px rgba(79,70,229,0.45);
-      transform: translateY(-2px);
-    }
-    .section-fade {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.9s ease-out;
-    }
-    .section-fade.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .benefit-icon {
-      width: 72px;
-      height: 72px;
-      background: linear-gradient(135deg, #4f46e5, #7c3aed);
-      border-radius: 9999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.25rem;
-      transition: all 0.4s ease;
-      box-shadow: 0 10px 25px -5px rgba(79,70,229,0.3);
-    }
-    .benefit-card:hover .benefit-icon {
-      transform: scale(1.12);
-      box-shadow: 0 15px 35px -8px rgba(79,70,229,0.5);
-    }
-    .card-feature {
-      background: white;
-      border-radius: 1.25rem;
-      border: 1px solid #f1f5f9;
-      padding: 1.5rem;
-      transition: all 0.3s ease;
-    }
-    .card-feature:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px -10px rgba(79,70,229,0.12);
-      border-color: #e0e7ff;
-    }
-  </style>
 </head>
 
 <body class="bg-white text-slate-900 antialiased">
 
-  <!-- Announcement Bar -->
-  <div id="announcement-bar" class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-center py-2.5 text-sm font-medium relative">
-    🚀 Travel CRM for Indian Travel Agencies — Now Live. <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="underline font-bold ml-1">Book a Free Demo →</a>
-    <button onclick="document.getElementById('announcement-bar').remove()" class="absolute right-4 top-1/2 -translate-y-1/2 opacity-70 hover:opacity-100 transition text-lg">×</button>
-  </div>
-
   <!-- Navigation -->
   <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
-      <a href="index.html" class="text-xl font-black">
-        ZeroFlow<span class="bg-gradient-to-r from-indigo-600 to-cyan-500 bg-clip-text text-transparent">Tech</span>
+      <a href="index.html" class="text-xl font-black tracking-tight font-heading">
+        ZeroFlow<span class="gradient-text">Tech</span>
       </a>
       <div class="hidden md:flex items-center gap-8">
-        <a href="index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">Home</a>
-        <a href="travel-crm.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">Product</a>
-        <a href="services.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">Services</a>
-        <a href="case-studies.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">Case Studies</a>
-        <a href="about.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">About</a>
-        <a href="contact.html" class="text-indigo-600 font-semibold">Contact</a>
+        <a href="index.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Home</a>
+        <a href="travel-crm.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Product</a>
+        <a href="about.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">About</a>
+        <a href="contact.html" class="text-indigo-600 font-semibold text-sm">Contact</a>
       </div>
       <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM"
-         target="_blank"
-         class="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:shadow-[0_8px_20px_rgba(79,70,229,0.4)] hover:scale-105 transition-all duration-300">
-        Book Demo <i class="fa-solid fa-arrow-right text-xs"></i>
+         class="hidden md:inline-flex items-center gap-2 btn-whatsapp text-sm !py-2.5 !px-5 !rounded-xl">
+        <i class="fa-brands fa-whatsapp text-lg"></i> Book Demo
       </a>
-      <div class="md:hidden flex items-center gap-3">
-        <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM"
-           target="_blank"
-           class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white px-4 py-2 rounded-lg font-semibold text-sm">
-          Demo
-        </a>
-        <button id="menu-btn" class="text-2xl text-slate-700"><i class="fa-solid fa-bars"></i></button>
-      </div>
+      <button id="mobile-toggle" class="md:hidden text-slate-700 p-2">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 py-6 px-6 space-y-5 font-medium">
-      <a href="index.html" class="block text-slate-700 hover:text-indigo-600">Home</a>
-      <a href="travel-crm.html" class="block text-slate-700 hover:text-indigo-600">Product</a>
-      <a href="services.html" class="block text-slate-700 hover:text-indigo-600">Services</a>
-      <a href="case-studies.html" class="block text-slate-700 hover:text-indigo-600">Case Studies</a>
-      <a href="about.html" class="block text-slate-700 hover:text-indigo-600">About</a>
-      <a href="contact.html" class="block text-indigo-600 font-semibold">Contact</a>
-      <a href="faq.html" class="block text-slate-700 hover:text-indigo-600">FAQ</a>
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t border-slate-100 px-4 py-4">
+      <div class="flex flex-col gap-1">
+        <a href="index.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Home</a>
+        <a href="travel-crm.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Product</a>
+        <a href="about.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">About</a>
+        <a href="contact.html" class="block py-2.5 px-3 rounded-lg text-indigo-600 font-semibold bg-indigo-50">Contact</a>
+        <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM"
+           class="btn-whatsapp mt-3 justify-center text-center">
+          <i class="fa-brands fa-whatsapp"></i> Book Demo
+        </a>
+      </div>
     </div>
   </nav>
 
@@ -157,7 +82,7 @@
         <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
         We respond within hours
       </div>
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 font-heading">
         Let's <span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Get in Touch</span>
       </h1>
       <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto">
@@ -169,7 +94,7 @@
   <!-- Benefits Section -->
   <section class="py-12 sm:py-16 bg-slate-50 section-fade">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-10 text-slate-800">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-10 text-slate-800 font-heading">
         Why Reach Out Today?
       </h2>
       <div class="grid md:grid-cols-4 gap-6">
@@ -177,28 +102,28 @@
           <div class="benefit-icon">
             <i class="fa-solid fa-clock-rotate-left text-2xl text-white"></i>
           </div>
-          <h3 class="text-lg font-bold mb-2">Save Hours Every Day</h3>
+          <h3 class="text-lg font-bold mb-2 font-heading">Save Hours Every Day</h3>
           <p class="text-slate-600 text-sm">Stop manual chaos — reclaim your time for growth.</p>
         </div>
         <div class="benefit-card card-feature text-center">
           <div class="benefit-icon">
             <i class="fa-solid fa-chart-line text-2xl text-white"></i>
           </div>
-          <h3 class="text-lg font-bold mb-2">Grow Revenue Faster</h3>
+          <h3 class="text-lg font-bold mb-2 font-heading">Grow Revenue Faster</h3>
           <p class="text-slate-600 text-sm">Never miss leads, bookings, or follow-ups again.</p>
         </div>
         <div class="benefit-card card-feature text-center">
           <div class="benefit-icon">
             <i class="fa-solid fa-face-smile text-2xl text-white"></i>
           </div>
-          <h3 class="text-lg font-bold mb-2">Reduce Daily Stress</h3>
+          <h3 class="text-lg font-bold mb-2 font-heading">Reduce Daily Stress</h3>
           <p class="text-slate-600 text-sm">Let automation handle the repetitive grind.</p>
         </div>
         <div class="benefit-card card-feature text-center">
           <div class="benefit-icon">
             <i class="fa-solid fa-headset text-2xl text-white"></i>
           </div>
-          <h3 class="text-lg font-bold mb-2">Get Expert Help</h3>
+          <h3 class="text-lg font-bold mb-2 font-heading">Get Expert Help</h3>
           <p class="text-slate-600 text-sm">We listen, research, and build what actually works for you.</p>
         </div>
       </div>
@@ -211,7 +136,7 @@
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
         <!-- Form -->
         <div class="bg-white p-8 lg:p-10 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100">
-          <h2 class="text-2xl font-bold mb-8 text-center text-slate-800">Send Us a Message</h2>
+          <h2 class="text-2xl font-bold mb-8 text-center text-slate-800 font-heading">Send Us a Message</h2>
           <form class="space-y-5">
             <input type="text" placeholder="Your Name *" required
               class="w-full p-4 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition text-slate-800 placeholder-slate-400" />
@@ -231,7 +156,7 @@
         <!-- Quick Connect -->
         <div class="flex flex-col justify-center space-y-8">
           <div class="bg-white p-8 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100">
-            <h3 class="text-xl font-bold mb-6 text-slate-800">Quick Ways to Reach Us</h3>
+            <h3 class="text-xl font-bold mb-6 text-slate-800 font-heading">Quick Ways to Reach Us</h3>
             <div class="space-y-5">
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -264,7 +189,7 @@
           </div>
 
           <div class="bg-indigo-50 p-8 rounded-2xl border border-indigo-100">
-            <h3 class="text-xl font-bold mb-3 text-slate-800">Prefer a Quick Chat?</h3>
+            <h3 class="text-xl font-bold mb-3 text-slate-800 font-heading">Prefer a Quick Chat?</h3>
             <p class="text-slate-600 mb-5">
               Book a free 15-minute call — no sales pitch, just real talk about your business needs.
             </p>
@@ -279,86 +204,21 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="py-16 sm:py-20 bg-slate-50 section-fade">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 text-slate-800">
-        What Our Clients Say
-      </h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- Testimonial 1 -->
-        <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_40px_-10px_rgba(79,70,229,0.12)] hover:-translate-y-1 transition-all duration-300">
-          <div class="flex justify-center mb-4">
-            <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-indigo-100">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop"
-                alt="Rahul Jain" class="w-full h-full object-cover" />
-            </div>
-          </div>
-          <div class="flex justify-center mb-4">
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-          </div>
-          <p class="italic text-slate-600 text-sm leading-relaxed mb-5 text-center">
-            "They turned 10+ hours of daily chaos into complete automation. Bookings, leads, alerts — everything just works now."
-          </p>
-          <p class="font-bold text-center gradient-text">Rahul Jain</p>
-          <p class="text-slate-500 text-sm text-center">Travel Agency Owner</p>
-        </div>
-
-        <!-- Testimonial 2 -->
-        <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_40px_-10px_rgba(79,70,229,0.12)] hover:-translate-y-1 transition-all duration-300">
-          <div class="flex justify-center mb-4">
-            <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-indigo-100">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop"
-                alt="Priya Sharma" class="w-full h-full object-cover" />
-            </div>
-          </div>
-          <div class="flex justify-center mb-4">
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-          </div>
-          <p class="italic text-slate-600 text-sm leading-relaxed mb-5 text-center">
-            "Their free audit showed us exactly where we were losing money. Honest, fast, and actually care about making your business better."
-          </p>
-          <p class="font-bold text-center gradient-text">Priya Sharma</p>
-          <p class="text-slate-500 text-sm text-center">Business Owner, Indore</p>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_40px_-10px_rgba(79,70,229,0.12)] hover:-translate-y-1 transition-all duration-300">
-          <div class="flex justify-center mb-4">
-            <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-indigo-100">
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop"
-                alt="Amit Patel" class="w-full h-full object-cover" />
-            </div>
-          </div>
-          <div class="flex justify-center mb-4">
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-            <i class="fa-solid fa-star text-amber-400"></i>
-          </div>
-          <p class="italic text-slate-600 text-sm leading-relaxed mb-5 text-center">
-            "Custom CRM cut our admin time by over 20 hours a week. Clear process, no surprises, always available when we need them."
-          </p>
-          <p class="font-bold text-center gradient-text">Amit Patel</p>
-          <p class="text-slate-500 text-sm text-center">Logistics Business, Ahmedabad</p>
-        </div>
-      </div>
+  <!-- Prefer to Chat? -->
+  <section class="py-12 bg-slate-50">
+    <div class="max-w-xl mx-auto px-4 text-center">
+      <h3 class="text-xl font-bold text-slate-900 mb-3 font-heading">Prefer to Chat?</h3>
+      <p class="text-slate-500 mb-5">Most agencies reach us on WhatsApp. We reply within minutes.</p>
+      <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20have%20a%20question" class="btn-whatsapp text-base px-8 py-4 mx-auto">
+        <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
+      </a>
     </div>
   </section>
 
   <!-- Final CTA -->
-  <section class="py-20 bg-gradient-to-r from-indigo-600 to-violet-600 text-white section-fade">
+  <section class="py-20 text-white section-fade" style="background: linear-gradient(135deg, #4f46e5, #7c3aed, #FB923C);">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 font-heading">
         Ready to stop the daily grind?
       </h2>
       <p class="text-lg mb-10 opacity-90 max-w-2xl mx-auto">
@@ -383,56 +243,56 @@
     <div class="max-w-7xl mx-auto px-4">
       <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
         <div>
-          <a href="index.html" class="text-xl font-black text-white mb-3 block">
-            ZeroFlow<span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Tech</span>
+          <a href="index.html" class="text-xl font-black text-white mb-3 block tracking-tight font-heading">
+            ZeroFlow<span class="gradient-text">Tech</span>
           </a>
-          <p class="text-sm leading-relaxed mb-4">Building SaaS products and custom solutions for Indian businesses.</p>
-          <div class="flex gap-3">
-            <a href="https://wa.me/6268497800" class="text-slate-400 hover:text-green-400 transition"><i class="fa-brands fa-whatsapp text-lg"></i></a>
-            <a href="mailto:zeroflowtech@gmail.com" class="text-slate-400 hover:text-indigo-400 transition"><i class="fa-solid fa-envelope text-lg"></i></a>
+          <p class="text-sm leading-relaxed mb-5 text-slate-500">Building Travel CRM — the only tool Indian travel agencies need to run their business.</p>
+          <div class="flex gap-4">
+            <a href="https://wa.me/6268497800" class="text-slate-400 hover:text-green-400 transition text-lg" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:zeroflowtech@gmail.com" class="text-slate-400 hover:text-indigo-400 transition text-lg" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
           </div>
         </div>
         <div>
-          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Product</p>
-          <div class="flex flex-col gap-2 text-sm">
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Product</p>
+          <div class="flex flex-col gap-2.5 text-sm">
             <a href="travel-crm.html" class="hover:text-indigo-400 transition">Travel CRM</a>
             <a href="travel-crm.html#features" class="hover:text-indigo-400 transition">Features</a>
-            <a href="travel-crm.html#faq" class="hover:text-indigo-400 transition">FAQ</a>
-            <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="hover:text-indigo-400 transition">Book Demo</a>
+            <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="hover:text-green-400 transition">Book Demo</a>
           </div>
         </div>
         <div>
-          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Company</p>
-          <div class="flex flex-col gap-2 text-sm">
-            <a href="services.html" class="hover:text-indigo-400 transition">Services</a>
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Company</p>
+          <div class="flex flex-col gap-2.5 text-sm">
             <a href="about.html" class="hover:text-indigo-400 transition">About</a>
+            <a href="services.html" class="hover:text-indigo-400 transition">Services</a>
             <a href="case-studies.html" class="hover:text-indigo-400 transition">Case Studies</a>
             <a href="faq.html" class="hover:text-indigo-400 transition">FAQ</a>
           </div>
         </div>
         <div>
-          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Contact</p>
-          <div class="flex flex-col gap-2 text-sm">
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</p>
+          <div class="flex flex-col gap-2.5 text-sm">
             <a href="mailto:zeroflowtech@gmail.com" class="hover:text-indigo-400 transition">zeroflowtech@gmail.com</a>
             <a href="https://wa.me/6268497800" class="hover:text-green-400 transition">+91 62684 97800</a>
             <a href="contact.html" class="hover:text-indigo-400 transition">Contact Form</a>
           </div>
         </div>
       </div>
-      <p class="mt-8 text-sm text-center text-slate-500">© 2026 ZeroFlowTech. All rights reserved.</p>
+      <p class="mt-8 text-sm text-center text-slate-600">&copy; 2026 ZeroFlowTech. All rights reserved.</p>
     </div>
   </footer>
 
-  <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20have%20a%20question%20about%20Travel%20CRM"
+     class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="wa-tooltip">Chat with us</span>
+  </a>
 
-    document.getElementById('menu-btn')?.addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
-  </script>
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>

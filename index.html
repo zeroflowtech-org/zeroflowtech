@@ -4,21 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ZeroFlowTech — Travel CRM for Indian Travel Agencies</title>
-  <meta name="description" content="ZeroFlowTech builds Travel CRM — a complete SaaS for Indian travel agencies. Lead pipeline, itinerary builder, bookings, payments, commissions and reports. Book a free demo." />
+  <meta name="description" content="ZeroFlowTech builds Travel CRM — a complete SaaS for Indian travel agencies. 38+ modules: lead pipeline, itinerary builder, bookings, payments, commissions and reports. Book a free demo." />
+  <meta property="og:title" content="ZeroFlowTech — Travel CRM for Indian Travel Agencies" />
+  <meta property="og:description" content="Lead to commission in one platform. 38+ modules built for Indian travel agencies. WhatsApp-first, GST-ready, Razorpay integrated." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/logos/logo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          fontFamily: { heading: ['Poppins', 'sans-serif'], sans: ['Inter', 'sans-serif'] },
           colors: {
             primary: '#4f46e5',
             secondary: '#7c3aed',
             accent: '#06b6d4',
+            coral: '#FF6B6B',
+            golden: '#F59E0B',
+            sunset: '#FB923C',
+            forest: '#059669',
           },
           boxShadow: {
             'glow': '0 0 40px rgba(79,70,229,0.2)',
@@ -29,172 +39,24 @@
       }
     }
   </script>
-  <style>
-    * { font-family: 'Inter', sans-serif; }
-    .gradient-hero {
-      background: #050d1a;
-      background-image:
-        radial-gradient(ellipse at 20% 50%, rgba(79,70,229,0.18) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(6,182,212,0.1) 0%, transparent 55%),
-        radial-gradient(ellipse at 60% 80%, rgba(124,58,237,0.1) 0%, transparent 50%);
-    }
-    .gradient-dark {
-      background: #0a0f1e;
-      background-image:
-        radial-gradient(ellipse at 70% 50%, rgba(79,70,229,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse at 20% 30%, rgba(6,182,212,0.07) 0%, transparent 55%);
-    }
-    .gradient-text {
-      background: linear-gradient(90deg, #4f46e5, #06b6d4);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, #4f46e5, #7c3aed);
-      color: white;
-      padding: 0.875rem 2rem;
-      border-radius: 0.75rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-    }
-    .btn-primary:hover {
-      box-shadow: 0 8px 30px rgba(79,70,229,0.45);
-      transform: translateY(-2px);
-    }
-    .btn-ghost {
-      border: 1.5px solid rgba(255,255,255,0.3);
-      color: white;
-      padding: 0.875rem 2rem;
-      border-radius: 0.75rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-    }
-    .btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); }
-    .card-feature {
-      background: white;
-      border-radius: 1.25rem;
-      border: 1px solid #f1f5f9;
-      padding: 1.5rem;
-      transition: all 0.35s ease;
-    }
-    .card-feature:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px -10px rgba(79,70,229,0.15);
-      border-color: #e0e7ff;
-    }
-    .icon-box {
-      background: linear-gradient(135deg, #4f46e5, #7c3aed);
-      border-radius: 0.75rem;
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      margin-bottom: 1rem;
-    }
-    .icon-box-cyan { background: linear-gradient(135deg, #0891b2, #06b6d4); }
-    .icon-box-amber { background: linear-gradient(135deg, #d97706, #f59e0b); }
-    .section-fade { opacity: 0; transform: translateY(30px); transition: all 0.9s ease-out; }
-    .section-fade.visible { opacity: 1; transform: translateY(0); }
-    .pain-card {
-      background: rgba(255,255,255,0.04);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 1.25rem;
-      padding: 1.5rem;
-      transition: all 0.3s ease;
-    }
-    .pain-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.15); }
-    .workflow-step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      flex: 1;
-      position: relative;
-    }
-    .workflow-step:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      top: 24px;
-      left: calc(50% + 28px);
-      right: calc(-50% + 28px);
-      height: 2px;
-      background: linear-gradient(90deg, #4f46e5, #06b6d4);
-      display: none;
-    }
-    @media (min-width: 768px) { .workflow-step:not(:last-child)::after { display: block; } }
-    .step-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #4f46e5, #7c3aed);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1rem;
-      margin-bottom: 0.75rem;
-      position: relative;
-      z-index: 1;
-      flex-shrink: 0;
-    }
-    .mobile-menu { display: none; }
-    .mobile-menu.open { display: block; }
-    .badge-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 0.35rem 0.9rem;
-      border-radius: 9999px;
-    }
-    .stat-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 1rem;
-      padding: 1.25rem 1.75rem;
-      text-align: center;
-    }
-  </style>
 </head>
 <body class="bg-white text-slate-900 antialiased">
-
-  <!-- Announcement Bar -->
-  <div id="announcement-bar" class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-sm py-2.5 px-4 text-center relative">
-    <span class="font-medium">Travel CRM for Indian Travel Agencies — 17 modules, live &amp; ready.</span>
-    <a href="travel-crm.html" class="underline ml-2 font-semibold hover:no-underline">Book a Free Demo →</a>
-    <button onclick="document.getElementById('announcement-bar').remove()" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition text-xl leading-none">&times;</button>
-  </div>
 
   <!-- Navigation -->
   <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
-      <a href="index.html" class="text-xl font-black tracking-tight">
+      <a href="index.html" class="text-xl font-black tracking-tight font-heading">
         ZeroFlow<span class="gradient-text">Tech</span>
       </a>
-      <div class="hidden md:flex items-center gap-7">
+      <div class="hidden md:flex items-center gap-8">
         <a href="index.html" class="text-indigo-600 font-semibold text-sm">Home</a>
         <a href="travel-crm.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Product</a>
-        <a href="services.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Services</a>
-        <a href="case-studies.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Case Studies</a>
         <a href="about.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">About</a>
         <a href="contact.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Contact</a>
       </div>
       <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM"
-         class="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:shadow-button hover:scale-105 transition-all duration-300">
-        Book Demo <i class="fa-solid fa-arrow-right text-xs"></i>
+         class="hidden md:inline-flex items-center gap-2 btn-whatsapp text-sm !py-2.5 !px-5 !rounded-xl">
+        <i class="fa-brands fa-whatsapp text-lg"></i> Book Demo
       </a>
       <button id="mobile-toggle" class="md:hidden text-slate-700 p-2">
         <i class="fa-solid fa-bars text-xl"></i>
@@ -204,366 +66,697 @@
       <div class="flex flex-col gap-1">
         <a href="index.html" class="block py-2.5 px-3 rounded-lg text-indigo-600 font-semibold bg-indigo-50">Home</a>
         <a href="travel-crm.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Product</a>
-        <a href="services.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Services</a>
-        <a href="case-studies.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Case Studies</a>
         <a href="about.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">About</a>
         <a href="contact.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Contact</a>
-        <a href="faq.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">FAQ</a>
         <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM"
-           class="btn-primary mt-3 justify-center text-center">
+           class="btn-whatsapp mt-3 justify-center text-center">
           <i class="fa-brands fa-whatsapp"></i> Book Demo
         </a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="gradient-hero py-24 lg:py-32 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <!-- Badges -->
-      <div class="flex items-center justify-center gap-3 mb-6 flex-wrap">
-        <span class="badge-pill bg-green-500/15 text-green-400 border border-green-500/25">
-          <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse inline-block"></span>
-          17 Modules · Live &amp; Ready
-        </span>
-        <span class="badge-pill bg-indigo-500/15 text-indigo-300 border border-indigo-500/25">
-          <i class="fa-solid fa-indian-rupee-sign text-xs"></i> Built for Indian Travel Agencies
-        </span>
+  <!-- ==========================================
+       HERO — Two-column with typing effect + mockup
+       ========================================== -->
+  <section class="gradient-hero py-20 lg:py-28">
+    <!-- Floating travel domain icons — subtle background decoration -->
+    <i class="fa-solid fa-plane travel-float hidden lg:block" style="top:15%; left:8%; animation-delay:0s; font-size:1.8rem;"></i>
+    <i class="fa-solid fa-passport travel-float hidden lg:block" style="top:60%; right:5%; animation-delay:3s; font-size:1.5rem;"></i>
+    <i class="fa-solid fa-earth-asia travel-float hidden lg:block" style="bottom:20%; left:3%; animation-delay:6s; font-size:2rem;"></i>
+    <i class="fa-solid fa-suitcase-rolling travel-float hidden lg:block" style="top:25%; right:12%; animation-delay:9s; font-size:1.3rem;"></i>
+    <i class="fa-solid fa-ticket travel-float hidden lg:block" style="bottom:35%; right:3%; animation-delay:12s; font-size:1.4rem;"></i>
+
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left: Text -->
+        <div class="text-center lg:text-left">
+          <div class="flex items-center justify-center lg:justify-start gap-3 mb-6 flex-wrap">
+            <span class="badge-pill bg-green-500/15 text-green-400 border border-green-500/25">
+              <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse inline-block"></span>
+              38+ Modules &middot; Production-Ready
+            </span>
+            <span class="badge-pill bg-sunset/15 text-orange-300 border border-sunset/25">
+              <i class="fa-solid fa-indian-rupee-sign text-xs"></i> Made for India
+            </span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-2 font-heading" style="min-height: 4.5rem;">
+            <span class="typing-container">
+              <span id="typing-text"
+                    data-phrases='["Your Leads Are Slipping Through WhatsApp.","Your Itineraries Take 45 Minutes Each.","Your Commissions Cause Monthly Fights."]'
+                    class="gradient-text-warm"></span>
+              <span class="typing-cursor"></span>
+            </span>
+          </h1>
+          <p class="text-lg text-slate-300 mb-3 font-heading font-semibold">We built the fix.</p>
+          <p class="text-base text-slate-400 leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
+            One dashboard for your entire agency — leads, itineraries, bookings, payments, commissions. WhatsApp-first. GST-ready.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
+            <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="btn-whatsapp text-base px-8 py-4">
+              <i class="fa-brands fa-whatsapp text-lg"></i> Book a Free Demo
+            </a>
+            <a href="travel-crm.html" class="btn-ghost text-base px-8 py-4">
+              <i class="fa-solid fa-play text-xs"></i> See the Product
+            </a>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-5 text-sm text-slate-400">
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-green-400 text-xs"></i> No Setup Fee</span>
+            <span class="text-slate-600">&middot;</span>
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-green-400 text-xs"></i> Go Live in 2 Weeks</span>
+            <span class="text-slate-600">&middot;</span>
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-green-400 text-xs"></i> WhatsApp Support</span>
+          </div>
+        </div>
+
+        <!-- Right: Dashboard Mockup -->
+        <div class="hidden lg:block float">
+          <div class="browser-frame">
+            <div class="browser-bar">
+              <div class="browser-dot" style="background:#ef4444;"></div>
+              <div class="browser-dot" style="background:#f59e0b;"></div>
+              <div class="browser-dot" style="background:#22c55e;"></div>
+              <div class="browser-url">app.travelcrm.in/admin/dashboard</div>
+            </div>
+            <div class="browser-content" style="background:#0f172a; padding:0;">
+              <div class="flex" style="min-height:280px;">
+                <!-- Sidebar -->
+                <div class="mock-sidebar">
+                  <div class="mock-sidebar-dot active"></div>
+                  <div class="mock-sidebar-dot"></div>
+                  <div class="mock-sidebar-dot"></div>
+                  <div class="mock-sidebar-dot"></div>
+                  <div class="mock-sidebar-dot"></div>
+                  <div class="mock-sidebar-dot"></div>
+                </div>
+                <!-- Main content -->
+                <div class="flex-1 p-3">
+                  <!-- Top stats -->
+                  <div class="grid grid-cols-4 gap-2 mb-3">
+                    <div class="bg-white/5 rounded-lg p-2 text-center">
+                      <div class="text-xs font-bold text-white">142</div>
+                      <div class="text-[0.5rem] text-slate-500">Leads</div>
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-2 text-center">
+                      <div class="text-xs font-bold text-indigo-400">38</div>
+                      <div class="text-[0.5rem] text-slate-500">Bookings</div>
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-2 text-center">
+                      <div class="text-xs font-bold text-green-400">&#8377;12.4L</div>
+                      <div class="text-[0.5rem] text-slate-500">Revenue</div>
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-2 text-center">
+                      <div class="text-xs font-bold text-amber-400">94%</div>
+                      <div class="text-[0.5rem] text-slate-500">Conversion</div>
+                    </div>
+                  </div>
+                  <!-- Table-like rows -->
+                  <div class="bg-white/[0.03] rounded-lg p-2">
+                    <div class="text-[0.6rem] text-slate-400 font-semibold mb-2 uppercase tracking-wider">Recent Leads</div>
+                    <div class="mock-row">
+                      <span class="text-white/80">Sharma Family Tour</span>
+                      <span>Goa - 5N/6D</span>
+                      <span class="mock-chip mock-chip-green">Qualified</span>
+                      <span>&#8377;85,000</span>
+                    </div>
+                    <div class="mock-row">
+                      <span class="text-white/80">Rajput Wedding Group</span>
+                      <span>Udaipur - 3N</span>
+                      <span class="mock-chip mock-chip-indigo">Proposal Sent</span>
+                      <span>&#8377;3,20,000</span>
+                    </div>
+                    <div class="mock-row">
+                      <span class="text-white/80">Mehta Honeymoon</span>
+                      <span>Maldives - 4N</span>
+                      <span class="mock-chip mock-chip-amber">Negotiation</span>
+                      <span>&#8377;1,45,000</span>
+                    </div>
+                    <div class="mock-row" style="border:none;">
+                      <span class="text-white/80">Patel Corporate</span>
+                      <span>Thailand - 6N</span>
+                      <span class="mock-chip mock-chip-red">New</span>
+                      <span>&#8377;4,80,000</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Headline -->
-      <h1 class="text-5xl lg:text-7xl font-black text-white leading-tight mb-6">
-        The CRM Built for<br />
-        <span class="gradient-text">Indian Travel Agencies</span>
-      </h1>
-
-      <p class="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl mx-auto">
-        Lead to commission — one platform. Stop switching between WhatsApp, Excel, and notebooks. Your whole agency on one dashboard.
-      </p>
-
-      <!-- CTAs -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-        <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="btn-primary text-base px-8 py-4">
-          <i class="fa-brands fa-whatsapp text-lg"></i> Book a Free Demo
-        </a>
-        <a href="travel-crm.html" class="btn-ghost text-base px-8 py-4">
-          Explore the Product <i class="fa-solid fa-arrow-right text-xs"></i>
-        </a>
-      </div>
-
-      <!-- Trust pills -->
-      <div class="flex flex-wrap items-center justify-center gap-5 mb-16 text-sm text-slate-400">
-        <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-green-400 text-xs"></i> No Setup Fee</span>
-        <span class="text-slate-600">·</span>
-        <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-green-400 text-xs"></i> Full Onboarding Included</span>
-        <span class="text-slate-600">·</span>
-        <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-green-400 text-xs"></i> Go Live in 2 Weeks</span>
-        <span class="text-slate-600">·</span>
-        <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-green-400 text-xs"></i> WhatsApp Support</span>
-      </div>
-
-      <!-- Stats row -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+      <!-- Stats row (below hero on all screens) -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mt-16 lg:mt-20">
         <div class="stat-card">
-          <div class="text-2xl font-black text-white mb-1">17</div>
-          <div class="text-slate-400 text-xs font-medium">Modules Built</div>
+          <div class="text-2xl font-black text-white mb-1 font-heading" data-counter="38" data-suffix="+">0</div>
+          <div class="text-slate-400 text-xs font-medium">Production Modules</div>
         </div>
         <div class="stat-card">
-          <div class="text-2xl font-black gradient-text mb-1">500+</div>
-          <div class="text-slate-400 text-xs font-medium">Leads Tracked</div>
+          <div class="text-2xl font-black gradient-text-warm mb-1 font-heading">5</div>
+          <div class="text-slate-400 text-xs font-medium">User Roles</div>
         </div>
         <div class="stat-card">
-          <div class="text-2xl font-black text-white mb-1">₹2Cr+</div>
-          <div class="text-slate-400 text-xs font-medium">Payments Processed</div>
+          <div class="text-2xl font-black text-white mb-1 font-heading">2 Weeks</div>
+          <div class="text-slate-400 text-xs font-medium">Go Live Timeline</div>
         </div>
         <div class="stat-card">
-          <div class="text-2xl font-black gradient-text mb-1">50+</div>
-          <div class="text-slate-400 text-xs font-medium">Agencies Onboarded</div>
+          <div class="text-2xl font-black gradient-text-warm mb-1 font-heading">24/7</div>
+          <div class="text-slate-400 text-xs font-medium">WhatsApp Support</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Trusted by bar -->
-  <div class="bg-slate-50 py-8 border-b border-slate-100">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <p class="text-slate-400 text-xs font-semibold mb-5 uppercase tracking-widest">Trusted by travel agencies across India</p>
-      <div class="flex flex-wrap items-center justify-center gap-4">
-        <span class="bg-white border border-slate-200 text-slate-500 text-sm font-medium px-5 py-2 rounded-full">Sunrise Tours</span>
-        <span class="bg-white border border-slate-200 text-slate-500 text-sm font-medium px-5 py-2 rounded-full">Himalaya Travels</span>
-        <span class="bg-white border border-slate-200 text-slate-500 text-sm font-medium px-5 py-2 rounded-full">Royal Journeys</span>
-        <span class="bg-white border border-slate-200 text-slate-500 text-sm font-medium px-5 py-2 rounded-full">Dream Destinations</span>
-        <span class="bg-white border border-slate-200 text-slate-500 text-sm font-medium px-5 py-2 rounded-full">GlobeTrek India</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Pain → Solution -->
-  <section class="gradient-dark py-20 section-fade">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-3">Sound Familiar?</h2>
-        <p class="text-slate-400 text-lg">Every Indian travel agency runs into the same three problems.</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="pain-card">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 bg-red-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
-              <i class="fa-brands fa-whatsapp text-red-400 text-lg"></i>
-            </div>
-            <span class="text-red-400 text-xs font-bold uppercase tracking-wide">Problem</span>
-          </div>
-          <h3 class="text-white font-bold text-lg mb-2">Leads Lost in WhatsApp</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">Enquiries come in, get buried in group chats, and nobody follows up. Deals slip away silently every week.</p>
-          <div class="flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 rounded-lg px-3 py-2">
-            <i class="fa-solid fa-check text-indigo-400 text-xs"></i>
-            <span class="text-indigo-300 text-sm font-medium">7-stage lead pipeline. Nothing escapes.</span>
-          </div>
-        </div>
-        <div class="pain-card">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 bg-red-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
-              <i class="fa-solid fa-file-word text-red-400 text-lg"></i>
-            </div>
-            <span class="text-red-400 text-xs font-bold uppercase tracking-wide">Problem</span>
-          </div>
-          <h3 class="text-white font-bold text-lg mb-2">Itineraries in Word / Excel</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">Copy-pasting old itineraries, fixing pricing manually, formatting PDFs. Hours wasted on every single trip proposal.</p>
-          <div class="flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 rounded-lg px-3 py-2">
-            <i class="fa-solid fa-check text-indigo-400 text-xs"></i>
-            <span class="text-indigo-300 text-sm font-medium">Professional proposal PDF in 60 seconds.</span>
-          </div>
-        </div>
-        <div class="pain-card">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 bg-red-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
-              <i class="fa-solid fa-indian-rupee-sign text-red-400 text-lg"></i>
-            </div>
-            <span class="text-red-400 text-xs font-bold uppercase tracking-wide">Problem</span>
-          </div>
-          <h3 class="text-white font-bold text-lg mb-2">Payments in Notebooks</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">Partial payments tracked on paper. Commission fights at month-end. GST filing is a nightmare every quarter.</p>
-          <div class="flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 rounded-lg px-3 py-2">
-            <i class="fa-solid fa-check text-indigo-400 text-xs"></i>
-            <span class="text-indigo-300 text-sm font-medium">Auto-invoices, GST, Tally-compatible export.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Feature Spotlight -->
-  <section id="features" class="py-24 bg-white section-fade">
+  <!-- ==========================================
+       FEATURES — 6 key modules, compressed
+       ========================================== -->
+  <section id="features" class="py-20 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-14">
-        <span class="badge-pill bg-indigo-50 text-indigo-600 border border-indigo-100 mb-3">Complete SaaS Product</span>
-        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-4 mb-3">Everything Your Agency Needs — Already Built</h2>
-        <p class="text-slate-500 text-lg max-w-2xl mx-auto">17 production-ready modules. Not a prototype — a complete SaaS deployed and running for agencies right now.</p>
+        <span class="badge-pill bg-indigo-50 text-indigo-600 border border-indigo-100 mb-3">38+ Production Modules</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-4 mb-3 font-heading">Everything Your Agency Needs</h2>
+        <p class="text-slate-500 text-lg max-w-xl mx-auto">Not a prototype — a complete SaaS deployed and running.</p>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="card-feature">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 gsap-stagger-group">
+        <div class="card-feature card-sweep gsap-stagger-item">
           <div class="icon-box"><i class="fa-solid fa-filter"></i></div>
-          <h3 class="font-bold text-slate-900 text-lg mb-2">Lead Pipeline</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">7-stage funnel: New → Contacted → Qualified → Proposal Sent → Negotiation → Converted / Lost. Every enquiry tracked. Nothing slips.</p>
+          <h3 class="font-bold text-slate-900 text-lg mb-1 font-heading">Lead Pipeline</h3>
+          <p class="text-slate-500 text-sm">7-stage funnel. Every enquiry tracked and scored.</p>
         </div>
-        <div class="card-feature">
+        <div class="card-feature card-sweep gsap-stagger-item">
           <div class="icon-box icon-box-cyan"><i class="fa-solid fa-file-lines"></i></div>
-          <h3 class="font-bold text-slate-900 text-lg mb-2">Itinerary Builder</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Day-by-day planner, pricing engine, proposal PDF. Customer receives a public proposal link — they approve online. One click converts to booking.</p>
+          <h3 class="font-bold text-slate-900 text-lg mb-1 font-heading">Itinerary Builder</h3>
+          <p class="text-slate-500 text-sm">Day-wise planner. Auto-pricing. PDF in 60 seconds.</p>
         </div>
-        <div class="card-feature">
-          <div class="icon-box"><i class="fa-solid fa-map"></i></div>
-          <h3 class="font-bold text-slate-900 text-lg mb-2">Tour Management</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Build tour packages with pricing tiers. Approval workflow: Draft → Review → Live. Agents only see live, approved tours.</p>
+        <div class="card-feature card-sweep gsap-stagger-item">
+          <div class="icon-box icon-box-sunset"><i class="fa-solid fa-calendar-check"></i></div>
+          <h3 class="font-bold text-slate-900 text-lg mb-1 font-heading">Booking Lifecycle</h3>
+          <p class="text-slate-500 text-sm">Draft to confirmed. Auto GST, invoices, amendments.</p>
         </div>
-        <div class="card-feature">
-          <div class="icon-box"><i class="fa-solid fa-calendar-check"></i></div>
-          <h3 class="font-bold text-slate-900 text-lg mb-2">Booking Lifecycle</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Full booking flow — Draft to Confirmed to Completed. Auto-calculates base price, markup, GST. Invoice PDF generated instantly on confirmation.</p>
+        <div class="card-feature card-sweep gsap-stagger-item">
+          <div class="icon-box icon-box-forest"><i class="fa-solid fa-credit-card"></i></div>
+          <h3 class="font-bold text-slate-900 text-lg mb-1 font-heading">Payments + Razorpay</h3>
+          <p class="text-slate-500 text-sm">Online + offline. Partial payments. GST + Tally export.</p>
         </div>
-        <div class="card-feature">
-          <div class="icon-box icon-box-amber"><i class="fa-solid fa-credit-card"></i></div>
-          <h3 class="font-bold text-slate-900 text-lg mb-2">Payments + Razorpay</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Online payments via Razorpay + offline cash/UPI/NEFT. Partial payments, full payments, GST tracking. Tally-compatible GST summary export.</p>
+        <div class="card-feature card-sweep gsap-stagger-item">
+          <div class="icon-box icon-box-amber"><i class="fa-solid fa-handshake"></i></div>
+          <h3 class="font-bold text-slate-900 text-lg mb-1 font-heading">Commissions</h3>
+          <p class="text-slate-500 text-sm">Auto-created on booking. Approval flow. Agent notified.</p>
         </div>
-        <div class="card-feature">
-          <div class="icon-box"><i class="fa-solid fa-handshake"></i></div>
-          <h3 class="font-bold text-slate-900 text-lg mb-2">Commission System</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Commissions auto-created on booking. Agent → Manager approval flow: Pending → Approved → Paid. Agent gets WhatsApp + in-app notification at every step.</p>
-        </div>
-        <div class="card-feature">
-          <div class="icon-box icon-box-cyan"><i class="fa-solid fa-chart-bar"></i></div>
-          <h3 class="font-bold text-slate-900 text-lg mb-2">Reports + Export</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">GST summary, aging receivables, payment methods breakdown, agent performance leaderboard. Date-range filters, CSV export for Tally.</p>
-        </div>
-        <div class="card-feature">
-          <div class="icon-box"><i class="fa-solid fa-users"></i></div>
-          <h3 class="font-bold text-slate-900 text-lg mb-2">Customer Portal</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Your customers browse tours, book online, pay via Razorpay — without calling you. OTP or Gmail OAuth login. Booking history, invoice downloads.</p>
-        </div>
-        <div class="card-feature">
-          <div class="icon-box icon-box-amber"><i class="fa-solid fa-bell"></i></div>
-          <h3 class="font-bold text-slate-900 text-lg mb-2">Notifications + Audit</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Real-time in-app alerts for new leads, booking status, commission approvals. Full audit trail — every action logged with timestamps.</p>
+        <div class="card-feature card-sweep gsap-stagger-item">
+          <div class="icon-box icon-box-coral"><i class="fa-brands fa-whatsapp"></i></div>
+          <h3 class="font-bold text-slate-900 text-lg mb-1 font-heading">WhatsApp-First</h3>
+          <p class="text-slate-500 text-sm">Templates, reminders, itinerary share — all from CRM.</p>
         </div>
       </div>
-      <div class="text-center mt-12">
-        <a href="travel-crm.html" class="btn-primary text-base px-10 py-4">
-          See Full Product Details <i class="fa-solid fa-arrow-right text-xs"></i>
+      <div class="text-center mt-10">
+        <a href="travel-crm.html" class="btn-outline text-sm px-7 py-3">
+          See All 38+ Modules <i class="fa-solid fa-arrow-right text-xs"></i>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Workflow -->
-  <section class="py-20 bg-slate-50 section-fade">
+  <!-- ==========================================
+       PRODUCT MOCKUP — See it in action
+       ========================================== -->
+  <section class="gradient-dark py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12 section-fade">
+        <span class="badge-pill bg-white/10 text-slate-300 border border-white/10 mb-3">See It In Action</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-white mt-4 mb-3 font-heading">Your Entire Agency on One Screen</h2>
+        <p class="text-slate-400 text-lg max-w-xl mx-auto">Lead pipeline, booking tracker, payment dashboard, agent performance — all connected.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <!-- Mockup -->
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <div class="browser-dot" style="background:#ef4444;"></div>
+            <div class="browser-dot" style="background:#f59e0b;"></div>
+            <div class="browser-dot" style="background:#22c55e;"></div>
+            <div class="browser-url">app.travelcrm.in/admin/leads</div>
+          </div>
+          <div class="browser-content" style="background:#0f172a; padding:0;">
+            <div class="flex" style="min-height:260px;">
+              <div class="mock-sidebar">
+                <div class="mock-sidebar-dot"></div>
+                <div class="mock-sidebar-dot active"></div>
+                <div class="mock-sidebar-dot"></div>
+                <div class="mock-sidebar-dot"></div>
+              </div>
+              <div class="flex-1 p-3">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="text-[0.65rem] text-white font-semibold">Lead Pipeline</div>
+                  <div class="flex gap-1">
+                    <span class="text-[0.5rem] bg-white/10 text-slate-400 px-2 py-0.5 rounded">All</span>
+                    <span class="text-[0.5rem] bg-indigo-500/30 text-indigo-300 px-2 py-0.5 rounded">Hot</span>
+                  </div>
+                </div>
+                <!-- Kanban-like columns -->
+                <div class="grid grid-cols-4 gap-1.5">
+                  <div class="bg-white/[0.04] rounded-lg p-1.5">
+                    <div class="text-[0.45rem] text-red-400 font-bold mb-1.5 uppercase">New (12)</div>
+                    <div class="bg-white/[0.06] rounded p-1.5 mb-1">
+                      <div class="text-[0.5rem] text-white/80">Kerala Family</div>
+                      <div class="text-[0.4rem] text-slate-500">&#8377;1.2L</div>
+                    </div>
+                    <div class="bg-white/[0.06] rounded p-1.5">
+                      <div class="text-[0.5rem] text-white/80">Goa Group</div>
+                      <div class="text-[0.4rem] text-slate-500">&#8377;85K</div>
+                    </div>
+                  </div>
+                  <div class="bg-white/[0.04] rounded-lg p-1.5">
+                    <div class="text-[0.45rem] text-amber-400 font-bold mb-1.5 uppercase">Qualified (8)</div>
+                    <div class="bg-white/[0.06] rounded p-1.5 mb-1">
+                      <div class="text-[0.5rem] text-white/80">Dubai Honeymoon</div>
+                      <div class="text-[0.4rem] text-slate-500">&#8377;2.1L</div>
+                    </div>
+                    <div class="bg-white/[0.06] rounded p-1.5">
+                      <div class="text-[0.5rem] text-white/80">Manali Trip</div>
+                      <div class="text-[0.4rem] text-slate-500">&#8377;45K</div>
+                    </div>
+                  </div>
+                  <div class="bg-white/[0.04] rounded-lg p-1.5">
+                    <div class="text-[0.45rem] text-indigo-400 font-bold mb-1.5 uppercase">Proposal (5)</div>
+                    <div class="bg-white/[0.06] rounded p-1.5 mb-1">
+                      <div class="text-[0.5rem] text-white/80">Europe 10D</div>
+                      <div class="text-[0.4rem] text-slate-500">&#8377;8.5L</div>
+                    </div>
+                    <div class="bg-white/[0.06] rounded p-1.5">
+                      <div class="text-[0.5rem] text-white/80">Bali Wedding</div>
+                      <div class="text-[0.4rem] text-slate-500">&#8377;6.2L</div>
+                    </div>
+                  </div>
+                  <div class="bg-white/[0.04] rounded-lg p-1.5">
+                    <div class="text-[0.45rem] text-green-400 font-bold mb-1.5 uppercase">Won (15)</div>
+                    <div class="bg-white/[0.06] rounded p-1.5 mb-1">
+                      <div class="text-[0.5rem] text-white/80">Singapore Pkg</div>
+                      <div class="text-[0.4rem] text-slate-500">&#8377;3.8L</div>
+                    </div>
+                    <div class="bg-white/[0.06] rounded p-1.5">
+                      <div class="text-[0.5rem] text-white/80">Andaman 5N</div>
+                      <div class="text-[0.4rem] text-slate-500">&#8377;1.9L</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature highlights -->
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-indigo-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-filter text-indigo-400"></i>
+            </div>
+            <div>
+              <h3 class="text-white font-bold mb-1">Visual Lead Pipeline</h3>
+              <p class="text-slate-400 text-sm">Drag-and-drop Kanban board. See every lead's stage, value, and next follow-up at a glance.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-chart-line text-green-400"></i>
+            </div>
+            <div>
+              <h3 class="text-white font-bold mb-1">Real-Time Dashboard</h3>
+              <p class="text-slate-400 text-sm">Revenue, pipeline value, conversion rates, agent leaderboard — all live, all accurate.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-amber-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fa-brands fa-whatsapp text-amber-400"></i>
+            </div>
+            <div>
+              <h3 class="text-white font-bold mb-1">WhatsApp Built In</h3>
+              <p class="text-slate-400 text-sm">Send proposals, payment reminders, and booking confirmations — all from the CRM, logged automatically.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-sunset/20 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-mobile-screen text-orange-400"></i>
+            </div>
+            <div>
+              <h3 class="text-white font-bold mb-1">Mobile-Ready</h3>
+              <p class="text-slate-400 text-sm">Works on phone. Agents can add leads, check bookings, call customers — from anywhere.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       WORKFLOW — From enquiry to commission
+       ========================================== -->
+  <section class="py-20 bg-white section-fade">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-14">
-        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">From First Enquiry to Final Commission</h2>
-        <p class="text-slate-500 text-lg">One connected workflow — fully automated across your entire team.</p>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3 font-heading">From First Enquiry to Final Commission</h2>
+        <p class="text-slate-500 text-lg">One connected workflow — fully automated.</p>
       </div>
       <div class="flex flex-col md:flex-row items-start justify-between gap-8">
         <div class="workflow-step">
           <div class="step-icon"><i class="fa-solid fa-phone text-sm"></i></div>
           <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-1">Step 1</div>
           <div class="font-bold text-slate-800 text-sm mb-1">Lead Captured</div>
-          <div class="text-slate-500 text-xs leading-relaxed px-2">Enquiry enters the pipeline. Agent assigned, follow-up scheduled.</div>
+          <div class="text-slate-500 text-xs leading-relaxed px-2">Enquiry enters pipeline. Agent assigned.</div>
         </div>
         <div class="workflow-step">
-          <div class="step-icon"><i class="fa-solid fa-file-lines text-sm"></i></div>
+          <div class="step-icon" style="background: linear-gradient(135deg, #0891b2, #06b6d4);"><i class="fa-solid fa-file-lines text-sm"></i></div>
           <div class="text-xs font-bold text-cyan-600 uppercase tracking-wider mb-1">Step 2</div>
           <div class="font-bold text-slate-800 text-sm mb-1">Proposal Sent</div>
-          <div class="text-slate-500 text-xs leading-relaxed px-2">Itinerary built, PDF sent. Customer views and approves online.</div>
+          <div class="text-slate-500 text-xs leading-relaxed px-2">Itinerary built, PDF sent via WhatsApp.</div>
         </div>
         <div class="workflow-step">
           <div class="step-icon"><i class="fa-solid fa-calendar-check text-sm"></i></div>
           <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-1">Step 3</div>
           <div class="font-bold text-slate-800 text-sm mb-1">Booking Confirmed</div>
-          <div class="text-slate-500 text-xs leading-relaxed px-2">Lead converts to booking. Invoice auto-generated with GST.</div>
+          <div class="text-slate-500 text-xs leading-relaxed px-2">Converts to booking. Invoice auto-generated.</div>
         </div>
         <div class="workflow-step">
-          <div class="step-icon"><i class="fa-solid fa-credit-card text-sm"></i></div>
-          <div class="text-xs font-bold text-cyan-600 uppercase tracking-wider mb-1">Step 4</div>
+          <div class="step-icon" style="background: linear-gradient(135deg, #047857, #059669);"><i class="fa-solid fa-credit-card text-sm"></i></div>
+          <div class="text-xs font-bold text-green-600 uppercase tracking-wider mb-1">Step 4</div>
           <div class="font-bold text-slate-800 text-sm mb-1">Payment Received</div>
-          <div class="text-slate-500 text-xs leading-relaxed px-2">Online via Razorpay or offline. Partial payments tracked automatically.</div>
+          <div class="text-slate-500 text-xs leading-relaxed px-2">Razorpay or offline. Tracked automatically.</div>
         </div>
         <div class="workflow-step">
-          <div class="step-icon"><i class="fa-solid fa-handshake text-sm"></i></div>
-          <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-1">Step 5</div>
+          <div class="step-icon" style="background: linear-gradient(135deg, #ea580c, #FB923C);"><i class="fa-solid fa-handshake text-sm"></i></div>
+          <div class="text-xs font-bold text-sunset uppercase tracking-wider mb-1">Step 5</div>
           <div class="font-bold text-slate-800 text-sm mb-1">Commission Paid</div>
-          <div class="text-slate-500 text-xs leading-relaxed px-2">Commission auto-created, approved, paid. Agent notified on WhatsApp.</div>
+          <div class="text-slate-500 text-xs leading-relaxed px-2">Auto-created, approved, paid. Agent notified.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Role Access -->
-  <section class="py-20 bg-white section-fade">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">One System, Every Role</h2>
-        <p class="text-slate-500 text-lg">Each team member sees exactly what they need — nothing more, nothing less.</p>
+  <!-- ==========================================
+       THE DAILY REALITY — 4 micro problem/solution vignettes
+       ========================================== -->
+  <section class="py-20 bg-white overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-14 section-fade">
+        <span class="badge-pill bg-red-50 text-red-500 border border-red-100 mb-3">The Daily Reality</span>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-4 mb-3 font-heading">This Happens in Your Agency Every Single Day</h2>
+        <p class="text-slate-500 text-lg max-w-2xl mx-auto">Four scenes your team lives through. Four problems that drain revenue silently.</p>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-gradient-to-br from-indigo-50 to-white rounded-2xl border border-indigo-100 p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-          <div class="w-14 h-14 bg-gradient-to-br from-indigo-600 to-violet-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <i class="fa-solid fa-crown text-white text-xl"></i>
+
+      <!-- Scene 1: Lead Lost in WhatsApp -->
+      <div class="grid lg:grid-cols-2 gap-6 mb-8 items-stretch">
+        <div class="relative bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl border border-red-100 p-5 lg:p-6 overflow-hidden">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-7 h-7 bg-red-500/15 rounded-lg flex items-center justify-center"><i class="fa-brands fa-whatsapp text-red-500 text-sm"></i></div>
+            <span class="text-red-500 font-bold text-[0.65rem] uppercase tracking-wider">9:42 AM — Lead Lost</span>
           </div>
-          <h3 class="font-bold text-slate-900 text-lg mb-2">Admin</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Full access — all modules, all reports, user management, system configuration.</p>
+          <!-- WhatsApp conversation scene -->
+          <div class="space-y-2 mb-3">
+            <div class="flex gap-2 items-end">
+              <div class="bg-white rounded-xl rounded-bl-sm shadow-sm px-3 py-2 text-xs text-slate-600 max-w-[75%] border border-slate-100 chat-bubble-chaos" style="animation-delay:0s;">
+                <div class="text-[0.55rem] text-green-600 font-bold">+91 98XXX XXXXX</div>
+                "Hi, we are 8 people looking for Manali trip 5N/6D in April. Budget around 1.5L. Please share options."
+              </div>
+            </div>
+            <div class="flex gap-2 items-end">
+              <div class="bg-white rounded-xl rounded-bl-sm shadow-sm px-3 py-2 text-xs text-slate-500 max-w-[60%] border border-slate-100 chat-bubble-chaos" style="animation-delay:0.6s;">
+                <div class="text-[0.55rem] text-green-600 font-bold">Agent Ravi</div>
+                "Sir, one second... sending you"
+              </div>
+            </div>
+            <div class="flex gap-2 items-end">
+              <div class="bg-amber-50 rounded-xl shadow-sm px-2.5 py-1.5 text-[0.6rem] text-amber-700 border border-amber-200 chat-bubble-chaos" style="animation-delay:1.2s;">
+                <i class="fa-solid fa-clock text-[0.5rem] mr-1"></i> 47 new messages above...
+              </div>
+            </div>
+          </div>
+          <div class="bg-red-100/80 rounded-lg px-3 py-2 text-xs text-red-700 flex items-center gap-2">
+            <i class="fa-solid fa-circle-xmark text-red-500"></i>
+            <span><strong>Outcome:</strong> Message buried. No follow-up. Customer booked with competitor by evening.</span>
+          </div>
         </div>
-        <div class="bg-gradient-to-br from-violet-50 to-white rounded-2xl border border-violet-100 p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-          <div class="w-14 h-14 bg-gradient-to-br from-violet-600 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <i class="fa-solid fa-user-tie text-white text-xl"></i>
+        <!-- Solution -->
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border border-green-100 p-5 lg:p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-7 h-7 bg-green-500/15 rounded-lg flex items-center justify-center"><i class="fa-solid fa-filter text-green-600 text-sm"></i></div>
+            <span class="text-green-600 font-bold text-[0.65rem] uppercase tracking-wider">With CRM — Auto-Captured</span>
           </div>
-          <h3 class="font-bold text-slate-900 text-lg mb-2">Manager</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Leads, bookings, tours, payments, commissions, reports. Team oversight without system config.</p>
-        </div>
-        <div class="bg-gradient-to-br from-cyan-50 to-white rounded-2xl border border-cyan-100 p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-          <div class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <i class="fa-solid fa-user text-white text-xl"></i>
+          <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+            <div class="bg-slate-800 px-3 py-1.5 flex items-center gap-1.5">
+              <div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>
+              <span class="text-[0.5rem] text-slate-400">New Lead Alert</span>
+              <span class="text-[0.5rem] text-amber-400 ml-auto"><i class="fa-solid fa-bell"></i> just now</span>
+            </div>
+            <div class="p-3 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[0.65rem] font-bold text-slate-800">Manali Group — 8 Pax</span>
+                <span class="text-[0.5rem] bg-red-100 text-red-600 px-1.5 py-0.5 rounded font-bold">NEW</span>
+              </div>
+              <div class="grid grid-cols-2 gap-1.5 text-[0.55rem] text-slate-500">
+                <div><i class="fa-solid fa-calendar text-indigo-400 mr-1"></i>April 2026 &middot; 5N/6D</div>
+                <div><i class="fa-solid fa-indian-rupee-sign text-green-500 mr-1"></i>Budget: 1,50,000</div>
+                <div><i class="fa-solid fa-user text-slate-400 mr-1"></i>Assigned: Agent Ravi</div>
+                <div><i class="fa-solid fa-clock text-amber-500 mr-1"></i>Follow-up: Tomorrow 10 AM</div>
+              </div>
+              <div class="flex gap-1.5 mt-1">
+                <span class="text-[0.45rem] bg-indigo-50 text-indigo-600 px-1.5 py-0.5 rounded font-semibold">Send Itinerary</span>
+                <span class="text-[0.45rem] bg-green-50 text-green-600 px-1.5 py-0.5 rounded font-semibold"><i class="fa-brands fa-whatsapp mr-0.5"></i>WhatsApp</span>
+                <span class="text-[0.45rem] bg-slate-50 text-slate-500 px-1.5 py-0.5 rounded font-semibold">Add Note</span>
+              </div>
+            </div>
           </div>
-          <h3 class="font-bold text-slate-900 text-lg mb-2">Agent</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Their own leads, bookings, itineraries, commissions. Live tours only. Clean, simple UI.</p>
-        </div>
-        <div class="bg-gradient-to-br from-amber-50 to-white rounded-2xl border border-amber-100 p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-          <div class="w-14 h-14 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <i class="fa-solid fa-calculator text-white text-xl"></i>
+          <div class="bg-green-100/80 rounded-lg px-3 py-2 text-xs text-green-700 flex items-center gap-2 mt-3">
+            <i class="fa-solid fa-circle-check text-green-500"></i>
+            <span><strong>Outcome:</strong> Lead captured instantly. Follow-up scheduled. Proposal sent by noon.</span>
           </div>
-          <h3 class="font-bold text-slate-900 text-lg mb-2">Finance</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Payments, commissions, GST reports, Tally export. Scoped view, no access to sales pipeline.</p>
         </div>
       </div>
+
+      <!-- Scene 2: Itinerary Nightmare -->
+      <div class="grid lg:grid-cols-2 gap-6 mb-8 items-stretch">
+        <div class="relative bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl border border-red-100 p-5 lg:p-6 overflow-hidden">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-7 h-7 bg-red-500/15 rounded-lg flex items-center justify-center"><i class="fa-solid fa-file-word text-red-500 text-sm"></i></div>
+            <span class="text-red-500 font-bold text-[0.65rem] uppercase tracking-wider">11:30 AM — Itinerary Hell</span>
+          </div>
+          <!-- Word document scene -->
+          <div class="bg-white rounded-lg shadow-sm border border-slate-200 p-3 mb-3">
+            <div class="flex items-center gap-2 border-b border-slate-100 pb-2 mb-2">
+              <i class="fa-solid fa-file-word text-blue-500 text-sm"></i>
+              <span class="text-[0.6rem] text-slate-500">Goa_Itinerary_v3_FINAL_revised_NEW.docx</span>
+            </div>
+            <div class="space-y-1.5 text-[0.55rem] text-slate-500">
+              <div class="flex items-center gap-1"><span class="text-red-400"><s>Day 1: Arrival at Dabolim Airport...</s></span></div>
+              <div class="flex items-center gap-1"><span class="text-blue-600">Day 1: Arrival at Manohar International Airport...</span> <span class="text-[0.45rem] text-amber-500">(copy-pasted wrong)</span></div>
+              <div class="flex items-center gap-1"><span>Day 2: North Goa sightseeing - Rs.XXXX per person</span> <span class="text-[0.45rem] text-red-500">(pricing missing!)</span></div>
+              <div class="bg-amber-50 rounded px-2 py-1 text-amber-700 mt-1">
+                <i class="fa-solid fa-calculator text-[0.5rem] mr-1"></i> Manual total: 8 pax x Rs.12,500 = <s>Rs.1,00,000</s> Rs.1,12,500?? <span class="text-red-500">(GST not added)</span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-red-100/80 rounded-lg px-3 py-2 text-xs text-red-700 flex items-center gap-2">
+            <i class="fa-solid fa-circle-xmark text-red-500"></i>
+            <span><strong>Outcome:</strong> 45 minutes wasted. Wrong pricing sent. Customer asks "where is GST breakdown?" — you panic.</span>
+          </div>
+        </div>
+        <!-- Solution -->
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border border-green-100 p-5 lg:p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-7 h-7 bg-green-500/15 rounded-lg flex items-center justify-center"><i class="fa-solid fa-file-lines text-green-600 text-sm"></i></div>
+            <span class="text-green-600 font-bold text-[0.65rem] uppercase tracking-wider">With CRM — 60 Second Proposal</span>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+            <div class="bg-slate-800 px-3 py-1.5 flex items-center gap-1.5">
+              <div class="w-1.5 h-1.5 rounded-full bg-cyan-400"></div>
+              <span class="text-[0.5rem] text-slate-400">Itinerary Builder</span>
+            </div>
+            <div class="p-3 space-y-1.5">
+              <div class="flex items-center gap-2 bg-cyan-50/50 rounded-lg px-2.5 py-1.5 border border-cyan-100">
+                <span class="text-[0.5rem] text-cyan-600 font-bold w-10">Day 1</span>
+                <span class="text-[0.55rem] text-slate-700 flex-1">Airport Pickup &rarr; Hotel Taj Aguada &rarr; Calangute Beach</span>
+              </div>
+              <div class="flex items-center gap-2 bg-cyan-50/50 rounded-lg px-2.5 py-1.5 border border-cyan-100">
+                <span class="text-[0.5rem] text-cyan-600 font-bold w-10">Day 2</span>
+                <span class="text-[0.55rem] text-slate-700 flex-1">North Goa Tour &rarr; Aguada Fort &rarr; Baga Beach &rarr; Cruise</span>
+              </div>
+              <div class="flex items-center gap-2 bg-cyan-50/50 rounded-lg px-2.5 py-1.5 border border-cyan-100">
+                <span class="text-[0.5rem] text-cyan-600 font-bold w-10">Day 3</span>
+                <span class="text-[0.55rem] text-slate-700 flex-1">South Goa &rarr; Old Goa Churches &rarr; Spice Plantation</span>
+              </div>
+              <div class="bg-slate-50 rounded-lg px-2.5 py-2 mt-1 border border-slate-100">
+                <div class="flex justify-between text-[0.55rem]">
+                  <span class="text-slate-500">Base: &#8377;1,00,000</span>
+                  <span class="text-slate-500">GST (5%): &#8377;5,000</span>
+                  <span class="text-green-700 font-bold">Total: &#8377;1,05,000</span>
+                </div>
+              </div>
+              <div class="flex gap-1.5">
+                <span class="text-[0.45rem] bg-green-500 text-white px-2 py-1 rounded font-bold"><i class="fa-brands fa-whatsapp mr-0.5"></i>Share on WhatsApp</span>
+                <span class="text-[0.45rem] bg-indigo-500 text-white px-2 py-1 rounded font-bold"><i class="fa-solid fa-file-pdf mr-0.5"></i>Download PDF</span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-green-100/80 rounded-lg px-3 py-2 text-xs text-green-700 flex items-center gap-2 mt-3">
+            <i class="fa-solid fa-circle-check text-green-500"></i>
+            <span><strong>Outcome:</strong> Professional proposal with GST breakdown sent in 60 seconds. Customer approves online.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene 3: Payment Chaos -->
+      <div class="grid lg:grid-cols-2 gap-6 mb-8 items-stretch">
+        <div class="relative bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl border border-red-100 p-5 lg:p-6 overflow-hidden">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-7 h-7 bg-red-500/15 rounded-lg flex items-center justify-center"><i class="fa-solid fa-indian-rupee-sign text-red-500 text-sm"></i></div>
+            <span class="text-red-500 font-bold text-[0.65rem] uppercase tracking-wider">4:00 PM — Payment Confusion</span>
+          </div>
+          <!-- Notebook scene -->
+          <div class="bg-amber-50/50 rounded-lg p-3 mb-2 border border-amber-200" style="font-family: 'Segoe Script', cursive, sans-serif;">
+            <div class="text-[0.6rem] text-amber-800 font-bold mb-2 flex items-center gap-1" style="font-family: Inter, sans-serif;"><i class="fa-solid fa-book text-amber-600"></i> Payment Register — March</div>
+            <div class="space-y-1.5 text-[0.6rem] text-slate-600 border-l-2 border-amber-300 pl-2">
+              <div>Sharma - Goa - <span class="text-green-600">50K recd</span> (UPI) bal <span class="text-red-500">35K?</span></div>
+              <div>Patel - Thailand - <span class="text-green-600">2L recd</span> (cash) <span class="text-amber-600">cheque pending</span></div>
+              <div>Mehta - Bali - <span class="text-red-500 line-through">80K</span> <span class="text-red-500">75K??</span> (who collected??)</div>
+              <div class="text-red-500"><s>Ravi commission 8%</s> 10%?? — <span class="text-[0.5rem]">check with boss</span></div>
+            </div>
+          </div>
+          <div class="bg-red-100/80 rounded-lg px-3 py-2 text-xs text-red-700 flex items-center gap-2">
+            <i class="fa-solid fa-circle-xmark text-red-500"></i>
+            <span><strong>Outcome:</strong> Month-end: 3 hours reconciling. Commission dispute with Agent Ravi. GST filing delayed.</span>
+          </div>
+        </div>
+        <!-- Solution -->
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border border-green-100 p-5 lg:p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-7 h-7 bg-green-500/15 rounded-lg flex items-center justify-center"><i class="fa-solid fa-credit-card text-green-600 text-sm"></i></div>
+            <span class="text-green-600 font-bold text-[0.65rem] uppercase tracking-wider">With CRM — Auto-Tracked</span>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+            <div class="bg-slate-800 px-3 py-1.5 flex items-center gap-1.5">
+              <div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>
+              <span class="text-[0.5rem] text-slate-400">Payment Dashboard</span>
+            </div>
+            <div class="p-3 space-y-1.5">
+              <div class="flex items-center gap-2 bg-green-50 rounded-lg px-2.5 py-1.5 border border-green-100">
+                <i class="fa-solid fa-circle-check text-green-500 text-[0.5rem]"></i>
+                <span class="text-[0.55rem] text-slate-700 flex-1">Sharma — UPI — &#8377;50,000</span>
+                <span class="text-[0.5rem] bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-bold">VERIFIED</span>
+              </div>
+              <div class="flex items-center gap-2 bg-amber-50 rounded-lg px-2.5 py-1.5 border border-amber-100">
+                <i class="fa-solid fa-clock text-amber-500 text-[0.5rem]"></i>
+                <span class="text-[0.55rem] text-slate-700 flex-1">Sharma — Balance &#8377;35,000</span>
+                <span class="text-[0.5rem] bg-amber-100 text-amber-600 px-1.5 py-0.5 rounded font-bold">PENDING</span>
+              </div>
+              <div class="flex items-center gap-2 bg-green-50 rounded-lg px-2.5 py-1.5 border border-green-100">
+                <i class="fa-solid fa-circle-check text-green-500 text-[0.5rem]"></i>
+                <span class="text-[0.55rem] text-slate-700 flex-1">Patel — Razorpay — &#8377;2,00,000</span>
+                <span class="text-[0.5rem] bg-green-100 text-green-700 px-1.5 py-0.5 rounded font-bold">VERIFIED</span>
+              </div>
+              <div class="bg-slate-50 rounded-lg px-2.5 py-2 border border-slate-100 mt-1">
+                <div class="flex justify-between text-[0.55rem]">
+                  <span class="text-slate-500">CGST: &#8377;4,500</span>
+                  <span class="text-slate-500">SGST: &#8377;4,500</span>
+                  <span class="text-indigo-600 font-bold"><i class="fa-solid fa-download text-[0.45rem] mr-0.5"></i>Export for Tally</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-green-100/80 rounded-lg px-3 py-2 text-xs text-green-700 flex items-center gap-2 mt-3">
+            <i class="fa-solid fa-circle-check text-green-500"></i>
+            <span><strong>Outcome:</strong> Every rupee tracked. Commission auto-calculated. GST export in 1 click.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene 4: Owner Has No Visibility -->
+      <div class="grid lg:grid-cols-2 gap-6 items-stretch">
+        <div class="relative bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl border border-red-100 p-5 lg:p-6 overflow-hidden">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-7 h-7 bg-red-500/15 rounded-lg flex items-center justify-center"><i class="fa-solid fa-eye-slash text-red-500 text-sm"></i></div>
+            <span class="text-red-500 font-bold text-[0.65rem] uppercase tracking-wider">8:00 PM — Owner in the Dark</span>
+          </div>
+          <div class="space-y-2.5 mb-3">
+            <div class="bg-white rounded-lg shadow-sm px-3 py-2 text-xs text-slate-600 border border-slate-100">
+              <i class="fa-solid fa-phone text-slate-400 mr-1"></i> "Ravi, aaj kitne leads aaye?"
+              <div class="text-[0.55rem] text-slate-400 mt-1 italic">"Sir, 2-3 the... exact yaad nahi"</div>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm px-3 py-2 text-xs text-slate-600 border border-slate-100">
+              <i class="fa-solid fa-phone text-slate-400 mr-1"></i> "Is month ka collection kitna hua?"
+              <div class="text-[0.55rem] text-slate-400 mt-1 italic">"Sir, calculate karke batata hoon kal..."</div>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm px-3 py-2 text-xs text-slate-600 border border-slate-100">
+              <i class="fa-solid fa-phone text-slate-400 mr-1"></i> "Priya ki pending follow-ups?"
+              <div class="text-[0.55rem] text-slate-400 mt-1 italic">"Sir, uska phone band hai..."</div>
+            </div>
+          </div>
+          <div class="bg-red-100/80 rounded-lg px-3 py-2 text-xs text-red-700 flex items-center gap-2">
+            <i class="fa-solid fa-circle-xmark text-red-500"></i>
+            <span><strong>Outcome:</strong> Owner calls 3 people to get basic numbers. Still no clear picture. Decisions made on gut feeling.</span>
+          </div>
+        </div>
+        <!-- Solution -->
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border border-green-100 p-5 lg:p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-7 h-7 bg-green-500/15 rounded-lg flex items-center justify-center"><i class="fa-solid fa-chart-line text-green-600 text-sm"></i></div>
+            <span class="text-green-600 font-bold text-[0.65rem] uppercase tracking-wider">With CRM — Everything at a Glance</span>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+            <div class="bg-slate-800 px-3 py-1.5 flex items-center gap-1.5">
+              <div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>
+              <span class="text-[0.5rem] text-slate-400">Owner Dashboard</span>
+              <span class="text-[0.5rem] text-green-400 ml-auto"><i class="fa-solid fa-circle text-[0.3rem]"></i> Live</span>
+            </div>
+            <div class="p-3">
+              <div class="grid grid-cols-2 gap-2 mb-3">
+                <div class="bg-indigo-50 rounded-lg p-2 text-center border border-indigo-100">
+                  <div class="text-lg font-black text-indigo-600 font-heading">23</div>
+                  <div class="text-[0.45rem] text-slate-500">Active Leads</div>
+                </div>
+                <div class="bg-green-50 rounded-lg p-2 text-center border border-green-100">
+                  <div class="text-lg font-black text-green-600 font-heading">&#8377;28L</div>
+                  <div class="text-[0.45rem] text-slate-500">This Month Revenue</div>
+                </div>
+              </div>
+              <div class="text-[0.55rem] text-slate-500 font-semibold mb-1.5 uppercase tracking-wider">Agent Performance</div>
+              <div class="space-y-1">
+                <div class="flex items-center gap-2 text-[0.55rem]">
+                  <span class="text-slate-700 w-14">Ravi</span>
+                  <div class="flex-1 bg-slate-100 rounded-full h-2 overflow-hidden"><div class="bg-green-500 h-2 rounded-full" style="width:85%"></div></div>
+                  <span class="text-slate-500 w-14 text-right">12 bookings</span>
+                </div>
+                <div class="flex items-center gap-2 text-[0.55rem]">
+                  <span class="text-slate-700 w-14">Priya</span>
+                  <div class="flex-1 bg-slate-100 rounded-full h-2 overflow-hidden"><div class="bg-indigo-500 h-2 rounded-full" style="width:62%"></div></div>
+                  <span class="text-slate-500 w-14 text-right">8 bookings</span>
+                </div>
+                <div class="flex items-center gap-2 text-[0.55rem]">
+                  <span class="text-slate-700 w-14">Amit</span>
+                  <div class="flex-1 bg-slate-100 rounded-full h-2 overflow-hidden"><div class="bg-amber-500 h-2 rounded-full" style="width:40%"></div></div>
+                  <span class="text-slate-500 w-14 text-right">5 bookings</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-green-100/80 rounded-lg px-3 py-2 text-xs text-green-700 flex items-center gap-2 mt-3">
+            <i class="fa-solid fa-circle-check text-green-500"></i>
+            <span><strong>Outcome:</strong> Owner opens phone. Sees everything. Makes decisions based on data, not phone calls.</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Social Proof -->
-  <section class="gradient-dark py-20 section-fade">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <div class="inline-flex gap-1 mb-6">
-        <i class="fa-solid fa-star text-amber-400 text-xl"></i>
-        <i class="fa-solid fa-star text-amber-400 text-xl"></i>
-        <i class="fa-solid fa-star text-amber-400 text-xl"></i>
-        <i class="fa-solid fa-star text-amber-400 text-xl"></i>
-        <i class="fa-solid fa-star text-amber-400 text-xl"></i>
-      </div>
-      <blockquote class="text-2xl lg:text-3xl font-bold text-white leading-relaxed mb-6">
-        "Completely transformed our travel operations — bookings &amp; leads now automated 24/7. Saved 15 hours/week. Best decision we ever made."
-      </blockquote>
-      <p class="font-bold text-lg gradient-text">Rahul Jain</p>
-      <p class="text-slate-400 mt-1">Travel Agency Owner, Mumbai</p>
-      <div class="mt-10">
-        <a href="travel-crm.html" class="btn-primary mx-auto text-base px-8 py-4">
-          See the Full Product <i class="fa-solid fa-arrow-right text-xs"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Agency Services Teaser -->
-  <section id="services" class="py-20 bg-slate-50 section-fade">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-10">
-        <span class="badge-pill bg-slate-100 text-slate-500 border border-slate-200 mb-3">Agency Services</span>
-        <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mt-4 mb-2">Need Custom Development?</h2>
-        <p class="text-slate-500">Beyond Travel CRM, we build custom digital solutions for businesses of all sizes.</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-2xl border border-slate-100 p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-          <div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-4">
-            <i class="fa-solid fa-globe text-slate-600 text-lg"></i>
-          </div>
-          <h3 class="font-bold text-slate-900 mb-2">Website Development</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Landing pages, business websites, and e-commerce stores built for conversion and performance.</p>
-        </div>
-        <div class="bg-white rounded-2xl border border-slate-100 p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-          <div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-4">
-            <i class="fa-solid fa-filter text-slate-600 text-lg"></i>
-          </div>
-          <h3 class="font-bold text-slate-900 mb-2">Lead Tracking Systems</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Custom CRM and lead management solutions tailored precisely to your sales process.</p>
-        </div>
-        <div class="bg-white rounded-2xl border border-slate-100 p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-          <div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-4">
-            <i class="fa-solid fa-gears text-slate-600 text-lg"></i>
-          </div>
-          <h3 class="font-bold text-slate-900 mb-2">Workflow Automation</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Automate repetitive business processes to save time and reduce costly human errors.</p>
-        </div>
-      </div>
-      <div class="text-center mt-8">
-        <a href="services.html" class="inline-flex items-center gap-2 border-2 border-slate-300 text-slate-600 px-7 py-3 rounded-xl font-semibold hover:border-indigo-500 hover:text-indigo-600 transition-all duration-300">
-          View All Services <i class="fa-solid fa-arrow-right text-xs"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section class="py-24 bg-gradient-to-br from-indigo-700 via-indigo-600 to-violet-600 section-fade">
+  <!-- ==========================================
+       FINAL CTA
+       ========================================== -->
+  <section class="py-24 section-fade" style="background: linear-gradient(135deg, #4f46e5, #7c3aed, #FB923C);">
     <div class="max-w-3xl mx-auto px-4 text-center">
-      <h2 class="text-4xl lg:text-5xl font-black text-white mb-4">Start Your Free Demo Today</h2>
-      <p class="text-indigo-100 text-lg mb-8 leading-relaxed">No commitment. No credit card. Just 30 minutes to see your entire agency — leads, itineraries, bookings, payments — running on one dashboard.</p>
+      <h2 class="text-4xl lg:text-5xl font-black text-white mb-4 font-heading">Ready to Run Your Agency Smarter?</h2>
+      <p class="text-white/80 text-lg mb-8 leading-relaxed">No commitment. No credit card. Just 30 minutes to see your entire agency on one dashboard.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM"
            class="inline-flex items-center justify-center gap-2 bg-white text-indigo-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-indigo-50 transition-all duration-300 shadow-lg">
@@ -582,10 +775,10 @@
     <div class="max-w-7xl mx-auto px-4">
       <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
         <div>
-          <a href="index.html" class="text-xl font-black text-white mb-3 block tracking-tight">
-            ZeroFlow<span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Tech</span>
+          <a href="index.html" class="text-xl font-black text-white mb-3 block tracking-tight font-heading">
+            ZeroFlow<span class="gradient-text">Tech</span>
           </a>
-          <p class="text-sm leading-relaxed mb-5 text-slate-500">Building SaaS products and custom digital solutions for Indian businesses.</p>
+          <p class="text-sm leading-relaxed mb-5 text-slate-500">Building Travel CRM — the only tool Indian travel agencies need to run their business.</p>
           <div class="flex gap-4">
             <a href="https://wa.me/6268497800" class="text-slate-400 hover:text-green-400 transition text-lg" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="mailto:zeroflowtech@gmail.com" class="text-slate-400 hover:text-indigo-400 transition text-lg" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
@@ -596,15 +789,15 @@
           <div class="flex flex-col gap-2.5 text-sm">
             <a href="travel-crm.html" class="hover:text-indigo-400 transition">Travel CRM</a>
             <a href="travel-crm.html#features" class="hover:text-indigo-400 transition">Features</a>
-            <a href="travel-crm.html#faq" class="hover:text-indigo-400 transition">FAQ</a>
+            <a href="faq.html" class="hover:text-indigo-400 transition">FAQ</a>
             <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="hover:text-green-400 transition">Book Demo</a>
           </div>
         </div>
         <div>
           <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Company</p>
           <div class="flex flex-col gap-2.5 text-sm">
-            <a href="services.html" class="hover:text-indigo-400 transition">Services</a>
             <a href="about.html" class="hover:text-indigo-400 transition">About</a>
+            <a href="services.html" class="hover:text-indigo-400 transition">Services</a>
             <a href="case-studies.html" class="hover:text-indigo-400 transition">Case Studies</a>
             <a href="faq.html" class="hover:text-indigo-400 transition">FAQ</a>
           </div>
@@ -618,29 +811,29 @@
           </div>
         </div>
       </div>
-      <p class="mt-8 text-sm text-center text-slate-600">© 2026 ZeroFlowTech. All rights reserved.</p>
+      <p class="mt-8 text-sm text-center text-slate-600">&copy; 2026 ZeroFlowTech. All rights reserved.</p>
     </div>
   </footer>
 
-  <script>
-    // Mobile menu toggle
-    const toggle = document.getElementById('mobile-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    toggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-      const icon = toggle.querySelector('i');
-      icon.classList.toggle('fa-bars');
-      icon.classList.toggle('fa-xmark');
-    });
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20have%20a%20question%20about%20Travel%20CRM"
+     class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="wa-tooltip">Chat with us</span>
+  </a>
 
-    // Scroll animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  <!-- Mobile Sticky CTA Bar -->
+  <div id="mobile-cta-bar" class="mobile-cta-bar">
+    <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM"
+       class="btn-whatsapp w-full justify-center text-center !rounded-lg">
+      <i class="fa-brands fa-whatsapp text-lg"></i> Book Free Demo
+    </a>
+  </div>
 
-    document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
-  </script>
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

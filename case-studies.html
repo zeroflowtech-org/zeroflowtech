@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="ZeroFlowTech Case Studies – Real results from custom websites, CRM, automation & travel solutions in Bhopal and beyond." />
+  <meta name="description" content="ZeroFlowTech Case Studies – Real results from custom websites, CRM, automation & travel solutions in Bhopal and beyond." />
   <title>Case Studies | ZeroFlowTech – Real Results, Real Growth</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+  <link rel="icon" href="assets/logos/logo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          fontFamily: { heading: ['Poppins', 'sans-serif'], sans: ['Inter', 'sans-serif'] },
           colors: {
             primary: '#4f46e5',
             secondary: '#7c3aed',
             accent: '#06b6d4',
+            coral: '#FF6B6B',
+            golden: '#F59E0B',
+            sunset: '#FB923C',
+            forest: '#059669',
           },
           boxShadow: {
             'glow': '0 0 40px rgba(79,70,229,0.2)',
@@ -32,119 +35,30 @@
       }
     }
   </script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <style>
-    .gradient-hero {
-      background: #050d1a;
-      background-image:
-        radial-gradient(ellipse at 20% 50%, rgba(79,70,229,0.15) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(6,182,212,0.08) 0%, transparent 55%);
-    }
-    .gradient-text {
-      background: linear-gradient(90deg, #4f46e5, #06b6d4);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, #4f46e5, #7c3aed);
-      color: white;
-      padding: 0.875rem 2rem;
-      border-radius: 0.75rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .btn-primary:hover {
-      box-shadow: 0 8px 30px rgba(79,70,229,0.45);
-      transform: translateY(-2px);
-    }
-    .section-fade {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.9s ease-out;
-    }
-    .section-fade.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .case-card {
-      transition: all 0.4s ease;
-    }
-    .case-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 50px -12px rgba(79,70,229,0.2);
-    }
-    .stat-number {
-      font-size: 2.5rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #4f46e5, #7c3aed);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 1.2s ease-out;
-    }
-    .stat-visible {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-    }
-    @media (max-width: 640px) {
-      h1 { font-size: 2.5rem !important; line-height: 1.1; }
-      h2 { font-size: 2rem !important; }
-    }
-  </style>
 </head>
-
 <body class="bg-white text-slate-900 antialiased">
-
-  <!-- Announcement Bar -->
-  <div id="announcement-bar" class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-center py-2.5 text-sm font-medium relative">
-    🚀 Travel CRM for Indian Travel Agencies — Now Live. <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="underline font-bold ml-1">Book a Free Demo →</a>
-    <button onclick="document.getElementById('announcement-bar').remove()" class="absolute right-4 top-1/2 -translate-y-1/2 opacity-70 hover:opacity-100 transition text-lg">×</button>
-  </div>
 
   <!-- Navigation -->
   <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
-      <a href="index.html" class="text-xl font-black">
-        ZeroFlow<span class="bg-gradient-to-r from-indigo-600 to-cyan-500 bg-clip-text text-transparent">Tech</span>
-      </a>
+      <a href="index.html" class="text-xl font-black tracking-tight font-heading">ZeroFlow<span class="gradient-text">Tech</span></a>
       <div class="hidden md:flex items-center gap-8">
-        <a href="index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">Home</a>
-        <a href="travel-crm.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">Product</a>
-        <a href="services.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">Services</a>
-        <a href="case-studies.html" class="text-indigo-600 font-semibold">Case Studies</a>
-        <a href="about.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">About</a>
-        <a href="contact.html" class="text-slate-600 hover:text-indigo-600 font-medium transition">Contact</a>
+        <a href="index.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Home</a>
+        <a href="travel-crm.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Product</a>
+        <a href="about.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">About</a>
+        <a href="contact.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Contact</a>
       </div>
-      <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM"
-         target="_blank"
-         class="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:shadow-[0_8px_20px_rgba(79,70,229,0.4)] hover:scale-105 transition-all duration-300">
-        Book Demo <i class="fa-solid fa-arrow-right text-xs"></i>
-      </a>
-      <div class="md:hidden flex items-center gap-3">
-        <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM"
-           target="_blank"
-           class="bg-gradient-to-r from-indigo-600 to-violet-600 text-white px-4 py-2 rounded-lg font-semibold text-sm">
-          Demo
-        </a>
-        <button id="menu-btn" class="text-2xl text-slate-700"><i class="fa-solid fa-bars"></i></button>
-      </div>
+      <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="hidden md:inline-flex items-center gap-2 btn-whatsapp text-sm !py-2.5 !px-5 !rounded-xl"><i class="fa-brands fa-whatsapp text-lg"></i> Book Demo</a>
+      <button id="mobile-toggle" class="md:hidden text-slate-700 p-2"><i class="fa-solid fa-bars text-xl"></i></button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 py-6 px-6 space-y-5 font-medium">
-      <a href="index.html" class="block text-slate-700 hover:text-indigo-600">Home</a>
-      <a href="travel-crm.html" class="block text-slate-700 hover:text-indigo-600">Product</a>
-      <a href="services.html" class="block text-slate-700 hover:text-indigo-600">Services</a>
-      <a href="case-studies.html" class="block text-indigo-600 font-semibold">Case Studies</a>
-      <a href="about.html" class="block text-slate-700 hover:text-indigo-600">About</a>
-      <a href="contact.html" class="block text-slate-700 hover:text-indigo-600">Contact</a>
-      <a href="faq.html" class="block text-slate-700 hover:text-indigo-600">FAQ</a>
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t border-slate-100 px-4 py-4">
+      <div class="flex flex-col gap-1">
+        <a href="index.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Home</a>
+        <a href="travel-crm.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Product</a>
+        <a href="about.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">About</a>
+        <a href="contact.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Contact</a>
+        <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="btn-whatsapp mt-3 justify-center text-center"><i class="fa-brands fa-whatsapp"></i> Book Demo</a>
+      </div>
     </div>
   </nav>
 
@@ -155,7 +69,7 @@
         <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
         Proof in Numbers
       </div>
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 font-heading">
         Real Results. <span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Real Businesses.</span>
       </h1>
       <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
@@ -174,10 +88,10 @@
           <div class="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-indigo-100">
             <i class="fa-solid fa-plane-departure"></i> Travel Industry
           </div>
-          <h2 class="text-3xl sm:text-4xl font-bold mb-6 leading-tight">DejaVu Tours – <span class="gradient-text">From Chaos to 24/7 Automation</span></h2>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6 leading-tight font-heading">DejaVu Tours – <span class="gradient-text">From Chaos to 24/7 Automation</span></h2>
 
           <div class="mb-8">
-            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800">
+            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800 font-heading">
               <i class="fa-solid fa-triangle-exclamation text-amber-500"></i> The Challenge
             </h3>
             <ul class="space-y-2 text-slate-600">
@@ -189,7 +103,7 @@
           </div>
 
           <div class="mb-8">
-            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800">
+            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800 font-heading">
               <i class="fa-solid fa-rocket text-indigo-600"></i> Our Solution
             </h3>
             <ul class="space-y-2 text-slate-600">
@@ -201,7 +115,7 @@
           </div>
 
           <div class="bg-gradient-to-br from-emerald-50 to-white p-8 rounded-2xl border border-emerald-100 mb-8">
-            <h3 class="text-lg font-bold mb-6 flex items-center gap-2 text-slate-800">
+            <h3 class="text-lg font-bold mb-6 flex items-center gap-2 text-slate-800 font-heading">
               <i class="fa-solid fa-chart-line text-emerald-600"></i> Results
             </h3>
             <div class="grid grid-cols-3 gap-4 text-center">
@@ -252,10 +166,10 @@
           <div class="inline-flex items-center gap-2 bg-violet-50 text-violet-700 px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-violet-100">
             <i class="fa-solid fa-building"></i> Real Estate & Construction
           </div>
-          <h2 class="text-3xl sm:text-4xl font-bold mb-6 leading-tight">Neelant Group – <span class="gradient-text">Three Websites, One Strong Brand</span></h2>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6 leading-tight font-heading">Neelant Group – <span class="gradient-text">Three Websites, One Strong Brand</span></h2>
 
           <div class="mb-8">
-            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800">
+            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800 font-heading">
               <i class="fa-solid fa-triangle-exclamation text-amber-500"></i> The Challenge
             </h3>
             <ul class="space-y-2 text-slate-600">
@@ -267,7 +181,7 @@
           </div>
 
           <div class="mb-8">
-            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800">
+            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800 font-heading">
               <i class="fa-solid fa-rocket text-indigo-600"></i> Our Solution
             </h3>
             <ul class="space-y-2 text-slate-600">
@@ -279,7 +193,7 @@
           </div>
 
           <div class="bg-gradient-to-br from-emerald-50 to-white p-8 rounded-2xl border border-emerald-100 mb-8">
-            <h3 class="text-lg font-bold mb-6 flex items-center gap-2 text-slate-800">
+            <h3 class="text-lg font-bold mb-6 flex items-center gap-2 text-slate-800 font-heading">
               <i class="fa-solid fa-chart-line text-emerald-600"></i> Results
             </h3>
             <div class="grid grid-cols-3 gap-4 text-center">
@@ -326,160 +240,15 @@
         </div>
       </div>
 
-      <!-- Case 3: Swift Logistics -->
-      <div class="grid lg:grid-cols-2 gap-12 items-center case-card">
-        <div>
-          <div class="inline-flex items-center gap-2 bg-cyan-50 text-cyan-700 px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-cyan-100">
-            <i class="fa-solid fa-truck"></i> Logistics
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-bold mb-6 leading-tight">Swift Logistics – <span class="gradient-text">Real-Time Inventory & Order Dashboard</span></h2>
-
-          <div class="mb-8">
-            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800">
-              <i class="fa-solid fa-triangle-exclamation text-amber-500"></i> The Challenge
-            </h3>
-            <ul class="space-y-2 text-slate-600">
-              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> Manual stock & order tracking via Excel</li>
-              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> Delays in updates & errors</li>
-              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> No real-time visibility for team</li>
-              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> Lost revenue from stockouts</li>
-            </ul>
-          </div>
-
-          <div class="mb-8">
-            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800">
-              <i class="fa-solid fa-rocket text-indigo-600"></i> Our Solution
-            </h3>
-            <ul class="space-y-2 text-slate-600">
-              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Custom CRM dashboard with real-time sync</li>
-              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Order & inventory alerts</li>
-              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Driver & warehouse integration</li>
-              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Reporting & analytics</li>
-            </ul>
-          </div>
-
-          <div class="bg-gradient-to-br from-emerald-50 to-white p-8 rounded-2xl border border-emerald-100 mb-8">
-            <h3 class="text-lg font-bold mb-6 flex items-center gap-2 text-slate-800">
-              <i class="fa-solid fa-chart-line text-emerald-600"></i> Results
-            </h3>
-            <div class="grid grid-cols-3 gap-4 text-center">
-              <div>
-                <div class="stat-number" data-target="95" data-suffix="%">0%</div>
-                <div class="text-sm text-slate-600 mt-1">Accuracy</div>
-              </div>
-              <div>
-                <div class="stat-number" data-target="40" data-suffix="%">0%</div>
-                <div class="text-sm text-slate-600 mt-1">Cost Saving</div>
-              </div>
-              <div>
-                <div class="stat-number" data-target="18" data-suffix="">0</div>
-                <div class="text-sm text-slate-600 mt-1">Hours Saved Weekly</div>
-              </div>
-            </div>
-          </div>
-
-          <blockquote class="italic text-slate-600 mb-8 border-l-4 border-indigo-500 pl-6 py-1">
-            "We finally have real-time control — no more guesswork or losses."
-          </blockquote>
-
-          <div class="mb-6">
-            <span class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Tech Stack</span>
-            <p class="text-slate-600 mt-1">React · Node.js · PostgreSQL · Real-time WebSockets</p>
-          </div>
-
-          <a href="contact.html" class="btn-primary">
-            Want This Efficiency? <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-
-        <div>
-          <img
-            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-            alt="Logistics Dashboard" class="rounded-2xl shadow-2xl w-full" loading="lazy" />
-        </div>
-      </div>
-
-      <!-- Case 4: Vikram Fashion -->
-      <div class="grid lg:grid-cols-2 gap-12 items-center case-card">
-        <div class="lg:order-2">
-          <div class="inline-flex items-center gap-2 bg-amber-50 text-amber-700 px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-amber-100">
-            <i class="fa-solid fa-cart-shopping"></i> E-commerce
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-bold mb-6 leading-tight">Vikram Fashion – <span class="gradient-text">From Slow Site to High-Converting Store</span></h2>
-
-          <div class="mb-8">
-            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800">
-              <i class="fa-solid fa-triangle-exclamation text-amber-500"></i> The Challenge
-            </h3>
-            <ul class="space-y-2 text-slate-600">
-              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> Slow, unresponsive old website</li>
-              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> High cart abandonment</li>
-              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> No proper payment or inventory sync</li>
-              <li class="flex items-start gap-2"><span class="text-red-400 mt-1">•</span> Poor mobile experience</li>
-            </ul>
-          </div>
-
-          <div class="mb-8">
-            <h3 class="text-lg font-bold mb-3 flex items-center gap-2 text-slate-800">
-              <i class="fa-solid fa-rocket text-indigo-600"></i> Our Solution
-            </h3>
-            <ul class="space-y-2 text-slate-600">
-              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Modern custom e-commerce platform</li>
-              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Fast checkout + Razorpay integration</li>
-              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Real-time inventory & order tracking</li>
-              <li class="flex items-start gap-2"><span class="text-indigo-400 mt-1">•</span> Mobile-first responsive design</li>
-            </ul>
-          </div>
-
-          <div class="bg-gradient-to-br from-emerald-50 to-white p-8 rounded-2xl border border-emerald-100 mb-8">
-            <h3 class="text-lg font-bold mb-6 flex items-center gap-2 text-slate-800">
-              <i class="fa-solid fa-chart-line text-emerald-600"></i> Results
-            </h3>
-            <div class="grid grid-cols-3 gap-4 text-center">
-              <div>
-                <div class="stat-number" data-target="220" data-suffix="%">0%</div>
-                <div class="text-sm text-slate-600 mt-1">Conversion</div>
-              </div>
-              <div>
-                <div class="stat-number" data-target="65" data-suffix="%">0%</div>
-                <div class="text-sm text-slate-600 mt-1">Cart Recovery</div>
-              </div>
-              <div>
-                <div class="stat-number-static" style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#4f46e5,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">4×</div>
-                <div class="text-sm text-slate-600 mt-1">Faster Load Time</div>
-              </div>
-            </div>
-          </div>
-
-          <blockquote class="italic text-slate-600 mb-8 border-l-4 border-indigo-500 pl-6 py-1">
-            "Sales doubled in first month — site now converts like never before."
-          </blockquote>
-
-          <div class="mb-6">
-            <span class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Tech Stack</span>
-            <p class="text-slate-600 mt-1">Next.js · Razorpay · MongoDB · Tailwind</p>
-          </div>
-
-          <a href="contact.html" class="btn-primary">
-            Want Higher Sales? <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-
-        <div class="lg:order-1">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
-            alt="E-commerce Success" class="rounded-2xl shadow-2xl w-full" loading="lazy" />
-        </div>
-      </div>
-
     </div>
   </section>
 
   <!-- CTA Banner -->
   <section class="py-20 bg-gradient-to-r from-indigo-600 to-violet-600 text-white section-fade">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Your Success Story Starts Here</h2>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 font-heading">Your Success Story Starts Here</h2>
       <p class="text-lg sm:text-xl mb-10 opacity-90 max-w-2xl mx-auto">
-        We've transformed travel agencies, real estate groups, logistics firms & e-commerce stores — let's do the same for you.
+        We've transformed travel agencies and real estate groups — let's do the same for you.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM"
@@ -500,85 +269,53 @@
     <div class="max-w-7xl mx-auto px-4">
       <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
         <div>
-          <a href="index.html" class="text-xl font-black text-white mb-3 block">
-            ZeroFlow<span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Tech</span>
-          </a>
-          <p class="text-sm leading-relaxed mb-4">Building SaaS products and custom solutions for Indian businesses.</p>
-          <div class="flex gap-3">
-            <a href="https://wa.me/6268497800" class="text-slate-400 hover:text-green-400 transition"><i class="fa-brands fa-whatsapp text-lg"></i></a>
-            <a href="mailto:zeroflowtech@gmail.com" class="text-slate-400 hover:text-indigo-400 transition"><i class="fa-solid fa-envelope text-lg"></i></a>
+          <a href="index.html" class="text-xl font-black text-white mb-3 block tracking-tight font-heading">ZeroFlow<span class="gradient-text">Tech</span></a>
+          <p class="text-sm leading-relaxed mb-5 text-slate-500">Building Travel CRM — the only tool Indian travel agencies need to run their business.</p>
+          <div class="flex gap-4">
+            <a href="https://wa.me/6268497800" class="text-slate-400 hover:text-green-400 transition text-lg" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:zeroflowtech@gmail.com" class="text-slate-400 hover:text-indigo-400 transition text-lg" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
           </div>
         </div>
         <div>
-          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Product</p>
-          <div class="flex flex-col gap-2 text-sm">
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Product</p>
+          <div class="flex flex-col gap-2.5 text-sm">
             <a href="travel-crm.html" class="hover:text-indigo-400 transition">Travel CRM</a>
             <a href="travel-crm.html#features" class="hover:text-indigo-400 transition">Features</a>
-            <a href="travel-crm.html#faq" class="hover:text-indigo-400 transition">FAQ</a>
-            <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="hover:text-indigo-400 transition">Book Demo</a>
+            <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="hover:text-green-400 transition">Book Demo</a>
           </div>
         </div>
         <div>
-          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Company</p>
-          <div class="flex flex-col gap-2 text-sm">
-            <a href="services.html" class="hover:text-indigo-400 transition">Services</a>
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Company</p>
+          <div class="flex flex-col gap-2.5 text-sm">
             <a href="about.html" class="hover:text-indigo-400 transition">About</a>
+            <a href="services.html" class="hover:text-indigo-400 transition">Services</a>
             <a href="case-studies.html" class="hover:text-indigo-400 transition">Case Studies</a>
             <a href="faq.html" class="hover:text-indigo-400 transition">FAQ</a>
           </div>
         </div>
         <div>
-          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Contact</p>
-          <div class="flex flex-col gap-2 text-sm">
+          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</p>
+          <div class="flex flex-col gap-2.5 text-sm">
             <a href="mailto:zeroflowtech@gmail.com" class="hover:text-indigo-400 transition">zeroflowtech@gmail.com</a>
             <a href="https://wa.me/6268497800" class="hover:text-green-400 transition">+91 62684 97800</a>
             <a href="contact.html" class="hover:text-indigo-400 transition">Contact Form</a>
           </div>
         </div>
       </div>
-      <p class="mt-8 text-sm text-center text-slate-500">© 2026 ZeroFlowTech. All rights reserved.</p>
+      <p class="mt-8 text-sm text-center text-slate-600">&copy; 2026 ZeroFlowTech. All rights reserved.</p>
     </div>
   </footer>
 
-  <script>
-    // Fade-in
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20have%20a%20question%20about%20Travel%20CRM"
+     class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="wa-tooltip">Chat with us</span>
+  </a>
 
-    // Mobile menu
-    document.getElementById('menu-btn')?.addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
-
-    // Animated Stat Counter
-    const stats = document.querySelectorAll('.stat-number');
-    const statObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.getAttribute('data-target'));
-          const suffix = el.getAttribute('data-suffix') || '';
-          let count = 0;
-          const increment = Math.max(1, target / 50);
-          const updateCount = () => {
-            count += increment;
-            if (count < target) {
-              el.textContent = Math.ceil(count) + suffix;
-              setTimeout(updateCount, 40);
-            } else {
-              el.textContent = target + suffix;
-              el.classList.add('stat-visible');
-            }
-          };
-          updateCount();
-          statObserver.unobserve(el);
-        }
-      });
-    }, { threshold: 0.5 });
-    stats.forEach(stat => statObserver.observe(stat));
-  </script>
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
-
 </html>
