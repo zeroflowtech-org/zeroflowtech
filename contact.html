@@ -11,7 +11,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <script>
@@ -41,6 +41,11 @@
 
 <body class="bg-white text-slate-900 antialiased">
 
+  <!-- Cursor -->
+  <div id="cursor-glow"></div>
+  <div id="cursor-ring"></div>
+  <div id="scroll-progress-bar"></div>
+
   <!-- Navigation -->
   <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
@@ -48,10 +53,11 @@
         ZeroFlow<span class="gradient-text">Tech</span>
       </a>
       <div class="hidden md:flex items-center gap-8">
-        <a href="index.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Home</a>
-        <a href="travel-crm.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Product</a>
-        <a href="about.html" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition">About</a>
-        <a href="contact.html" class="text-indigo-600 font-semibold text-sm">Contact</a>
+        <a href="index.html" class="nav-link text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Home</a>
+        <a href="travel-crm.html" class="nav-link text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Product</a>
+        <a href="about.html" class="nav-link text-slate-600 hover:text-indigo-600 font-medium text-sm transition">About</a>
+        <a href="pricing.html" class="nav-link text-slate-600 hover:text-indigo-600 font-medium text-sm transition">Pricing</a>
+        <a href="contact.html" class="nav-link text-indigo-600 font-semibold text-sm">Contact</a>
       </div>
       <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM"
          class="hidden md:inline-flex items-center gap-2 btn-whatsapp text-sm !py-2.5 !px-5 !rounded-xl">
@@ -66,6 +72,7 @@
         <a href="index.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Home</a>
         <a href="travel-crm.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Product</a>
         <a href="about.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">About</a>
+        <a href="pricing.html" class="block py-2.5 px-3 rounded-lg text-slate-700 hover:text-indigo-600 hover:bg-slate-50 font-medium transition">Pricing</a>
         <a href="contact.html" class="block py-2.5 px-3 rounded-lg text-indigo-600 font-semibold bg-indigo-50">Contact</a>
         <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM"
            class="btn-whatsapp mt-3 justify-center text-center">
@@ -77,7 +84,8 @@
 
   <!-- Hero -->
   <section class="gradient-hero py-20 sm:py-28 relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 text-center">
+    <canvas id="hero-canvas"></canvas>
+    <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
       <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-cyan-300 px-4 py-2 rounded-full text-sm font-medium mb-8 backdrop-blur-sm">
         <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
         We respond within hours
@@ -98,28 +106,32 @@
         Why Reach Out Today?
       </h2>
       <div class="grid md:grid-cols-4 gap-6">
-        <div class="benefit-card card-feature text-center">
+        <div class="benefit-card card-feature tilt-card text-center">
+          <div class="tilt-shine"></div>
           <div class="benefit-icon">
             <i class="fa-solid fa-clock-rotate-left text-2xl text-white"></i>
           </div>
           <h3 class="text-lg font-bold mb-2 font-heading">Save Hours Every Day</h3>
           <p class="text-slate-600 text-sm">Stop manual chaos — reclaim your time for growth.</p>
         </div>
-        <div class="benefit-card card-feature text-center">
+        <div class="benefit-card card-feature tilt-card text-center">
+          <div class="tilt-shine"></div>
           <div class="benefit-icon">
             <i class="fa-solid fa-chart-line text-2xl text-white"></i>
           </div>
           <h3 class="text-lg font-bold mb-2 font-heading">Grow Revenue Faster</h3>
           <p class="text-slate-600 text-sm">Never miss leads, bookings, or follow-ups again.</p>
         </div>
-        <div class="benefit-card card-feature text-center">
+        <div class="benefit-card card-feature tilt-card text-center">
+          <div class="tilt-shine"></div>
           <div class="benefit-icon">
             <i class="fa-solid fa-face-smile text-2xl text-white"></i>
           </div>
           <h3 class="text-lg font-bold mb-2 font-heading">Reduce Daily Stress</h3>
           <p class="text-slate-600 text-sm">Let automation handle the repetitive grind.</p>
         </div>
-        <div class="benefit-card card-feature text-center">
+        <div class="benefit-card card-feature tilt-card text-center">
+          <div class="tilt-shine"></div>
           <div class="benefit-icon">
             <i class="fa-solid fa-headset text-2xl text-white"></i>
           </div>
@@ -135,7 +147,7 @@
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
         <!-- Form -->
-        <div class="bg-white p-8 lg:p-10 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100">
+        <div class="bg-white p-4 sm:p-6 lg:p-10 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100">
           <h2 class="text-2xl font-bold mb-8 text-center text-slate-800 font-heading">Send Us a Message</h2>
           <form class="space-y-5">
             <input type="text" placeholder="Your Name *" required
@@ -155,7 +167,7 @@
 
         <!-- Quick Connect -->
         <div class="flex flex-col justify-center space-y-8">
-          <div class="bg-white p-8 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100">
+          <div class="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100">
             <h3 class="text-xl font-bold mb-6 text-slate-800 font-heading">Quick Ways to Reach Us</h3>
             <div class="space-y-5">
               <div class="flex items-center gap-4">
@@ -188,7 +200,7 @@
             </div>
           </div>
 
-          <div class="bg-indigo-50 p-8 rounded-2xl border border-indigo-100">
+          <div class="bg-indigo-50 p-4 sm:p-6 lg:p-8 rounded-2xl border border-indigo-100">
             <h3 class="text-xl font-bold mb-3 text-slate-800 font-heading">Prefer a Quick Chat?</h3>
             <p class="text-slate-600 mb-5">
               Book a free 15-minute call — no sales pitch, just real talk about your business needs.
@@ -238,47 +250,70 @@
     </div>
   </section>
 
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
   <!-- Footer -->
-  <footer class="bg-[#050d1a] text-slate-400 pt-16 pb-8">
+  <footer class="footer-v2 text-slate-400 pt-14 pb-6">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+      <div class="footer-cta-strip">
         <div>
-          <a href="index.html" class="text-xl font-black text-white mb-3 block tracking-tight font-heading">
-            ZeroFlow<span class="gradient-text">Tech</span>
-          </a>
-          <p class="text-sm leading-relaxed mb-5 text-slate-500">Building Travel CRM — the only tool Indian travel agencies need to run their business.</p>
-          <div class="flex gap-4">
-            <a href="https://wa.me/6268497800" class="text-slate-400 hover:text-green-400 transition text-lg" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="mailto:zeroflowtech@gmail.com" class="text-slate-400 hover:text-indigo-400 transition text-lg" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <div class="text-white font-bold text-lg font-heading mb-1">Got a question or idea?</div>
+          <div class="text-slate-400 text-sm">We reply on WhatsApp within hours — no sales pitch, just real talk.</div>
+        </div>
+        <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20to%20talk"
+           class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white font-bold px-6 py-3 rounded-xl transition-all duration-200 flex-shrink-0 text-sm">
+          <i class="fa-brands fa-whatsapp text-base"></i> Chat on WhatsApp
+        </a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-10 pb-10 border-b border-white/8">
+        <div class="">
+          <a href="index.html" class="text-xl font-black text-white mb-2 block tracking-tight font-heading">ZeroFlow<span class="gradient-text">Tech</span></a>
+          <p class="text-sm leading-relaxed text-slate-500 mb-4 max-w-xs">Building Travel CRM — the only platform Indian travel agencies need. WhatsApp-first, GST-ready, built in India.</p>
+          <div class="flex gap-3 mb-3">
+            <a href="https://wa.me/6268497800" aria-label="WhatsApp" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-green-500/20 border border-white/8 hover:border-green-500/30 flex items-center justify-center text-slate-400 hover:text-green-400 transition-all duration-200"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:zeroflowtech@gmail.com" aria-label="Email" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-indigo-500/20 border border-white/8 hover:border-indigo-500/30 flex items-center justify-center text-slate-400 hover:text-indigo-400 transition-all duration-200"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+          <div class="footer-badge"><i class="fa-solid fa-flag text-orange-400 text-[0.6rem]"></i> Made in India &mdash; for India</div>
+        </div>
+        <div>
+          <p class="text-white font-semibold mb-4 text-xs uppercase tracking-widest">Product</p>
+          <div class="flex flex-col gap-2 text-sm">
+            <a href="travel-crm.html" class="footer-link">Travel CRM</a>
+            <a href="travel-crm.html#features" class="footer-link">All Features</a>
+            <a href="index.html#demo" class="footer-link">Live Demo</a>
+            <a href="pricing.html" class="footer-link">Pricing</a>
+            <a href="faq.html" class="footer-link">FAQ</a>
           </div>
         </div>
         <div>
-          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Product</p>
-          <div class="flex flex-col gap-2.5 text-sm">
-            <a href="travel-crm.html" class="hover:text-indigo-400 transition">Travel CRM</a>
-            <a href="travel-crm.html#features" class="hover:text-indigo-400 transition">Features</a>
-            <a href="https://wa.me/6268497800?text=Hi%20ZeroFlowTech%2C%20I%20want%20a%20demo%20of%20Travel%20CRM" class="hover:text-green-400 transition">Book Demo</a>
+          <p class="text-white font-semibold mb-4 text-xs uppercase tracking-widest">Company</p>
+          <div class="flex flex-col gap-2 text-sm">
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="services.html" class="footer-link">Services</a>
+            <a href="case-studies.html" class="footer-link">Case Studies</a>
+            <a href="contact.html" class="footer-link">Contact</a>
           </div>
         </div>
         <div>
-          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Company</p>
-          <div class="flex flex-col gap-2.5 text-sm">
-            <a href="about.html" class="hover:text-indigo-400 transition">About</a>
-            <a href="services.html" class="hover:text-indigo-400 transition">Services</a>
-            <a href="case-studies.html" class="hover:text-indigo-400 transition">Case Studies</a>
-            <a href="faq.html" class="hover:text-indigo-400 transition">FAQ</a>
-          </div>
-        </div>
-        <div>
-          <p class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</p>
-          <div class="flex flex-col gap-2.5 text-sm">
-            <a href="mailto:zeroflowtech@gmail.com" class="hover:text-indigo-400 transition">zeroflowtech@gmail.com</a>
-            <a href="https://wa.me/6268497800" class="hover:text-green-400 transition">+91 62684 97800</a>
-            <a href="contact.html" class="hover:text-indigo-400 transition">Contact Form</a>
+          <p class="text-white font-semibold mb-4 text-xs uppercase tracking-widest">Get in Touch</p>
+          <div class="flex flex-col gap-3 text-sm">
+            <a href="https://wa.me/6268497800" class="footer-link text-slate-400"><i class="fa-brands fa-whatsapp text-green-400"></i> +91 62684 97800</a>
+            <a href="mailto:zeroflowtech@gmail.com" class="footer-link text-slate-400"><i class="fa-solid fa-envelope text-indigo-400"></i> zeroflowtech@gmail.com</a>
+            <div class="mt-2 text-xs text-slate-600 leading-relaxed"><i class="fa-solid fa-clock text-[0.5rem] mr-1"></i> Mon–Sat, 10am–7pm IST<br/>Typically reply within 2 hours</div>
           </div>
         </div>
       </div>
-      <p class="mt-8 text-sm text-center text-slate-600">&copy; 2026 ZeroFlowTech. All rights reserved.</p>
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-xs text-slate-600">&copy; 2026 ZeroFlowTech. All rights reserved. Built with <i class="fa-solid fa-heart text-red-500 text-[0.55rem]"></i> in India.</p>
+        <div class="flex gap-4 text-xs text-slate-600">
+          <a href="contact.html" class="hover:text-slate-400 transition">Privacy</a>
+          <span class="text-slate-700">&middot;</span>
+          <a href="contact.html" class="hover:text-slate-400 transition">Terms</a>
+        </div>
+      </div>
     </div>
   </footer>
 
